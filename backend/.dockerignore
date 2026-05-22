@@ -1,5 +1,5 @@
 node_modules
-docs/
+/docs/
 !src/docs/
 !src/docs/**
 node_modules/

@@ -24,6 +24,7 @@ pnpm-debug.log*
 
 # Next.js frontend output
 forntend/.next/
+forntend/.next-codex*/
 forntend/out/
 forntend/build/
 forntend/.vercel/
