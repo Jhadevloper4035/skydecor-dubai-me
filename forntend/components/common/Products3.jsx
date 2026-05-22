@@ -1,20 +1,75 @@
 "use client";
 import ProductCard1 from "@/components/productCards/ProductCard1";
-import productsData from "@/data/products.json";
-import React, { useState } from "react";
+import { getProductsFromApi, localProducts } from "@/lib/productsApi";
+import React, { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 
-const tabs = [
-  { label: "1mm Laminates", thickness: "1 mm +" },
-  { label: "0.8mm Laminates", thickness: "0.8 mm" },
-];
+const titleize = (value = "") =>
+  String(value)
+    .trim()
+    .replace(/[-_]+/g, " ")
+    .replace(/\s+/g, " ")
+    .replace(/\b\w/g, (letter) => letter.toUpperCase());
+
+const getProductTypeKey = (product = {}) =>
+  String(product.productTypeSlug || product.productType || "")
+    .trim()
+    .toLowerCase()
+    .replace(/\s+/g, "-");
+
+const getProductTypeLabel = (product = {}) =>
+  titleize(product.productType || product.productTypeSlug || "Products");
 
 export default function Products3({ parentClass = "flat-spacing-3" }) {
-  const [activeTab, setActiveTab] = useState(tabs[0]);
+  const [products, setProducts] = useState(localProducts);
+  const [activeTabKey, setActiveTabKey] = useState("");
 
-  const filteredProducts = productsData
-    .filter((p) => p.thickness === activeTab.thickness)
-    .slice(0, 8);
+  useEffect(() => {
+    let isMounted = true;
+
+    getProductsFromApi({ limit: 1000, isActive: true }).then((apiProducts) => {
+      if (isMounted && apiProducts?.length) {
+        setProducts(apiProducts);
+      }
+    });
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
+  const tabs = useMemo(() => {
+    const productTypeMap = new Map();
+
+    products.forEach((product) => {
+      const key = getProductTypeKey(product);
+      if (!key) return;
+
+      const existingTab = productTypeMap.get(key) || {
+        key,
+        label: getProductTypeLabel(product),
+        products: [],
+      };
+
+      existingTab.products.push(product);
+      productTypeMap.set(key, existingTab);
+    });
+
+    return Array.from(productTypeMap.values()).sort((left, right) =>
+      left.label.localeCompare(right.label)
+    );
+  }, [products]);
+
+  useEffect(() => {
+    if (!tabs.length) return;
+
+    if (!activeTabKey || !tabs.some((tab) => tab.key === activeTabKey)) {
+      setActiveTabKey(tabs[0].key);
+    }
+  }, [activeTabKey, tabs]);
+
+  const activeTab = tabs.find((tab) => tab.key === activeTabKey) || tabs[0];
+  const filteredProducts = activeTab?.products.slice(0, 8) || [];
 
   return (
     <section className={parentClass}>
@@ -28,13 +83,13 @@ export default function Products3({ parentClass = "flat-spacing-3" }) {
         <div className="flat-animate-tab">
           <ul className="tab-product justify-content-sm-center" role="tablist">
             {tabs.map((tab) => (
-              <li key={tab.thickness} className="nav-tab-item">
+              <li key={tab.key} className="nav-tab-item">
                 <a
                   href="#"
-                  className={activeTab.thickness === tab.thickness ? "active" : ""}
+                  className={activeTab?.key === tab.key ? "active" : ""}
                   onClick={(e) => {
                     e.preventDefault();
-                    setActiveTab(tab);
+                    setActiveTabKey(tab.key);
                   }}
                 >
                   {tab.label}
