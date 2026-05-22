@@ -16,7 +16,7 @@ services:
     networks:
       - app-net
     healthcheck:
-      test: wget -qO- http://localhost/ || exit 1
+      test: ["CMD-SHELL", "wget -qO- --header='Host: skydecor.me' http://127.0.0.1/health || exit 1"]
       interval: 30s
       timeout: 3s
       retries: 3
@@ -28,8 +28,14 @@ services:
     image: ${FRONTEND_IMAGE:?FRONTEND_IMAGE is required}
     container_name: skydecor-frontend-prod
     restart: always
+    environment:
+      NEXT_PUBLIC_API_BASE_URL: http://app:${PORT:-8080}/api/v1
+      NEXT_PUBLIC_BACKEND_URL: http://app:${PORT:-8080}/api/v1
     expose:
       - '3000'
+    depends_on:
+      app:
+        condition: service_healthy
     networks:
       - app-net
     healthcheck:
