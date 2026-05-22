@@ -1,0 +1,225 @@
+body {
+  overflow-x: hidden;
+}
+
+.range-slider {
+  height: 4px !important;
+
+  .range-slider__range {
+    background: var(--main) !important;
+  }
+
+  .range-slider__thumb {
+    background: var(--white) !important;
+    border: 2px solid var(--main);
+    width: 16px !important;
+    height: 16px !important;
+  }
+}
+
+#shoppingCart.show .tf-progress-bar .value {
+  width: 60% !important;
+}
+
+.menu-item-li.active {
+  .menu-link-text {
+    &::before {
+      width: 100%;
+      left: 0;
+      right: auto;
+      background-color: var(--primary) !important;
+    }
+  }
+}
+
+.sub-nav-link.active,
+.mb-menu-link.active,
+.sub-nav-link.active {
+  color: var(--primary) !important;
+}
+
+@media only screen and (max-width: 767px) {
+  .footer .footer-col-block .tf-collapse-content {
+    overflow-y: hidden;
+    display: block;
+    height: 0px;
+    transition: 0.5s;
+  }
+}
+
+.tfSubscribeMsg {
+  display: none;
+  max-height: 0px;
+  // transition: 0.4s;
+  overflow: hidden;
+
+  &.active {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    max-height: 180px;
+    display: block;
+  }
+}
+
+.swiper-pagination-lock {
+  display: none;
+}
+
+.show-mx-1200 {
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  .show-mx-1200 {
+    display: block !important;
+  }
+
+  .hidden-mx-1200 {
+    display: none;
+  }
+}
+
+.tf-toolbar-bottom {
+  overflow-x: hidden;
+}
+
+.mw-100p-scroll {
+  max-width: 100%;
+  overflow-y: auto;
+}
+
+.mw-100p-hidden,
+.tf-product-info-wrap {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.tabFilter {
+  transform: translateY(30px) !important;
+  opacity: 0 !important;
+  transition: 0.3s !important;
+
+  &.filtered {
+    transform: translateY(0px) !important;
+    opacity: 1 !important;
+  }
+}
+
+.icv__label {
+  height: fit-content !important;
+}
+
+.home-gaming-testimonials {
+  @media (max-width: 1200px) {
+    .nav-prev-testimonial {
+      left: 300px !important;
+      bottom: 0;
+      top: unset;
+    }
+
+    .nav-next-testimonial {
+      right: 300px !important;
+      bottom: 0;
+      top: unset;
+    }
+  }
+}
+
+.bookstore-product-heading {
+  @media (max-width: 580px) {
+    flex-wrap: wrap;
+
+    .btn-line {
+      margin-top: 20px;
+    }
+  }
+}
+
+.logo-header img {
+  width: 180px;
+}
+
+.header-default .main-header .wrapper-header {
+  padding: 5px 0px;
+}
+
+.container {
+  max-width: 1200px;
+}
+
+#header .box-nav-ul .item-link {
+  font-weight: 400;
+}
+
+.tf-topbar {
+  background: linear-gradient(90deg, #bdad7b 0%, #615328 100%);
+}
+
+#toggle-rtl {
+  display: none !important;
+}
+
+.wg-blog.style-1 .image {
+  height: 300px !important;
+  object-fit: cover;
+}
+
+.testi-tiktok {
+  background-color: #f6ede6 !important;
+}
+
+.collection-social .poster {
+  display: none !important;
+}
+
+.heading {
+  font-size: clamp(22px, 4.5vw, 54px);
+  font-weight: 300;
+  line-height: 1.18;
+  letter-spacing: -0.5px;
+  color: #1a1a1a;
+  margin-bottom: 36px;
+}
+
+.banner-heading {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 300;
+  font-style: normal;
+  line-height: 1.1;
+  letter-spacing: 0;
+  color: #b49a6e;
+  margin-bottom: 20px;
+}
+
+h3 {
+  line-height: 35px !important;
+  font-family: ui-monospace;
+}
+
+.social-whatsapp:hover {
+  background-color: #25d366 !important;
+}
+
+#footer .footer-bottom-wrap {
+  border-top: 1px solid #333333b0;
+}
+
+.modal-quick-view .tf-quick-view-image .quickView-item {
+  width: 350px;
+  height: 700px;
+  aspect-ratio: 1/2;
+  max-height: 700px;
+}
+
+.card-product:not(.list-st-3, .list-st-2, .style-list) .card-product-wrapper {
+  aspect-ratio: 1 / 2;
+}
+
+.menu-item a {
+  white-space: nowrap;
+}
+
+.box-nav-ul .menu-list .menu-link-text::before {
+  display: none !important ;
+}

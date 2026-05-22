@@ -1,0 +1,90 @@
+# Rename this file to skydecor-ssl.conf after TLS certificates exist on the host.
+# Mount the certificate directory into the nginx service before enabling it.
+
+upstream skydecor_frontend_ssl {
+    server frontend:3000;
+}
+
+upstream skydecor_backend_ssl {
+    server app:8080;
+}
+
+map $http_upgrade $connection_upgrade_ssl {
+    default upgrade;
+    '' close;
+}
+
+server {
+    listen 80;
+    server_name skydecor.me www.skydecor.me;
+
+    location /.well-known/acme-challenge/ {
+        root /var/www/certbot;
+    }
+
+    location / {
+        return 301 https://$host$request_uri;
+    }
+}
+
+server {
+    listen 443 ssl http2;
+    server_name skydecor.me www.skydecor.me;
+
+    ssl_certificate /etc/letsencrypt/live/skydecor.me/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/skydecor.me/privkey.pem; 
+
+    client_max_body_size 10m;
+
+    location /api/ {
+        proxy_pass http://skydecor_backend_ssl;
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header X-Forwarded-Host $host;
+    }
+
+    location /scan/ {
+        proxy_pass http://skydecor_backend_ssl;
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header X-Forwarded-Host $host;
+    }
+
+    location = /health {
+        proxy_pass http://skydecor_backend_ssl;
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header X-Forwarded-Host $host;
+    }
+
+    location = /ready {
+        proxy_pass http://skydecor_backend_ssl;
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header X-Forwarded-Host $host;
+    }
+
+    location / {
+        proxy_pass http://skydecor_frontend_ssl;
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header X-Forwarded-Host $host;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection $connection_upgrade_ssl;
+    }
+}

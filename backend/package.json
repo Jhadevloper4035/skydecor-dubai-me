@@ -1,0 +1,59 @@
+{
+  "name": "skydecor-dubai-backend",
+  "version": "1.0.0",
+  "description": "REST API backend for SkyDecor Dubai — interior decoration services platform",
+  "author": "Jhadevloper4035",
+  "license": "ISC",
+  "main": "src/index.js",
+  "type": "module",
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  },
+  "scripts": {
+    "start": "NODE_ENV=production node src/server.js",
+    "dev": "NODE_ENV=development nodemon src/server.js",
+    "lint": "eslint src/",
+    "lint:fix": "eslint src/ --fix",
+    "format": "prettier --write src/",
+    "format:check": "prettier --check src/",
+    "build": "find src -name '*.js' -print0 | xargs -0 -n1 node --check",
+    "seed:db": "NODE_ENV=development node src/seedDB.js",
+    "seed:qrcode": "NODE_ENV=development node src/seedDB.js",
+    "test": "node --test"
+  },
+  "keywords": [
+    "express",
+    "nodejs",
+    "mongodb",
+    "rest-api",
+    "interior-decoration"
+  ],
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.1043.0",
+    "@aws-sdk/s3-request-presigner": "^3.1043.0",
+    "bcryptjs": "^3.0.3",
+    "compression": "^1.8.1",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.4.1",
+    "express-validator": "^7.3.2",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.5.0",
+    "redis": "^5.12.1",
+    "slugify": "^1.6.9",
+    "winston": "^3.19.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.0.0",
+    "eslint": "^9.0.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-prettier": "^5.5.5",
+    "nodemon": "^3.1.14",
+    "prettier": "^3.8.3"
+  }
+}

@@ -1,0 +1,193 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+env:
+  BACKEND_IMAGE: ${{ secrets.DOCKERHUB_USERNAME }}/skydecor-api
+  FRONTEND_IMAGE: ${{ secrets.DOCKERHUB_USERNAME }}/skydecor-frontend
+  NEXT_PUBLIC_API_BASE_URL: http://app:8080/api/v1
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+          cache-dependency-path: |
+            backend/package-lock.json
+            forntend/package-lock.json
+
+      - name: Install backend dependencies
+        run: npm ci
+        working-directory: backend
+
+      - name: Install frontend dependencies
+        run: npm ci
+        working-directory: forntend
+
+      - name: Build backend
+        run: npm run build
+        working-directory: backend
+
+      - name: Build frontend
+        run: npm run build
+        working-directory: forntend
+
+  docker:
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build and push backend image
+        uses: docker/build-push-action@v6
+        with:
+          context: ./backend
+          file: ./backend/Dockerfile
+          target: production
+          push: true
+          tags: |
+            ${{ env.BACKEND_IMAGE }}:${{ github.sha }}
+            ${{ env.BACKEND_IMAGE }}:latest
+
+      - name: Build and push frontend image
+        uses: docker/build-push-action@v6
+        with:
+          context: ./forntend
+          file: ./forntend/Dockerfile
+          target: production
+          push: true
+          build-args: |
+            NEXT_PUBLIC_API_BASE_URL=${{ env.NEXT_PUBLIC_API_BASE_URL }}
+          tags: |
+            ${{ env.FRONTEND_IMAGE }}:${{ github.sha }}
+            ${{ env.FRONTEND_IMAGE }}:latest
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: docker
+    steps:
+      - name: Deploy to EC2 via SSH
+        uses: appleboy/ssh-action@v1.2.0
+        env:
+          DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+          DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
+          APP_IMAGE: ${{ env.BACKEND_IMAGE }}
+          FRONTEND_IMAGE: ${{ env.FRONTEND_IMAGE }}
+          NGINX_HTTP_PORT: ${{ secrets.PROD_NGINX_HTTP_PORT }}
+          MONGO_URI: ${{ secrets.PROD_MONGO_URI }}
+          ALLOWED_ORIGINS: ${{ secrets.PROD_ALLOWED_ORIGINS }}
+          JWT_SECRET: ${{ secrets.PROD_JWT_SECRET }}
+          JWT_EXPIRES_IN: ${{ secrets.PROD_JWT_EXPIRES_IN }}
+          QR_CODE_CACHE_TTL_SECONDS: ${{ secrets.PROD_QR_CODE_CACHE_TTL_SECONDS }}
+          BOOTSTRAP_SUPERADMIN_NAME: ${{ secrets.BOOTSTRAP_SUPERADMIN_NAME }}
+          BOOTSTRAP_SUPERADMIN_EMAIL: ${{ secrets.BOOTSTRAP_SUPERADMIN_EMAIL }}
+          BOOTSTRAP_SUPERADMIN_PASSWORD: ${{ secrets.BOOTSTRAP_SUPERADMIN_PASSWORD }}
+          AWS_REGION: ${{ secrets.AWS_REGION }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          S3_BUCKET: ${{ secrets.S3_BUCKET }}
+          S3_PUBLIC_BASE_URL: ${{ secrets.S3_PUBLIC_BASE_URL }}
+          S3_KEY_PREFIX: ${{ secrets.S3_KEY_PREFIX }}
+          S3_PRESIGNED_EXPIRES_SECONDS: ${{ secrets.S3_PRESIGNED_EXPIRES_SECONDS }}
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          envs: DOCKERHUB_USERNAME,DOCKERHUB_TOKEN,APP_IMAGE,FRONTEND_IMAGE,NGINX_HTTP_PORT,MONGO_URI,ALLOWED_ORIGINS,JWT_SECRET,JWT_EXPIRES_IN,QR_CODE_CACHE_TTL_SECONDS,BOOTSTRAP_SUPERADMIN_NAME,BOOTSTRAP_SUPERADMIN_EMAIL,BOOTSTRAP_SUPERADMIN_PASSWORD,AWS_REGION,AWS_ACCESS_KEY_ID,AWS_SECRET_ACCESS_KEY,S3_BUCKET,S3_PUBLIC_BASE_URL,S3_KEY_PREFIX,S3_PRESIGNED_EXPIRES_SECONDS
+          script: |
+            set -e
+            cd /opt/skydecor
+
+            git pull origin main
+
+            : "${MONGO_URI:?PROD_MONGO_URI secret is required}"
+            : "${ALLOWED_ORIGINS:?PROD_ALLOWED_ORIGINS secret is required}"
+            : "${JWT_SECRET:?PROD_JWT_SECRET secret is required}"
+
+            printf '%s\n' \
+              "PORT=8080" \
+              "NGINX_HTTP_PORT=${NGINX_HTTP_PORT:-80}" \
+              "NODE_ENV=production" \
+              "APP_IMAGE=${APP_IMAGE}:latest" \
+              "FRONTEND_IMAGE=${FRONTEND_IMAGE}:latest" \
+              "TRUST_PROXY=1" \
+              "MONGO_URI=$MONGO_URI" \
+              "ALLOWED_ORIGINS=$ALLOWED_ORIGINS" \
+              "JWT_SECRET=$JWT_SECRET" \
+              "JWT_EXPIRES_IN=${JWT_EXPIRES_IN:-1d}" \
+              "REDIS_URL=redis://redis:6379" \
+              "QR_CODE_CACHE_TTL_SECONDS=${QR_CODE_CACHE_TTL_SECONDS:-300}" \
+              "BOOTSTRAP_SUPERADMIN_NAME=$BOOTSTRAP_SUPERADMIN_NAME" \
+              "BOOTSTRAP_SUPERADMIN_EMAIL=$BOOTSTRAP_SUPERADMIN_EMAIL" \
+              "BOOTSTRAP_SUPERADMIN_PASSWORD=$BOOTSTRAP_SUPERADMIN_PASSWORD" \
+              "DB_AUTO_INDEX=false" \
+              "AWS_REGION=$AWS_REGION" \
+              "AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID" \
+              "AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY" \
+              "S3_BUCKET=$S3_BUCKET" \
+              "S3_PUBLIC_BASE_URL=$S3_PUBLIC_BASE_URL" \
+              "S3_KEY_PREFIX=${S3_KEY_PREFIX:-uploads/images}" \
+              "S3_PRESIGNED_EXPIRES_SECONDS=${S3_PRESIGNED_EXPIRES_SECONDS:-300}" \
+              > .env.production
+
+            chmod 600 .env.production
+
+            echo "$DOCKERHUB_TOKEN" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
+
+            docker compose -f docker-compose.prod.yaml --env-file .env.production pull
+            docker compose -f docker-compose.prod.yaml --env-file .env.production down
+            docker compose -f docker-compose.prod.yaml --env-file .env.production up -d --no-build
+
+            docker image prune -f
+
+            sleep 10
+
+            BASE_URL="http://localhost:${NGINX_HTTP_PORT:-80}"
+
+            echo "Checking backend health"
+            curl -fsS -H "Host: skydecor.me" "$BASE_URL/health"
+            curl -fsS -H "Host: skydecor.me" "$BASE_URL/ready"
+
+            echo "Checking API links"
+            curl -fsS -H "Host: skydecor.me" "$BASE_URL/api/v1/products" >/dev/null
+            curl -fsS -H "Host: skydecor.me" "$BASE_URL/api/v1/products/filters" >/dev/null
+
+            echo "Checking public website links"
+            for path in \
+              "/" \
+              "/about-us" \
+              "/shop-default-grid" \
+              "/shop-collection" \
+              "/contact" \
+              "/FAQs" \
+              "/term-of-use" \
+              "/blog-default" \
+              "/store-list"
+            do
+              echo "Checking $path"
+              curl -fsS -H "Host: skydecor.me" "$BASE_URL$path" >/dev/null
+            done
+
+            echo "Deploy successful"

@@ -1,0 +1,95 @@
+services:
+
+  nginx:
+    image: nginx:1.27-alpine
+    container_name: skydecor-nginx-prod
+    restart: always
+    ports:
+      - '${NGINX_HTTP_PORT:-80}:80'
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d:ro
+    depends_on:
+      frontend:
+        condition: service_healthy
+      app:
+        condition: service_healthy
+    networks:
+      - app-net
+    healthcheck:
+      test: wget -qO- http://localhost/ || exit 1
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 20s
+    security_opt:
+      - no-new-privileges:true
+
+  frontend:
+    image: ${FRONTEND_IMAGE:?FRONTEND_IMAGE is required}
+    container_name: skydecor-frontend-prod
+    restart: always
+    expose:
+      - '3000'
+    networks:
+      - app-net
+    healthcheck:
+      test: wget -qO- http://localhost:3000/ || exit 1
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 40s
+    security_opt:
+      - no-new-privileges:true
+
+  app:
+    image: ${APP_IMAGE:?APP_IMAGE is required}
+    container_name: skydecor-api-prod
+    restart: always
+    expose:
+      - '${PORT:-8080}'
+    env_file:
+      - .env.production
+    networks:
+      - app-net
+    depends_on:
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: wget -qO- http://localhost:$${PORT:-8080}/health || exit 1
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 40s
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    cap_add:
+      - NET_BIND_SERVICE
+
+  redis:
+    image: redis:7.4-alpine
+    container_name: skydecor-redis-prod
+    restart: always
+    command: redis-server --appendonly yes
+    expose:
+      - '6379'
+    volumes:
+      - redis-data:/data
+    networks:
+      - app-net
+    healthcheck:
+      test: redis-cli ping | grep PONG || exit 1
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 10s
+    security_opt:
+      - no-new-privileges:true
+
+networks:
+  app-net:
+    driver: bridge
+
+volumes:
+  redis-data:

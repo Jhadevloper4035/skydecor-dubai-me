@@ -1,0 +1,7 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/(other-pages)/layout,_N_T_/(other-pages)/compare-products/layout,_N_T_/(other-pages)/compare-products/page,_N_T_/compare-products"
+  }
+}
