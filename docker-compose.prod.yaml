@@ -39,11 +39,15 @@ services:
     networks:
       - app-net
     healthcheck:
-      test: wget -qO- http://localhost:3000/ || exit 1
+      test:
+        [
+          "CMD-SHELL",
+          "node -e \"require('http').get('http://127.0.0.1:3000/', (res) => process.exit(res.statusCode >= 200 && res.statusCode < 400 ? 0 : 1)).on('error', () => process.exit(1))\"",
+        ]
       interval: 30s
-      timeout: 3s
-      retries: 3
-      start_period: 40s
+      timeout: 10s
+      retries: 5
+      start_period: 60s
     security_opt:
       - no-new-privileges:true
 
