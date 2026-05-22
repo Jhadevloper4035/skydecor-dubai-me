@@ -37,6 +37,10 @@ jobs:
         run: npm run build
         working-directory: backend
 
+      - name: Verify backend runtime imports
+        run: MONGO_URI=mongodb://localhost:27017/test JWT_SECRET=0123456789abcdef0123456789abcdef NODE_ENV=test node -e "import('./src/index.js')"
+        working-directory: backend
+
       - name: Build frontend
         run: npm run build
         working-directory: forntend
@@ -132,6 +136,7 @@ jobs:
           DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
           APP_IMAGE: ${{ needs.docker.outputs.backend_image }}
           FRONTEND_IMAGE: ${{ needs.docker.outputs.frontend_image }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
           NGINX_HTTP_PORT: ${{ secrets.PROD_NGINX_HTTP_PORT }}
           MONGO_URI: ${{ secrets.PROD_MONGO_URI }}
           ALLOWED_ORIGINS: ${{ secrets.PROD_ALLOWED_ORIGINS }}
@@ -152,12 +157,27 @@ jobs:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_SSH_KEY }}
-          envs: DOCKERHUB_USERNAME,DOCKERHUB_TOKEN,APP_IMAGE,FRONTEND_IMAGE,NGINX_HTTP_PORT,MONGO_URI,ALLOWED_ORIGINS,JWT_SECRET,JWT_EXPIRES_IN,QR_CODE_CACHE_TTL_SECONDS,BOOTSTRAP_SUPERADMIN_NAME,BOOTSTRAP_SUPERADMIN_EMAIL,BOOTSTRAP_SUPERADMIN_PASSWORD,AWS_REGION,AWS_ACCESS_KEY_ID,AWS_SECRET_ACCESS_KEY,S3_BUCKET,S3_PUBLIC_BASE_URL,S3_KEY_PREFIX,S3_PRESIGNED_EXPIRES_SECONDS
+          envs: DOCKERHUB_USERNAME,DOCKERHUB_TOKEN,APP_IMAGE,FRONTEND_IMAGE,GITHUB_REPOSITORY,NGINX_HTTP_PORT,MONGO_URI,ALLOWED_ORIGINS,JWT_SECRET,JWT_EXPIRES_IN,QR_CODE_CACHE_TTL_SECONDS,BOOTSTRAP_SUPERADMIN_NAME,BOOTSTRAP_SUPERADMIN_EMAIL,BOOTSTRAP_SUPERADMIN_PASSWORD,AWS_REGION,AWS_ACCESS_KEY_ID,AWS_SECRET_ACCESS_KEY,S3_BUCKET,S3_PUBLIC_BASE_URL,S3_KEY_PREFIX,S3_PRESIGNED_EXPIRES_SECONDS
           script: |
             set -e
+
+            mkdir -p /opt/skydecor
             cd /opt/skydecor
 
-            git pull origin main
+            if [ ! -d .git ]; then
+              if [ -n "$(find . -mindepth 1 -maxdepth 1 -print -quit)" ]; then
+                BACKUP_DIR="/opt/skydecor.backup.$(date +%Y%m%d%H%M%S)"
+                echo "/opt/skydecor is not a git repository. Moving existing files to $BACKUP_DIR"
+                cd /opt
+                mv /opt/skydecor "$BACKUP_DIR"
+                mkdir -p /opt/skydecor
+                cd /opt/skydecor
+              fi
+
+              git clone "https://github.com/${GITHUB_REPOSITORY}.git" .
+            else
+              git pull origin main
+            fi
 
             : "${MONGO_URI:?PROD_MONGO_URI secret is required}"
             : "${ALLOWED_ORIGINS:?PROD_ALLOWED_ORIGINS secret is required}"

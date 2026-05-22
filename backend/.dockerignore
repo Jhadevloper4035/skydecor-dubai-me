@@ -1,5 +1,7 @@
 node_modules
 docs/
+!src/docs/
+!src/docs/**
 node_modules/
 .git
 .env
