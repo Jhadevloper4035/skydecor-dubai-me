@@ -8,7 +8,6 @@ export default function FilterMeta({ allProps, productLength }) {
     ["texture", "setTexture"],
     ["size", "setSize"],
     ["thickness", "setThickness"],
-    ["width", "setWidth"],
   ].filter(([filterKey]) => allProps[filterKey] != "All");
 
   return (
@@ -28,17 +27,6 @@ export default function FilterMeta({ allProps, productLength }) {
             <span className="remove-tag icon-close" />
           </span>
         ))}
-        {allProps.availability != "All" ? (
-          <span
-            className="filter-tag"
-            onClick={() => allProps.setAvailability("All")}
-          >
-            {allProps.availability.label}
-            <span className="remove-tag icon-close" />
-          </span>
-        ) : (
-          ""
-        )}
         {allProps.color != "All" ? (
           <span
             className="filter-tag color-tag"
@@ -69,8 +57,7 @@ export default function FilterMeta({ allProps, productLength }) {
           ""
         )}
       </div>
-      {allProps.availability != "All" ||
-      appliedFilters.length ||
+      {appliedFilters.length ||
       allProps.color != "All" ||
       allProps.brands.length ? (
         <button

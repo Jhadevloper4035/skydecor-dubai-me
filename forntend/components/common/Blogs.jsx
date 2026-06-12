@@ -1,13 +1,22 @@
 "use client";
 import Image from "next/image";
-import { blogPosts } from "@/data/blogs";
+import { useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Link from "next/link";
 import { Pagination } from "swiper/modules";
+import { useAppDispatch, useAppSelector } from "@/store/hooks";
+import { fetchBlogs, selectBlogs } from "@/store/contentSlice";
 
 export default function Blogs({
   parentClass = "flat-spacing ",
 }) {
+  const dispatch = useAppDispatch();
+  const blogs = useAppSelector(selectBlogs);
+
+  useEffect(() => {
+    dispatch(fetchBlogs());
+  }, [dispatch]);
+
   return (
     <section className={parentClass}>
       <div className="container">
@@ -40,11 +49,11 @@ export default function Blogs({
           modules={[Pagination]}
           pagination={{ clickable: true }}
         >
-          {blogPosts.map((post, index) => (
+          {blogs.slice(0, 6).map((post, index) => (
             <SwiperSlide key={index} className="swiper-slide">
               <div
                 className="wg-blog style-1 hover-image wow fadeInUp"
-                data-wow-delay={post.delay}
+                data-wow-delay={post.delay || "0s"}
               >
                 <div className="image">
                   <Image
@@ -62,7 +71,7 @@ export default function Blogs({
                   </p>
                   <div>
                     <h6 className=" title fw-5">
-                      <Link className="link" href={`/blog-detail/${post.id}`}>
+                      <Link className="link" href={post.href}>
                         {post.title}
                       </Link>
                     </h6>

@@ -48,13 +48,6 @@ export default function Nav() {
         </Link>
       </li>
 
-      <li className="menu-item">
-        <Link href={allProductsLink.href} className="item-link">
-          {allProductsLink.name}
-        </Link>
-      </li>
-
-
       <li
         className={`menu-item ${productMenuLinks.some(
           (elm) => elm.href.split("/")[1] == pathname.split("/")[1]
@@ -63,10 +56,10 @@ export default function Nav() {
           : ""
           } `}
       >
-        <a href="#" className="item-link">
+        <Link href={allProductsLink.href} className="item-link">
           Our Range
           <i className="icon icon-arrow-down" />
-        </a>
+        </Link>
         <div className="sub-menu mega-menu">
           <div className="container">
             <div className="row">
@@ -76,6 +69,15 @@ export default function Nav() {
                     {allProductsLink.name}
                   </Link>
                   <ul className="menu-list">
+                    <li
+                      className={`menu-item-li ${
+                        pathname === allProductsLink.href ? "active" : ""
+                      } `}
+                    >
+                      <Link href={allProductsLink.href} className="menu-link-text">
+                        {allProductsLink.name}
+                      </Link>
+                    </li>
                     <li
                       className={`menu-item-li ${
                         pathname === laminatesLink.href ? "active" : ""
@@ -172,8 +174,12 @@ export default function Nav() {
 
 
 
-      <li className="menu-item">
-        <Link href="/coming-soon" className="item-link">
+      <li
+        className={`menu-item ${
+          pathname.split("/")[1] === "career" ? "active" : ""
+        }`}
+      >
+        <Link href="/career" className="item-link">
           Career
         </Link>
       </li>
@@ -188,7 +194,12 @@ export default function Nav() {
           : ""
           } `}
       >
-        <a href="#" className="item-link">
+        <a
+          href="#"
+          className="item-link"
+          data-no-loader
+          onClick={(event) => event.preventDefault()}
+        >
           Resources
           <i className="icon icon-arrow-down" />
         </a>

@@ -143,12 +143,14 @@ export default function ProductCard1({
       <div className="card-product-info">
         <Link
           href={productHref}
-          className="title link"
+          className="title link text-uppercase"
         >
           {product.productName}
         </Link>
         {product.designName && (
-          <p className="text-caption-1 text-secondary">{product.productType} {product.category}</p>
+          <p className="text-caption-1 text-secondary text-uppercase">
+            {product.productType} {product.category}
+          </p>
         )}
        
       </div>

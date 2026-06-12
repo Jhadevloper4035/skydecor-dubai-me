@@ -17,6 +17,22 @@ const normalizeParams = (params = {}) =>
       .sort(([leftKey], [rightKey]) => leftKey.localeCompare(rightKey))
   );
 
+const isSameProductId = (left, right) =>
+  String(left).toLowerCase() === String(right).toLowerCase();
+
+const uniqueProductIds = (ids = []) =>
+  ids.reduce((uniqueIds, id) => {
+    if (
+      id !== undefined &&
+      id !== null &&
+      !uniqueIds.some((itemId) => isSameProductId(itemId, id))
+    ) {
+      uniqueIds.push(id);
+    }
+
+    return uniqueIds;
+  }, []);
+
 export const buildProductQueryKey = (params = {}) =>
   JSON.stringify(normalizeParams(params));
 
@@ -117,8 +133,30 @@ const productsSlice = createSlice({
     selectedProduct: null,
     selectedProductStatus: "idle",
     selectedProductError: null,
+    compareItems: [],
   },
-  reducers: {},
+  reducers: {
+    setCompareItems: (state, action) => {
+      state.compareItems = uniqueProductIds(action.payload);
+    },
+    addCompareItem: (state, action) => {
+      if (
+        action.payload !== undefined &&
+        action.payload !== null &&
+        !state.compareItems.some((itemId) => isSameProductId(itemId, action.payload))
+      ) {
+        state.compareItems.push(action.payload);
+      }
+    },
+    removeCompareItem: (state, action) => {
+      state.compareItems = state.compareItems.filter(
+        (itemId) => !isSameProductId(itemId, action.payload)
+      );
+    },
+    clearCompareItems: (state) => {
+      state.compareItems = [];
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchProducts.pending, (state) => {
@@ -181,5 +219,13 @@ export const selectProductsStatus = (state) => state.products.itemsStatus;
 export const selectProductFilterOptions = (state) => state.products.filterOptions;
 export const selectNavigationFilterOptions = (state) => state.products.navigationOptions;
 export const selectSelectedProduct = (state) => state.products.selectedProduct;
+export const selectCompareItems = (state) => state.products.compareItems;
+
+export const {
+  addCompareItem,
+  clearCompareItems,
+  removeCompareItem,
+  setCompareItems,
+} = productsSlice.actions;
 
 export default productsSlice.reducer;

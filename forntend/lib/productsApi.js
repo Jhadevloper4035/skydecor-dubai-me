@@ -1,5 +1,6 @@
 import { allProducts } from "@/data/products";
-import productCatalog from "@/data/products.json";
+
+const productCatalog = allProducts;
 
 const SERVER_API_BASE_URL =
   process.env.NEXT_PUBLIC_API_BASE_URL ||
@@ -25,7 +26,9 @@ const buildUrl = (path, params = {}) => {
 };
 
 const sortValues = (values) =>
-  [...new Set(values.filter(Boolean))].sort((a, b) => a.localeCompare(b));
+  [...new Set(values.filter(Boolean).map((value) => String(value)))].sort((a, b) =>
+    a.localeCompare(b)
+  );
 
 const buildProductTypeGroups = (products = []) => {
   const groupsByType = products.reduce((groups, product) => {

@@ -1,0 +1,42 @@
+import CareersPage from "@/components/careers/CareersPage";
+import { getJobs } from "@/lib/careersApi";
+import Link from "next/link";
+
+export const metadata = {
+  title: "Careers | SkyDecor Dubai",
+  description:
+    "Explore open roles at SkyDecor Dubai and apply for sales, design advisory, and operations jobs.",
+};
+
+export default async function CareerPage() {
+  const jobs = await getJobs();
+
+  return (
+    <>
+      <div
+        className="page-title"
+        style={{ backgroundImage: "url(/images/section/page-title.jpg)" }}
+      >
+        <div className="container-full">
+          <div className="row">
+            <div className="col-12">
+              <h3 className="heading text-center">Careers</h3>
+              <ul className="breadcrumbs d-flex align-items-center justify-content-center">
+                <li>
+                  <Link className="link" href="/">
+                    Homepage
+                  </Link>
+                </li>
+                <li>
+                  <i className="icon-arrRight" />
+                </li>
+                <li>Careers</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <CareersPage jobs={jobs} />
+    </>
+  );
+}

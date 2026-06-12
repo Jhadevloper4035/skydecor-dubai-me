@@ -134,7 +134,7 @@ export default function AboutUs() {
                     </div>
                   ))}
                 </div>
-              </div>
+              </div>ww
 
               <div
                 className="about-us-btn-elite wow fadeInUp"

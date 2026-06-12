@@ -4,6 +4,8 @@ import Script from 'next/script';
 import Topbar from "@/components/headers/Topbar";
 import Header1 from "@/components/headers/Header1";
 import Footer1 from "@/components/footers/Footer1";
+import GlobalSpinner from "@/components/common/GlobalSpinner";
+import RouteLoadingController from "@/components/common/RouteLoadingController";
 
 import '@fortawesome/fontawesome-free/css/all.min.css'
 
@@ -23,7 +25,7 @@ import "react-range-slider-input/dist/style.css";
 import "../public/css/image-compare-viewer.min.css";
 
 
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import Context from "@/context/Context";
 import StoreProvider from "@/store/StoreProvider";
 
@@ -41,6 +43,26 @@ import Categories from "@/components/modals/Categories";
 // import CartModal from "@/components/modals/CartModal";
 // import NewsLetterModal from "@/components/modals/NewsLetterModal";
 // import ScrollTop from "@/components/common/ScrollTop";
+
+const hasVisibleBootstrapLayer = () =>
+  Boolean(
+    document.querySelector(
+      ".modal.show, .modal.showing, .offcanvas.show, .offcanvas.showing"
+    )
+  );
+
+const cleanupStaleBootstrapLayers = () => {
+  window.setTimeout(() => {
+    if (hasVisibleBootstrapLayer()) return;
+
+    document
+      .querySelectorAll(".modal-backdrop, .offcanvas-backdrop")
+      .forEach((backdrop) => backdrop.remove());
+    document.body.classList.remove("modal-open");
+    document.body.style.removeProperty("overflow");
+    document.body.style.removeProperty("padding-right");
+  }, 350);
+};
 
 export default function RootLayout({ children }) {
   const pathname = usePathname();
@@ -112,8 +134,32 @@ export default function RootLayout({ children }) {
       document.querySelectorAll(".offcanvas.show").forEach((offcanvas) => {
         bs.Offcanvas.getInstance(offcanvas)?.hide();
       });
+      cleanupStaleBootstrapLayers();
     });
   }, [pathname]);
+
+  useEffect(() => {
+    const handleBootstrapHidden = () => cleanupStaleBootstrapLayers();
+    const handleDismissClick = (event) => {
+      if (
+        event.target.closest(
+          '[data-bs-dismiss="modal"], [data-bs-dismiss="offcanvas"]'
+        )
+      ) {
+        cleanupStaleBootstrapLayers();
+      }
+    };
+
+    document.addEventListener("hidden.bs.modal", handleBootstrapHidden);
+    document.addEventListener("hidden.bs.offcanvas", handleBootstrapHidden);
+    document.addEventListener("click", handleDismissClick, true);
+
+    return () => {
+      document.removeEventListener("hidden.bs.modal", handleBootstrapHidden);
+      document.removeEventListener("hidden.bs.offcanvas", handleBootstrapHidden);
+      document.removeEventListener("click", handleDismissClick, true);
+    };
+  }, []);
 
   useEffect(() => {
     const header = document.querySelector("header");
@@ -136,6 +182,10 @@ export default function RootLayout({ children }) {
       <body className="popup-loader">
         <StoreProvider>
           <Context>
+            <GlobalSpinner />
+            <Suspense fallback={null}>
+              <RouteLoadingController />
+            </Suspense>
             <Topbar />
             <Header1 />
             <div id="wrapper">{children}</div>

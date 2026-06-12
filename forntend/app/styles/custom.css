@@ -19,6 +19,680 @@
     --accent-font: "Space Grotesk", sans-serif;
 }
 
+.sd-careers-page {
+    background: var(--white-color);
+}
+
+.sd-careers-hero {
+    padding: 86px 0 58px;
+    background: linear-gradient(180deg, var(--secondary-color) 0%, var(--white-color) 100%);
+}
+
+.sd-careers-hero__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.92fr) minmax(360px, 1.08fr);
+    gap: 46px;
+    align-items: center;
+}
+
+.sd-careers-hero__content h1 {
+    margin: 0 0 18px;
+    color: var(--primary-color);
+    font-family: var(--accent-font);
+    font-size: 58px;
+    line-height: 1.04;
+    font-weight: 600;
+    letter-spacing: 0;
+}
+
+.sd-careers-hero__content p {
+    max-width: 570px;
+    margin: 0;
+    color: var(--text-color);
+    font-size: 18px;
+    line-height: 1.75;
+}
+
+.sd-careers-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px 26px;
+    align-items: center;
+    margin-top: 32px;
+}
+
+.sd-careers-hero__image {
+    overflow: hidden;
+    border-radius: 8px;
+    background: var(--bg-color);
+}
+
+.sd-careers-hero__image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1.45 / 1;
+    object-fit: cover;
+}
+
+.sd-careers-stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1px;
+    overflow: hidden;
+    margin-top: 52px;
+    border: 1px solid var(--divider-color);
+    border-radius: 8px;
+    background: var(--divider-color);
+}
+
+.sd-careers-stat {
+    min-width: 0;
+    padding: 26px;
+    background: var(--white-color);
+}
+
+.sd-careers-stat strong {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--accent-color);
+    font-family: var(--accent-font);
+    font-size: 34px;
+    line-height: 1;
+    font-weight: 700;
+}
+
+.sd-careers-stat span {
+    color: var(--text-color);
+    font-size: 14px;
+    line-height: 1.45;
+}
+
+.sd-careers-section-head,
+.sd-careers-openings__head {
+    margin-bottom: 36px;
+}
+
+.sd-careers-section-head {
+    max-width: 660px;
+}
+
+.sd-careers-values {
+    background: #e9eef3;
+}
+
+.sd-careers-values__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.sd-careers-value {
+    min-height: 250px;
+    padding: 28px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    background: var(--white-color);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.sd-careers-value:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 34px rgba(0, 0, 0, 0.08);
+}
+
+.sd-careers-value__icon {
+    display: inline-flex;
+    width: 42px;
+    height: 42px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 28px;
+    border: 1px solid var(--divider-color);
+    border-radius: 50%;
+    color: var(--accent-color);
+    background: var(--secondary-color);
+}
+
+.sd-careers-value h4 {
+    margin: 0 0 12px;
+    color: var(--primary-color);
+    font-size: 22px;
+    line-height: 1.25;
+    font-weight: 600;
+}
+
+.sd-careers-value p {
+    margin: 0;
+    color: var(--text-color);
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.sd-careers-openings {
+    background: #f8eaa7;
+}
+
+.sd-careers-openings__head {
+    display: grid;
+    grid-template-columns: minmax(0, 0.7fr) minmax(280px, 0.3fr);
+    gap: 30px;
+    align-items: end;
+}
+
+.sd-careers-openings__head p {
+    margin: 0;
+    color: var(--primary-color);
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.sd-careers-job-list {
+    border-top: 1px solid rgba(0, 0, 0, 0.18);
+}
+
+.sd-careers-job-row {
+    display: grid;
+    grid-template-columns: minmax(240px, 1.45fr) minmax(140px, 0.65fr) minmax(120px, 0.55fr) auto;
+    gap: 20px;
+    align-items: center;
+    min-height: 74px;
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.18);
+    color: var(--primary-color);
+}
+
+.sd-careers-job-row:hover {
+    color: var(--accent-color);
+}
+
+.sd-careers-job-row__title {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.sd-careers-job-row__title strong {
+    color: inherit;
+    font-size: 18px;
+    line-height: 1.25;
+    font-weight: 600;
+}
+
+.sd-careers-job-row__title small,
+.sd-careers-job-row span {
+    color: inherit;
+    font-size: 14px;
+    line-height: 1.35;
+}
+
+.sd-careers-job-row__action {
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: flex-end;
+    font-weight: 600;
+}
+
+.sd-careers-empty {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: 24px;
+    align-items: center;
+    padding: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.16);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.42);
+}
+
+.sd-careers-empty__icon {
+    display: inline-flex;
+    width: 54px;
+    height: 54px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--white-color);
+    color: var(--accent-color);
+    font-size: 20px;
+}
+
+.sd-careers-empty h4 {
+    margin: 0 0 7px;
+    color: var(--primary-color);
+    font-size: 21px;
+    line-height: 1.25;
+    font-weight: 600;
+}
+
+.sd-careers-empty p {
+    max-width: 650px;
+    margin: 0;
+    color: var(--primary-color);
+    font-size: 15px;
+    line-height: 1.65;
+}
+
+.sd-careers-process {
+    background: var(--secondary-color);
+}
+
+.sd-careers-process__intro {
+    display: grid;
+    grid-template-columns: minmax(0, 0.7fr) minmax(280px, 0.3fr);
+    gap: 30px;
+    align-items: end;
+    margin-bottom: 42px;
+}
+
+.sd-careers-process__intro p {
+    margin: 0;
+    color: var(--text-color);
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.sd-careers-process__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    border-top: 1px solid var(--divider-color);
+}
+
+.sd-careers-process__step {
+    position: relative;
+    min-height: 230px;
+    padding: 30px 28px;
+    border-right: 1px solid var(--divider-color);
+}
+
+.sd-careers-process__step:last-child {
+    border-right: 0;
+}
+
+.sd-careers-process__step > span {
+    display: block;
+    margin-bottom: 42px;
+    color: var(--accent-secondary-color);
+    font-family: var(--accent-font);
+    font-size: 14px;
+    line-height: 1;
+    font-weight: 700;
+}
+
+.sd-careers-process__step h4 {
+    margin: 0 0 12px;
+    color: var(--primary-color);
+    font-size: 21px;
+    line-height: 1.25;
+    font-weight: 600;
+}
+
+.sd-careers-process__step p {
+    margin: 0;
+    color: var(--text-color);
+    font-size: 14px;
+    line-height: 1.65;
+}
+
+.sd-career-detail {
+    background: var(--white-color);
+}
+
+.sd-career-detail__back {
+    display: inline-flex;
+    margin-bottom: 28px;
+}
+
+.sd-career-detail__layout {
+    display: grid;
+    grid-template-columns: minmax(0, 0.64fr) minmax(360px, 0.36fr);
+    gap: 46px;
+    align-items: start;
+}
+
+.sd-career-detail__content {
+    min-width: 0;
+}
+
+.sd-career-detail__intro {
+    margin-bottom: 36px;
+    padding-bottom: 34px;
+    border-bottom: 1px solid var(--divider-color);
+}
+
+.sd-career-detail__intro h2 {
+    margin: 0 0 16px;
+    color: var(--primary-color);
+    font-family: var(--accent-font);
+    font-size: 46px;
+    line-height: 1.1;
+    font-weight: 600;
+}
+
+.sd-career-detail__intro p,
+.sd-career-apply p {
+    margin: 0;
+    color: var(--text-color);
+    font-size: 16px;
+    line-height: 1.75;
+}
+
+.sd-career-detail__apply-link {
+    width: fit-content;
+    margin-top: 26px;
+}
+
+.sd-career-detail__section {
+    margin-bottom: 34px;
+}
+
+.sd-career-detail__section h3,
+.sd-career-summary h3,
+.sd-career-apply h3 {
+    margin: 0 0 18px;
+    color: var(--primary-color);
+    font-size: 24px;
+    line-height: 1.25;
+    font-weight: 600;
+}
+
+.sd-career-detail__section ul {
+    display: grid;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sd-career-detail__section li {
+    position: relative;
+    padding-left: 26px;
+    color: var(--text-color);
+    font-size: 16px;
+    line-height: 1.65;
+}
+
+.sd-career-detail__section li::before {
+    content: "";
+    position: absolute;
+    top: 11px;
+    left: 0;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent-secondary-color);
+}
+
+.sd-career-detail__aside {
+    position: sticky;
+    top: 112px;
+    display: grid;
+    gap: 22px;
+}
+
+.sd-career-summary,
+.sd-career-apply {
+    padding: 28px;
+    border: 1px solid var(--divider-color);
+    border-radius: 8px;
+    background: var(--secondary-color);
+}
+
+.sd-career-summary dl {
+    display: grid;
+    gap: 14px;
+    margin: 0;
+}
+
+.sd-career-summary dl div {
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--divider-color);
+}
+
+.sd-career-summary dl div:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+
+.sd-career-summary dt,
+.sd-career-summary dd {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.45;
+}
+
+.sd-career-summary dt {
+    color: var(--text-color);
+}
+
+.sd-career-summary dd {
+    color: var(--primary-color);
+    font-weight: 600;
+    text-align: right;
+}
+
+.sd-career-apply {
+    background: var(--white-color);
+}
+
+.sd-career-form {
+    display: grid;
+    gap: 14px;
+    margin-top: 22px;
+}
+
+.sd-career-form fieldset {
+    min-width: 0;
+    margin: 0;
+}
+
+.sd-career-form fieldset > label {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--primary-color);
+    font-size: 13px;
+    line-height: 1.4;
+    font-weight: 600;
+}
+
+.sd-career-form__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.sd-career-form input,
+.sd-career-form textarea {
+    width: 100%;
+    min-height: 50px;
+    padding: 13px 15px;
+    border: 1px solid var(--divider-color);
+    border-radius: 6px;
+    background: var(--white-color);
+    color: var(--primary-color);
+    font-size: 14px;
+    line-height: 1.45;
+}
+
+.sd-career-form textarea {
+    min-height: 124px;
+    resize: vertical;
+}
+
+.sd-career-form input:focus,
+.sd-career-form textarea:focus {
+    border-color: var(--accent-color);
+    outline: none;
+}
+
+.sd-career-form input[readonly] {
+    background: var(--bg-color);
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+.sd-career-form__job span {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--text-color);
+    font-size: 13px;
+    line-height: 1.4;
+    font-weight: 600;
+}
+
+.sd-career-form__consent {
+    display: grid;
+    grid-template-columns: 18px minmax(0, 1fr);
+    gap: 10px;
+    align-items: start;
+    color: var(--text-color);
+    font-size: 13px;
+    line-height: 1.55;
+    cursor: pointer;
+}
+
+.sd-career-form .sd-career-form__consent input {
+    width: 18px;
+    min-height: 18px;
+    margin: 1px 0 0;
+    padding: 0;
+    accent-color: var(--accent-color);
+}
+
+.sd-career-form__message {
+    margin: 0;
+    padding: 10px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    line-height: 1.45;
+}
+
+.sd-career-form__message--success {
+    color: #236b3c;
+    background: #e9f6ee;
+}
+
+.sd-career-form__message--error {
+    color: #a13b32;
+    background: #fdecea;
+}
+
+.sd-career-form .tf-btn {
+    justify-content: center;
+}
+
+.sd-career-form .tf-btn:disabled {
+    cursor: progress;
+    opacity: 0.72;
+}
+
+@media (max-width: 1199px) {
+    .sd-careers-hero__content h1 {
+        font-size: 48px;
+    }
+
+    .sd-careers-hero__grid,
+    .sd-career-detail__layout {
+        grid-template-columns: 1fr;
+    }
+
+    .sd-career-detail__aside {
+        position: static;
+    }
+}
+
+@media (max-width: 991px) {
+    .sd-careers-hero {
+        padding: 66px 0 46px;
+    }
+
+    .sd-careers-stats,
+    .sd-careers-values__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .sd-careers-openings__head,
+    .sd-careers-process__intro,
+    .sd-careers-job-row {
+        grid-template-columns: 1fr;
+    }
+
+    .sd-careers-process__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .sd-careers-process__step:nth-child(2) {
+        border-right: 0;
+    }
+
+    .sd-careers-process__step:nth-child(-n + 2) {
+        border-bottom: 1px solid var(--divider-color);
+    }
+
+    .sd-careers-job-row {
+        gap: 8px;
+        padding: 18px 0;
+    }
+
+    .sd-careers-job-row__action {
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 575px) {
+    .sd-careers-hero__content h1,
+    .sd-career-detail__intro h2 {
+        font-size: 36px;
+    }
+
+    .sd-careers-hero__content p {
+        font-size: 16px;
+    }
+
+    .sd-careers-stats,
+    .sd-careers-values__grid,
+    .sd-careers-process__grid,
+    .sd-career-form__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sd-careers-empty {
+        grid-template-columns: 1fr;
+        padding: 24px;
+    }
+
+    .sd-careers-empty .tf-btn {
+        width: fit-content;
+    }
+
+    .sd-careers-process__step,
+    .sd-careers-process__step:nth-child(2) {
+        min-height: 0;
+        padding: 26px 0;
+        border-right: 0;
+        border-bottom: 1px solid var(--divider-color);
+    }
+
+    .sd-careers-process__step:last-child {
+        border-bottom: 0;
+    }
+
+    .sd-careers-process__step > span {
+        margin-bottom: 24px;
+    }
+
+    .sd-careers-stat,
+    .sd-careers-value,
+    .sd-career-summary,
+    .sd-career-apply {
+        padding: 22px;
+    }
+}
+
 .sd-cascade-filter {
     margin-bottom: 28px;
     padding: 22px;
@@ -127,8 +801,332 @@
     margin-bottom: 24px;
 }
 
+.sd-events-page {
+    background: #fff;
+}
+
+.sd-events-heading,
+.sd-event-gallery__heading {
+    max-width: 680px;
+    margin: 0 auto 42px;
+    text-align: center;
+}
+
+.sd-events-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+    color: var(--accent-color);
+    font-size: 12px;
+    line-height: 1.3;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.sd-events-kicker::before,
+.sd-events-kicker::after {
+    content: "";
+    width: 22px;
+    height: 1px;
+    background: var(--accent-secondary-color);
+}
+
+.sd-events-heading .heading,
+.sd-event-gallery__heading .heading {
+    margin-bottom: 12px;
+}
+
+.sd-events-heading p,
+.sd-event-gallery__heading p {
+    margin: 0;
+    color: var(--text-color);
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.sd-events-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 30px;
+}
+
+.sd-event-card {
+    display: flex;
+    min-width: 0;
+    height: 100%;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid var(--divider-color);
+    border-radius: 8px;
+    background: var(--white-color);
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.sd-event-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(97, 83, 40, 0.28);
+    box-shadow: 0 18px 44px rgba(0, 0, 0, 0.08);
+}
+
+.sd-event-card__image {
+    display: block;
+    position: relative;
+    aspect-ratio: 1.36 / 1;
+    overflow: hidden;
+    background: var(--bg-color);
+}
+
+.sd-event-card__image img,
+.sd-event-detail__hero img,
+.sd-event-gallery__item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sd-event-card__image img {
+    transition: transform 0.45s ease;
+}
+
+.sd-event-card:hover .sd-event-card__image img {
+    transform: scale(1.04);
+}
+
+.sd-event-card__body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 24px;
+}
+
+.sd-event-card__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 16px;
+    margin-bottom: 14px;
+}
+
+.sd-event-card__meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: var(--text-color);
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.sd-event-card__meta i {
+    color: var(--accent-color);
+    font-size: 12px;
+}
+
+.sd-event-card h4 {
+    margin: 0 0 12px;
+    font-size: 22px;
+    line-height: 1.25;
+    font-weight: 600;
+}
+
+.sd-event-card p {
+    display: -webkit-box;
+    margin: 0 0 20px;
+    overflow: hidden;
+    color: var(--text-color);
+    font-size: 15px;
+    line-height: 1.65;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+
+.sd-event-card .btn-line {
+    width: fit-content;
+    margin-top: auto;
+}
+
+.sd-event-detail {
+    display: grid;
+    gap: 54px;
+}
+
+.sd-event-detail__hero {
+    aspect-ratio: 16 / 8.5;
+    overflow: hidden;
+    border-radius: 8px;
+    background: var(--bg-color);
+}
+
+.sd-event-detail__content {
+    display: grid;
+    grid-template-columns: 300px minmax(0, 1fr);
+    gap: 56px;
+    align-items: start;
+}
+
+.sd-event-detail__aside {
+    position: sticky;
+    top: 110px;
+}
+
+.sd-event-detail__panel {
+    display: grid;
+    gap: 22px;
+    padding: 26px;
+    border: 1px solid var(--divider-color);
+    border-radius: 8px;
+    background: var(--secondary-color);
+}
+
+.sd-event-detail__info {
+    display: grid;
+    gap: 6px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--divider-color);
+}
+
+.sd-event-detail__info span {
+    color: var(--text-color);
+    font-size: 13px;
+    line-height: 1.4;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.sd-event-detail__info strong {
+    color: var(--primary-color);
+    font-size: 16px;
+    line-height: 1.45;
+    font-weight: 600;
+}
+
+.sd-event-detail__article {
+    max-width: 790px;
+}
+
+.sd-event-detail__article .heading {
+    margin-bottom: 22px;
+}
+
+.sd-event-detail__article p {
+    margin-bottom: 18px;
+    color: var(--text-color);
+    line-height: 1.8;
+}
+
+.sd-event-highlights {
+    margin-top: 34px;
+    padding-top: 30px;
+    border-top: 1px solid var(--divider-color);
+}
+
+.sd-event-highlights h4 {
+    margin-bottom: 18px;
+    font-size: 24px;
+    line-height: 1.25;
+    font-weight: 600;
+}
+
+.sd-event-highlights ul {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px 24px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sd-event-highlights li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    color: var(--primary-color);
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.sd-event-highlights li i {
+    margin-top: 5px;
+    color: var(--accent-color);
+    font-size: 12px;
+}
+
+.sd-event-gallery {
+    padding-top: 4px;
+}
+
+.sd-event-gallery__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.sd-event-gallery__item {
+    display: block;
+    position: relative;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border-radius: 8px;
+    background: var(--bg-color);
+    cursor: zoom-in;
+}
+
+.sd-event-gallery__item::after {
+    content: "\f00e";
+    position: absolute;
+    right: 14px;
+    bottom: 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.92);
+    color: var(--primary-color);
+    font-family: "Font Awesome 7 Free";
+    font-size: 14px;
+    font-weight: 900;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.sd-event-gallery__item:hover::after {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 @media (max-width: 991px) {
     .sd-cascade-filter__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .sd-events-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px;
+    }
+
+    .sd-event-detail__content {
+        grid-template-columns: 1fr;
+        gap: 34px;
+    }
+
+    .sd-event-detail__aside {
+        position: static;
+    }
+
+    .sd-event-detail__panel {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-items: end;
+    }
+
+    .sd-event-detail__panel .btn-line {
+        grid-column: 1 / -1;
+        width: fit-content;
+    }
+
+    .sd-event-gallery__grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
@@ -146,6 +1144,46 @@
 
     .sd-cascade-filter__grid {
         grid-template-columns: 1fr;
+    }
+
+    .sd-events-heading,
+    .sd-event-gallery__heading {
+        margin-bottom: 28px;
+        text-align: left;
+    }
+
+    .sd-events-kicker::before {
+        display: none;
+    }
+
+    .sd-events-grid,
+    .sd-event-gallery__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sd-event-card__body {
+        padding: 20px;
+    }
+
+    .sd-event-card h4 {
+        font-size: 20px;
+    }
+
+    .sd-event-detail {
+        gap: 34px;
+    }
+
+    .sd-event-detail__hero {
+        aspect-ratio: 1.16 / 1;
+    }
+
+    .sd-event-detail__panel,
+    .sd-event-highlights ul {
+        grid-template-columns: 1fr;
+    }
+
+    .sd-event-detail__article .heading {
+        font-size: 28px;
     }
 }
 
@@ -378,19 +1416,34 @@
     }
 }
 
+.sky-product-detail-section .row {
+    align-items: flex-start;
+    row-gap: 38px;
+}
+
 .sky-product-detail-panel {
-    padding: 4px 0 0 12px;
+    display: flex;
+    flex-direction: column;
+    max-width: 620px;
+    margin-left: auto;
+    padding: 2px 0 0 28px;
     color: var(--main);
 }
 
+.sky-product-detail-header {
+    padding-bottom: 22px;
+    border-bottom: 1px solid var(--line);
+}
+
 .sky-product-detail-header h1 {
-    margin: 0 0 10px;
+    margin: 0 0 12px;
     color: var(--main);
-    font-size: clamp(28px, 3.2vw, 38px);
-    font-weight: 500;
-    line-height: 1.16;
+    font-size: clamp(30px, 3.1vw, 42px);
+    font-weight: 600;
+    line-height: 1.12;
     letter-spacing: 0;
     text-transform: uppercase;
+    overflow-wrap: anywhere;
 }
 
 .sky-product-detail-header p {
@@ -405,9 +1458,9 @@
 .sky-product-meta {
     display: flex;
     flex-wrap: wrap;
-    gap: 14px 30px;
-    margin-top: 26px;
-    padding-bottom: 25px;
+    gap: 12px 24px;
+    margin-top: 22px;
+    padding-bottom: 22px;
     border-bottom: 1px solid var(--line);
     color: var(--secondary);
     font-size: 14px;
@@ -428,16 +1481,15 @@
 }
 
 .sky-product-specs {
-    margin-top: 22px;
-    border-top: 1px solid var(--line);
+    margin-top: 0;
 }
 
 .sky-product-spec-row {
     display: grid;
-    grid-template-columns: minmax(150px, 0.9fr) minmax(160px, 1fr);
-    gap: 24px;
+    grid-template-columns: minmax(150px, 0.82fr) minmax(180px, 1fr);
+    gap: 22px;
     align-items: center;
-    min-height: 54px;
+    min-height: 56px;
     border-bottom: 1px solid var(--line);
 }
 
@@ -452,8 +1504,10 @@
 .sky-product-spec-value {
     color: var(--main);
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 500;
+    line-height: 1.45;
     text-align: right;
+    overflow-wrap: anywhere;
 }
 
 .sky-product-actions {
@@ -519,9 +1573,10 @@
 
 .sky-product-detail-panel .sky-product-action-row {
     display: flex;
-    gap: 10px;
+    gap: 12px;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 28px;
+    margin-bottom: 12px;
 }
 
 .sky-product-detail-panel .sky-product-action-row::before {
@@ -530,9 +1585,10 @@
 
 .sky-product-detail-panel .sky-product-action-row .btn-style-2 {
     min-width: 0;
-    height: 48px;
-    max-height: 48px;
-    padding: 0 22px;
+    height: 52px;
+    max-height: 52px;
+    padding: 0 26px;
+    border-radius: 999px;
     font-size: 14px;
     line-height: 14px;
     font-weight: 600;
@@ -541,8 +1597,9 @@
 }
 
 .sky-product-detail-panel .sky-product-action-row .box-icon {
-    width: 48px;
-    height: 48px;
+    width: 52px;
+    height: 52px;
+    flex: 0 0 52px;
     border: 2px solid #e3e6ea;
     background: #fff;
     color: #111;
@@ -561,11 +1618,12 @@
 }
 
 .sky-product-detail-panel .btn-style-3 {
-    height: 48px;
-    max-height: 48px;
+    width: 100%;
+    height: 52px;
+    max-height: 52px;
     min-height: unset;
-    margin-top: 10px;
-    padding: 0 22px;
+    margin-top: 0;
+    padding: 0 26px;
     font-size: 14px;
     line-height: 14px;
     font-weight: 600;
@@ -574,13 +1632,15 @@
 }
 
 .sky-product-detail-panel .tf-product-info-help {
-    gap: 10px;
-    margin-top: 8px;
-    padding-bottom: 26px;
+    gap: 14px;
+    margin-top: 24px;
+    padding: 22px 0 24px;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
 }
 
 .sky-product-detail-panel .tf-product-info-extra-link {
-    gap: 10px 28px;
+    gap: 12px 30px;
 }
 
 .sky-product-detail-panel .tf-product-extra-icon {
@@ -613,6 +1673,7 @@
 .sky-product-detail-panel .tf-product-info-time p,
 .sky-product-detail-panel .tf-product-info-return p {
     margin: 0;
+    line-height: 1.45;
 }
 
 .sky-product-detail-panel .sky-product-extra-button::after {
@@ -622,7 +1683,7 @@
 .sky-product-detail-panel .tf-product-info-time,
 .sky-product-detail-panel .tf-product-info-return,
 .sky-product-detail-panel .tf-product-info-view {
-    align-items: center;
+    align-items: flex-start;
     gap: 8px;
 }
 
@@ -632,13 +1693,13 @@
 
 .sky-product-detail-section .thumbs-slider {
     align-items: stretch;
-    max-height: 800px;
-    min-height: 700px;
+    max-height: 720px;
+    min-height: 620px;
 }
 
 .sky-product-detail-section .tf-product-media-main {
-    max-height: 800px;
-    min-height: 700px;
+    max-height: 720px;
+    min-height: 620px;
 }
 
 .sky-product-detail-section .tf-product-media-main .swiper-wrapper,
@@ -661,13 +1722,87 @@
 }
 
 .sky-product-detail-section .tf-product-media-thumbs .swiper-slide .item {
-    height: 86px;
-    max-height: 86px;
+    height: 82px;
+    max-height: 82px;
 }
 
 .sky-product-detail-panel .btn-style-3.disabled {
     pointer-events: none;
     opacity: 0.55;
+}
+
+.sky-compare-remove {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    background: #fff;
+    color: var(--main);
+    font-size: 14px;
+    line-height: 1;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.sky-compare-remove:hover {
+    border-color: var(--main);
+    background: var(--main);
+    color: #fff;
+}
+
+#header .box-nav-ul .sec-cls-header {
+    padding-bottom: 0;
+}
+
+#header .box-nav-ul .sec-cls-header .collection-position {
+    min-height: 260px;
+    overflow: hidden;
+}
+
+#header .box-nav-ul .sec-cls-header .collection-position .img-style {
+    height: 100%;
+    min-height: 260px;
+}
+
+#header .box-nav-ul .sec-cls-header .collection-position .content {
+    inset: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    max-width: 100%;
+    padding: 24px;
+    overflow: hidden;
+    transform: none;
+}
+
+#header .box-nav-ul .sec-cls-header .collection-position .content .title-top {
+    max-width: 100%;
+}
+
+#header .box-nav-ul .sec-cls-header .collection-position .content .title {
+    max-width: 100%;
+    margin: 0;
+    font-size: 24px;
+    line-height: 1.2;
+}
+
+#header .box-nav-ul .sec-cls-header .collection-position .content .link,
+#header .box-nav-ul .sec-cls-header .collection-position .content .desc {
+    display: block;
+    max-width: 100%;
+    overflow-wrap: anywhere;
 }
 
 .tf-breadcrumb {
@@ -695,13 +1830,25 @@
 
 @media (max-width: 767px) {
     .sky-product-detail-panel {
+        max-width: none;
+        margin-left: 0;
         padding: 28px 0 0;
+    }
+
+    .sky-product-detail-header {
+        padding-bottom: 18px;
+    }
+
+    .sky-product-meta {
+        margin-top: 18px;
+        padding-bottom: 18px;
     }
 
     .sky-product-spec-row {
         grid-template-columns: 1fr;
         gap: 8px;
-        padding: 15px 0;
+        min-height: unset;
+        padding: 16px 0;
     }
 
     .sky-product-spec-value {
@@ -714,17 +1861,21 @@
     }
 
     .sky-product-detail-panel .sky-product-action-row {
-        gap: 8px;
+        gap: 10px;
+        margin-top: 24px;
     }
 
     .sky-product-detail-panel .sky-product-action-row .btn-style-2,
     .sky-product-detail-panel .btn-style-3 {
         min-height: unset;
+        height: 50px;
+        max-height: 50px;
     }
 
     .sky-product-detail-panel .sky-product-action-row .box-icon {
-        width: 48px;
-        height: 48px;
+        width: 50px;
+        height: 50px;
+        flex-basis: 50px;
         font-size: 18px;
     }
 

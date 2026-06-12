@@ -1,5 +1,13 @@
 "use client";
 import { allProducts } from "@/data/products";
+import {
+  addCompareItem,
+  clearCompareItems,
+  removeCompareItem,
+  selectCompareItems,
+  setCompareItems,
+} from "@/store/productsSlice";
+import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import React, { useContext, useState } from "react";
 
 const dataContext = React.createContext();
@@ -9,7 +17,8 @@ export const useContextElement = () => {
 };
 
 export default function Context({ children }) {
-  const [compareItem, setCompareItem] = useState([1, 2, 3]);
+  const dispatch = useAppDispatch();
+  const compareItem = useAppSelector(selectCompareItems);
   const [quickViewItem, setQuickViewItem] = useState(allProducts[0]);
   const [quickAddItem, setQuickAddItem] = useState(null);
   const [wishlist, setWishlist] = useState([]);
@@ -60,19 +69,26 @@ export default function Context({ children }) {
   };
 
   const addToCompareItem = (id) => {
-    if (!compareItem.some((itemId) => isSameId(itemId, id))) {
-      setCompareItem((pre) => [...pre, id]);
-    }
+    dispatch(addCompareItem(id));
   };
 
   const removeFromCompareItem = (id) => {
-    if (compareItem.some((itemId) => isSameId(itemId, id))) {
-      setCompareItem((pre) => [...pre.filter((elm) => !isSameId(elm, id))]);
-    }
+    dispatch(removeCompareItem(id));
   };
 
   const isAddedtoCompareItem = (id) => {
     return compareItem.some((itemId) => isSameId(itemId, id));
+  };
+
+  const setCompareItem = (value) => {
+    const nextItems = typeof value === "function" ? value(compareItem) : value;
+
+    if (!nextItems?.length) {
+      dispatch(clearCompareItems());
+      return;
+    }
+
+    dispatch(setCompareItems(nextItems));
   };
 
   const contextElement = {

@@ -1,16 +1,39 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useContextElement } from "@/context/Context";
-import { allProducts } from "@/data/products";
+import { getProductDetailHref } from "@/lib/productsApi";
+import useComparedProducts from "@/lib/useComparedProducts";
+
+const titleCase = (value = "") =>
+  String(value)
+    .replace(/[-_]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim()
+    .replace(/\b\w/g, (letter) => letter.toUpperCase());
+
+const upperValue = (value = "") => String(value || "").trim().toUpperCase();
+
+const displayProductCode = (product = {}) =>
+  upperValue(product.productCode || product.productCodeSlug || product._id || product.id);
+
+const normalizeLookup = (value) => String(value || "").trim().toLowerCase();
+
+const productLookupValues = (product = {}) =>
+  [product._id, product.id, product.productCodeSlug, product.productCode].filter(Boolean);
+
+const findCompareItemId = (product = {}, compareItem = []) =>
+  compareItem.find((id) =>
+    productLookupValues(product).some(
+      (value) => normalizeLookup(value) === normalizeLookup(id)
+    )
+  ) || product._id || product.id;
+
 export default function Compare() {
   const { removeFromCompareItem, compareItem, setCompareItem } =
     useContextElement();
-  const [items, setItems] = useState([]);
-  useEffect(() => {
-    setItems([...allProducts.filter((elm) => compareItem.includes(elm.id))]);
-  }, [compareItem]);
+  const items = useComparedProducts(compareItem);
 
   return (
     <div className="offcanvas offcanvas-bottom offcanvas-compare" id="compare">
@@ -90,10 +113,12 @@ export default function Compare() {
                           <span
                             className="icon-close remove"
                             style={{ cursor: "pointer" }}
-                            onClick={() => removeFromCompareItem(elm.id)}
+                            onClick={() =>
+                              removeFromCompareItem(findCompareItemId(elm, compareItem))
+                            }
                           />
                           <Link
-                            href={`/product-detail/${elm.id}`}
+                            href={getProductDetailHref(elm)}
                             className="image"
                           >
                             <Image
@@ -110,13 +135,13 @@ export default function Compare() {
                             <div className="text-title">
                               <Link
                                 className="link text-line-clamp-2"
-                                href={`/product-detail/${elm.id}`}
+                                href={getProductDetailHref(elm)}
                               >
-                                {elm.title}
+                                {displayProductCode(elm)}
                               </Link>
                             </div>
-                            <div className="text-button">
-                              ${elm.price.toFixed(2)}
+                            <div className="text-button text-line-clamp-1">
+                              {titleCase(elm.designName || elm.texture || elm.productName)}
                             </div>
                           </div>
                         </div>

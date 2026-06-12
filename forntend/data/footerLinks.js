@@ -13,7 +13,7 @@ export const footerLinks = [
       { label: "Our Stories", href: "#", isLink: false },
       { label: "Size Guide", href: "#", isLink: false },
       { label: "Contact us", href: "/contact", isLink: true },
-      { label: "Career", href: "#", isLink: false },
+      { label: "Career", href: "/career", isLink: true },
     ],
   },
   {

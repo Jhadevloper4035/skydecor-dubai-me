@@ -68,8 +68,6 @@ export default function CascadingProductFilters({
 
   const hasActiveFilters =
     filterFields.some(({ key }) => allProps[key] !== "All") ||
-    allProps.width !== "All" ||
-    allProps.availability !== "All" ||
     allProps.color !== "All" ||
     allProps.brands.length > 0 ||
     allProps.activeFilterOnSale;

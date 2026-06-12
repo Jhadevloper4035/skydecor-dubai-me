@@ -27,6 +27,12 @@ const eventSchema = new mongoose.Schema(
       required: true,
       trim: true,
     },
+    highlights: [
+      {
+        type: String,
+        trim: true,
+      },
+    ],
     startDate: {
       type: Date,
       required: true,
@@ -105,9 +111,10 @@ eventSchema.virtual('hasEnded').get(function () {
 });
 
 eventSchema.statics.findPublicEvents = function (filter = {}) {
+  const requestedStatus = filter.status;
   return this.find({
     ...filter,
-    status: { $in: ['upcoming', 'ongoing', 'completed'] },
+    status: requestedStatus || { $in: ['upcoming', 'ongoing', 'completed'] },
   }).sort({ startDate: 1 });
 };
 

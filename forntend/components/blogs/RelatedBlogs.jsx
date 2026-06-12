@@ -1,11 +1,19 @@
 "use client";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
-import { blogPosts6 } from "@/data/blogs";
+import { useAppDispatch, useAppSelector } from "@/store/hooks";
+import { fetchBlogs, selectBlogs } from "@/store/contentSlice";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 export default function RelatedBlogs() {
+  const dispatch = useAppDispatch();
+  const blogs = useAppSelector(selectBlogs);
+
+  useEffect(() => {
+    dispatch(fetchBlogs());
+  }, [dispatch]);
+
   return (
     <section className="flat-spacing">
       <div className="container">
@@ -43,7 +51,7 @@ export default function RelatedBlogs() {
               }}
               modules={[Pagination]}
             >
-              {blogPosts6.slice(0, 5).map((post, i) => (
+              {blogs.slice(0, 5).map((post, i) => (
                 <SwiperSlide key={i} className="swiper-slide">
                   <div className="wg-blog style-1 hover-image">
                     <div className="image">
@@ -79,13 +87,13 @@ export default function RelatedBlogs() {
                         <h6 className="title fw-5">
                           <Link
                             className="link"
-                            href={`/blog-detail/${post.id}`}
+                            href={post.href}
                           >
                             {post.title}
                           </Link>
                         </h6>
                         <div className="body-text">
-                          {post.description.split(" ").slice(0, 10).join(" ")}
+                          {post.description.split(" ").slice(0, 18).join(" ")}
                         </div>
                       </div>
                     </div>

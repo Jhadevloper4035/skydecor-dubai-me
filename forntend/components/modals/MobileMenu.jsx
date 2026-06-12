@@ -111,18 +111,6 @@ export default function MobileMenu() {
               </li>
 
               <li className="nav-mb-item">
-                <Link
-                  href={allProductsLink.href}
-                  className={`mb-menu-link ${
-                    isSameSection(pathname, allProductsLink.href) ? "active" : ""
-                  }`}
-                  {...dismissOffcanvas}
-                >
-                  <span>{allProductsLink.name}</span>
-                </Link>
-              </li>
-
-              <li className="nav-mb-item">
                 <a
                   href="#mobile-range-menu"
                   className={`collapsed mb-menu-link ${
@@ -139,6 +127,18 @@ export default function MobileMenu() {
                 </a>
                 <div id="mobile-range-menu" className="collapse">
                   <ul className="sub-nav-menu">
+                    <li>
+                      <Link
+                        href={allProductsLink.href}
+                        className={`sub-nav-link ${
+                          pathname === allProductsLink.href ? "active" : ""
+                        }`}
+                        {...dismissOffcanvas}
+                      >
+                        {allProductsLink.name}
+                      </Link>
+                    </li>
+
                     <li>
                       <Link
                         href={laminatesLink.href}
@@ -202,9 +202,9 @@ export default function MobileMenu() {
 
               <li className="nav-mb-item">
                 <Link
-                  href="/coming-soon"
+                  href="/career"
                   className={`mb-menu-link ${
-                    isSameSection(pathname, "/coming-soon") ? "active" : ""
+                    isSameSection(pathname, "/career") ? "active" : ""
                   }`}
                   {...dismissOffcanvas}
                 >

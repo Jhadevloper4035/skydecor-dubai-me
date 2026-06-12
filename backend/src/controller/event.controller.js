@@ -6,13 +6,13 @@ import {
 import AppError from '../utils/appError.js';
 import catchAsync from '../utils/catchAsync.js';
 import { sendCreated, sendList, sendNoContent, sendSuccess } from '../utils/response.js';
-import createSlug from '../utils/slug.js';
 
 const eventFields = [
   'title',
   'slug',
   'shortDescription',
   'description',
+  'highlights',
   'startDate',
   'endDate',
   'location',
@@ -61,7 +61,9 @@ export const getEvents = catchAsync(async (req, res) => {
   const { status, isFeatured, search } = req.query;
   const filter = {};
 
-  if (status) filter.status = status;
+  if (status && ['upcoming', 'ongoing', 'completed'].includes(status)) {
+    filter.status = status;
+  }
   if (isFeatured !== undefined) filter.isFeatured = isFeatured === 'true';
   if (search) {
     const re = new RegExp(search, 'i');
@@ -69,8 +71,11 @@ export const getEvents = catchAsync(async (req, res) => {
   }
 
   const [events, total] = await Promise.all([
-    Event.find(filter).sort({ startDate: 1, createdAt: -1 }).skip(skip).limit(limit),
-    Event.countDocuments(filter),
+    Event.findPublicEvents(filter).sort({ startDate: -1, createdAt: -1 }).skip(skip).limit(limit),
+    Event.countDocuments({
+      ...filter,
+      status: filter.status || { $in: ['upcoming', 'ongoing', 'completed'] },
+    }),
   ]);
 
   sendList(res, 'events', events, {
@@ -92,7 +97,7 @@ export const getEvent = catchAsync(async (req, res, next) => {
 });
 
 export const getEventBySlug = catchAsync(async (req, res, next) => {
-  const event = await Event.findOne({ slug: createSlug(req.params.slug) });
+  const event = await Event.findPublicBySlug(req.params.slug);
 
   if (!event) {
     return next(new AppError('Event not found.', 404, 'EVENT_NOT_FOUND'));

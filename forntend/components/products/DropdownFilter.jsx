@@ -1,15 +1,12 @@
 "use client";
 
 import {
-  availabilityOptions,
   brands,
   categories,
   colors,
   sizes,
 } from "@/data/productFilterOptions";
 import { productMain } from "@/data/products";
-
-import RangeSlider from "react-range-slider-input";
 
 export default function DropdownFilter({ allProps, setIsDDActive }) {
   return (
@@ -34,30 +31,6 @@ export default function DropdownFilter({ allProps, setIsDDActive }) {
               </li>
             ))}
           </ul>
-        </div>
-        <div className="widget-facet facet-price">
-          <h6 className="facet-title">Price</h6>
-
-          <RangeSlider
-            min={10}
-            max={450}
-            value={allProps.price}
-            onInput={(value) => allProps.setPrice(value)}
-          />
-          <div className="box-price-product mt-3">
-            <div className="box-price-item">
-              <span className="title-price">Min price</span>
-              <div className="price-val" id="price-min-value" data-currency="$">
-                {allProps.price[0]}
-              </div>
-            </div>
-            <div className="box-price-item">
-              <span className="title-price">Max price</span>
-              <div className="price-val" id="price-max-value" data-currency="$">
-                {allProps.price[1]}
-              </div>
-            </div>
-          </div>
         </div>
         <div className="widget-facet facet-size">
           <h6 className="facet-title">Size</h6>
@@ -97,37 +70,6 @@ export default function DropdownFilter({ allProps, setIsDDActive }) {
                 <span className={`color ${color.className}`} />
                 {color.name}
               </div>
-            ))}
-          </div>
-        </div>
-        <div className="widget-facet facet-fieldset">
-          <h6 className="facet-title">Availability</h6>
-          <div className="box-fieldset-item">
-            {availabilityOptions.map((option, index) => (
-              <fieldset
-                key={index}
-                className="fieldset-item"
-                onClick={() => allProps.setAvailability(option)}
-              >
-                <input
-                  type="radio"
-                  name="availability"
-                  className="tf-check"
-                  readOnly
-                  checked={allProps.availability === option}
-                />
-                <label>
-                  {option.label}{" "}
-                  <span className="count-stock">
-                    (
-                    {
-                      productMain.filter((el) => el.inStock == option.value)
-                        .length
-                    }
-                    )
-                  </span>
-                </label>
-              </fieldset>
             ))}
           </div>
         </div>

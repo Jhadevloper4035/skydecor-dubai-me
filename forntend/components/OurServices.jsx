@@ -15,7 +15,8 @@ const services = [
     image: "/images/our-project-image-1.jpg",
     icon: "/images/icon-service-item-2.svg",
     title: "Living Room Design",
-    description: "Smart, efficient, and visually impactful designs for offices,",
+    description:
+      "Smart, efficient, and visually impactful designs for offices,",
     delay: "0.2s",
   },
   {
@@ -40,14 +41,13 @@ export default function OurServices() {
   return (
     <div className="our-services-elite">
       <div className="container">
-
         {/* Section Title */}
         <div className="row section-row">
           <div className="col-lg-12">
             <div className="section-title section-title-center">
               <h3 className="heading wow fadeInUp">Our Services</h3>
               <h2 className="text-anime-style-3 heading" data-cursor="-opaque">
-              Design That Inspires
+                Design That Inspires
               </h2>
             </div>
           </div>
@@ -72,7 +72,6 @@ export default function OurServices() {
 
                 {/* Service Body */}
                 <div className="service-item-body-elite">
-
                   <div className="service-item-content-elite">
                     <h2 className="">
                       <Link href="/contact">{service.title}</Link>
@@ -102,11 +101,13 @@ export default function OurServices() {
                 </div>
               </div>
               <p>
-                Discover more stunning designs crafted with precision — 
+                Discover more stunning designs crafted with precision —
                 <Link href="/contact"> Contact Us Today</Link>.
               </p>
               <ul>
-                <li><span className="counter">4.9</span>/5</li>
+                <li>
+                  <span className="counter">4.9</span>/5
+                </li>
                 <li>
                   <i className="fa-solid fa-star"></i>
                   <i className="fa-solid fa-star"></i>
@@ -119,7 +120,6 @@ export default function OurServices() {
             </div>
           </div>
         </div>
-
       </div>
     </div>
   );

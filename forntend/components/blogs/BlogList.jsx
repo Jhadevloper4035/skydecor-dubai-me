@@ -1,16 +1,26 @@
-import React from "react";
+"use client";
+
+import React, { useEffect } from "react";
 import Sidebar from "./Sidebar";
 import Pagination from "../common/Pagination";
 import Link from "next/link";
 import Image from "next/image";
-import { blogPosts6 } from "@/data/blogs";
+import { useAppDispatch, useAppSelector } from "@/store/hooks";
+import { fetchBlogs, selectBlogs } from "@/store/contentSlice";
 export default function BlogList() {
+  const dispatch = useAppDispatch();
+  const blogs = useAppSelector(selectBlogs);
+
+  useEffect(() => {
+    dispatch(fetchBlogs());
+  }, [dispatch]);
+
   return (
     <div className="main-content-page">
       <div className="container">
         <div className="row">
           <div className="col-lg-8 mb-lg-30">
-            {blogPosts6.slice(0, 5).map((post, i) => (
+            {blogs.slice(0, 5).map((post, i) => (
               <div key={i} className="wg-blog style-row hover-image mb_40">
                 <div className="image">
                   <Image
@@ -44,13 +54,13 @@ export default function BlogList() {
                     </div>
                   </div>
                   <h5 className="title">
-                    <Link className="link" href={`/blog-detail/${post.id}`}>
+                    <Link className="link" href={post.href}>
                       {post.title}
                     </Link>
                   </h5>
-                  <p>{post.description.split(" ").slice(0, 10).join(" ")}</p>
+                  <p>{post.description.split(" ").slice(0, 18).join(" ")}</p>
                   <Link
-                    href={`/blog-detail/${post.id}`}
+                    href={post.href}
                     className="link text-button bot-button"
                   >
                     Read More

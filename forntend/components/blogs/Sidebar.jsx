@@ -1,9 +1,19 @@
 "use client";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
-import { blogPosts6 } from "@/data/blogs";
+import { useAppDispatch, useAppSelector } from "@/store/hooks";
+import { fetchBlogs, selectBlogs } from "@/store/contentSlice";
 export default function Sidebar() {
+  const dispatch = useAppDispatch();
+  const blogs = useAppSelector(selectBlogs);
+  const categories = [...new Set(blogs.flatMap((post) => post.categories || []))].slice(0, 5);
+  const tags = [...new Set(blogs.flatMap((post) => post.tags || []))].slice(0, 8);
+
+  useEffect(() => {
+    dispatch(fetchBlogs());
+  }, [dispatch]);
+
   return (
     <div className="sidebar maxw-360">
       <div className="sidebar-item sidebar-search">
@@ -50,7 +60,7 @@ export default function Sidebar() {
       <div className="sidebar-item sidebar-relatest-post">
         <h5 className="sidebar-heading">Relatest Post</h5>
         <div>
-          {blogPosts6.slice(3, 8).map((post, i) => (
+          {blogs.slice(0, 5).map((post, i) => (
             <div
               key={i}
               className={`relatest-post-item ${
@@ -87,8 +97,8 @@ export default function Sidebar() {
                   </div>
                 </div>
                 <h6 className="title fw-5">
-                  <Link className="link" href={`/blog-detail/${post.id}`}>
-                    {post.description.split(" ").slice(0, 8).join(" ")}
+                  <Link className="link" href={post.href}>
+                    {post.title}
                   </Link>
                 </h6>
               </div>
@@ -99,76 +109,25 @@ export default function Sidebar() {
       <div className="sidebar-item sidebar-categories">
         <h5 className="sidebar-heading">Categories</h5>
         <ul>
-          <li>
-            <a className="text-button link" href="#">
-              Trending
-            </a>
-          </li>
-          <li>
-            <a className="text-button link" href="#">
-              Fashion
-            </a>
-          </li>
-          <li>
-            <a className="text-button link" href="#">
-              Outfit
-            </a>
-          </li>
-          <li>
-            <a className="text-button link" href="#">
-              Accessories
-            </a>
-          </li>
-          <li>
-            <a className="text-button link" href="#">
-              Beauty
-            </a>
-          </li>
+          {(categories.length ? categories : ["Laminates", "Interiors", "Design"]).map((category) => (
+            <li key={category}>
+              <a className="text-button link" href="#">
+                {category}
+              </a>
+            </li>
+          ))}
         </ul>
       </div>
       <div className="sidebar-item sidebar-tag">
         <h5 className="sidebar-heading">Popular Tag</h5>
         <ul className="list-tags">
-          <li>
-            <a href="#" className="text-caption-1 link">
-              Fashion Trends
-            </a>
-          </li>
-          <li>
-            <a href="#" className="text-caption-1 link">
-              Sustainable Fashion
-            </a>
-          </li>
-          <li>
-            <a href="#" className="text-caption-1 link">
-              Street Style
-            </a>
-          </li>
-          <li>
-            <a href="#" className="text-caption-1 link">
-              Beauty Tips
-            </a>
-          </li>
-          <li>
-            <a href="#" className="text-caption-1 link">
-              Street Style
-            </a>
-          </li>
-          <li>
-            <a href="#" className="text-caption-1 link">
-              Vintage Fashion
-            </a>
-          </li>
-          <li>
-            <a href="#" className="text-caption-1 link">
-              Eco Friendly
-            </a>
-          </li>
-          <li>
-            <a href="#" className="text-caption-1 link">
-              Tips
-            </a>
-          </li>
+          {(tags.length ? tags : ["surfaces", "decor", "design", "dubai"]).map((tag) => (
+            <li key={tag}>
+              <a href="#" className="text-caption-1 link">
+                {tag}
+              </a>
+            </li>
+          ))}
         </ul>
       </div>
     </div>

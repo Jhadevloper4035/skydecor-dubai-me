@@ -122,8 +122,6 @@ export default function Products1({
     subCategory: initialSubCategory || initialState.subCategory,
   });
   const {
-    price,
-    availability,
     color,
     size,
     productType,
@@ -131,7 +129,6 @@ export default function Products1({
     subCategory,
     texture,
     thickness,
-    width,
     brands,
 
     filtered,
@@ -146,8 +143,6 @@ export default function Products1({
   const allProps = {
     ...state,
     filterOptions,
-    setPrice: (value) => filterDispatch({ type: "SET_PRICE", payload: value }),
-
     setColor: (value) => {
       value == color
         ? filterDispatch({ type: "SET_COLOR", payload: "All" })
@@ -168,7 +163,6 @@ export default function Products1({
       filterDispatch({ type: "SET_TEXTURE", payload: "All" });
       filterDispatch({ type: "SET_SIZE", payload: "All" });
       filterDispatch({ type: "SET_THICKNESS", payload: "All" });
-      filterDispatch({ type: "SET_WIDTH", payload: "All" });
     },
     setCategory: (value) => {
       filterDispatch({
@@ -179,7 +173,6 @@ export default function Products1({
       filterDispatch({ type: "SET_TEXTURE", payload: "All" });
       filterDispatch({ type: "SET_SIZE", payload: "All" });
       filterDispatch({ type: "SET_THICKNESS", payload: "All" });
-      filterDispatch({ type: "SET_WIDTH", payload: "All" });
     },
     setSubCategory: (value) => {
       filterDispatch({
@@ -189,7 +182,6 @@ export default function Products1({
       filterDispatch({ type: "SET_TEXTURE", payload: "All" });
       filterDispatch({ type: "SET_SIZE", payload: "All" });
       filterDispatch({ type: "SET_THICKNESS", payload: "All" });
-      filterDispatch({ type: "SET_WIDTH", payload: "All" });
     },
     setTexture: (value) => {
       filterDispatch({
@@ -198,7 +190,6 @@ export default function Products1({
       });
       filterDispatch({ type: "SET_SIZE", payload: "All" });
       filterDispatch({ type: "SET_THICKNESS", payload: "All" });
-      filterDispatch({ type: "SET_WIDTH", payload: "All" });
     },
     setThickness: (value) => {
       filterDispatch({
@@ -206,18 +197,6 @@ export default function Products1({
         payload: value == thickness ? "All" : value,
       });
     },
-    setWidth: (value) => {
-      filterDispatch({
-        type: "SET_WIDTH",
-        payload: value == width ? "All" : value,
-      });
-    },
-    setAvailability: (value) => {
-      value == availability
-        ? filterDispatch({ type: "SET_AVAILABILITY", payload: "All" })
-        : filterDispatch({ type: "SET_AVAILABILITY", payload: value });
-    },
-
     setBrands: (newBrand) => {
       const updated = [...brands].includes(newBrand)
         ? [...brands].filter((elm) => elm != newBrand)
@@ -259,7 +238,6 @@ export default function Products1({
     filterDispatch({ type: "SET_TEXTURE", payload: "All" });
     filterDispatch({ type: "SET_SIZE", payload: "All" });
     filterDispatch({ type: "SET_THICKNESS", payload: "All" });
-    filterDispatch({ type: "SET_WIDTH", payload: "All" });
     filterDispatch({ type: "SET_CURRENT_PAGE", payload: 1 });
   }, [initialProductType, initialCategory, initialSubCategory, initialQuery]);
 
@@ -299,16 +277,8 @@ export default function Products1({
       texture: selectedFilterValue(texture),
       size: size !== "All" && size !== "Free Size" ? size : "",
       thickness: selectedFilterValue(thickness),
-      width: selectedFilterValue(width),
     });
     let filteredArrays = [];
-
-    if (availability !== "All") {
-      const filteredByAvailability = [...products].filter(
-        (elm) => elm.inStock === availability.value
-      );
-      filteredArrays = [...filteredArrays, filteredByAvailability];
-    }
 
     if (brands.length) {
       const filteredByBrands = [...products].filter((elm) =>
@@ -327,11 +297,6 @@ export default function Products1({
       filteredArrays = [...filteredArrays, filteredByonSale];
     }
 
-    const filteredByPrice = [...products].filter(
-      (elm) => elm.price >= price[0] && elm.price <= price[1]
-    );
-    filteredArrays = [...filteredArrays, filteredByPrice];
-
     const commonItems = [...products].filter((item) =>
       filteredArrays.every((array) => array.includes(item))
     );
@@ -344,13 +309,10 @@ export default function Products1({
     texture,
     size,
     thickness,
-    width,
-    availability,
     initialProductType,
     initialCategory,
     initialSubCategory,
     initialQuery,
-    price,
     color,
     brands,
     activeFilterOnSale,

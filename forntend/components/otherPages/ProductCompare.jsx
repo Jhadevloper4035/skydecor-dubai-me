@@ -1,21 +1,76 @@
 "use client";
-import { useContextElement } from "@/context/Context";
-import { allProducts } from "@/data/products";
+
 import Image from "next/image";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React from "react";
+
+import { useContextElement } from "@/context/Context";
+import { getProductDetailHref } from "@/lib/productsApi";
+import useComparedProducts from "@/lib/useComparedProducts";
+
+const titleCase = (value = "") =>
+  String(value)
+    .replace(/[-_]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim()
+    .replace(/\b\w/g, (letter) => letter.toUpperCase());
+
+const upperValue = (value = "") => String(value || "").trim().toUpperCase();
+
+const displayValue = (value, fallback = "-") => {
+  if (value === undefined || value === null || value === "") return fallback;
+  return titleCase(value);
+};
+
+const displayCode = (product = {}) =>
+  upperValue(product.productCode || product.productCodeSlug || product._id || product.id);
+
+const normalizeLookup = (value) => String(value || "").trim().toLowerCase();
+
+const productLookupValues = (product = {}) =>
+  [product._id, product.id, product.productCodeSlug, product.productCode].filter(Boolean);
+
+const findCompareItemId = (product = {}, compareItem = []) =>
+  compareItem.find((id) =>
+    productLookupValues(product).some(
+      (value) => normalizeLookup(value) === normalizeLookup(id)
+    )
+  ) || product._id || product.id;
+
+const displayName = (product = {}) =>
+  upperValue(product.productName || product.title || product.designName || product.productCode);
+
+const formatThickness = (value = "") => {
+  const normalized = String(value).trim();
+  if (!normalized) return "-";
+
+  return normalized.replace(/\s*mm$/i, " mm").replace(/(\d)(mm)$/i, "$1 mm");
+};
+
+const productRows = [
+  ["Product Name", displayName],
+  ["Design Name", (product) => displayValue(product.designName)],
+  ["Product Type", (product) => displayValue(product.productType)],
+  ["Category", (product) => displayValue(product.category)],
+  ["Sub Category", (product) => displayValue(product.subCategory)],
+  ["Texture", (product) => displayValue(product.texture)],
+  ["Texture Code", (product) => upperValue(product.textureCode) || "-"],
+  ["Size", (product) => product.size || "-"],
+  ["Thickness", (product) => formatThickness(product.thickness)],
+  ["Width", (product) => product.width || "-"],
+  [
+    "Availability",
+    (product) =>
+      product.inStock || product.status === "active" || product.isActive
+        ? "Available"
+        : "Unavailable",
+  ],
+];
 
 export default function ProductCompare() {
-  const {
-    compareItem,
+  const { compareItem, removeFromCompareItem } = useContextElement();
+  const items = useComparedProducts(compareItem);
 
-    addProductToCart,
-    isAddedToCartProducts,
-  } = useContextElement();
-  const [items, setItems] = useState([]);
-  useEffect(() => {
-    setItems([...allProducts.filter((elm) => compareItem.includes(elm.id))]);
-  }, [compareItem]);
   return (
     <section className="flat-spacing">
       <div className="container">
@@ -28,25 +83,35 @@ export default function ProductCompare() {
             </Link>
           </div>
         ) : (
-          ""
-        )}
-        {items.length ? (
           <div className="tf-compare-table">
             <div className="tf-compare-row tf-compare-grid">
               <div className="tf-compare-col d-md-block d-none" />
-              {items.map((elm, i) => (
-                <div key={i} className="tf-compare-col">
+              {items.map((product) => (
+                <div
+                  key={product._id || product.id || product.productCode}
+                  className="tf-compare-col"
+                >
                   <div className="tf-compare-item">
+                    <button
+                      type="button"
+                      className="sky-compare-remove"
+                      aria-label={`Remove ${displayCode(product)} from compare`}
+                      onClick={() =>
+                        removeFromCompareItem(findCompareItemId(product, compareItem))
+                      }
+                    >
+                      <i className="fa-solid fa-xmark" />
+                    </button>
                     <Link
                       className="tf-compare-image"
-                      href={`/product-detail/${elm.id}`}
+                      href={getProductDetailHref(product)}
                     >
                       <Image
                         loading="lazy"
                         decoding="async"
                         className="lazyload"
-                        alt="img-compare"
-                        src={elm.imgSrc}
+                        alt={displayCode(product)}
+                        src={product.imgSrc}
                         width={600}
                         height={800}
                       />
@@ -54,12 +119,14 @@ export default function ProductCompare() {
                     <div className="tf-compare-content">
                       <Link
                         className="link text-title text-line-clamp-1"
-                        href={`/product-detail/${elm.id}`}
+                        href={getProductDetailHref(product)}
                       >
-                        {elm.title}
+                        {displayCode(product)}
                       </Link>
                       <p className="desc text-caption-1">
-                        Clothes, women, T-shirt
+                        {[displayValue(product.designName), displayValue(product.texture)]
+                          .filter((value) => value !== "-")
+                          .join(" - ")}
                       </p>
                     </div>
                   </div>
@@ -67,134 +134,64 @@ export default function ProductCompare() {
               ))}
             </div>
 
-            <div className="tf-compare-row">
-              <div className="tf-compare-col tf-compare-field d-md-block d-none">
-                <h6>Rating</h6>
-              </div>
-              {items.map((elm, i) => (
-                <div
-                  key={i}
-                  className="tf-compare-col tf-compare-field tf-compare-rate"
-                >
-                  <div className="list-star">
-                    <span className="icon icon-star" />
-                    <span className="icon icon-star" />
-                    <span className="icon icon-star" />
-                    <span className="icon icon-star" />
-                    <span className="icon icon-star" />
-                  </div>
-                  <span>(1.234)</span>
+            {productRows.map(([label, getValue]) => (
+              <div key={label} className="tf-compare-row">
+                <div className="tf-compare-col tf-compare-field d-md-block d-none">
+                  <h6>{label}</h6>
                 </div>
-              ))}
-            </div>
-            <div className="tf-compare-row">
-              <div className="tf-compare-col tf-compare-field d-md-block d-none">
-                <h6>Price</h6>
+                {items.map((product) => (
+                  <div
+                    key={`${product._id || product.id || product.productCode}-${label}`}
+                    className="tf-compare-col tf-compare-field text-center"
+                  >
+                    <span className="tf-compare-value">{getValue(product)}</span>
+                  </div>
+                ))}
               </div>
+            ))}
 
-              {items.map((elm, i) => (
+            <div className="tf-compare-row">
+              <div className="tf-compare-col tf-compare-field d-md-block d-none">
+                <h6>Product PDF</h6>
+              </div>
+              {items.map((product) => (
                 <div
-                  key={i}
+                  key={`${product._id || product.id || product.productCode}-pdf`}
                   className="tf-compare-col tf-compare-field text-center"
                 >
-                  <span className="price">${elm.price.toFixed(2)}</span>
+                  {product.pdfUrlPath ? (
+                    <a
+                      className="btn-line"
+                      href={product.pdfUrlPath}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      download
+                    >
+                      Download PDF
+                    </a>
+                  ) : (
+                    <span className="tf-compare-value">-</span>
+                  )}
                 </div>
               ))}
             </div>
+
             <div className="tf-compare-row">
               <div className="tf-compare-col tf-compare-field d-md-block d-none">
-                <h6>Type</h6>
+                <h6>Details</h6>
               </div>
-              {items.map((elm, i) => (
+              {items.map((product) => (
                 <div
-                  key={i}
-                  className="tf-compare-col tf-compare-field text-center"
-                >
-                  <span className="type">Jacket</span>
-                </div>
-              ))}
-            </div>
-            <div className="tf-compare-row">
-              <div className="tf-compare-col tf-compare-field d-md-block d-none">
-                <h6>Brand</h6>
-              </div>
-              {items.map((elm, i) => (
-                <div
-                  key={i}
-                  className="tf-compare-col tf-compare-field text-center"
-                >
-                  <span className="brand">Gucci</span>
-                </div>
-              ))}
-            </div>
-            <div className="tf-compare-row">
-              <div className="tf-compare-col tf-compare-field d-md-block d-none">
-                <h6>size</h6>
-              </div>
-              {items.map((elm, i) => (
-                <div
-                  key={i}
-                  className="tf-compare-col tf-compare-field text-center"
-                >
-                  <span className="size">X, XS, L, M, XL</span>
-                </div>
-              ))}
-            </div>
-            <div className="tf-compare-row">
-              <div className="tf-compare-col tf-compare-field d-md-block d-none">
-                <h6>Color</h6>
-              </div>
-              {items.map((elm, i) => (
-                <div
-                  key={i}
-                  className="tf-compare-col tf-compare-field text-center"
-                >
-                  <div className="list-compare-color justify-content-center">
-                    <span className="item bg-pink" />
-                    <span className="item bg-yellow" />
-                    <span className="item bg-primary active" />
-                    <span className="item bg-success" />
-                    <span className="item bg-warning" />
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className="tf-compare-row">
-              <div className="tf-compare-col tf-compare-field d-md-block d-none">
-                <h6>Metarial</h6>
-              </div>
-              {items.map((elm, i) => (
-                <div
-                  key={i}
-                  className="tf-compare-col tf-compare-field text-center"
-                >
-                  <span className="size">Cotton</span>
-                </div>
-              ))}
-            </div>
-            <div className="tf-compare-row">
-              <div className="tf-compare-col tf-compare-field d-md-block d-none">
-                <h6>Add To Cart</h6>
-              </div>
-              {items.map((elm, i) => (
-                <div
-                  key={i}
+                  key={`${product._id || product.id || product.productCode}-details`}
                   className="tf-compare-col tf-compare-field tf-compare-viewcart text-center"
                 >
-                  <a
-                    className="btn-view-cart"
-                    onClick={() => addProductToCart(elm.id)}
-                  >
-                    {isAddedToCartProducts(elm.id)
-                      ? "Already Added"
-                      : "Add to Cart"}
-                  </a>
+                  <Link className="btn-view-cart" href={getProductDetailHref(product)}>
+                    View Details
+                  </Link>
                 </div>
               ))}
             </div>
           </div>
-        ) : (
-          ""
         )}
       </div>
     </section>

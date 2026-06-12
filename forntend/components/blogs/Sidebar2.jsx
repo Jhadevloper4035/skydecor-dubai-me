@@ -1,8 +1,18 @@
+"use client";
+
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
-import { blogPosts6 } from "@/data/blogs";
+import { useAppDispatch, useAppSelector } from "@/store/hooks";
+import { fetchBlogs, selectBlogs } from "@/store/contentSlice";
 export default function Sidebar2() {
+  const dispatch = useAppDispatch();
+  const blogs = useAppSelector(selectBlogs);
+
+  useEffect(() => {
+    dispatch(fetchBlogs());
+  }, [dispatch]);
+
   return (
     <div className="sidebar maxw-360">
       <div className="sidebar-item sidebar-writer">
@@ -19,10 +29,10 @@ export default function Sidebar2() {
             <div className="name">
               <h6>
                 <a className="link" href="#">
-                  Shara Miller
+                  SkyDecor Dubai
                 </a>
               </h6>
-              <p className="text-caption-1">200 Follower</p>
+              <p className="text-caption-1">Surface Design Team</p>
             </div>
             <a href="#" className="button-follow text-btn-uppercase link">
               Follow
@@ -31,9 +41,8 @@ export default function Sidebar2() {
         </div>
         <div className="writer-content">
           <p>
-            Jessie Nguyen (@Jessie_ng) is a writer who draws. He’s the
-            Bestselling author of “Number of The Year”. Donec vitae tortor
-            efficitur, convallis lelobortis elit.
+            Insights from the SkyDecor Dubai team on laminates, surfaces,
+            interiors, product launches, and design events.
           </p>
           <ul className="tf-social-icon">
             <li>
@@ -72,7 +81,7 @@ export default function Sidebar2() {
       <div className="sidebar-item sidebar-relatest-post">
         <h5 className="sidebar-heading">Relatest Post</h5>
         <div>
-          {blogPosts6.slice(3, 8).map((post, i) => (
+          {blogs.slice(0, 5).map((post, i) => (
             <div
               key={i}
               className={`relatest-post-item ${
@@ -109,8 +118,8 @@ export default function Sidebar2() {
                   </div>
                 </div>
                 <h6 className="title fw-5">
-                  <Link className="link" href={`/blog-detail/${post.id}`}>
-                    {post.description.split(" ").slice(0, 8).join(" ")}
+                  <Link className="link" href={post.href}>
+                    {post.title}
                   </Link>
                 </h6>
               </div>

@@ -1,16 +1,26 @@
-import React from "react";
+"use client";
+
+import React, { useEffect } from "react";
 import Pagination from "../common/Pagination";
 import Link from "next/link";
 import Image from "next/image";
-import { blogPosts6 } from "@/data/blogs";
+import { useAppDispatch, useAppSelector } from "@/store/hooks";
+import { fetchBlogs, selectBlogs } from "@/store/contentSlice";
 export default function BlogGrid() {
+  const dispatch = useAppDispatch();
+  const blogs = useAppSelector(selectBlogs);
+
+  useEffect(() => {
+    dispatch(fetchBlogs());
+  }, [dispatch]);
+
   return (
     <div className="main-content-page">
       <div className="container">
         <div className="row">
           <div className="col-12">
             <div className="tf-grid-layout md-col-3">
-              {blogPosts6.map((blog, index) => (
+              {blogs.map((blog, index) => (
                 <div className="wg-blog style-1 hover-image" key={index}>
                   <div className="image">
                     <Image
@@ -44,7 +54,7 @@ export default function BlogGrid() {
                     </div>
                     <div>
                       <h6 className="title fw-5">
-                        <Link className="link" href={`/blog-detail/${blog.id}`}>
+                      <Link className="link" href={blog.href}>
                           {blog.title}
                         </Link>
                       </h6>

@@ -1,17 +1,27 @@
-import React from "react";
+"use client";
+
+import React, { useEffect } from "react";
 import Sidebar from "./Sidebar";
 import Pagination from "../common/Pagination";
 import Link from "next/link";
 import Image from "next/image";
-import { blogPosts6 } from "@/data/blogs";
+import { useAppDispatch, useAppSelector } from "@/store/hooks";
+import { fetchBlogs, selectBlogs } from "@/store/contentSlice";
 
 export default function BlogDefault() {
+  const dispatch = useAppDispatch();
+  const blogs = useAppSelector(selectBlogs);
+
+  useEffect(() => {
+    dispatch(fetchBlogs());
+  }, [dispatch]);
+
   return (
     <div className="main-content-page">
       <div className="container">
         <div className="row">
           <div className="col-lg-8 mb-lg-30">
-            {blogPosts6.slice(0, 3).map((post, i) => (
+            {blogs.slice(0, 3).map((post, i) => (
               <React.Fragment key={i}>
                 {i != 0 ? <div className="line-bt mb_40" /> : ""}
                 <div className="wg-blog hover-image mb_40">
@@ -27,7 +37,7 @@ export default function BlogDefault() {
                   <div className="content">
                     <div className="d-flex align-items-center justify-content-between flex-wrap gap-10">
                       <div className="meta">
-                        <div className="meta-item gap-8">
+                      <div className="meta-item gap-8">
                           <div className="icon">
                             <i className="icon-calendar" />
                           </div>
@@ -61,7 +71,7 @@ export default function BlogDefault() {
                       </div>
                     </div>
                     <h4 className="title fw-5">
-                      <Link className="link" href={`/blog-detail/${post.id}`}>
+                      <Link className="link" href={post.href}>
                         {post.title}
                       </Link>
                     </h4>

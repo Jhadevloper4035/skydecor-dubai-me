@@ -3,7 +3,6 @@ import { createImagePresignedUrl } from '../service/upload.service.js';
 import AppError from '../utils/appError.js';
 import catchAsync from '../utils/catchAsync.js';
 import { sendCreated, sendList, sendNoContent, sendSuccess } from '../utils/response.js';
-import createSlug from '../utils/slug.js';
 
 const blogFields = [
   'title',
@@ -49,7 +48,7 @@ export const getBlogs = catchAsync(async (req, res) => {
   const { status, category, tag, isFeatured, search } = req.query;
   const filter = {};
 
-  if (status) filter.status = status;
+  if (status === 'published') filter.status = status;
   if (category) filter.categories = category.toLowerCase();
   if (tag) filter.tags = tag.toLowerCase();
   if (isFeatured !== undefined) filter.isFeatured = isFeatured === 'true';
@@ -59,8 +58,8 @@ export const getBlogs = catchAsync(async (req, res) => {
   }
 
   const [blogs, total] = await Promise.all([
-    Blog.find(filter).sort({ publishedAt: -1, createdAt: -1 }).skip(skip).limit(limit),
-    Blog.countDocuments(filter),
+    Blog.findPublished(filter).skip(skip).limit(limit),
+    Blog.countDocuments({ ...filter, status: 'published' }),
   ]);
 
   sendList(res, 'blogs', blogs, {
@@ -82,7 +81,7 @@ export const getBlog = catchAsync(async (req, res, next) => {
 });
 
 export const getBlogBySlug = catchAsync(async (req, res, next) => {
-  const blog = await Blog.findOne({ slug: createSlug(req.params.slug) });
+  const blog = await Blog.findPublishedBySlug(req.params.slug);
 
   if (!blog) {
     return next(new AppError('Blog not found.', 404, 'BLOG_NOT_FOUND'));

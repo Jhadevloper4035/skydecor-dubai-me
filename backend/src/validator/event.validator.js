@@ -30,6 +30,8 @@ export const createEventValidator = [
     .isLength({ max: 300 })
     .withMessage('must be at most 300 chars'),
   body('description').trim().notEmpty().withMessage('is required'),
+  body('highlights').optional().isArray().withMessage('must be an array'),
+  body('highlights.*').optional().trim().notEmpty().withMessage('cannot be empty'),
   body('startDate').isISO8601().withMessage('must be a valid ISO 8601 date'),
   body('endDate').optional().isISO8601().withMessage('must be a valid ISO 8601 date'),
   dateOrderValidator,
@@ -56,6 +58,8 @@ export const updateEventValidator = [
     .isLength({ max: 300 })
     .withMessage('must be at most 300 chars'),
   body('description').optional().trim().notEmpty().withMessage('cannot be empty'),
+  body('highlights').optional().isArray().withMessage('must be an array'),
+  body('highlights.*').optional().trim().notEmpty().withMessage('cannot be empty'),
   body('startDate').optional().isISO8601().withMessage('must be a valid ISO 8601 date'),
   body('endDate').optional().isISO8601().withMessage('must be a valid ISO 8601 date'),
   dateOrderValidator,
