@@ -1,3 +1,5 @@
+import { contactDetails } from "./contactDetails";
+
 export const socialLinks = [
   {
     href: "https://www.facebook.com/skydecorlam",
@@ -10,7 +12,7 @@ export const socialLinks = [
     iconClass: "fab fa-instagram fa-xs",
   },
   {
-    href: "https://alvo.chat/3Ijc",
+    href: contactDetails.whatsappHref,
     className: "social-whatsapp",
     iconClass: "fab fa-whatsapp fa-xs",
   },

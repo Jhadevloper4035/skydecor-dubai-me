@@ -2056,9 +2056,7 @@ a:hover {
   width: 144px;
 }
 
-.box-nav-ul .menu-item {
-  padding: 28px 0px;
-}
+
 .box-nav-ul .menu-item:hover > .sub-menu {
   pointer-events: all;
   opacity: 1;
@@ -2145,7 +2143,7 @@ a:hover {
 .box-nav-ul .menu-heading {
   font-size: 12px;
   line-height: 20px;
-  font-weight: 700;
+  font-weight: 400;
   color: var(--main);
   text-transform: uppercase;
   margin-bottom: 8px;

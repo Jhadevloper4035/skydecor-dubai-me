@@ -31,10 +31,11 @@ const footerSections = [
   {
     title: "Design Ideas",
     links: [
-      { label: "Design Journal", href: "/blog-default" },
-      { label: "Product Catalogues", href: "/catalogue" },
-      { label: "Surface Collections", href: "/products" },
-      { label: "Certificates", href: "/certificates" },
+      { label: "Bedroom Design", href: "/bedroom-design" },
+      { label: "Living Room Design", href: "/living-room-design" },
+      { label: "Kitchen Design", href: "/kitchen-design" },
+      { label: "Workspace Design", href: "/workspace-design" },
+      { label: "Kidroom design", href: "/kidroom-design" },
     ],
   },
   {
@@ -59,7 +60,7 @@ export default function Footer1({ hasPaddingBottom = false }) {
           <div className="sd-footer__brand">
             <Link href="/" aria-label="SkyDecor home">
               <Image
-                src="/images/logo/logo.png"
+                src="/images/logo/white-logo.png"
                 alt="SkyDecor"
                 width={230}
                 height={87}

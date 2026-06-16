@@ -1,21 +1,9 @@
 // components/AboutUs.js
 import Link from "next/link";
 
-const aboutItems = [
-  {
-    id: 1,
-    icon: "/images/icon-about-item-1.svg",
-    title: "Our Mission",
-    description:
-      "To become a leading architecture & interior design studio know for transform ordinary",
-  },
-  {
-    id: 2,
-    icon: "/images/icon-about-item-2.svg",
-    title: "Our Vision",
-    description:
-      "To become a leading architecture & interior design studio know for transform ordinary",
-  },
+const companyStory = [
+  "Established in 2016, SkyDecor creates decorative, acrylic, and PVC laminates with a focus on design, precision, and dependable quality.",
+  "Our advanced manufacturing facilities and Dubai warehouse support customers across the Middle East and global markets with versatile surfaces for modern interiors.",
 ];
 
 export default function AboutUs() {
@@ -106,39 +94,24 @@ export default function AboutUs() {
                   className="heading text-anime-style-3"
                   data-cursor="-opaque"
                 >
-                  Designing Spaces That Feel Like LUXURY Home
+                  Laminates made for better spaces
                 </h2>
-                <p className="wow fadeInUp" data-wow-delay="0.2s">
-                  We create elegant, high end interiors that reflect comfort,
-                  sophistication, and timeless beauty turning everyday living
-                  into a luxurious experience.
-                </p>
-              </div>
-
-              {/* About Body */}
-              <div
-                className="about-us-body-elite wow fadeInUp"
-                data-wow-delay="0.4s"
-              >
-                {/* About Items */}
-                <div className="about-item-list-elite">
-                  {aboutItems.map((item) => (
-                    <div className="about-us-item-elite" key={item.id}>
-                      <div className="icon-box">
-                        <img src={item.icon} alt={item.title} />
-                      </div>
-                      <div className="about-us-item-content-elite">
-                        <h3 className="">{item.title}</h3>
-                        <p>{item.description}</p>
-                      </div>
-                    </div>
+                <div className="about-us-story-elite">
+                  {companyStory.map((paragraph, index) => (
+                    <p
+                      className="wow fadeInUp"
+                      data-wow-delay={`${0.2 + index * 0.1}s`}
+                      key={paragraph}
+                    >
+                      {paragraph}
+                    </p>
                   ))}
                 </div>
-              </div>ww
+              </div>
 
               <div
                 className="about-us-btn-elite wow fadeInUp"
-                data-wow-delay="0.6s"
+                data-wow-delay="0.5s"
               >
                 <Link href="/about-us" className="btn-default">
                   More About Us

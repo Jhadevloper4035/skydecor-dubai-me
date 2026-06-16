@@ -82,7 +82,7 @@ export default function Nav() {
         </div>
       </li>
 
-      {/* <li
+      <li
         className={`menu-item ${
           pathname.split("/")[1] === "career" ? "active" : ""
         }`}
@@ -90,7 +90,7 @@ export default function Nav() {
         <Link href="/career" className="item-link">
           Career
         </Link>
-      </li> */}
+      </li>
 
       <li
         className={`menu-item ${
@@ -102,52 +102,42 @@ export default function Nav() {
         </Link>
       </li>
 
-
       <li
-  className={`menu-item position-relative has-submenu ${
-    otherPageLinks.some(
-      (link) =>
-        link.href.split("/")[1] === pathname.split("/")[1],
-    )
-      ? "active"
-      : ""
-  }`}
->
-  <Link
-    href="/resources"
-    className="item-link"
-    aria-haspopup="true"
-  >
-    Resources
-
-    <span className="sd-dropdown-indicator" aria-hidden="true">
-      <svg viewBox="0 0 12 8" focusable="false">
-        <path d="M1 1.5L6 6.5L11 1.5" />
-      </svg>
-    </span>
-  </Link>
-
-  <div className="sub-menu submenu-default">
-    <ul className="menu-list">
-      {otherPageLinks.map((link) => (
-        <li
-          key={link.href}
-          className={`menu-item-li ${
-            pathname.split("/")[1] === link.href.split("/")[1]
-              ? "active"
-              : ""
-          }`}
-        >
-          <Link href={link.href} className="menu-link-text">
-            {link.name}
-          </Link>
-        </li>
-      ))}
-    </ul>
-  </div>
-</li>
-
-     
+        className={`menu-item position-relative has-submenu ${
+          [...otherPageLinks].some(
+            (elm) => elm.href.split("/")[1] == pathname.split("/")[1],
+          )
+            ? "active"
+            : ""
+        } `}
+      >
+        <button type="button" className="item-link">
+          Home
+          <span className="sd-dropdown-indicator" aria-hidden="true">
+            <svg viewBox="0 0 12 8" focusable="false">
+              <path d="M1 1.5L6 6.5L11 1.5" />
+            </svg>
+          </span>
+        </button>
+        <div className="sub-menu submenu-default">
+          <ul className="menu-list">
+            {otherPageLinks.map((link, index) => (
+              <li
+                key={index}
+                className={`menu-item-li ${
+                  pathname.split("/")[1] == link.href.split("/")[1]
+                    ? "active"
+                    : ""
+                } `}
+              >
+                <Link href={link.href} className="menu-link-text">
+                {link.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </li>
 
 
 

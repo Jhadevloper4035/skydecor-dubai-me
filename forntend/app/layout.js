@@ -1,7 +1,6 @@
 "use client";
 
 import Script from 'next/script';
-import Topbar from "@/components/headers/Topbar";
 import Header1 from "@/components/headers/Header1";
 import Footer1 from "@/components/footers/Footer1";
 import GlobalSpinner from "@/components/common/GlobalSpinner";
@@ -177,7 +176,6 @@ export default function RootLayout({ children }) {
             <Suspense fallback={null}>
               <RouteLoadingController />
             </Suspense>
-            <Topbar />
             <Header1 />
             <div id="wrapper">{children}</div>
             <Footer1 />

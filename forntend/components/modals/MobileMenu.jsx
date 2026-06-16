@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import { contactDetails } from "@/data/contactDetails";
 import { otherPageLinks, productNavigation } from "@/data/menu";
 import { usePathname } from "next/navigation";
 
@@ -159,6 +160,18 @@ export default function MobileMenu() {
               </li>
 
               <li className="nav-mb-item">
+                <Link
+                  href="/certificates"
+                  className={`mb-menu-link ${
+                    isSameSection(pathname, "/certificates") ? "active" : ""
+                  }`}
+                  {...dismissOffcanvas}
+                >
+                  <span>Certificates</span>
+                </Link>
+              </li>
+
+              <li className="nav-mb-item">
                 <button
                   type="button"
                   className={`collapsed mb-menu-link ${
@@ -240,12 +253,12 @@ export default function MobileMenu() {
             <ul className="mb-info">
               <li>
                 <i className="icon icon-mail" />
-                <a href="mailto:info@skydecor.eu">info@skydecor.eu</a>
+                <a href={`mailto:${contactDetails.email}`}>{contactDetails.email}</a>
               </li>
               <li>
                 <i className="icon icon-phone" />
                 <a
-                  href="https://alvo.chat/3Ijc"
+                  href={contactDetails.whatsappHref}
                   target="_blank"
                   rel="noopener noreferrer"
                 >

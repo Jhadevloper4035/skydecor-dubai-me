@@ -238,16 +238,16 @@ h3 {
   width: 100%;
 }
 
-#header.header-style-4 .main-header .wrapper-header {
+Home.main-header .wrapper-header {
   min-height: 84px;
   padding: 14px 0 2px;
 }
 
-#header.header-style-4 .header-bottom .wrapper-header {
+Home.header-bottom .wrapper-header {
   min-height: 60px;
 }
 
-#header.header-style-4 .box-nav-ul {
+Home.box-nav-ul {
   flex-wrap: nowrap;
   justify-content: center !important;
   gap: 28px;
@@ -255,28 +255,28 @@ h3 {
   margin: 0 auto;
 }
 
-#header.header-style-4 .box-nav-ul .menu-item {
+Home.box-nav-ul .menu-item {
   display: flex;
   flex: 0 0 auto;
   justify-content: center;
 }
 
-#header.header-style-4 .header-bottom .box-nav-ul .menu-item {
+Home.header-bottom .box-nav-ul .menu-item {
   padding: 0;
 }
 
-#header.header-style-4 .box-nav-ul .item-link {
+Home.box-nav-ul .item-link {
   font-weight: 400;
   justify-content: center;
   line-height: 24px;
   white-space: nowrap;
 }
 
-#header.header-style-4 .header-bottom .box-nav-ul .item-link {
+Home.header-bottom .box-nav-ul .item-link {
   color: var(--white);
 }
 
-#header.header-style-4 .box-nav-ul .sd-menu-button {
+Home.box-nav-ul .sd-menu-button {
   appearance: none;
   border: 0;
   background: transparent;
@@ -284,7 +284,7 @@ h3 {
   cursor: pointer;
 }
 
-#header.header-style-4 .box-nav-ul .sd-dropdown-indicator {
+Home.box-nav-ul .sd-dropdown-indicator {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -293,7 +293,7 @@ h3 {
   line-height: 1;
 }
 
-#header.header-style-4 .box-nav-ul .sd-dropdown-indicator svg {
+Home.box-nav-ul .sd-dropdown-indicator svg {
   display: block;
   width: 10px;
   height: 8px;
@@ -301,7 +301,7 @@ h3 {
   transition: transform 0.2s ease;
 }
 
-#header.header-style-4 .box-nav-ul .sd-dropdown-indicator path {
+Home.box-nav-ul .sd-dropdown-indicator path {
   fill: none;
   stroke: currentColor;
   stroke-width: 1.8;
@@ -309,14 +309,14 @@ h3 {
   stroke-linejoin: round;
 }
 
-#header.header-style-4 .box-nav-ul .has-submenu:hover .sd-dropdown-indicator svg {
+Home.box-nav-ul .has-submenu:hover .sd-dropdown-indicator svg {
   transform: rotate(180deg);
 }
 
 @media (min-width: 1200px) {
-  #header.header-style-4 .nav-icon .nav-account,
-  #header.header-style-4 .nav-icon .nav-wishlist,
-  #header.header-style-4 .nav-icon .nav-cart {
+  Home.nav-icon .nav-account,
+  Home.nav-icon .nav-wishlist,
+  Home.nav-icon .nav-cart {
     display: inline-flex !important;
   }
 }
