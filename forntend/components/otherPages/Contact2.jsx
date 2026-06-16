@@ -1,172 +1,283 @@
 "use client";
-import { submitGeneralEnquiry } from "@/lib/productsApi";
-import React, { useRef, useState } from "react";
+
+import { contactDetails } from "@/data/contactDetails";
+import { productNavigation } from "@/data/menu";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
+
+const enquiryTypes = [
+  "Product information",
+  "Catalogue request",
+  "Sample request",
+  "Dealer / distributor enquiry",
+  "Project quotation",
+  "Technical support",
+];
+
+const initialFormState = {
+  name: "",
+  email: "",
+  phone: "",
+  company: "",
+  city: "",
+  enquiryType: enquiryTypes[0],
+  productLineup: [],
+  message: "",
+  consent: false,
+  website: "",
+};
 
 export default function Contact2() {
-  const formRef = useRef();
-  const [success, setSuccess] = useState(false);
-  const [showMessage, setShowMessage] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const router = useRouter();
+  const [formData, setFormData] = useState(initialFormState);
+  const [status, setStatus] = useState("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+  const productLineupOptions = productNavigation.ranges.map((range) => range.name);
+  const isSubmitting = status === "submitting";
 
-  const handleShowMessage = () => {
-    setShowMessage(true);
-    setTimeout(() => {
-      setShowMessage(false);
-    }, 2000);
+  const updateField = (event) => {
+    const { checked, name, type, value } = event.target;
+
+    if (name === "productLineup") {
+      setFormData((current) => ({
+        ...current,
+        productLineup: checked
+          ? [...current.productLineup, value]
+          : current.productLineup.filter((item) => item !== value),
+      }));
+      return;
+    }
+
+    setFormData((current) => ({
+      ...current,
+      [name]: type === "checkbox" ? checked : value,
+    }));
   };
 
-  const sendMail = async (e) => {
-    e.preventDefault();
-    const formData = new FormData(formRef.current);
-    setIsSubmitting(true);
+  const submitLead = async (event) => {
+    event.preventDefault();
+    setStatus("submitting");
+    setErrorMessage("");
 
     try {
-      await submitGeneralEnquiry({
-        name: formData.get("name"),
-        email: formData.get("email"),
-        phone: formData.get("phone"),
-        subject: "Website enquiry",
-        service: "general",
-        message: formData.get("message"),
+      const response = await fetch("/api/contact-leads", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
       });
-      setSuccess(true);
-      formRef.current.reset();
-    } catch {
-      setSuccess(false);
-    } finally {
-      setIsSubmitting(false);
-      handleShowMessage();
+      const data = await response.json().catch(() => ({}));
+
+      if (!response.ok) {
+        throw new Error(data.message || "Unable to submit your enquiry.");
+      }
+
+      setFormData(initialFormState);
+      router.push(`/thank-you?lead=${encodeURIComponent(data.data?.leadId || "")}`);
+    } catch (error) {
+      setStatus("failed");
+      setErrorMessage(
+        error.message || "We could not submit your enquiry. Please try again."
+      );
     }
   };
+
   return (
-    <section className="flat-spacing">
+    <section className="flat-spacing sd-contact-lead">
       <div className="container">
-        <div className="contact-us-content">
-          <div className="left">
-            <h4>Get In Touch</h4>
-            <p className="text-secondary-2">
-              Tell us about your project, product needs, or sample request.
+        <div className="sd-contact-lead__layout">
+          <div className="sd-contact-lead__intro">
+            <span className="sd-events-kicker">Get in Touch</span>
+            <h2>Let us help with your project</h2>
+            <p>
+              Send your product interest, sample request, or project details.
+              Our Dubai team will get back to you shortly.
             </p>
-            <div
-              className={`tfSubscribeMsg  footer-sub-element ${
-                showMessage ? "active" : ""
-              }`}
-            >
-              {success ? (
-                <p style={{ color: "rgb(52, 168, 83)" }}>
-                  Your message has been sent. Our team will contact you soon.
-                </p>
-              ) : (
-                <p style={{ color: "red" }}>
-                  We could not send your message. Please email us directly.
-                </p>
-              )}
-            </div>
-            <form
-              onSubmit={sendMail}
-              ref={formRef}
-              id="contactform"
-              className="form-leave-comment"
-            >
-              <div className="wrap">
-                <div className="cols">
-                  <fieldset className="">
-                    <input
-                      className=""
-                      type="text"
-                      placeholder="Your Name*"
-                      name="name"
-                      id="name"
-                      tabIndex={2}
-                      defaultValue=""
-                      aria-required="true"
-                      required
-                    />
-                  </fieldset>
-                  <fieldset className="">
-                    <input
-                      className=""
-                      type="email"
-                      placeholder="Your Email*"
-                      name="email"
-                      id="email"
-                      tabIndex={2}
-                      defaultValue=""
-                      aria-required="true"
-                      required
-                    />
-                  </fieldset>
-                </div>
-                <fieldset>
-                  <input
-                    type="tel"
-                    placeholder="Your Phone*"
-                    name="phone"
-                    id="phone"
-                    tabIndex={3}
-                    aria-required="true"
-                    required
-                  />
-                </fieldset>
-                <fieldset className="">
-                  <textarea
-                    name="message"
-                    id="message"
-                    rows={4}
-                    placeholder="Your Message*"
-                    tabIndex={4}
-                    aria-required="true"
-                    required
-                    defaultValue={""}
-                  />
-                </fieldset>
+
+            <div className="sd-contact-lead__info">
+              <div>
+                <span>Call</span>
+                <a href={contactDetails.phoneHref}>{contactDetails.phoneLabel}</a>
               </div>
-              <div className="button-submit send-wrap">
-                <button
-                  className="tf-btn btn-fill"
-                  type="submit"
-                  disabled={isSubmitting}
-                >
-                  <span className="text text-button">
-                    {isSubmitting ? "Sending..." : "Send message"}
-                  </span>
-                </button>
+              <div>
+                <span>Email</span>
+                <a href={`mailto:${contactDetails.email}`}>{contactDetails.email}</a>
               </div>
-            </form>
-          </div>
-          <div className="right">
-            <h4>Information</h4>
-            <div className="mb_20">
-              <div className="text-title mb_8">WhatsApp:</div>
-              <p className="text-secondary">
+              <div>
+                <span>WhatsApp</span>
                 <a
-                  href="https://alvo.chat/3Ijc"
+                  href={contactDetails.whatsappHref}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Start a conversation
+                  Chat with SkyDecor
                 </a>
-              </p>
-            </div>
-            <div className="mb_20">
-              <div className="text-title mb_8">Email:</div>
-              <p className="text-secondary">
-                <a href="mailto:info@skydecor.eu">info@skydecor.eu</a>
-              </p>
-            </div>
-            <div className="mb_20">
-              <div className="text-title mb_8">Address:</div>
-              <p className="text-secondary">
-                Dubai, United Arab Emirates
-              </p>
-            </div>
-            <div>
-              <div className="text-title mb_8">Enquiries:</div>
-              <p className="text-secondary">
-                Product selection, samples, catalogues, and project support.
-              </p>
+              </div>
             </div>
           </div>
+
+          <form className="sd-contact-lead__form" onSubmit={submitLead}>
+            <input
+              type="text"
+              name="website"
+              value={formData.website}
+              onChange={updateField}
+              className="sd-contact-lead__honeypot"
+              tabIndex="-1"
+              autoComplete="off"
+              aria-hidden="true"
+            />
+
+            <div className="sd-contact-lead__grid">
+              <fieldset>
+                <label htmlFor="contact-lead-name">Full name *</label>
+                <input
+                  id="contact-lead-name"
+                  name="name"
+                  type="text"
+                  placeholder="Your name"
+                  value={formData.name}
+                  onChange={updateField}
+                  autoComplete="name"
+                  maxLength={120}
+                  required
+                />
+              </fieldset>
+              <fieldset>
+                <label htmlFor="contact-lead-phone">Phone number *</label>
+                <input
+                  id="contact-lead-phone"
+                  name="phone"
+                  type="tel"
+                  placeholder="+971 ..."
+                  value={formData.phone}
+                  onChange={updateField}
+                  autoComplete="tel"
+                  maxLength={40}
+                  required
+                />
+              </fieldset>
+              <fieldset>
+                <label htmlFor="contact-lead-email">Email address *</label>
+                <input
+                  id="contact-lead-email"
+                  name="email"
+                  type="email"
+                  placeholder="you@example.com"
+                  value={formData.email}
+                  onChange={updateField}
+                  autoComplete="email"
+                  maxLength={180}
+                  required
+                />
+              </fieldset>
+              <fieldset>
+                <label htmlFor="contact-lead-company">Company</label>
+                <input
+                  id="contact-lead-company"
+                  name="company"
+                  type="text"
+                  placeholder="Company name"
+                  value={formData.company}
+                  onChange={updateField}
+                  autoComplete="organization"
+                  maxLength={160}
+                />
+              </fieldset>
+              <fieldset>
+                <label htmlFor="contact-lead-city">City / Emirate</label>
+                <input
+                  id="contact-lead-city"
+                  name="city"
+                  type="text"
+                  placeholder="Dubai"
+                  value={formData.city}
+                  onChange={updateField}
+                  autoComplete="address-level2"
+                  maxLength={120}
+                />
+              </fieldset>
+              <fieldset>
+                <label htmlFor="contact-lead-type">Enquiry type *</label>
+                <select
+                  id="contact-lead-type"
+                  name="enquiryType"
+                  value={formData.enquiryType}
+                  onChange={updateField}
+                  required
+                >
+                  {enquiryTypes.map((type) => (
+                    <option value={type} key={type}>
+                      {type}
+                    </option>
+                  ))}
+                </select>
+              </fieldset>
+            </div>
+
+            <fieldset className="sd-contact-lead__lineup">
+              <legend>Product interest</legend>
+              <div>
+                {productLineupOptions.map((productLine) => (
+                  <label key={productLine}>
+                    <input
+                      type="checkbox"
+                      name="productLineup"
+                      value={productLine}
+                      checked={formData.productLineup.includes(productLine)}
+                      onChange={updateField}
+                    />
+                    <span>{productLine}</span>
+                  </label>
+                ))}
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <label htmlFor="contact-lead-message">Message *</label>
+              <textarea
+                id="contact-lead-message"
+                name="message"
+                rows={5}
+                value={formData.message}
+                onChange={updateField}
+                placeholder="Product, quantity, project location, timeline..."
+                maxLength={2500}
+                required
+              />
+            </fieldset>
+
+            <label className="sd-contact-lead__consent">
+              <input
+                type="checkbox"
+                name="consent"
+                checked={formData.consent}
+                onChange={updateField}
+                required
+              />
+              <span>
+                I agree to be contacted by SkyDecor about this enquiry.
+              </span>
+            </label>
+
+            {errorMessage ? (
+              <p className="sd-contact-lead__error" role="alert">
+                {errorMessage}
+              </p>
+            ) : null}
+
+            <button
+              className="tf-btn btn-fill justify-content-center sd-contact-lead__submit"
+              type="submit"
+              disabled={isSubmitting || !formData.consent}
+            >
+              <span className="text text-button">
+                {isSubmitting ? "Sending..." : "Send Enquiry"}
+              </span>
+              <i className="icon icon-arrowUpRight" />
+            </button>
+          </form>
         </div>
       </div>
     </section>

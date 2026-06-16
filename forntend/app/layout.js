@@ -1,9 +1,9 @@
 "use client";
 
-import Script from 'next/script';
 import Header1 from "@/components/headers/Header1";
 import Footer1 from "@/components/footers/Footer1";
 import GlobalSpinner from "@/components/common/GlobalSpinner";
+import LegacyScripts from "@/components/common/LegacyScripts";
 import RouteLoadingController from "@/components/common/RouteLoadingController";
 
 import '@fortawesome/fontawesome-free/css/all.min.css'
@@ -168,7 +168,7 @@ export default function RootLayout({ children }) {
     });
   }, [pathname]);
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" data-scroll-behavior="smooth" suppressHydrationWarning>
       <body className="popup-loader" suppressHydrationWarning>
         <StoreProvider>
           <Context>
@@ -183,36 +183,9 @@ export default function RootLayout({ children }) {
             <Compare />
             <MobileMenu />
             <SearchModal />
+            <LegacyScripts />
           </Context>
         </StoreProvider>
-
-
-
-
-        <Script src="/js/jquery-3.7.1.min.js" strategy="beforeInteractive" />
-        <Script src="/js/bootstrap.min.js" strategy="afterInteractive" />
-        <Script src="/js/gsap.min.js" strategy="afterInteractive" />
-        <Script src="/js/ScrollTrigger.min.js" strategy="afterInteractive" />
-        <Script src="/js/SmoothScroll.js" strategy="afterInteractive" />
-        <Script src="/js/SplitText.min.js" strategy="afterInteractive" />
-
-        {/* 3. jQuery plugins — after jQuery */}
-        <Script src="/js/jquery.counterup.min.js" strategy="afterInteractive" />
-        <Script src="/js/jquery.magnific-popup.min.js" strategy="afterInteractive" />
-        <Script src="/js/jquery.mb.YTPlayer.min.js" strategy="afterInteractive" />
-        <Script src="/js/jquery.slicknav.js" strategy="afterInteractive" />
-        <Script src="/js/jquery.waypoints.min.js" strategy="afterInteractive" />
-
-        {/* 4. Other plugins */}
-        <Script src="/js/swiper-bundle.min.js" strategy="afterInteractive" />
-        <Script src="/js/magiccursor.js" strategy="afterInteractive" />
-        <Script src="/js/parallaxie.js" strategy="afterInteractive" />
-        <Script src="/js/wow.min.js" strategy="afterInteractive" />
-        <Script src="/js/validator.min.js" strategy="afterInteractive" />
-
-
-        <Script src="/js/function.js" strategy="afterInteractive" />
-
       </body>
     </html>
   );

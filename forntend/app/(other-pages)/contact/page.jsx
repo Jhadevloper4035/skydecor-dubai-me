@@ -10,6 +10,7 @@ export const metadata = {
 export default function ContactPage() {
   return (
     <>
+      <Contact2 />
       <iframe
         src="https://www.google.com/maps?q=Dubai%2C%20United%20Arab%20Emirates&output=embed"
         title="SkyDecor Dubai location"
@@ -19,7 +20,6 @@ export default function ContactPage() {
         allowFullScreen=""
         loading="lazy"
       />
-      <Contact2 />
     </>
   );
 }
