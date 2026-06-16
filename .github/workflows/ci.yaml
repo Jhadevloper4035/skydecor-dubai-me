@@ -289,4 +289,4 @@ jobs:
             curl -fsS -H "Host: skydecor.me" "$BASE_URL/api/v1/products" >/dev/null
 
             docker image prune -f
-            echo "Deploy successful: $GIT_COMMIT_SHA"
+            echo "Deploy successfully: $GIT_COMMIT_SHA"
