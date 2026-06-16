@@ -195,7 +195,7 @@ export default function SearchModal() {
 
     if (!trimmedQuery) return;
 
-    router.push(`/shop-default-grid?query=${encodeURIComponent(trimmedQuery)}`);
+    router.push(`/products?query=${encodeURIComponent(trimmedQuery)}`);
   };
 
   return (

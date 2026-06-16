@@ -1,11 +1,7 @@
 import CareerDetail from "@/components/careers/CareerDetail";
-import { getJobBySlug, localJobs } from "@/lib/careersApi";
+import { getJobBySlug } from "@/lib/careersApi";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-
-export function generateStaticParams() {
-  return localJobs.map((job) => ({ slug: job.slug }));
-}
 
 export async function generateMetadata({ params }) {
   const resolvedParams = await params;
@@ -42,7 +38,7 @@ export default async function CareerDetailPage({ params }) {
               <ul className="breadcrumbs d-flex align-items-center justify-content-center">
                 <li>
                   <Link className="link" href="/">
-                    Homepage
+                    Home
                   </Link>
                 </li>
                 <li>

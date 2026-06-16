@@ -2,7 +2,6 @@
 
 import React, { useEffect } from "react";
 import Sidebar from "./Sidebar";
-import Pagination from "../common/Pagination";
 import Link from "next/link";
 import Image from "next/image";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
@@ -48,25 +47,8 @@ export default function BlogDefault() {
                             <i className="icon-user" />
                           </div>
                           <p>
-                            by{" "}
-                            <a className="link" href="#">
-                              {post.author}
-                            </a>
+                            by <span>{post.author}</span>
                           </p>
-                        </div>
-                      </div>
-                      <div className="meta">
-                        <div className="meta-item gap-4">
-                          <div className="icon">
-                            <i className="icon-comment" />
-                          </div>
-                          <p>12</p>
-                        </div>
-                        <div className="meta-item gap-4">
-                          <div className="icon">
-                            <i className="icon-eye" />
-                          </div>
-                          <p>260.2K</p>
                         </div>
                       </div>
                     </div>
@@ -80,10 +62,6 @@ export default function BlogDefault() {
                 </div>{" "}
               </React.Fragment>
             ))}
-
-            <ul className="wg-pagination">
-              <Pagination />
-            </ul>
           </div>
           <div className="col-lg-4">
             <Sidebar />

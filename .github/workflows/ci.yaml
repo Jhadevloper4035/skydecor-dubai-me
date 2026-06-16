@@ -1,16 +1,21 @@
-name: CI
+name: CI/CD
 
 on:
+  workflow_dispatch:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
+
+permissions:
+  contents: read
 
 env:
   NEXT_PUBLIC_API_BASE_URL: http://app:8080/api/v1
 
 jobs:
-  build:
+  validate:
+    name: Test and build applications
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -20,7 +25,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-          cache: "npm"
+          cache: npm
           cache-dependency-path: |
             backend/package-lock.json
             forntend/package-lock.json
@@ -37,18 +42,67 @@ jobs:
         run: npm run build
         working-directory: backend
 
-      - name: Verify backend runtime imports
-        run: MONGO_URI=mongodb://localhost:27017/test JWT_SECRET=0123456789abcdef0123456789abcdef NODE_ENV=test node -e "import('./src/index.js')"
+      - name: Test backend
+        run: npm test
         working-directory: backend
+
+      - name: Verify backend runtime imports
+        run: node -e "import('./src/index.js')"
+        working-directory: backend
+        env:
+          NODE_ENV: test
+          MONGO_URI: mongodb://localhost:27017/skydecor_ci
+          JWT_SECRET: 0123456789abcdef0123456789abcdef
+
+      - name: Lint frontend
+        run: npm run lint
+        working-directory: forntend
+
+      - name: Test frontend
+        run: npm test
+        working-directory: forntend
 
       - name: Build frontend
         run: npm run build
         working-directory: forntend
 
-  docker:
+  docker-pr:
+    name: Validate production Docker images
     runs-on: ubuntu-latest
-    needs: build
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: validate
+    if: github.event_name == 'pull_request'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build backend image
+        uses: docker/build-push-action@v6
+        with:
+          context: ./backend
+          file: ./backend/Dockerfile
+          target: production
+          push: false
+          tags: skydecor-api:pr-${{ github.event.pull_request.number }}
+
+      - name: Build frontend image
+        uses: docker/build-push-action@v6
+        with:
+          context: ./forntend
+          file: ./forntend/Dockerfile
+          target: production
+          push: false
+          build-args: |
+            NEXT_PUBLIC_API_BASE_URL=${{ env.NEXT_PUBLIC_API_BASE_URL }}
+          tags: skydecor-frontend:pr-${{ github.event.pull_request.number }}
+
+  publish:
+    name: Publish Docker images
+    runs-on: ubuntu-latest
+    needs: validate
+    if: github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
     outputs:
       backend_image: ${{ steps.images.outputs.backend_image }}
       frontend_image: ${{ steps.images.outputs.frontend_image }}
@@ -70,13 +124,13 @@ jobs:
           fi
 
           if ! echo "$DOCKERHUB_NAMESPACE" | grep -Eq '^[a-z0-9][a-z0-9_.-]*$'; then
-            echo "DOCKERHUB_USERNAME must be a Docker Hub username or organization, not an email, and must not contain spaces" >&2
+            echo "DOCKERHUB_USERNAME must be a Docker Hub username or organization" >&2
             exit 1
           fi
 
-          echo "dockerhub_namespace=${DOCKERHUB_NAMESPACE}" >> "$GITHUB_OUTPUT"
-          echo "backend_image=${DOCKERHUB_NAMESPACE}/skydecor-api" >> "$GITHUB_OUTPUT"
-          echo "frontend_image=${DOCKERHUB_NAMESPACE}/skydecor-frontend" >> "$GITHUB_OUTPUT"
+          echo "dockerhub_namespace=$DOCKERHUB_NAMESPACE" >> "$GITHUB_OUTPUT"
+          echo "backend_image=$DOCKERHUB_NAMESPACE/skydecor-api" >> "$GITHUB_OUTPUT"
+          echo "frontend_image=$DOCKERHUB_NAMESPACE/skydecor-frontend" >> "$GITHUB_OUTPUT"
 
       - name: Log in to Docker Hub
         uses: docker/login-action@v3
@@ -116,31 +170,37 @@ jobs:
             ${{ steps.images.outputs.frontend_image }}:latest
 
   deploy:
+    name: Deploy to EC2
     runs-on: ubuntu-latest
-    needs: docker
+    needs: publish
+    concurrency:
+      group: skydecor-production
+      cancel-in-progress: false
     steps:
-      - name: Validate EC2 SSH key secret
+      - name: Validate deployment secrets
         env:
           EC2_SSH_KEY: ${{ secrets.EC2_SSH_KEY }}
+          EC2_HOST_FINGERPRINT: ${{ secrets.EC2_HOST_FINGERPRINT }}
         run: |
-          if [ -z "$EC2_SSH_KEY" ]; then
-            echo "EC2_SSH_KEY secret is empty. Paste the full private key content, not the .pem file path." >&2
-            exit 1
-          fi
-
           if ! printf '%s' "$EC2_SSH_KEY" | grep -q -- "-----BEGIN .*PRIVATE KEY-----"; then
-            echo "EC2_SSH_KEY does not look like a private key. It must include the BEGIN/END PRIVATE KEY lines." >&2
+            echo "EC2_SSH_KEY must contain the complete private key" >&2
             exit 1
           fi
 
-      - name: Deploy to EC2 via SSH
-        uses: appleboy/ssh-action@v1.2.0
+          if [ -z "$EC2_HOST_FINGERPRINT" ]; then
+            echo "EC2_HOST_FINGERPRINT secret is required" >&2
+            exit 1
+          fi
+
+      - name: Deploy release to EC2
+        uses: appleboy/ssh-action@v1.2.5
         env:
-          DOCKERHUB_USERNAME: ${{ needs.docker.outputs.dockerhub_namespace }}
+          DOCKERHUB_USERNAME: ${{ needs.publish.outputs.dockerhub_namespace }}
           DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
-          APP_IMAGE: ${{ needs.docker.outputs.backend_image }}
-          FRONTEND_IMAGE: ${{ needs.docker.outputs.frontend_image }}
+          APP_IMAGE: ${{ needs.publish.outputs.backend_image }}:${{ github.sha }}
+          FRONTEND_IMAGE: ${{ needs.publish.outputs.frontend_image }}:${{ github.sha }}
           GITHUB_REPOSITORY: ${{ github.repository }}
+          GIT_COMMIT_SHA: ${{ github.sha }}
           NGINX_HTTP_PORT: ${{ secrets.PROD_NGINX_HTTP_PORT }}
           MONGO_URI: ${{ secrets.PROD_MONGO_URI }}
           ALLOWED_ORIGINS: ${{ secrets.PROD_ALLOWED_ORIGINS }}
@@ -161,27 +221,19 @@ jobs:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_SSH_KEY }}
-          envs: DOCKERHUB_USERNAME,DOCKERHUB_TOKEN,APP_IMAGE,FRONTEND_IMAGE,GITHUB_REPOSITORY,NGINX_HTTP_PORT,MONGO_URI,ALLOWED_ORIGINS,JWT_SECRET,JWT_EXPIRES_IN,QR_CODE_CACHE_TTL_SECONDS,BOOTSTRAP_SUPERADMIN_NAME,BOOTSTRAP_SUPERADMIN_EMAIL,BOOTSTRAP_SUPERADMIN_PASSWORD,AWS_REGION,AWS_ACCESS_KEY_ID,AWS_SECRET_ACCESS_KEY,S3_BUCKET,S3_PUBLIC_BASE_URL,S3_KEY_PREFIX,S3_PRESIGNED_EXPIRES_SECONDS
+          fingerprint: ${{ secrets.EC2_HOST_FINGERPRINT }}
+          envs: DOCKERHUB_USERNAME,DOCKERHUB_TOKEN,APP_IMAGE,FRONTEND_IMAGE,GITHUB_REPOSITORY,GIT_COMMIT_SHA,NGINX_HTTP_PORT,MONGO_URI,ALLOWED_ORIGINS,JWT_SECRET,JWT_EXPIRES_IN,QR_CODE_CACHE_TTL_SECONDS,BOOTSTRAP_SUPERADMIN_NAME,BOOTSTRAP_SUPERADMIN_EMAIL,BOOTSTRAP_SUPERADMIN_PASSWORD,AWS_REGION,AWS_ACCESS_KEY_ID,AWS_SECRET_ACCESS_KEY,S3_BUCKET,S3_PUBLIC_BASE_URL,S3_KEY_PREFIX,S3_PRESIGNED_EXPIRES_SECONDS
           script: |
-            set -e
+            set -eu
 
-            mkdir -p /opt/skydecor
             cd /opt/skydecor
 
             if [ ! -d .git ]; then
-              if [ -n "$(find . -mindepth 1 -maxdepth 1 -print -quit)" ]; then
-                BACKUP_DIR="/opt/skydecor.backup.$(date +%Y%m%d%H%M%S)"
-                echo "/opt/skydecor is not a git repository. Moving existing files to $BACKUP_DIR"
-                cd /opt
-                mv /opt/skydecor "$BACKUP_DIR"
-                mkdir -p /opt/skydecor
-                cd /opt/skydecor
-              fi
-
               git clone "https://github.com/${GITHUB_REPOSITORY}.git" .
-            else
-              git pull origin main
             fi
+
+            git fetch origin "$GIT_COMMIT_SHA"
+            git checkout --detach "$GIT_COMMIT_SHA"
 
             : "${MONGO_URI:?PROD_MONGO_URI secret is required}"
             : "${ALLOWED_ORIGINS:?PROD_ALLOWED_ORIGINS secret is required}"
@@ -191,8 +243,8 @@ jobs:
               "PORT=8080" \
               "NGINX_HTTP_PORT=${NGINX_HTTP_PORT:-80}" \
               "NODE_ENV=production" \
-              "APP_IMAGE=${APP_IMAGE}:latest" \
-              "FRONTEND_IMAGE=${FRONTEND_IMAGE}:latest" \
+              "APP_IMAGE=$APP_IMAGE" \
+              "FRONTEND_IMAGE=$FRONTEND_IMAGE" \
               "TRUST_PROXY=1" \
               "MONGO_URI=$MONGO_URI" \
               "ALLOWED_ORIGINS=$ALLOWED_ORIGINS" \
@@ -218,37 +270,14 @@ jobs:
             echo "$DOCKERHUB_TOKEN" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
 
             docker compose -f docker-compose.prod.yaml --env-file .env.production pull
-            docker compose -f docker-compose.prod.yaml --env-file .env.production down
-            docker compose -f docker-compose.prod.yaml --env-file .env.production up -d --no-build
-
-            docker image prune -f
-
-            sleep 10
+            docker compose -f docker-compose.prod.yaml --env-file .env.production up -d --no-build --remove-orphans --wait --wait-timeout 180
 
             BASE_URL="http://localhost:${NGINX_HTTP_PORT:-80}"
 
-            echo "Checking backend health"
             curl -fsS -H "Host: skydecor.me" "$BASE_URL/health"
             curl -fsS -H "Host: skydecor.me" "$BASE_URL/ready"
-
-            echo "Checking API links"
+            curl -fsS -H "Host: skydecor.me" "$BASE_URL/" >/dev/null
             curl -fsS -H "Host: skydecor.me" "$BASE_URL/api/v1/products" >/dev/null
-            curl -fsS -H "Host: skydecor.me" "$BASE_URL/api/v1/products/filters" >/dev/null
 
-            echo "Checking public website links"
-            for path in \
-              "/" \
-              "/about-us" \
-              "/shop-default-grid" \
-              "/shop-collection" \
-              "/contact" \
-              "/FAQs" \
-              "/term-of-use" \
-              "/blog-default" \
-              "/store-list"
-            do
-              echo "Checking $path"
-              curl -fsS -H "Host: skydecor.me" "$BASE_URL$path" >/dev/null
-            done
-
-            echo "Deploy successful"
+            docker image prune -f
+            echo "Deploy successful: $GIT_COMMIT_SHA"

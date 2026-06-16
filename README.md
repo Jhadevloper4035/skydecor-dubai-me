@@ -213,6 +213,8 @@ docker compose --env-file .env.development --profile dev down
 
 ## Docker Production
 
+For the GitHub Actions, Docker Hub, and EC2 deployment setup, see [EC2_DEPLOYMENT.md](EC2_DEPLOYMENT.md).
+
 From the repo root:
 
 ```bash

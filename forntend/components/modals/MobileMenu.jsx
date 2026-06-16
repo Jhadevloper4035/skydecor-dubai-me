@@ -1,14 +1,8 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React from "react";
 import Link from "next/link";
-import { otherPageLinks } from "@/data/menu";
-import { buildProductNavigationLinks } from "@/lib/productsApi";
-import { useAppDispatch, useAppSelector } from "@/store/hooks";
-import {
-  fetchNavigationFilters,
-  selectNavigationFilterOptions,
-} from "@/store/productsSlice";
+import { otherPageLinks, productNavigation } from "@/data/menu";
 import { usePathname } from "next/navigation";
 
 const dismissOffcanvas = { "data-bs-dismiss": "offcanvas" };
@@ -18,17 +12,11 @@ const isSameSection = (pathname, href) =>
 
 export default function MobileMenu() {
   const pathname = usePathname();
-  const dispatch = useAppDispatch();
-  const navigationOptions = useAppSelector(selectNavigationFilterOptions);
-  const productMenus = buildProductNavigationLinks(navigationOptions);
-  const allProductsLink = productMenus.allProductsLink;
-  const laminatesLink = productMenus.laminatesLink;
-  const productTypeGroups = productMenus.productTypeGroups || [];
+  const allProductsLink = productNavigation.allProducts;
+  const mainRangeLinks = productNavigation.ranges;
   const productMenuLinks = [
     allProductsLink,
-    laminatesLink,
-    ...productMenus.productTypeLinks,
-    ...productMenus.categoryLinks,
+    ...mainRangeLinks,
   ];
   const resourceLinks = otherPageLinks.filter(
     (link) =>
@@ -36,10 +24,6 @@ export default function MobileMenu() {
         link.href
       )
   );
-
-  useEffect(() => {
-    dispatch(fetchNavigationFilters());
-  }, [dispatch]);
 
   return (
     <div className="offcanvas offcanvas-start canvas-mb" id="mobileMenu">
@@ -51,42 +35,6 @@ export default function MobileMenu() {
       <div className="mb-canvas-content">
         <div className="mb-body">
           <div className="mb-content-top">
-            <form className="form-search" onSubmit={(e) => e.preventDefault()}>
-              <fieldset className="text">
-                <input
-                  type="text"
-                  placeholder="What are you looking for?"
-                  name="text"
-                  tabIndex={0}
-                  defaultValue=""
-                  aria-required="true"
-                  required
-                />
-              </fieldset>
-              <button type="submit" aria-label="Search">
-                <svg
-                  width={24}
-                  height={24}
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z"
-                    stroke="#181818"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M20.9984 20.9999L16.6484 16.6499"
-                    stroke="#181818"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </button>
-            </form>
-
             <ul className="nav-ul-mb" id="wrapper-menu-navigation">
               <li className="nav-mb-item">
                 <Link
@@ -111,20 +59,30 @@ export default function MobileMenu() {
               </li>
 
               <li className="nav-mb-item">
-                <a
-                  href="#mobile-range-menu"
-                  className={`collapsed mb-menu-link ${
+                <div
+                  className={`mb-menu-link mobile-range-menu-row ${
                     productMenuLinks.some((link) => isSameSection(pathname, link.href))
                       ? "active"
                       : ""
                   }`}
-                  data-bs-toggle="collapse"
-                  aria-expanded="false"
-                  aria-controls="mobile-range-menu"
                 >
-                  <span>Our Range</span>
-                  <span className="btn-open-sub" />
-                </a>
+                  <Link
+                    href={allProductsLink.href}
+                    className="mobile-range-all-link"
+                    {...dismissOffcanvas}
+                  >
+                    Our Range
+                  </Link>
+                  <button
+                    type="button"
+                    className="btn-open-sub mobile-range-toggle collapsed"
+                    aria-label="Open product ranges"
+                    data-bs-target="#mobile-range-menu"
+                    data-bs-toggle="collapse"
+                    aria-expanded="false"
+                    aria-controls="mobile-range-menu"
+                  />
+                </div>
                 <div id="mobile-range-menu" className="collapse">
                   <ul className="sub-nav-menu">
                     <li>
@@ -139,20 +97,8 @@ export default function MobileMenu() {
                       </Link>
                     </li>
 
-                    <li>
-                      <Link
-                        href={laminatesLink.href}
-                        className={`sub-nav-link ${
-                          pathname === laminatesLink.href ? "active" : ""
-                        }`}
-                        {...dismissOffcanvas}
-                      >
-                        {laminatesLink.name}
-                      </Link>
-                    </li>
-
-                    {productTypeGroups.map((group, index) => {
-                      const groupId = `mobile-product-type-${index}`;
+                    {mainRangeLinks.map((group, index) => {
+                      const groupId = `mobile-product-range-${index}`;
                       const groupLinks = [
                         { href: group.href, name: `All ${group.name}` },
                         ...group.categoryLinks,
@@ -160,8 +106,8 @@ export default function MobileMenu() {
 
                       return (
                         <li key={group.name}>
-                          <a
-                            href={`#${groupId}`}
+                          <button
+                            type="button"
                             className={`sub-nav-link collapsed ${
                               groupLinks.some((link) =>
                                 isSameSection(pathname, link.href)
@@ -175,7 +121,7 @@ export default function MobileMenu() {
                           >
                             <span>{group.name}</span>
                             <span className="btn-open-sub" />
-                          </a>
+                          </button>
                           <div id={groupId} className="collapse">
                             <ul className="sub-nav-menu sub-menu-level-2">
                               {groupLinks.map((link) => (
@@ -213,8 +159,8 @@ export default function MobileMenu() {
               </li>
 
               <li className="nav-mb-item">
-                <a
-                  href="#mobile-resources-menu"
+                <button
+                  type="button"
                   className={`collapsed mb-menu-link ${
                     resourceLinks.some((link) => isSameSection(pathname, link.href))
                       ? "active"
@@ -226,7 +172,7 @@ export default function MobileMenu() {
                 >
                   <span>Resources</span>
                   <span className="btn-open-sub" />
-                </a>
+                </button>
                 <div id="mobile-resources-menu" className="collapse">
                   <ul className="sub-nav-menu">
                     {resourceLinks.map((link) => (
@@ -280,25 +226,31 @@ export default function MobileMenu() {
             </div>
             <div className="mb-contact">
               <p className="text-caption-1">
-                549 Oak St.Crystal Lake, IL 60014
+                Dubai, United Arab Emirates
               </p>
               <Link
                 href="/contact"
                 className="tf-btn-default text-btn-uppercase"
                 {...dismissOffcanvas}
               >
-                GET DIRECTION
+                CONTACT OUR TEAM
                 <i className="icon-arrowUpRight" />
               </Link>
             </div>
             <ul className="mb-info">
               <li>
                 <i className="icon icon-mail" />
-                <p>info@skydecor.eu</p>
+                <a href="mailto:info@skydecor.eu">info@skydecor.eu</a>
               </li>
               <li>
                 <i className="icon icon-phone" />
-                <p>315-666-6688</p>
+                <a
+                  href="https://alvo.chat/3Ijc"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  WhatsApp SkyDecor
+                </a>
               </li>
             </ul>
           </div>

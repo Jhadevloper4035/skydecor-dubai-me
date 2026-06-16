@@ -2,8 +2,9 @@ import Faqs from "@/components/otherPages/Faqs";
 import React from "react";
 import Link from "next/link";
 export const metadata = {
-  title: "Faqs || Modave - Multipurpose React Nextjs eCommerce Template",
-  description: "Modave - Multipurpose React Nextjs eCommerce Template",
+  title: "Frequently Asked Questions | SkyDecor Dubai",
+  description:
+    "Answers about SkyDecor surface products, samples, specifications, care, and project support in the UAE.",
 };
 
 export default function FAQSPage() {
@@ -20,16 +21,8 @@ export default function FAQSPage() {
               <ul className="breadcrumbs d-flex align-items-center justify-content-center">
                 <li>
                   <Link className="link" href={`/`}>
-                    Homepage
+                    Home
                   </Link>
-                </li>
-                <li>
-                  <i className="icon-arrRight" />
-                </li>
-                <li>
-                  <a className="link" href="#">
-                    Pages
-                  </a>
                 </li>
                 <li>
                   <i className="icon-arrRight" />

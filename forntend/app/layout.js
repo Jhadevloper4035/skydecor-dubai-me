@@ -34,15 +34,6 @@ import Compare from "@/components/modals/Compare";
 import MobileMenu from "@/components/modals/MobileMenu";
 import SearchModal from "@/components/modals/SearchModal";
 
-import DemoModal from "@/components/modals/DemoModal";
-import Categories from "@/components/modals/Categories";
-
-
-// import SizeGuide from "@/components/modals/SizeGuide";
-// import Wishlist from "@/components/modals/Wishlist";
-// import CartModal from "@/components/modals/CartModal";
-// import NewsLetterModal from "@/components/modals/NewsLetterModal";
-// import ScrollTop from "@/components/common/ScrollTop";
 
 const hasVisibleBootstrapLayer = () =>
   Boolean(
@@ -178,8 +169,8 @@ export default function RootLayout({ children }) {
     });
   }, [pathname]);
   return (
-    <html lang="en">
-      <body className="popup-loader">
+    <html lang="en" suppressHydrationWarning>
+      <body className="popup-loader" suppressHydrationWarning>
         <StoreProvider>
           <Context>
             <GlobalSpinner />
@@ -194,22 +185,10 @@ export default function RootLayout({ children }) {
             <Compare />
             <MobileMenu />
             <SearchModal />
-            <DemoModal />
-            <Categories />
           </Context>
         </StoreProvider>
 
 
-
-
-        {/*
-
-          <NewsLetterModal />
-          <SizeGuide /> 
-          <Wishlist />
-          <CartModal />
-
-          */}
 
 
         <Script src="/js/jquery-3.7.1.min.js" strategy="beforeInteractive" />

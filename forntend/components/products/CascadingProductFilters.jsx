@@ -3,6 +3,12 @@
 const normalizeValue = (value = "") =>
   String(value).trim().toLowerCase().replace(/\s+/g, "-");
 
+const formatOptionLabel = (value = "") =>
+  String(value)
+    .trim()
+    .replace(/[-_]+/g, " ")
+    .replace(/\b\w/g, (letter) => letter.toUpperCase());
+
 const selectOptionValue = (options = [], activeValue = "") => {
   if (!activeValue || activeValue === "All") return "";
 
@@ -112,7 +118,7 @@ export default function CascadingProductFilters({
                 <option value="">{placeholder}</option>
                 {options.map((option) => (
                   <option key={option} value={option}>
-                    {option}
+                    {formatOptionLabel(option)}
                   </option>
                 ))}
               </select>

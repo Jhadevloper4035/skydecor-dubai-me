@@ -2,9 +2,8 @@ import Terms from "@/components/otherPages/Terms";
 import React from "react";
 import Link from "next/link";
 export const metadata = {
-  title:
-    "Terms of Use || Modave - Multipurpose React Nextjs eCommerce Template",
-  description: "Modave - Multipurpose React Nextjs eCommerce Template",
+  title: "Terms of Use | SkyDecor Dubai",
+  description: "Terms governing use of the SkyDecor Dubai website.",
 };
 
 export default function TermsOfUsePage() {
@@ -21,16 +20,8 @@ export default function TermsOfUsePage() {
               <ul className="breadcrumbs d-flex align-items-center justify-content-center">
                 <li>
                   <Link className="link" href={`/`}>
-                    Homepage
+                    Home
                   </Link>
-                </li>
-                <li>
-                  <i className="icon-arrRight" />
-                </li>
-                <li>
-                  <a className="link" href="#">
-                    Pages
-                  </a>
                 </li>
                 <li>
                   <i className="icon-arrRight" />

@@ -2,8 +2,14 @@ import mongoose from 'mongoose';
 
 const productEnquirySchema = new mongoose.Schema(
   {
+    product: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Product',
+      required: true,
+    },
     productCode: {
       type: String,
+      required: true,
       trim: true,
       uppercase: true,
     },
@@ -74,6 +80,7 @@ const productEnquirySchema = new mongoose.Schema(
 );
 
 productEnquirySchema.index({ status: 1, createdAt: -1 });
+productEnquirySchema.index({ product: 1, createdAt: -1 });
 productEnquirySchema.index({ productCode: 1, status: 1 });
 productEnquirySchema.index({ email: 1, createdAt: -1 });
 

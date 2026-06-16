@@ -134,7 +134,7 @@ export default function Details1({ product = {} }) {
 
                   <div className="tf-product-info-by-btn sky-product-action-row mb_10 mt_24">
                     <a
-                      href="#ask_question"
+                      href="#product_enquiry"
                       data-bs-toggle="modal"
                       className="btn-style-2 flex-grow-1 text-btn-uppercase fw-6 btn-add-to-cart"
                     >
@@ -167,7 +167,7 @@ export default function Details1({ product = {} }) {
                     Download Product PDF
                   </a>
 
-                  <div className="tf-product-info-help mt_24">
+                  {/* <div className="tf-product-info-help mt_24">
                     <div className="tf-product-info-extra-link">
                       <a
                         href="#delivery_return"
@@ -180,7 +180,7 @@ export default function Details1({ product = {} }) {
                         <p className="text-caption-1">Delivery &amp; Return</p>
                       </a>
                       <a
-                        href="#ask_question"
+                        href="#product_enquiry"
                         data-bs-toggle="modal"
                         className="tf-product-extra-icon"
                       >
@@ -235,12 +235,12 @@ export default function Details1({ product = {} }) {
                           </div>
                           <div>
                             <p>Dubai, United Arab Emirates</p>
-                            <p>Call: 315-666-6688</p>
+                            <p>Email: info@skydecor.eu</p>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
 
                 </div>
               </div>

@@ -56,15 +56,34 @@ const buildProductTypeGroups = (products = []) => {
 const normalizeChoice = (value = "") =>
   String(value).trim().toLowerCase().replace(/\s+/g, "-");
 
+const normalizeProductHierarchy = (product = {}) => {
+  const legacyProductType = normalizeChoice(product.productType);
+
+  if (!["design-master", "ambience"].includes(legacyProductType)) {
+    return product;
+  }
+
+  return {
+    ...product,
+    productType: "decorative-hpl",
+    productTypeSlug: "decorative-hpl",
+    category: legacyProductType,
+    categorySlug: legacyProductType,
+  };
+};
+
 const buildProductImageUrl = (product = {}) => {
   const productType = normalizeChoice(product.productType);
+  const category = normalizeChoice(product.category);
+  const assetCollection =
+    productType === "decorative-hpl" && category ? category : productType;
   const productCode = String(product.productCode || product.productCodeSlug || "")
     .trim()
     .toUpperCase();
 
-  if (!productType || !productCode) return "";
+  if (!assetCollection || !productCode) return "";
 
-  return `https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/${productType}/${productCode}.jpg`;
+  return `https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/${assetCollection}/${productCode}.jpg`;
 };
 
 const matchesChoice = (product, field, slugField, value) => {
@@ -109,28 +128,40 @@ export const getProductDetailHref = (product = {}) => {
 };
 
 export const normalizeProduct = (product = {}) => {
-  const id = product._id || product.id;
-  const productImages = product.images?.length
-    ? product.images
-    : Array.isArray(product.image)
-      ? product.image.filter(Boolean)
-      : [product.image].filter(Boolean);
-  const images = productImages.length ? productImages : [buildProductImageUrl(product)].filter(Boolean);
-  const title = product.productName || product.title || product.designName || "Product";
+  const normalizedHierarchy = normalizeProductHierarchy(product);
+  const id = normalizedHierarchy._id || normalizedHierarchy.id;
+  const productImages = normalizedHierarchy.images?.length
+    ? normalizedHierarchy.images
+    : Array.isArray(normalizedHierarchy.image)
+      ? normalizedHierarchy.image.filter(Boolean)
+      : [normalizedHierarchy.image].filter(Boolean);
+  const images = productImages.length
+    ? productImages
+    : [buildProductImageUrl(normalizedHierarchy)].filter(Boolean);
+  const title =
+    normalizedHierarchy.productName ||
+    normalizedHierarchy.title ||
+    normalizedHierarchy.designName ||
+    "Product";
 
   return {
-    ...product,
+    ...normalizedHierarchy,
     id,
     title,
-    productName: product.productName || title,
-    imgSrc: product.imgSrc || images[0] || "/images/placeholder.jpg",
-    imgHover: product.imgHover || images[1] || images[0] || "/images/placeholder.jpg",
+    productName: normalizedHierarchy.productName || title,
+    imgSrc: normalizedHierarchy.imgSrc || images[0] || "/images/placeholder.jpg",
+    imgHover:
+      normalizedHierarchy.imgHover || images[1] || images[0] || "/images/placeholder.jpg",
     images,
-    price: Number(product.price ?? 0),
-    filterBrands: product.filterBrands || [product.productType, product.category].filter(Boolean),
-    filterColor: product.filterColor || [product.texture].filter(Boolean),
-    filterSizes: product.filterSizes || [product.size].filter(Boolean),
-    inStock: product.inStock ?? product.isActive ?? true,
+    price: Number(normalizedHierarchy.price ?? 0),
+    filterBrands:
+      normalizedHierarchy.filterBrands ||
+      [normalizedHierarchy.productType, normalizedHierarchy.category].filter(Boolean),
+    filterColor:
+      normalizedHierarchy.filterColor || [normalizedHierarchy.texture].filter(Boolean),
+    filterSizes:
+      normalizedHierarchy.filterSizes || [normalizedHierarchy.size].filter(Boolean),
+    inStock: normalizedHierarchy.inStock ?? normalizedHierarchy.isActive ?? true,
   };
 };
 
@@ -181,52 +212,32 @@ export const buildLocalProductFilterOptions = (products = localProducts, selecte
 
 export const createProductFilterHref = ({ productType, category, subCategory, query } = {}) => {
   const params = new URLSearchParams();
-  if (category) params.set("category", category);
-  if (subCategory) params.set("subCategory", subCategory);
   if (query) params.set("query", query);
 
+  const productTypeSlug = normalizeChoice(productType);
+  const categorySlug = normalizeChoice(category);
+  const subCategorySlug = normalizeChoice(subCategory);
+  let path = "/products";
+
+  if (productTypeSlug) {
+    path += `/product-type/${encodeURIComponent(productTypeSlug)}`;
+    if (categorySlug) path += `/category/${encodeURIComponent(categorySlug)}`;
+    if (categorySlug && subCategorySlug) {
+      path += `/sub-category/${encodeURIComponent(subCategorySlug)}`;
+    } else if (subCategorySlug) {
+      params.set("subCategory", subCategory);
+    }
+  } else if (categorySlug) {
+    path += `/${encodeURIComponent(categorySlug)}`;
+    if (subCategorySlug) path += `/${encodeURIComponent(subCategorySlug)}`;
+  } else if (subCategorySlug) {
+    params.set("subCategory", subCategory);
+  }
+
   const queryString = params.toString();
-  const path = productType
-    ? `/shop-default-grid/product-type/${encodeURIComponent(normalizeChoice(productType))}`
-    : "/shop-default-grid";
 
   return queryString ? `${path}?${queryString}` : path;
 };
-
-export const buildProductNavigationLinks = (
-  options = buildLocalProductFilterOptions(localProducts)
-) => ({
-  allProductsLink: {
-    href: "/shop-default-grid",
-    name: "All Products",
-  },
-  laminatesLink: {
-    href: "/shop-default-grid",
-    name: "Laminates",
-  },
-  productTypeGroups: (
-    options.productTypeGroups ||
-    (options.productTypes || []).map((productType) => ({
-      name: productType,
-      categories: options.categories || [],
-    }))
-  ).map((group) => ({
-    name: group.name,
-    href: createProductFilterHref({ productType: group.name }),
-    categoryLinks: (group.categories || []).map((category) => ({
-      href: createProductFilterHref({ productType: group.name, category }),
-      name: category,
-    })),
-  })),
-  productTypeLinks: (options.productTypes || []).map((productType) => ({
-    href: createProductFilterHref({ productType }),
-    name: productType,
-  })),
-  categoryLinks: (options.categories || []).map((category) => ({
-    href: createProductFilterHref({ category }),
-    name: category,
-  })),
-});
 
 export const filterProductsLocally = (products = localProducts, filters = {}) =>
   products.filter(
@@ -300,7 +311,18 @@ export const getProductFiltersFromApi = async (params = {}) => {
     }
 
     const payload = await response.json();
-    return payload.data?.options || buildLocalProductFilterOptions(localProducts, params);
+    const options = payload.data?.options;
+    const requestedProductType = normalizeChoice(params.productType);
+    const hasRequestedProductType =
+      !requestedProductType ||
+      (options?.productTypes || []).some(
+        (productType) => normalizeChoice(productType) === requestedProductType
+      );
+
+    if (options && hasRequestedProductType) return options;
+
+    const apiProducts = await getProductsFromApi({ limit: 1000, isActive: true });
+    return buildLocalProductFilterOptions(apiProducts || localProducts, params);
   } catch {
     return buildLocalProductFilterOptions(localProducts, params);
   }
@@ -319,6 +341,40 @@ export const getProductFromApi = async (slugOrId) => {
   } catch {
     return null;
   }
+};
+
+export const submitProductEnquiry = async (payload) => {
+  const response = await fetch(buildUrl("/product-enquiries"), {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(payload),
+  });
+  const data = await response.json().catch(() => ({}));
+
+  if (!response.ok) {
+    throw new Error(data.message || "Unable to submit product enquiry.");
+  }
+
+  return data.data?.productEnquiry;
+};
+
+export const submitGeneralEnquiry = async (payload) => {
+  const response = await fetch(buildUrl("/enquiries"), {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ ...payload, source: "website" }),
+  });
+  const data = await response.json().catch(() => ({}));
+
+  if (!response.ok) {
+    throw new Error(data.message || "Unable to send your message.");
+  }
+
+  return data.data?.enquiry;
 };
 
 export const findFallbackProduct = (slugOrId) =>

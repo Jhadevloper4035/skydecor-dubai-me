@@ -4,7 +4,7 @@ import LayoutHandler from "./LayoutHandler";
 import Sorting from "./Sorting";
 import Listview from "./Listview";
 import GridView from "./GridView";
-import { useEffect, useMemo, useReducer, useState } from "react";
+import { useEffect, useMemo, useReducer, useRef, useState } from "react";
 import FilterModal from "./FilterModal";
 import { initialState, reducer } from "@/reducer/filterReducer";
 import FilterMeta from "./FilterMeta";
@@ -94,6 +94,7 @@ export default function Products1({
   initialQuery = "",
 }) {
   const [activeLayout, setActiveLayout] = useState(4);
+  const productResultsRef = useRef(null);
   const storeDispatch = useAppDispatch();
   const storeProducts = useAppSelector(selectProductItems);
   const productsStatus = useAppSelector(selectProductsStatus);
@@ -139,6 +140,23 @@ export default function Products1({
     currentPage,
     itemPerPage,
   } = state;
+
+  const handlePageChange = (value) => {
+    if (value === currentPage) return;
+
+    filterDispatch({ type: "SET_CURRENT_PAGE", payload: value });
+
+    window.requestAnimationFrame(() => {
+      const reduceMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches;
+
+      productResultsRef.current?.scrollIntoView({
+        behavior: reduceMotion ? "auto" : "smooth",
+        block: "start",
+      });
+    });
+  };
 
   const allProps = {
     ...state,
@@ -211,8 +229,7 @@ export default function Products1({
     setSortingOption: (value) =>
       filterDispatch({ type: "SET_SORTING_OPTION", payload: value }),
     toggleFilterWithOnSale: () => filterDispatch({ type: "TOGGLE_FILTER_ON_SALE" }),
-    setCurrentPage: (value) =>
-      filterDispatch({ type: "SET_CURRENT_PAGE", payload: value }),
+    setCurrentPage: handlePageChange,
     setItemPerPage: (value) => {
       filterDispatch({ type: "SET_CURRENT_PAGE", payload: 1 }),
         filterDispatch({ type: "SET_ITEM_PER_PAGE", payload: value });
@@ -387,7 +404,10 @@ export default function Products1({
               <Sorting allProps={allProps} />
             </div>
           </div>
-          <div className="wrapper-control-shop">
+          <div
+            ref={productResultsRef}
+            className="wrapper-control-shop product-results-anchor"
+          >
             <FilterMeta productLength={sorted.length} allProps={allProps} />
 
             {activeLayout == 1 ? (

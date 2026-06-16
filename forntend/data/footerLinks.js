@@ -1,8 +1,24 @@
 export const socialLinks = [
-  { href: "#", className: "social-facebook", iconClass: "fab fa-facebook-f fa-xs" },
-  { href: "#", className: "social-instagram", iconClass: "fab fa-instagram fa-xs" },
-  { href: "#", className: "social-whatsapp", iconClass: "fab fa-whatsapp fa-xs" },
-  { href: "#", className: "social-youtube", iconClass: "fab fa-youtube fa-xs" },
+  {
+    href: "https://www.facebook.com/skydecorlam",
+    className: "social-facebook",
+    iconClass: "fab fa-facebook-f fa-xs",
+  },
+  {
+    href: "https://www.instagram.com/skydecorindia/",
+    className: "social-instagram",
+    iconClass: "fab fa-instagram fa-xs",
+  },
+  {
+    href: "https://alvo.chat/3Ijc",
+    className: "social-whatsapp",
+    iconClass: "fab fa-whatsapp fa-xs",
+  },
+  {
+    href: "https://www.youtube.com/@SKYDECORINDIA",
+    className: "social-youtube",
+    iconClass: "fab fa-youtube fa-xs",
+  },
 ];
 
 export const footerLinks = [
@@ -14,6 +30,8 @@ export const footerLinks = [
       { label: "Size Guide", href: "#", isLink: false },
       { label: "Contact us", href: "/contact", isLink: true },
       { label: "Career", href: "/career", isLink: true },
+      { label: "Catalogues", href: "/catalogue", isLink: true },
+      { label: "Certificates", href: "/certificates", isLink: true },
     ],
   },
   {

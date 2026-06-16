@@ -11,14 +11,32 @@ const titleize = (value = "") =>
     .replace(/\s+/g, " ")
     .replace(/\b\w/g, (letter) => letter.toUpperCase());
 
-const getProductTypeKey = (product = {}) =>
-  String(product.productTypeSlug || product.productType || "")
+const normalizeKey = (value = "") =>
+  String(value)
     .trim()
     .toLowerCase()
     .replace(/\s+/g, "-");
 
-const getProductTypeLabel = (product = {}) =>
-  titleize(product.productType || product.productTypeSlug || "Products");
+const getProductCollection = (product = {}) => {
+  const productType = normalizeKey(product.productTypeSlug || product.productType);
+  const category = normalizeKey(product.categorySlug || product.category);
+
+  if (productType === "decorative-hpl" && category) {
+    return {
+      key: category,
+      label: titleize(product.category || product.categorySlug),
+      href: `/products/product-type/decorative-hpl/category/${category}`,
+    };
+  }
+
+  return {
+    key: productType,
+    label: titleize(product.productType || product.productTypeSlug || "Products"),
+    href: productType
+      ? `/products/product-type/${productType}`
+      : "/products",
+  };
+};
 
 export default function Products3({ parentClass = "flat-spacing-3" }) {
   const [products, setProducts] = useState(localProducts);
@@ -39,23 +57,23 @@ export default function Products3({ parentClass = "flat-spacing-3" }) {
   }, []);
 
   const tabs = useMemo(() => {
-    const productTypeMap = new Map();
+    const collectionMap = new Map();
 
     products.forEach((product) => {
-      const key = getProductTypeKey(product);
+      const collection = getProductCollection(product);
+      const { key } = collection;
       if (!key) return;
 
-      const existingTab = productTypeMap.get(key) || {
-        key,
-        label: getProductTypeLabel(product),
+      const existingTab = collectionMap.get(key) || {
+        ...collection,
         products: [],
       };
 
       existingTab.products.push(product);
-      productTypeMap.set(key, existingTab);
+      collectionMap.set(key, existingTab);
     });
 
-    return Array.from(productTypeMap.values()).sort((left, right) =>
+    return Array.from(collectionMap.values()).sort((left, right) =>
       left.label.localeCompare(right.label)
     );
   }, [products]);
@@ -84,17 +102,17 @@ export default function Products3({ parentClass = "flat-spacing-3" }) {
           <ul className="tab-product justify-content-sm-center" role="tablist">
             {tabs.map((tab) => (
               <li key={tab.key} className="nav-tab-item">
-                <a
-                  href="#"
-                  className={activeTab?.key === tab.key ? "active" : ""}
-                  data-no-loader
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setActiveTabKey(tab.key);
-                  }}
+                <button
+                  type="button"
+                  role="tab"
+                  aria-selected={activeTab?.key === tab.key}
+                  className={`sd-tab-button ${
+                    activeTab?.key === tab.key ? "active" : ""
+                  }`}
+                  onClick={() => setActiveTabKey(tab.key)}
                 >
                   {tab.label}
-                </a>
+                </button>
               </li>
             ))}
           </ul>
@@ -115,7 +133,10 @@ export default function Products3({ parentClass = "flat-spacing-3" }) {
                 ))}
               </div>
               <div className="sec-btn text-center">
-                <Link href="/shop-default-grid" className="btn-line">
+                <Link
+                  href={activeTab?.href || "/products"}
+                  className="btn-line"
+                >
                   View All Products
                 </Link>
               </div>

@@ -1,8 +1,6 @@
 "use client";
 
 import React, { useEffect } from "react";
-import Comments from "./Comments";
-import CommentForm from "./CommentForm";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import {
   fetchBlogBySlug,
@@ -38,9 +36,7 @@ export default function BlogDetail1({ blog: initialBlog }) {
           <ul className="list-tags has-bg justify-content-center">
             {categories.slice(0, 3).map((category) => (
               <li key={category}>
-                <a href="#" className="link">
-                  {category}
-                </a>
+                <span>{category}</span>
               </li>
             ))}
           </ul>
@@ -57,10 +53,7 @@ export default function BlogDetail1({ blog: initialBlog }) {
                 <i className="icon-user" />
               </div>
               <p className="body-text-1">
-                by{" "}
-                <a className="link" href="#">
-                  {blog.author}
-                </a>
+                by <span>{blog.author}</span>
               </p>
             </div>
           </div>
@@ -79,40 +72,11 @@ export default function BlogDetail1({ blog: initialBlog }) {
             <li>Tag:</li>
             {tags.slice(0, 5).map((tag) => (
               <li key={tag}>
-                <a href="#" className="link">
-                  {tag}
-                </a>
+                <span>{tag}</span>
               </li>
             ))}
           </ul>
-          <div className="d-flex align-items-center justify-content-between gap-16">
-            <p>Share this post:</p>
-            <ul className="tf-social-icon style-1">
-              <li>
-                <a href="#" className="social-facebook">
-                  <i className="icon icon-fb" />
-                </a>
-              </li>
-              <li>
-                <a href="#" className="social-twiter">
-                  <i className="icon icon-x" />
-                </a>
-              </li>
-              <li>
-                <a href="#" className="social-pinterest">
-                  <i className="icon icon-pinterest" />
-                </a>
-              </li>
-              <li>
-                <a href="#" className="social-instagram">
-                  <i className="icon icon-instagram" />
-                </a>
-              </li>
-            </ul>
-          </div>
         </div>
-        <Comments />
-        <CommentForm />
       </div>
     </div>
   );

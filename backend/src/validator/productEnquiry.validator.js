@@ -6,17 +6,15 @@ const statuses = ['new', 'contacted', 'quoted', 'closed', 'cancelled'];
 
 export const createProductEnquiryValidator = [
   body('productCode').trim().notEmpty().withMessage('is required'),
-  body('productName').trim().notEmpty().withMessage('is required'),
   body('name').trim().notEmpty().withMessage('is required'),
   body('email').trim().isEmail().withMessage('must be a valid email'),
   body('phone').trim().notEmpty().withMessage('is required'),
   body('companyName').optional().trim().notEmpty().withMessage('cannot be empty'),
-  body('quantity').optional().isInt({ min: 1 }).withMessage('must be at least 1'),
+  body('quantity')
+    .optional()
+    .isInt({ min: 1, max: 100000 })
+    .withMessage('must be between 1 and 100000'),
   body('message').optional().trim().notEmpty().withMessage('cannot be empty'),
-  body('source').optional().isIn(sources).withMessage('has invalid value'),
-  body('status').optional().isIn(statuses).withMessage('has invalid value'),
-  body('assignedTo').optional().trim().notEmpty().withMessage('cannot be empty'),
-  body('notes').optional().trim().notEmpty().withMessage('cannot be empty'),
 ];
 
 export const updateProductEnquiryValidator = [

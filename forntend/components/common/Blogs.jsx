@@ -21,9 +21,9 @@ export default function Blogs({
     <section className={parentClass}>
       <div className="container">
         <div className="heading-section text-center">
-          <h3 className=" wow fadeInUp">News insight</h3>
+          <h3 className=" wow fadeInUp">Design Journal</h3>
           <p className="subheading text-secondary wow fadeInUp">
-            Browse our Top Trending: the hottest picks loved by all.
+            Practical guidance for surfaces, specifications, and interior projects.
           </p>
         </div>
         <Swiper
@@ -59,7 +59,7 @@ export default function Blogs({
                   <Image
                     className="aspect-ratio-1 ls-is-cached lazyload"
                     data-src={post.imgSrc}
-                    alt={post.alt}
+                    alt={post.alt || post.title || "SkyDecor article"}
                     src={post.imgSrc}
                     width={615}
                     height={461}

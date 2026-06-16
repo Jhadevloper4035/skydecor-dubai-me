@@ -2,6 +2,7 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
+import { socialLinks } from "@/data/footerLinks";
 
 export default function Topbar9() {
   return (
@@ -13,12 +14,17 @@ export default function Topbar9() {
 
               <ul className="topbar-left">
                 <li>
-                  <a className="text-caption-1 text-white" href="tel:315-666-6688">
-                    315-666-6688
+                  <a
+                    className="text-caption-1 text-white"
+                    href="https://alvo.chat/3Ijc"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    WhatsApp
                   </a>
                 </li>
                 <li>
-                  <a className="text-caption-1 text-white" href="#">
+                  <a className="text-caption-1 text-white" href="mailto:info@skydecor.eu">
                     info@skydecor.eu
                   </a>
                 </li>
@@ -47,44 +53,31 @@ export default function Topbar9() {
               </SwiperSlide>
               <SwiperSlide className="swiper-slide">
                 <p className="top-bar-text text-line-clamp-1 text-btn-uppercase fw-semibold letter-1 text-white">
-                 Premium Laminates & Wall Panels — brand intro with SkyDecor highlight
+                  Surface solutions for residential and commercial interiors
                 </p>
               </SwiperSlide>
               <SwiperSlide className="swiper-slide">
                 <p className="top-bar-text text-line-clamp-1 text-btn-uppercase fw-semibold letter-1 text-white">
-                  Free Delivery on Laminate Orders — across Dubai & UAE
+                  Supporting interior projects across Dubai &amp; the UAE
                 </p>
               </SwiperSlide>
             </Swiper>
           </div>
           <div className="col-xl-3 d-none d-xl-block">
             <ul className="tf-social-icon style-fill style-fill-2 justify-content-end">
-              <li>
-                <a href="#" className="social-facebook">
-                  <i className="fab fa-facebook-f fa-xs" />
-                </a>
-              </li>
-
-              <li>
-                <a href="#" className="social-instagram">
-                  <i className="fab fa-instagram fa-xs" />
-                </a>
-              </li>
-
-
-              <li>
-                <a href="#" className="social-whatsapp">
-                  <i className="fab fa-whatsapp fa-xs" />
-                </a>
-              </li>
-
-              <li>
-                <a href="#" className="social-youtube">
-                  <i className="fab fa-youtube fa-xs" />
-                </a>
-              </li>
-             
-             
+              {socialLinks.map((link) => (
+                <li key={link.className}>
+                  <a
+                    href={link.href}
+                    className={link.className}
+                    aria-label={link.className.replace("social-", "")}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i className={link.iconClass} aria-hidden="true" />
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
         </div>

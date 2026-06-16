@@ -14,14 +14,14 @@ export default function CompareProductsPage() {
           <ul className="breadcrumbs d-flex align-items-center justify-content-center">
             <li>
               <Link className="link" href={`/`}>
-                Homepage
+                Home
               </Link>
             </li>
             <li>
               <i className="icon-arrRight" />
             </li>
             <li>
-              <Link className="link" href={`/shop-default-grid`}>
+              <Link className="link" href={`/products`}>
                 Shop
               </Link>
             </li>

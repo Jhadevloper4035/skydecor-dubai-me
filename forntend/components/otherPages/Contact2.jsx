@@ -1,10 +1,12 @@
 "use client";
+import { submitGeneralEnquiry } from "@/lib/productsApi";
 import React, { useRef, useState } from "react";
-import emailjs from "@emailjs/browser";
+
 export default function Contact2() {
   const formRef = useRef();
-  const [success, setSuccess] = useState(true);
+  const [success, setSuccess] = useState(false);
   const [showMessage, setShowMessage] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleShowMessage = () => {
     setShowMessage(true);
@@ -13,26 +15,28 @@ export default function Contact2() {
     }, 2000);
   };
 
-  const sendMail = (e) => {
+  const sendMail = async (e) => {
     e.preventDefault();
-    emailjs
-      .sendForm("service_noj8796", "template_fs3xchn", formRef.current, {
-        publicKey: "iG4SCmR-YtJagQ4gV",
-      })
-      .then((res) => {
-        if (res.status === 200) {
-          setSuccess(true);
-          handleShowMessage();
+    const formData = new FormData(formRef.current);
+    setIsSubmitting(true);
 
-          formRef.current.reset();
-        } else {
-          setSuccess(false);
-          handleShowMessage();
-        }
-      })
-      .catch((err) => {
-        console.log(err);
+    try {
+      await submitGeneralEnquiry({
+        name: formData.get("name"),
+        email: formData.get("email"),
+        phone: formData.get("phone"),
+        subject: "Website enquiry",
+        service: "general",
+        message: formData.get("message"),
       });
+      setSuccess(true);
+      formRef.current.reset();
+    } catch {
+      setSuccess(false);
+    } finally {
+      setIsSubmitting(false);
+      handleShowMessage();
+    }
   };
   return (
     <section className="flat-spacing">
@@ -41,7 +45,7 @@ export default function Contact2() {
           <div className="left">
             <h4>Get In Touch</h4>
             <p className="text-secondary-2">
-              Use the form below to get in touch with the sales team
+              Tell us about your project, product needs, or sample request.
             </p>
             <div
               className={`tfSubscribeMsg  footer-sub-element ${
@@ -50,10 +54,12 @@ export default function Contact2() {
             >
               {success ? (
                 <p style={{ color: "rgb(52, 168, 83)" }}>
-                  You have successfully subscribed.
+                  Your message has been sent. Our team will contact you soon.
                 </p>
               ) : (
-                <p style={{ color: "red" }}>Something went wrong</p>
+                <p style={{ color: "red" }}>
+                  We could not send your message. Please email us directly.
+                </p>
               )}
             </div>
             <form
@@ -91,13 +97,24 @@ export default function Contact2() {
                     />
                   </fieldset>
                 </div>
+                <fieldset>
+                  <input
+                    type="tel"
+                    placeholder="Your Phone*"
+                    name="phone"
+                    id="phone"
+                    tabIndex={3}
+                    aria-required="true"
+                    required
+                  />
+                </fieldset>
                 <fieldset className="">
                   <textarea
                     name="message"
                     id="message"
                     rows={4}
                     placeholder="Your Message*"
-                    tabIndex={2}
+                    tabIndex={4}
                     aria-required="true"
                     required
                     defaultValue={""}
@@ -105,8 +122,14 @@ export default function Contact2() {
                 </fieldset>
               </div>
               <div className="button-submit send-wrap">
-                <button className="tf-btn btn-fill" type="submit">
-                  <span className="text text-button">Send message</span>
+                <button
+                  className="tf-btn btn-fill"
+                  type="submit"
+                  disabled={isSubmitting}
+                >
+                  <span className="text text-button">
+                    {isSubmitting ? "Sending..." : "Send message"}
+                  </span>
                 </button>
               </div>
             </form>
@@ -114,29 +137,33 @@ export default function Contact2() {
           <div className="right">
             <h4>Information</h4>
             <div className="mb_20">
-              <div className="text-title mb_8">Phone:</div>
-              <p className="text-secondary">+1 666 234 8888</p>
+              <div className="text-title mb_8">WhatsApp:</div>
+              <p className="text-secondary">
+                <a
+                  href="https://alvo.chat/3Ijc"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Start a conversation
+                </a>
+              </p>
             </div>
             <div className="mb_20">
               <div className="text-title mb_8">Email:</div>
-              <p className="text-secondary">themesflat@gmail.com</p>
+              <p className="text-secondary">
+                <a href="mailto:info@skydecor.eu">info@skydecor.eu</a>
+              </p>
             </div>
             <div className="mb_20">
               <div className="text-title mb_8">Address:</div>
               <p className="text-secondary">
-                2163 Phillips Gap Rd, West Jefferson, North Carolina, United
-                States
+                Dubai, United Arab Emirates
               </p>
             </div>
             <div>
-              <div className="text-title mb_8">Open Time:</div>
-              <p className="mb_4 open-time">
-                <span className="text-secondary">Mon - Sat:</span> 7:30am -
-                8:00pm PST
-              </p>
-              <p className="open-time">
-                <span className="text-secondary">Sunday:</span> 9:00am - 5:00pm
-                PST
+              <div className="text-title mb_8">Enquiries:</div>
+              <p className="text-secondary">
+                Product selection, samples, catalogues, and project support.
               </p>
             </div>
           </div>

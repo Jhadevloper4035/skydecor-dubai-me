@@ -6,6 +6,8 @@ const SERVER_API_BASE_URL =
 const API_BASE_URL =
   typeof window === "undefined" ? SERVER_API_BASE_URL : "/api/v1";
 
+const useLocalFallback = process.env.NODE_ENV !== "production";
+
 const buildUrl = (path, params = {}) => {
   const isAbsoluteUrl = /^https?:\/\//.test(API_BASE_URL);
   const url = isAbsoluteUrl
@@ -160,7 +162,7 @@ export const getJobFromApi = async (slug) => {
     if (!response.ok) return undefined;
 
     const payload = await response.json();
-    return normalizeJob(payload.data?.job);
+    return payload.data?.job ? normalizeJob(payload.data.job) : null;
   } catch {
     return undefined;
   }
@@ -168,13 +170,17 @@ export const getJobFromApi = async (slug) => {
 
 export const getJobs = async () => {
   const jobs = await getJobsFromApi();
-  return jobs === undefined ? normalizeJobs(localJobs) : jobs;
+  if (jobs !== undefined) return jobs;
+
+  return useLocalFallback ? normalizeJobs(localJobs) : [];
 };
 
 export const getJobBySlug = async (slug) => {
   const job = await getJobFromApi(slug);
 
   if (job !== undefined) return job;
+
+  if (!useLocalFallback) return null;
 
   return normalizeJobs(localJobs).find((item) => item.slug === slug) || null;
 };

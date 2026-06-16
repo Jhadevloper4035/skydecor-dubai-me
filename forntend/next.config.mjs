@@ -18,6 +18,65 @@ const nextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      {
+        source: "/shop-default-grid/:path*",
+        destination: "/products/:path*",
+        permanent: true,
+      },
+      {
+        source: "/shop-default-grid",
+        destination: "/products",
+        permanent: true,
+      },
+      {
+        source: "/contact-02",
+        destination: "/contact",
+        permanent: true,
+      },
+      {
+        source: "/store-list/:path*",
+        destination: "/contact",
+        permanent: true,
+      },
+      {
+        source: "/store-list-02/:path*",
+        destination: "/contact",
+        permanent: true,
+      },
+      {
+        source: "/customer-feedback",
+        destination: "/about-us",
+        permanent: true,
+      },
+      {
+        source: "/coming-soon",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/blog-grid",
+        destination: "/blog-default",
+        permanent: true,
+      },
+      {
+        source: "/blog-list",
+        destination: "/blog-default",
+        permanent: true,
+      },
+      {
+        source: "/blog-detail-02/:path*",
+        destination: "/blog-detail/:path*",
+        permanent: true,
+      },
+      {
+        source: "/shop-collection",
+        destination: "/products",
+        permanent: true,
+      },
+    ];
+  },
   sassOptions: {
     quietDeps: true, // This will silence deprecation warnings
     silenceDeprecations: ["legacy-js-api"],

@@ -1,334 +1,156 @@
 "use client";
-import React, { useEffect, useState } from "react";
+
 import Image from "next/image";
 import Link from "next/link";
 
+import { socialLinks } from "@/data/footerLinks";
+import { productNavigation } from "@/data/menu";
 import ScrollTop from "../common/ScrollTop";
-import { footerLinks, socialLinks } from "@/data/footerLinks";
-import axios from "axios";
-export default function Footer1({
-  border = true,
-  dark = false,
-  hasPaddingBottom = false,
-}) {
-  const [success, setSuccess] = useState(true);
-  const [showMessage, setShowMessage] = useState(false);
 
-  const handleShowMessage = () => {
-    setShowMessage(true);
-    setTimeout(() => {
-      setShowMessage(false);
-    }, 2000);
-  };
+const importantLinks = [
+  { label: "About Us", href: "/about-us" },
+  { label: "All Products", href: "/products" },
+  { label: "Catalogues", href: "/catalogue" },
+  { label: "Certificates", href: "/certificates" },
+  { label: "Blog", href: "/blog-default" },
+  { label: "Careers", href: "/career" },
+  { label: "Contact", href: "/contact" },
+  { label: "Terms of Use", href: "/term-of-use" },
+];
 
-  const sendEmail = async (e) => {
-    e.preventDefault(); // Prevent default form submission behavior
-    const email = e.target.email.value;
+const footerSections = [
+  {
+    title: "Quick Links",
+    links: [
+      { label: "All Products", href: "/products" },
+      { label: "About SkyDecor", href: "/about-us" },
+      { label: "Contact Our Team", href: "/contact" },
+      { label: "Careers", href: "/career" },
+    ],
+  },
+  {
+    title: "Design Ideas",
+    links: [
+      { label: "Design Journal", href: "/blog-default" },
+      { label: "Product Catalogues", href: "/catalogue" },
+      { label: "Surface Collections", href: "/products" },
+      { label: "Certificates", href: "/certificates" },
+    ],
+  },
+  {
+    title: "Legal",
+    links: [
+      { label: "Terms of Use", href: "/term-of-use" },
+      { label: "Website Terms", href: "/term-of-use" },
+      { label: "FAQs", href: "/FAQs" },
+      { label: "Contact", href: "/contact" },
+    ],
+  },
+];
 
-    try {
-      const response = await axios.post(
-        "https://express-brevomail.vercel.app/api/contacts",
-        {
-          email,
-        }
-      );
-
-      if ([200, 201].includes(response.status)) {
-        e.target.reset(); // Reset the form
-        setSuccess(true); // Set success state
-        handleShowMessage();
-      } else {
-        setSuccess(false); // Handle unexpected responses
-        handleShowMessage();
-      }
-    } catch (error) {
-      console.error("Error:", error.response?.data || "An error occurred");
-      setSuccess(false); // Set error state
-      handleShowMessage();
-      e.target.reset(); // Reset the form
-    }
-  };
-  useEffect(() => {
-    const headings = document.querySelectorAll(".footer-heading-mobile");
-
-    const toggleOpen = (event) => {
-      const parent = event.target.closest(".footer-col-block");
-      const content = parent.querySelector(".tf-collapse-content");
-
-      if (parent.classList.contains("open")) {
-        parent.classList.remove("open");
-        content.style.height = "0px";
-      } else {
-        parent.classList.add("open");
-        content.style.height = content.scrollHeight + 10 + "px";
-      }
-    };
-
-    headings.forEach((heading) => {
-      heading.addEventListener("click", toggleOpen);
-    });
-
-    // Clean up event listeners when the component unmounts
-    return () => {
-      headings.forEach((heading) => {
-        heading.removeEventListener("click", toggleOpen);
-      });
-    };
-  }, []); // Empty dependency array means this will run only once on mount
+export default function Footer1({ hasPaddingBottom = false }) {
   return (
     <>
       <footer
         id="footer"
-        style={{ backgroundColor: "rgb(246 237 230)" }}
-        className={`footer ${dark ? "bg-main" : ""} ${
-          hasPaddingBottom ? "has-pb" : ""
-        } `}
+        className={`sd-footer ${hasPaddingBottom ? "has-pb" : ""}`}
       >
-        <div className={`footer-wrap ${!border ? "border-0" : ""}`}>
-          <div className="footer-body">
-            <div className="container">
-              <div className="row">
-                <div className="col-lg-4">
-                  <div className="footer-infor">
-                    <div className="footer-logo">
-                      <Link href={`/`}>
-                        <Image
-                          alt=""
-                          src={
-                            dark
-                              ? "/images/logo/logo.png"
-                              : "/images/logo/logo.png"
-                          }
-                          width={180}
-                          height={60}
-                          style={{ width: "auto", height: "auto" }}
-                        />
-                      </Link>
-                    </div>
-                    <div className="footer-address">
-                      <p>549 Oak St.Crystal Lake, IL 60014</p>
-                      <Link
-                        href={`/contact`}
-                        className={`tf-btn-default fw-6 ${
-                          dark ? "style-white" : ""
-                        } `}
-                      >
-                        GET DIRECTION
-                        <i className="icon-arrowUpRight" />
-                      </Link>
-                    </div>
-                    <ul className="footer-info">
-                      <li>
-                        <i className="far fa-envelope" />
-                        <p>themesflat@gmail.com</p>
-                      </li>
-                      <li>
-                        <i className="far fa-phone" />
-                        <p>315-666-6688</p>
-                      </li>
-                    </ul>
-                    <ul
-                      className={`tf-social-icon  ${
-                        dark ? "style-white" : ""
-                      } `}
-                    >
-                      {socialLinks.map((link, index) => (
-                        <li key={index}>
-                          <a href={link.href} className={link.className}>
-                            <i className={link.iconClass} />
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-                <div className="col-lg-4">
-                  <div className="footer-menu">
-                    {footerLinks.map((section, sectionIndex) => (
-                      <div className="footer-col-block" key={sectionIndex}>
-                        <div className="footer-heading text-button footer-heading-mobile">
-                          {section.heading}
-                        </div>
-                        <div className="tf-collapse-content">
-                          <ul className="footer-menu-list">
-                            {section.items.map((item, itemIndex) => (
-                              <li className="text-caption-1" key={itemIndex}>
-                                {item.isLink ? (
-                                  <Link
-                                    href={item.href}
-                                    className="footer-menu_item"
-                                  >
-                                    {item.label}
-                                  </Link>
-                                ) : (
-                                  <a
-                                    href={item.href}
-                                    className="footer-menu_item"
-                                  >
-                                    {item.label}
-                                  </a>
-                                )}
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                <div className="col-lg-4">
-                  <div className="footer-col-block">
-                    <div className="footer-heading text-button footer-heading-mobile">
-                      Newsletter
-                    </div>
-                    <div className="tf-collapse-content">
-                      <div className="footer-newsletter">
-                        <p className="text-caption-1">
-                          Sign up for our newsletter and get 10% off your first
-                          purchase
-                        </p>
-                        <div
-                          className={`tfSubscribeMsg  footer-sub-element ${
-                            showMessage ? "active" : ""
-                          }`}
-                        >
-                          {success ? (
-                            <p style={{ color: "rgb(52, 168, 83)" }}>
-                              You have successfully subscribed.
-                            </p>
-                          ) : (
-                            <p style={{ color: "red" }}>Something went wrong</p>
-                          )}
-                        </div>
-                        <form
-                          onSubmit={sendEmail}
-                          className={`form-newsletter subscribe-form ${
-                            dark ? "style-black" : ""
-                          }`}
-                        >
-                          <div className="subscribe-content">
-                            <fieldset className="email">
-                              <input
-                                type="email"
-                                name="email"
-                                className="subscribe-email"
-                                placeholder="Enter your e-mail"
-                                tabIndex={0}
-                                aria-required="true"
-                              />
-                            </fieldset>
-                            <div className="button-submit">
-                              <button
-                                className="subscribe-button"
-                                type="submit"
-                              >
-                                <i className="icon icon-arrowUpRight" />
-                              </button>
-                            </div>
-                          </div>
-                          <div className="subscribe-msg" />
-                        </form>
-                        <div className="tf-cart-checkbox">
-                          <div className="tf-checkbox-wrapp">
-                            <input
-                              className=""
-                              type="checkbox"
-                              id="footer-Form_agree"
-                              name="agree_checkbox"
-                            />
-                            <div>
-                              <i className="icon-check" />
-                            </div>
-                          </div>
-                          <label
-                            className="text-caption-1"
-                            htmlFor="footer-Form_agree"
-                          >
-                            By clicking subscribe, you agree to the{" "}
-                            <Link className="fw-6 link" href={`/term-of-use`}>
-                              Terms of Service
-                            </Link>{" "}
-                            and{" "}
-                            <a className="fw-6 link" href="#">
-                              Privacy Policy
-                            </a>
-                            .
-                          </label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+        <div className="container-full">
+          <div className="sd-footer__brand">
+            <Link href="/" aria-label="SkyDecor home">
+              <Image
+                src="/images/logo/logo.png"
+                alt="SkyDecor"
+                width={230}
+                height={87}
+              />
+            </Link>
+          </div>
+
+          <div className="sd-footer__directory">
+            <section className="sd-footer__contact" aria-labelledby="footer-contact">
+              <h2 id="footer-contact">Headquarters &amp; Contact</h2>
+              <address>
+                <strong>SkyDecor Dubai</strong>
+                <span>Dubai, United Arab Emirates</span>
+                <a href="mailto:info@skydecor.eu">info@skydecor.eu</a>
+                <a
+                  href="https://alvo.chat/3Ijc"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Chat with us on WhatsApp
+                </a>
+              </address>
+              <p>
+                Decorative laminates and interior surface solutions for projects
+                across Dubai and the UAE.
+              </p>
+              <div className="sd-footer__contact-actions">
+                <Link href="/contact" className="sd-footer__request-link">
+                  Request info
+                  <i className="icon-arrowUpRight" aria-hidden="true" />
+                </Link>
               </div>
+            </section>
+
+            <div className="sd-footer__products">
+              {productNavigation.ranges.map((range) => (
+                <section className="sd-footer__range" key={range.name}>
+                  <h2>
+                    <Link href={range.href}>{range.name}</Link>
+                  </h2>
+                  <ul>
+                    {range.categoryLinks.map((category) => (
+                      <li key={`${range.name}-${category.name}`}>
+                        <Link href={category.href}>{category.name}</Link>
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+              ))}
+              {footerSections.map((section) => (
+                <section className="sd-footer__detail-links" key={section.title}>
+                  <h2>{section.title}</h2>
+                  <ul>
+                    {section.links.map((link) => (
+                      <li key={`${section.title}-${link.label}`}>
+                        <Link href={link.href}>{link.label}</Link>
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+              ))}
             </div>
           </div>
-          <div className="footer-bottom">
-            <div className="container">
-              <div className="row">
-                <div className="col-12">
-                  <div className="footer-bottom-wrap">
-                    <div className="left">
-                      <p className="text-caption-1">
-                        ©{new Date().getFullYear()} Skydecor All Rights Reserved.
-                      </p>
-                    </div>
-                    <div className="tf-payment">
-                      <p className="text-caption-1">Payment:</p>
-                      <ul>
-                        <li>
-                          <Image
-                            alt=""
-                            src="/images/payment/img-1.png"
-                            width={100}
-                            height={64}
-                          />
-                        </li>
-                        <li>
-                          <Image
-                            alt=""
-                            src="/images/payment/img-2.png"
-                            width={100}
-                            height={64}
-                          />
-                        </li>
-                        <li>
-                          <Image
-                            alt=""
-                            src="/images/payment/img-3.png"
-                            width={100}
-                            height={64}
-                          />
-                        </li>
-                        <li>
-                          <Image
-                            alt=""
-                            src="/images/payment/img-4.png"
-                            width={98}
-                            height={64}
-                          />
-                        </li>
-                        <li>
-                          <Image
-                            alt=""
-                            src="/images/payment/img-5.png"
-                            width={102}
-                            height={64}
-                          />
-                        </li>
-                        <li>
-                          <Image
-                            alt=""
-                            src="/images/payment/img-6.png"
-                            width={98}
-                            height={64}
-                          />
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+
+          <div className="sd-footer__bottom">
+            <p>
+              © {new Date().getFullYear()} SkyDecor Dubai. All rights reserved.
+            </p>
+
+            <nav className="sd-footer__important-links" aria-label="Footer links">
+              {importantLinks.map((link) => (
+                <Link href={link.href} key={link.href}>
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
+
+            <ul className="sd-footer__social" aria-label="Social media">
+              {socialLinks.map((link) => (
+                <li key={link.className}>
+                  <a
+                    href={link.href}
+                    aria-label={link.className.replace("social-", "")}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i className={link.iconClass} aria-hidden="true" />
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </footer>

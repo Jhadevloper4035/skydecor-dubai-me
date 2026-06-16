@@ -12,13 +12,22 @@ test('all seeded products match the product model contract', async () => {
   }
 });
 
+test('seeded products use the decorative HPL collection hierarchy', async () => {
+  const products = JSON.parse(await readFile(new URL('../src/data/product.json', import.meta.url)));
+  const categories = new Set(products.map((product) => product.category));
+
+  assert.ok(products.length > 0);
+  assert.ok(products.every((product) => product.productType === 'decorative-hpl'));
+  assert.deepEqual([...categories].sort(), ['ambience', 'design-master']);
+});
+
 test('product status and isActive stay synchronized', async () => {
   const inactiveProduct = new Product({
     id: 9999,
     productCode: 'SDL-TEST-INACTIVE',
-    productType: 'design-master',
+    productType: 'decorative-hpl',
     productName: 'sdl-test',
-    category: 'foil',
+    category: 'design-master',
     subCategory: 'foil',
     size: '4ft*8ft',
     thickness: '0.8mm',

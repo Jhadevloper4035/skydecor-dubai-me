@@ -22,8 +22,7 @@ export default function RelatedBlogs() {
             <div className="heading-section text-center">
               <h3>Related Articles</h3>
               <p className="body-text-1">
-                Discover the Hottest Fashion News and Trends Straight from the
-                Runway
+                Practical ideas for selecting and caring for interior surfaces.
               </p>
             </div>
             <Swiper
@@ -76,10 +75,7 @@ export default function RelatedBlogs() {
                             <i className="icon-user" />
                           </div>
                           <p className="text-caption-1">
-                            by{" "}
-                            <a className="link" href="#">
-                              {post.author}
-                            </a>
+                            by <span>{post.author}</span>
                           </p>
                         </div>
                       </div>

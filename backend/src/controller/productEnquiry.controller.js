@@ -1,6 +1,8 @@
 import ProductEnquiry from '../model/productEnquiry.model.js';
+import Product from '../model/product.model.js';
 import AppError from '../utils/appError.js';
 import catchAsync from '../utils/catchAsync.js';
+import createSlug from '../utils/slug.js';
 import { sendCreated, sendList, sendNoContent, sendSuccess } from '../utils/response.js';
 
 const productEnquiryFields = [
@@ -18,14 +20,48 @@ const productEnquiryFields = [
   'notes',
 ];
 
+const publicProductEnquiryFields = [
+  'name',
+  'email',
+  'phone',
+  'companyName',
+  'quantity',
+  'message',
+];
+
 const pickFields = (body, fields) =>
   fields.reduce((payload, field) => {
     if (body[field] !== undefined) payload[field] = body[field];
     return payload;
   }, {});
 
-export const createProductEnquiry = catchAsync(async (req, res) => {
-  const payload = pickFields(req.body, productEnquiryFields);
+export const createProductEnquiry = catchAsync(async (req, res, next) => {
+  const productCode = String(req.body.productCode || '').trim();
+  const product = await Product.findOne({
+    $or: [
+      { productCodeSlug: createSlug(productCode) },
+      { productCode: productCode.toLowerCase() },
+    ],
+    isActive: true,
+  });
+
+  if (!product) {
+    return next(
+      new AppError(
+        'This product is unavailable or no longer accepts enquiries.',
+        404,
+        'PRODUCT_NOT_FOUND',
+      ),
+    );
+  }
+
+  const payload = {
+    ...pickFields(req.body, publicProductEnquiryFields),
+    product: product._id,
+    productCode: product.productCode,
+    productName: product.productName,
+    source: 'website',
+  };
   payload.ipAddress = req.ip;
   payload.userAgent = req.get('User-Agent');
 

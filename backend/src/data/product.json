@@ -2,10 +2,10 @@
   {
     "id": 1,
     "productCode": "sdl-10102-fsr",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10102",
     "designName": "frosty white",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid-textured",
     "textureCode": "FSR",
     "texture": "flute silk raso",
@@ -22,10 +22,10 @@
   {
     "id": 2,
     "productCode": "sdl-10102-shg",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10102",
     "designName": "frosty white",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid-textured",
     "textureCode": "SHG",
     "texture": "super high gloss",
@@ -42,10 +42,10 @@
   {
     "id": 3,
     "productCode": "sdl-10102-sud",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10102",
     "designName": "frosty white",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid",
     "textureCode": "SUD",
     "texture": "suede",
@@ -62,10 +62,10 @@
   {
     "id": 4,
     "productCode": "sdl-10102-ssr",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10102",
     "designName": "frosty white",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid-textured",
     "textureCode": "SSR",
     "texture": "solid silk raso",
@@ -82,10 +82,10 @@
   {
     "id": 5,
     "productCode": "sdl-10106-fsr",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10106",
     "designName": "ash grey",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid-textured",
     "textureCode": "FSR",
     "texture": "flute silk raso",
@@ -102,10 +102,10 @@
   {
     "id": 6,
     "productCode": "sdl-10106-sud",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10106",
     "designName": "ash grey",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid",
     "textureCode": "SUD",
     "texture": "suede",
@@ -122,10 +122,10 @@
   {
     "id": 7,
     "productCode": "sdl-10106-ssr",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10106",
     "designName": "ash grey",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid-textured",
     "textureCode": "SSR",
     "texture": "solid silk raso",
@@ -142,10 +142,10 @@
   {
     "id": 8,
     "productCode": "sdl-10106-shg",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10106",
     "designName": "ash grey",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid-textured",
     "textureCode": "SHG",
     "texture": "super high gloss",
@@ -159,14 +159,13 @@
     "pdfUrlPath": "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/pdf/sdl-10106-shg.pdf",
     "status": "active"
   },
-  
   {
     "id": 10,
     "productCode": "sdl-10111-sud",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10111",
     "designName": "beige",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid",
     "textureCode": "SUD",
     "texture": "suede",
@@ -183,10 +182,10 @@
   {
     "id": 11,
     "productCode": "sdl-10111-ssr",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10111",
     "designName": "beige",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid-textured",
     "textureCode": "SSR",
     "texture": "solid silk raso",
@@ -203,10 +202,10 @@
   {
     "id": 12,
     "productCode": "sdl-10112-sud",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10112",
     "designName": "choco brown",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid",
     "textureCode": "SUD",
     "texture": "suede",
@@ -223,10 +222,10 @@
   {
     "id": 13,
     "productCode": "sdl-10112-ssr",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10112",
     "designName": "choco brown",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid-textured",
     "textureCode": "SSR",
     "texture": "solid silk raso",
@@ -243,10 +242,10 @@
   {
     "id": 14,
     "productCode": "sdl-10112-shg",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10112",
     "designName": "choco brown",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid-textured",
     "textureCode": "SHG",
     "texture": "super high gloss",
@@ -263,10 +262,10 @@
   {
     "id": 15,
     "productCode": "sdl-10114-shg",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10114",
     "designName": "ivory",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid-textured",
     "textureCode": "SHG",
     "texture": "super high gloss",
@@ -283,10 +282,10 @@
   {
     "id": 16,
     "productCode": "sdl-10114-ssr",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10114",
     "designName": "ivory",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid-textured",
     "textureCode": "SSR",
     "texture": "solid silk raso",
@@ -300,14 +299,13 @@
     "pdfUrlPath": "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/pdf/sdl-10114-ssr.pdf",
     "status": "active"
   },
-
   {
     "id": 18,
     "productCode": "sdl-10115-shg",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10115",
     "designName": "warm black",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid-textured",
     "textureCode": "SHG",
     "texture": "super high gloss",
@@ -324,10 +322,10 @@
   {
     "id": 19,
     "productCode": "sdl-10115-sud",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10115",
     "designName": "warm black",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid",
     "textureCode": "SUD",
     "texture": "suede",
@@ -344,10 +342,10 @@
   {
     "id": 20,
     "productCode": "sdl-10115-ssr",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10115",
     "designName": "warm black",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid-textured",
     "textureCode": "SSR",
     "texture": "solid silk raso",
@@ -364,10 +362,10 @@
   {
     "id": 21,
     "productCode": "sdl-10116-fsr",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10116",
     "designName": "silver grey",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid-textured",
     "textureCode": "FSR",
     "texture": "flute silk raso",
@@ -384,10 +382,10 @@
   {
     "id": 22,
     "productCode": "sdl-10116-shg",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10116",
     "designName": "silver grey",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid-textured",
     "textureCode": "SHG",
     "texture": "super high gloss",
@@ -404,10 +402,10 @@
   {
     "id": 23,
     "productCode": "sdl-10116-sud",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10116",
     "designName": "silver grey",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid",
     "textureCode": "SUD",
     "texture": "suede",
@@ -424,10 +422,10 @@
   {
     "id": 24,
     "productCode": "sdl-10116-ssr",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10116",
     "designName": "silver grey",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid-textured",
     "textureCode": "SSR",
     "texture": "solid silk raso",
@@ -444,10 +442,10 @@
   {
     "id": 25,
     "productCode": "sdl-10119-sud",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10119",
     "designName": "saffron",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid",
     "textureCode": "SUD",
     "texture": "suede",
@@ -464,10 +462,10 @@
   {
     "id": 26,
     "productCode": "sdl-10119-ssr",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10119",
     "designName": "saffron",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid-textured",
     "textureCode": "SSR",
     "texture": "solid silk raso",
@@ -484,10 +482,10 @@
   {
     "id": 28,
     "productCode": "sdl-10120-sud",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10120",
     "designName": "cappucciano",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid",
     "textureCode": "SUD",
     "texture": "suede",
@@ -504,10 +502,10 @@
   {
     "id": 29,
     "productCode": "sdl-10120-ssr",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10120",
     "designName": "cappucciano",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid-textured",
     "textureCode": "SSR",
     "texture": "solid silk raso",
@@ -524,10 +522,10 @@
   {
     "id": 30,
     "productCode": "sdl-10120-elr",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10120",
     "designName": "cappucciano",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid-textured",
     "textureCode": "ELR",
     "texture": "exotic leather",
@@ -544,10 +542,10 @@
   {
     "id": 31,
     "productCode": "sdl-10121-fsr",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10121",
     "designName": "oat clay",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid-textured",
     "textureCode": "FSR",
     "texture": "flute silk raso",
@@ -564,10 +562,10 @@
   {
     "id": 32,
     "productCode": "sdl-10121-sud",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10121",
     "designName": "oat clay",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid",
     "textureCode": "SUD",
     "texture": "suede",
@@ -584,10 +582,10 @@
   {
     "id": 33,
     "productCode": "sdl-10121-ssr",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10121",
     "designName": "oat clay",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid-textured",
     "textureCode": "SSR",
     "texture": "solid silk raso",
@@ -604,10 +602,10 @@
   {
     "id": 34,
     "productCode": "sdl-10122-fsr",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10122",
     "designName": "griege clay",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid-textured",
     "textureCode": "FSR",
     "texture": "flute silk raso",
@@ -624,10 +622,10 @@
   {
     "id": 35,
     "productCode": "sdl-10122-sud",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10122",
     "designName": "griege clay",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid",
     "textureCode": "SUD",
     "texture": "suede",
@@ -644,10 +642,10 @@
   {
     "id": 36,
     "productCode": "sdl-10122-ssr",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10122",
     "designName": "griege clay",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid-textured",
     "textureCode": "SSR",
     "texture": "solid silk raso",
@@ -664,10 +662,10 @@
   {
     "id": 37,
     "productCode": "sdl-10122-shg",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10122",
     "designName": "griege clay",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid-textured",
     "textureCode": "SHG",
     "texture": "super high gloss",
@@ -684,10 +682,10 @@
   {
     "id": 38,
     "productCode": "sdl-10123-eqr",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10123",
     "designName": "burnt sugar",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid-textured",
     "textureCode": "EQR",
     "texture": "exquisite leather",
@@ -704,10 +702,10 @@
   {
     "id": 39,
     "productCode": "sdl-10123-sud",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10123",
     "designName": "burnt sugar",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid",
     "textureCode": "SUD",
     "texture": "suede",
@@ -724,10 +722,10 @@
   {
     "id": 40,
     "productCode": "sdl-10123-ssr",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10123",
     "designName": "burnt sugar",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid-textured",
     "textureCode": "SSR",
     "texture": "solid silk raso",
@@ -744,10 +742,10 @@
   {
     "id": 41,
     "productCode": "sdl-10123-elr",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10123",
     "designName": "burnt sugar",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid-textured",
     "textureCode": "ELR",
     "texture": "exotic leather",
@@ -764,10 +762,10 @@
   {
     "id": 42,
     "productCode": "sdl-10123-shg",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10123",
     "designName": "burnt sugar",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid-textured",
     "textureCode": "SHG",
     "texture": "super high gloss",
@@ -784,10 +782,10 @@
   {
     "id": 43,
     "productCode": "sdl-10124-fbt",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10124",
     "designName": "moss beige",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid-textured",
     "textureCode": "FBT",
     "texture": "fabric texture",
@@ -804,10 +802,10 @@
   {
     "id": 44,
     "productCode": "sdl-10124-fsr",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10124",
     "designName": "moss beige",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid-textured",
     "textureCode": "FSR",
     "texture": "flute silk raso",
@@ -824,10 +822,10 @@
   {
     "id": 45,
     "productCode": "sdl-10124-sud",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10124",
     "designName": "moss beige",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid",
     "textureCode": "SUD",
     "texture": "suede",
@@ -844,10 +842,10 @@
   {
     "id": 46,
     "productCode": "sdl-10124-ssr",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10124",
     "designName": "moss beige",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid-textured",
     "textureCode": "SSR",
     "texture": "solid silk raso",
@@ -864,10 +862,10 @@
   {
     "id": 47,
     "productCode": "sdl-10125-fsr",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10125",
     "designName": "bottleship grey",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid-textured",
     "textureCode": "FSR",
     "texture": "flute silk raso",
@@ -884,10 +882,10 @@
   {
     "id": 48,
     "productCode": "sdl-10125-sud",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10125",
     "designName": "bottleship grey",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid",
     "textureCode": "SUD",
     "texture": "suede",
@@ -904,10 +902,10 @@
   {
     "id": 49,
     "productCode": "sdl-10125-ssr",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10125",
     "designName": "bottleship grey",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid-textured",
     "textureCode": "SSR",
     "texture": "solid silk raso",
@@ -924,10 +922,10 @@
   {
     "id": 50,
     "productCode": "sdl-10125-shg",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10125",
     "designName": "bottleship grey",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid-textured",
     "textureCode": "SHG",
     "texture": "super high gloss",
@@ -944,10 +942,10 @@
   {
     "id": 51,
     "productCode": "sdl-10126-sud",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10126",
     "designName": "brick red",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid",
     "textureCode": "SUD",
     "texture": "suede",
@@ -964,10 +962,10 @@
   {
     "id": 52,
     "productCode": "sdl-10126-ssr",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10126",
     "designName": "brick red",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid-textured",
     "textureCode": "SSR",
     "texture": "solid silk raso",
@@ -984,10 +982,10 @@
   {
     "id": 53,
     "productCode": "sdl-10127-sud",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10127",
     "designName": "seaform green",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid",
     "textureCode": "SUD",
     "texture": "suede",
@@ -1004,10 +1002,10 @@
   {
     "id": 54,
     "productCode": "sdl-10127-ssr",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10127",
     "designName": "seaform green",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid-textured",
     "textureCode": "SSR",
     "texture": "solid silk raso",
@@ -1024,10 +1022,10 @@
   {
     "id": 55,
     "productCode": "sdl-10128-sud",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10128",
     "designName": "bondi blue",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid",
     "textureCode": "SUD",
     "texture": "suede",
@@ -1044,10 +1042,10 @@
   {
     "id": 56,
     "productCode": "sdl-10128-ssr",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10128",
     "designName": "bondi blue",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid-textured",
     "textureCode": "SSR",
     "texture": "solid silk raso",
@@ -1064,10 +1062,10 @@
   {
     "id": 57,
     "productCode": "sdl-10130-fbt",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10130",
     "designName": "bone light",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid-textured",
     "textureCode": "FBT",
     "texture": "fabric texture",
@@ -1084,10 +1082,10 @@
   {
     "id": 58,
     "productCode": "sdl-10131-eqr",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10131",
     "designName": "bone dark",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid-textured",
     "textureCode": "EQR",
     "texture": "exquisite leather",
@@ -1104,10 +1102,10 @@
   {
     "id": 59,
     "productCode": "sdl-10132-eqr",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10132",
     "designName": "dark truffle",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid-textured",
     "textureCode": "EQR",
     "texture": "exquisite leather",
@@ -1121,14 +1119,13 @@
     "pdfUrlPath": "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/pdf/sdl-10132-eqr.pdf",
     "status": "active"
   },
- 
   {
     "id": 61,
     "productCode": "sdl-10133-shg",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10133",
     "designName": "pewter grey",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid-textured",
     "textureCode": "SHG",
     "texture": "super high gloss",
@@ -1145,10 +1142,10 @@
   {
     "id": 63,
     "productCode": "sdl-10134-fbt",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10134",
     "designName": "pastel grey",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid-textured",
     "textureCode": "FBT",
     "texture": "fabric texture",
@@ -1165,10 +1162,10 @@
   {
     "id": 64,
     "productCode": "sdl-10134-sud",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10134",
     "designName": "pastel grey",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid",
     "textureCode": "SUD",
     "texture": "suede",
@@ -1185,10 +1182,10 @@
   {
     "id": 65,
     "productCode": "sdl-10134-ssr",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10134",
     "designName": "pastel grey",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid-textured",
     "textureCode": "SSR",
     "texture": "solid silk raso",
@@ -1205,10 +1202,10 @@
   {
     "id": 66,
     "productCode": "sdl-10135-eqr",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10135",
     "designName": "charcoal grey",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid-textured",
     "textureCode": "EQR",
     "texture": "exquisite leather",
@@ -1225,10 +1222,10 @@
   {
     "id": 67,
     "productCode": "sdl-10135-ssr",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10135",
     "designName": "charcoal grey",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid-textured",
     "textureCode": "SSR",
     "texture": "solid silk raso",
@@ -1245,10 +1242,10 @@
   {
     "id": 68,
     "productCode": "sdl-10135-shg",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10135",
     "designName": "charcoal grey",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid-textured",
     "textureCode": "SHG",
     "texture": "super high gloss",
@@ -1265,10 +1262,10 @@
   {
     "id": 69,
     "productCode": "sdl-10137-fsr",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10137",
     "designName": "cruise green",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid-textured",
     "textureCode": "FSR",
     "texture": "flute silk raso",
@@ -1285,10 +1282,10 @@
   {
     "id": 70,
     "productCode": "sdl-10137-ssr",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10137",
     "designName": "cruise green",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid-textured",
     "textureCode": "SSR",
     "texture": "solid silk raso",
@@ -1305,10 +1302,10 @@
   {
     "id": 71,
     "productCode": "sdl-10138-fsr",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10138",
     "designName": "soft cyan",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid-textured",
     "textureCode": "FSR",
     "texture": "flute silk raso",
@@ -1325,10 +1322,10 @@
   {
     "id": 72,
     "productCode": "sdl-10138-ssr",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10138",
     "designName": "soft cyan",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid-textured",
     "textureCode": "SSR",
     "texture": "solid silk raso",
@@ -1345,10 +1342,10 @@
   {
     "id": 73,
     "productCode": "sdl-10139-ssr",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10139",
     "designName": "candy floss pink",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid-textured",
     "textureCode": "SSR",
     "texture": "solid silk raso",
@@ -1365,10 +1362,10 @@
   {
     "id": 74,
     "productCode": "sdl-10140-fbt",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10140",
     "designName": "blossom grey",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid-textured",
     "textureCode": "FBT",
     "texture": "fabric texture",
@@ -1385,10 +1382,10 @@
   {
     "id": 75,
     "productCode": "sdl-10140-fsr",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10140",
     "designName": "blossom grey",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid-textured",
     "textureCode": "FSR",
     "texture": "flute silk raso",
@@ -1405,10 +1402,10 @@
   {
     "id": 76,
     "productCode": "sdl-10140-ssr",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10140",
     "designName": "blossom grey",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid-textured",
     "textureCode": "SSR",
     "texture": "solid silk raso",
@@ -1425,10 +1422,10 @@
   {
     "id": 77,
     "productCode": "sdl-10142-sud",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10142",
     "designName": "gainsboro grey",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid",
     "textureCode": "SUD",
     "texture": "suede",
@@ -1442,14 +1439,13 @@
     "pdfUrlPath": "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/pdf/sdl-10142-sud.pdf",
     "status": "active"
   },
- 
   {
     "id": 79,
     "productCode": "sdl-10202-ssr",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10202",
     "designName": "rose white",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid-textured",
     "textureCode": "SSR",
     "texture": "solid silk raso",
@@ -1466,10 +1462,10 @@
   {
     "id": 80,
     "productCode": "sdl-10204-eqr",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10204",
     "designName": "creamy white",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid-textured",
     "textureCode": "EQR",
     "texture": "exquisite leather",
@@ -1486,10 +1482,10 @@
   {
     "id": 81,
     "productCode": "sdl-10204-fbt",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10204",
     "designName": "creamy white",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid-textured",
     "textureCode": "FBT",
     "texture": "fabric texture",
@@ -1506,10 +1502,10 @@
   {
     "id": 82,
     "productCode": "sdl-10204-elr",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10204",
     "designName": "creamy white",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid-textured",
     "textureCode": "ELR",
     "texture": "exotic leather",
@@ -1526,10 +1522,10 @@
   {
     "id": 83,
     "productCode": "sdl-10204-ssr",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10204",
     "designName": "chreamy white",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid-textured",
     "textureCode": "SSR",
     "texture": "solid silk raso",
@@ -1546,10 +1542,10 @@
   {
     "id": 84,
     "productCode": "sdl-10204-shg",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10204",
     "designName": "creamy white",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid-textured",
     "textureCode": "SHG",
     "texture": "super high gloss",
@@ -1566,10 +1562,10 @@
   {
     "id": 85,
     "productCode": "sdl-10205-ssr",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10205",
     "designName": "anti flash white",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid-textured",
     "textureCode": "SSR",
     "texture": "solid silk raso",
@@ -1586,10 +1582,10 @@
   {
     "id": 86,
     "productCode": "sdl-10206-ssr",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-10206",
     "designName": "cotton white",
-    "category": "solid",
+    "category": "design-master",
     "subCategory": "solid-textured",
     "textureCode": "SSR",
     "texture": "solid silk raso",
@@ -1606,10 +1602,10 @@
   {
     "id": 87,
     "productCode": "sdl-30303-sud",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-30303",
     "designName": "espresso oak",
-    "category": "woodgrain",
+    "category": "design-master",
     "subCategory": "woodgrain",
     "textureCode": "SUD",
     "texture": "suede",
@@ -1626,10 +1622,10 @@
   {
     "id": 88,
     "productCode": "sdl-30303-skr",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-30303",
     "designName": "espresso oak",
-    "category": "woodgrain",
+    "category": "design-master",
     "subCategory": "woodgrain-textured",
     "textureCode": "SKR",
     "texture": "silk raso",
@@ -1646,10 +1642,10 @@
   {
     "id": 89,
     "productCode": "sdl-30304-sud",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-30304",
     "designName": "kitami elm dark",
-    "category": "woodgrain",
+    "category": "design-master",
     "subCategory": "woodgrain",
     "textureCode": "SUD",
     "texture": "suede",
@@ -1666,10 +1662,10 @@
   {
     "id": 90,
     "productCode": "sdl-30304-skr",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-30304",
     "designName": "kitami elm dark",
-    "category": "woodgrain",
+    "category": "design-master",
     "subCategory": "woodgrain-textured",
     "textureCode": "SKR",
     "texture": "silk raso",
@@ -1686,10 +1682,10 @@
   {
     "id": 91,
     "productCode": "sdl-30305-grn",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-30305",
     "designName": "kitami elm light",
-    "category": "woodgrain",
+    "category": "design-master",
     "subCategory": "woodgrain-textured",
     "textureCode": "GRN",
     "texture": "grain",
@@ -1703,14 +1699,13 @@
     "pdfUrlPath": "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/pdf/sdl-30305-grn.pdf",
     "status": "active"
   },
- 
   {
     "id": 93,
     "productCode": "sdl-30305-skr",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-30305",
     "designName": "kitami elm light",
-    "category": "woodgrain",
+    "category": "design-master",
     "subCategory": "woodgrain-textured",
     "textureCode": "SKR",
     "texture": "silk raso",
@@ -1727,10 +1722,10 @@
   {
     "id": 94,
     "productCode": "sdl-30306-grn",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-30306",
     "designName": "raya oak dark",
-    "category": "woodgrain",
+    "category": "design-master",
     "subCategory": "woodgrain-textured",
     "textureCode": "GRN",
     "texture": "grain",
@@ -1747,10 +1742,10 @@
   {
     "id": 95,
     "productCode": "sdl-30306-rwd",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-30306",
     "designName": "raya oak dark",
-    "category": "woodgrain",
+    "category": "design-master",
     "subCategory": "woodgrain-textured",
     "textureCode": "RWD",
     "texture": "roughwood",
@@ -1764,14 +1759,13 @@
     "pdfUrlPath": "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/pdf/sdl-30306-rwd.pdf",
     "status": "active"
   },
- 
   {
     "id": 97,
     "productCode": "sdl-30306-skr",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-30306",
     "designName": "raya oak dark",
-    "category": "woodgrain",
+    "category": "design-master",
     "subCategory": "woodgrain-textured",
     "textureCode": "SKR",
     "texture": "silk raso",
@@ -1788,10 +1782,10 @@
   {
     "id": 98,
     "productCode": "sdl-30307-grn",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-30307",
     "designName": "raya oak light",
-    "category": "woodgrain",
+    "category": "design-master",
     "subCategory": "woodgrain-textured",
     "textureCode": "GRN",
     "texture": "grain",
@@ -1808,10 +1802,10 @@
   {
     "id": 99,
     "productCode": "sdl-30307-rwd",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-30307",
     "designName": "raya oak light",
-    "category": "woodgrain",
+    "category": "design-master",
     "subCategory": "woodgrain-textured",
     "textureCode": "RWD",
     "texture": "roughwood",
@@ -1828,10 +1822,10 @@
   {
     "id": 100,
     "productCode": "sdl-30307-sud",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-30307",
     "designName": "raya oak light",
-    "category": "woodgrain",
+    "category": "design-master",
     "subCategory": "woodgrain",
     "textureCode": "SUD",
     "texture": "suede",
@@ -1848,10 +1842,10 @@
   {
     "id": 101,
     "productCode": "sdl-30307-skr",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-30307",
     "designName": "raya oak light",
-    "category": "woodgrain",
+    "category": "design-master",
     "subCategory": "woodgrain-textured",
     "textureCode": "SKR",
     "texture": "silk raso",
@@ -1865,14 +1859,13 @@
     "pdfUrlPath": "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/pdf/sdl-30307-skr.pdf",
     "status": "active"
   },
- 
   {
     "id": 103,
     "productCode": "sdl-30308-skr",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-30308",
     "designName": "vintage teak",
-    "category": "woodgrain",
+    "category": "design-master",
     "subCategory": "woodgrain-textured",
     "textureCode": "SKR",
     "texture": "silk raso",
@@ -1889,10 +1882,10 @@
   {
     "id": 104,
     "productCode": "sdl-30309-brk",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-30309",
     "designName": "wheat walnut",
-    "category": "woodgrain",
+    "category": "design-master",
     "subCategory": "woodgrain-textured",
     "textureCode": "BRK",
     "texture": "bark",
@@ -1909,10 +1902,10 @@
   {
     "id": 105,
     "productCode": "sdl-30309-grn",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-30309",
     "designName": "wheat walnut",
-    "category": "woodgrain",
+    "category": "design-master",
     "subCategory": "woodgrain-textured",
     "textureCode": "GRN",
     "texture": "grain",
@@ -1929,10 +1922,10 @@
   {
     "id": 106,
     "productCode": "sdl-30309-sud",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-30309",
     "designName": "wheat walnut",
-    "category": "woodgrain",
+    "category": "design-master",
     "subCategory": "woodgrain",
     "textureCode": "SUD",
     "texture": "suede",
@@ -1949,10 +1942,10 @@
   {
     "id": 107,
     "productCode": "sdl-30309-skr",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-30309",
     "designName": "wheat walnut",
-    "category": "woodgrain",
+    "category": "design-master",
     "subCategory": "woodgrain-textured",
     "textureCode": "SKR",
     "texture": "silk raso",
@@ -1969,10 +1962,10 @@
   {
     "id": 108,
     "productCode": "sdl-30310-sud",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-30310",
     "designName": "dark brown oak",
-    "category": "woodgrain",
+    "category": "design-master",
     "subCategory": "woodgrain",
     "textureCode": "SUD",
     "texture": "suede",
@@ -1989,10 +1982,10 @@
   {
     "id": 109,
     "productCode": "sdl-30310-skr",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-30310",
     "designName": "dark brown oak",
-    "category": "woodgrain",
+    "category": "design-master",
     "subCategory": "woodgrain-textured",
     "textureCode": "SKR",
     "texture": "silk raso",
@@ -2009,10 +2002,10 @@
   {
     "id": 110,
     "productCode": "sdl-30310-vnz",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-30310",
     "designName": "dark brown oak",
-    "category": "woodgrain",
+    "category": "design-master",
     "subCategory": "woodgrain-textured",
     "textureCode": "VNZ",
     "texture": "venza",
@@ -2029,10 +2022,10 @@
   {
     "id": 111,
     "productCode": "sdl-30310-zn",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-30310",
     "designName": "dark brown oak",
-    "category": "woodgrain",
+    "category": "design-master",
     "subCategory": "woodgrain-textured",
     "textureCode": "ZN",
     "texture": "zebrono",
@@ -2049,10 +2042,10 @@
   {
     "id": 112,
     "productCode": "sdl-30311-brk",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-30311",
     "designName": "dark ruffle walnut",
-    "category": "woodgrain",
+    "category": "design-master",
     "subCategory": "woodgrain-textured",
     "textureCode": "BRK",
     "texture": "bark",
@@ -2069,10 +2062,10 @@
   {
     "id": 113,
     "productCode": "sdl-30311-grn",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-30311",
     "designName": "dark ruffle walnut",
-    "category": "woodgrain",
+    "category": "design-master",
     "subCategory": "woodgrain-textured",
     "textureCode": "GRN",
     "texture": "grain",
@@ -2089,10 +2082,10 @@
   {
     "id": 114,
     "productCode": "sdl-30311-sud",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-30311",
     "designName": "dark ruffle walnut",
-    "category": "woodgrain",
+    "category": "design-master",
     "subCategory": "woodgrain",
     "textureCode": "SUD",
     "texture": "suede",
@@ -2109,10 +2102,10 @@
   {
     "id": 115,
     "productCode": "sdl-30311-skr",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-30311",
     "designName": "dark ruffle walnut",
-    "category": "woodgrain",
+    "category": "design-master",
     "subCategory": "woodgrain-textured",
     "textureCode": "SKR",
     "texture": "silk raso",
@@ -2129,10 +2122,10 @@
   {
     "id": 116,
     "productCode": "sdl-30312-sud",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-30312",
     "designName": "california elm",
-    "category": "woodgrain",
+    "category": "design-master",
     "subCategory": "woodgrain",
     "textureCode": "SUD",
     "texture": "suede",
@@ -2149,10 +2142,10 @@
   {
     "id": 117,
     "productCode": "sdl-30312-skr",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-30312",
     "designName": "california elm",
-    "category": "woodgrain",
+    "category": "design-master",
     "subCategory": "woodgrain-textured",
     "textureCode": "SKR",
     "texture": "silk raso",
@@ -2169,10 +2162,10 @@
   {
     "id": 118,
     "productCode": "sdl-30312-vnz",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-30312",
     "designName": "california elm",
-    "category": "woodgrain",
+    "category": "design-master",
     "subCategory": "woodgrain-textured",
     "textureCode": "VNZ",
     "texture": "venza",
@@ -2189,10 +2182,10 @@
   {
     "id": 119,
     "productCode": "sdl-30313-sud",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-30313",
     "designName": "toledo ash",
-    "category": "woodgrain",
+    "category": "design-master",
     "subCategory": "woodgrain",
     "textureCode": "SUD",
     "texture": "suede",
@@ -2209,10 +2202,10 @@
   {
     "id": 120,
     "productCode": "sdl-30313-skr",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-30313",
     "designName": "toledo ash",
-    "category": "woodgrain",
+    "category": "design-master",
     "subCategory": "woodgrain-textured",
     "textureCode": "SKR",
     "texture": "silk raso",
@@ -2229,10 +2222,10 @@
   {
     "id": 121,
     "productCode": "sdl-30314-grn",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-30314",
     "designName": "novoceno pine",
-    "category": "woodgrain",
+    "category": "design-master",
     "subCategory": "woodgrain-textured",
     "textureCode": "GRN",
     "texture": "grain",
@@ -2249,10 +2242,10 @@
   {
     "id": 122,
     "productCode": "sdl-30314-sud",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-30314",
     "designName": "novoceno pine",
-    "category": "woodgrain",
+    "category": "design-master",
     "subCategory": "woodgrain",
     "textureCode": "SUD",
     "texture": "suede",
@@ -2269,10 +2262,10 @@
   {
     "id": 123,
     "productCode": "sdl-30315-skr",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-30315",
     "designName": "beige line illusion",
-    "category": "woodgrain",
+    "category": "design-master",
     "subCategory": "woodgrain-textured",
     "textureCode": "SKR",
     "texture": "silk raso",
@@ -2289,10 +2282,10 @@
   {
     "id": 124,
     "productCode": "sdl-30317-rwd",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-30317",
     "designName": "veracious walnut",
-    "category": "woodgrain",
+    "category": "design-master",
     "subCategory": "woodgrain-textured",
     "textureCode": "RWD",
     "texture": "roughwood",
@@ -2309,10 +2302,10 @@
   {
     "id": 125,
     "productCode": "sdl-30317-sud",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-30317",
     "designName": "veracious walnut",
-    "category": "woodgrain",
+    "category": "design-master",
     "subCategory": "woodgrain",
     "textureCode": "SUD",
     "texture": "suede",
@@ -2329,10 +2322,10 @@
   {
     "id": 126,
     "productCode": "sdl-30317-skr",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-30317",
     "designName": "veracious walnut",
-    "category": "woodgrain",
+    "category": "design-master",
     "subCategory": "woodgrain-textured",
     "textureCode": "SKR",
     "texture": "silk raso",
@@ -2349,10 +2342,10 @@
   {
     "id": 127,
     "productCode": "sdl-30318-brk",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-30318",
     "designName": "andean walnut",
-    "category": "woodgrain",
+    "category": "design-master",
     "subCategory": "woodgrain-textured",
     "textureCode": "BRK",
     "texture": "bark",
@@ -2369,10 +2362,10 @@
   {
     "id": 128,
     "productCode": "sdl-30318-sud",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-30318",
     "designName": "andean walnut",
-    "category": "woodgrain",
+    "category": "design-master",
     "subCategory": "woodgrain",
     "textureCode": "SUD",
     "texture": "suede",
@@ -2389,10 +2382,10 @@
   {
     "id": 129,
     "productCode": "sdl-30318-skr",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-30318",
     "designName": "andean walnut",
-    "category": "woodgrain",
+    "category": "design-master",
     "subCategory": "woodgrain-textured",
     "textureCode": "SKR",
     "texture": "silk raso",
@@ -2409,10 +2402,10 @@
   {
     "id": 130,
     "productCode": "sdl-30319-skr",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-30319",
     "designName": "dark grey walnut",
-    "category": "woodgrain",
+    "category": "design-master",
     "subCategory": "woodgrain-textured",
     "textureCode": "SKR",
     "texture": "silk raso",
@@ -2429,10 +2422,10 @@
   {
     "id": 131,
     "productCode": "sdl-30320-brk",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-30320",
     "designName": "borneo brown",
-    "category": "woodgrain",
+    "category": "design-master",
     "subCategory": "woodgrain-textured",
     "textureCode": "BRK",
     "texture": "bark",
@@ -2449,10 +2442,10 @@
   {
     "id": 132,
     "productCode": "sdl-30320-rwd",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-30320",
     "designName": "borneo brown",
-    "category": "woodgrain",
+    "category": "design-master",
     "subCategory": "woodgrain-textured",
     "textureCode": "RWD",
     "texture": "roughwood",
@@ -2469,10 +2462,10 @@
   {
     "id": 133,
     "productCode": "sdl-30320-sud",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-30320",
     "designName": "borneo brown",
-    "category": "woodgrain",
+    "category": "design-master",
     "subCategory": "woodgrain",
     "textureCode": "SUD",
     "texture": "suede",
@@ -2489,10 +2482,10 @@
   {
     "id": 134,
     "productCode": "sdl-30320-skr",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-30320",
     "designName": "borneo brown",
-    "category": "woodgrain",
+    "category": "design-master",
     "subCategory": "woodgrain-textured",
     "textureCode": "SKR",
     "texture": "silk raso",
@@ -2509,10 +2502,10 @@
   {
     "id": 135,
     "productCode": "sdl-30321-rwd",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-30321",
     "designName": "austra mondo",
-    "category": "woodgrain",
+    "category": "design-master",
     "subCategory": "woodgrain-textured",
     "textureCode": "RWD",
     "texture": "roughwood",
@@ -2529,10 +2522,10 @@
   {
     "id": 136,
     "productCode": "sdl-30321-sud",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-30321",
     "designName": "austra mondo",
-    "category": "woodgrain",
+    "category": "design-master",
     "subCategory": "woodgrain",
     "textureCode": "SUD",
     "texture": "suede",
@@ -2549,10 +2542,10 @@
   {
     "id": 137,
     "productCode": "sdl-30322-sud",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-30322",
     "designName": "orlando walnut",
-    "category": "woodgrain",
+    "category": "design-master",
     "subCategory": "woodgrain",
     "textureCode": "SUD",
     "texture": "suede",
@@ -2569,10 +2562,10 @@
   {
     "id": 138,
     "productCode": "sdl-30322-zn",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-30322",
     "designName": "orlando walnut",
-    "category": "woodgrain",
+    "category": "design-master",
     "subCategory": "woodgrain-textured",
     "textureCode": "ZN",
     "texture": "zebrono",
@@ -2589,10 +2582,10 @@
   {
     "id": 139,
     "productCode": "sdl-30323-sud",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-30323",
     "designName": "walnut dark brown",
-    "category": "woodgrain",
+    "category": "design-master",
     "subCategory": "woodgrain",
     "textureCode": "SUD",
     "texture": "suede",
@@ -2609,10 +2602,10 @@
   {
     "id": 140,
     "productCode": "sdl-30323-skr",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-30323",
     "designName": "walnut dark brown",
-    "category": "woodgrain",
+    "category": "design-master",
     "subCategory": "woodgrain-textured",
     "textureCode": "SKR",
     "texture": "silk raso",
@@ -2629,10 +2622,10 @@
   {
     "id": 141,
     "productCode": "sdl-30323-vnz",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-30323",
     "designName": "walnut dark brown",
-    "category": "woodgrain",
+    "category": "design-master",
     "subCategory": "woodgrain-textured",
     "textureCode": "VNZ",
     "texture": "venza",
@@ -2649,10 +2642,10 @@
   {
     "id": 142,
     "productCode": "sdl-30323-zn",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-30323",
     "designName": "walnut dark brown",
-    "category": "woodgrain",
+    "category": "design-master",
     "subCategory": "woodgrain-textured",
     "textureCode": "ZN",
     "texture": "zebrono",
@@ -2669,10 +2662,10 @@
   {
     "id": 143,
     "productCode": "sdl-30324-sud",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-30324",
     "designName": "reclaimed walnut",
-    "category": "woodgrain",
+    "category": "design-master",
     "subCategory": "woodgrain",
     "textureCode": "SUD",
     "texture": "suede",
@@ -2689,10 +2682,10 @@
   {
     "id": 144,
     "productCode": "sdl-40401-skr",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-40401",
     "designName": "pietra brown",
-    "category": "stone",
+    "category": "design-master",
     "subCategory": "stone",
     "textureCode": "SKR",
     "texture": "silk raso",
@@ -2706,14 +2699,13 @@
     "pdfUrlPath": "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/pdf/sdl-40401-skr.pdf",
     "status": "active"
   },
-
   {
     "id": 146,
     "productCode": "sdl-40402-skr",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-40402",
     "designName": "cave grey marble",
-    "category": "stone",
+    "category": "design-master",
     "subCategory": "stone",
     "textureCode": "SKR",
     "texture": "silk raso",
@@ -2730,10 +2722,10 @@
   {
     "id": 147,
     "productCode": "sdl-40403-ftc",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-40403",
     "designName": "sandstone brown",
-    "category": "stone",
+    "category": "design-master",
     "subCategory": "stone",
     "textureCode": "FTC",
     "texture": "cemented flute",
@@ -2750,10 +2742,10 @@
   {
     "id": 148,
     "productCode": "sdl-40404-ftc",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-40404",
     "designName": "sandstone dark",
-    "category": "stone",
+    "category": "design-master",
     "subCategory": "stone",
     "textureCode": "FTC",
     "texture": "cemented flute",
@@ -2770,10 +2762,10 @@
   {
     "id": 149,
     "productCode": "sdl-40405-ftc",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-40405",
     "designName": "dark travertine",
-    "category": "stone",
+    "category": "design-master",
     "subCategory": "stone",
     "textureCode": "FTC",
     "texture": "cemented flute",
@@ -2790,10 +2782,10 @@
   {
     "id": 150,
     "productCode": "sdl-40405-mbl",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-40405",
     "designName": "dark travertine",
-    "category": "stone",
+    "category": "design-master",
     "subCategory": "stone",
     "textureCode": "MBL",
     "texture": "marble",
@@ -2810,10 +2802,10 @@
   {
     "id": 151,
     "productCode": "sdl-40405-rk",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-40405",
     "designName": "dark travertine",
-    "category": "stone",
+    "category": "design-master",
     "subCategory": "stone",
     "textureCode": "RK",
     "texture": "rock",
@@ -2830,10 +2822,10 @@
   {
     "id": 152,
     "productCode": "sdl-40406-shg",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-40406",
     "designName": "travertine beige",
-    "category": "stone",
+    "category": "design-master",
     "subCategory": "stone",
     "textureCode": "SHG",
     "texture": "super high gloss",
@@ -2850,10 +2842,10 @@
   {
     "id": 153,
     "productCode": "sdl-40406-mbl",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-40406",
     "designName": "travertine beige",
-    "category": "stone",
+    "category": "design-master",
     "subCategory": "stone",
     "textureCode": "MBL",
     "texture": "marble",
@@ -2870,10 +2862,10 @@
   {
     "id": 154,
     "productCode": "sdl-40407-shg",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-40407",
     "designName": "lava stone light",
-    "category": "stone",
+    "category": "design-master",
     "subCategory": "stone",
     "textureCode": "SHG",
     "texture": "super high gloss",
@@ -2890,10 +2882,10 @@
   {
     "id": 155,
     "productCode": "sdl-40407-rk",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-40407",
     "designName": "lava stone light",
-    "category": "stone",
+    "category": "design-master",
     "subCategory": "stone",
     "textureCode": "RK",
     "texture": "rock",
@@ -2910,10 +2902,10 @@
   {
     "id": 156,
     "productCode": "sdl-40407-skr",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-40407",
     "designName": "lava stone light",
-    "category": "stone",
+    "category": "design-master",
     "subCategory": "stone",
     "textureCode": "SKR",
     "texture": "silk raso",
@@ -2930,10 +2922,10 @@
   {
     "id": 157,
     "productCode": "sdl-40408-shg",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-40408",
     "designName": "iceland granite stone",
-    "category": "stone",
+    "category": "design-master",
     "subCategory": "stone",
     "textureCode": "SHG",
     "texture": "super high gloss",
@@ -2950,10 +2942,10 @@
   {
     "id": 158,
     "productCode": "sdl-40408-mbl",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-40408",
     "designName": "iceland granite stone",
-    "category": "stone",
+    "category": "design-master",
     "subCategory": "stone",
     "textureCode": "MBL",
     "texture": "marble",
@@ -2970,10 +2962,10 @@
   {
     "id": 159,
     "productCode": "sdl-40408-rk",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-40408",
     "designName": "iceland granite stone",
-    "category": "stone",
+    "category": "design-master",
     "subCategory": "stone",
     "textureCode": "RK",
     "texture": "rock",
@@ -2990,10 +2982,10 @@
   {
     "id": 160,
     "productCode": "sdl-40408-skr",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-40408",
     "designName": "iceland granite stone",
-    "category": "stone",
+    "category": "design-master",
     "subCategory": "stone",
     "textureCode": "SKR",
     "texture": "silk raso",
@@ -3010,10 +3002,10 @@
   {
     "id": 161,
     "productCode": "sdl-40409-mbl",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-40409",
     "designName": "lava stone dark",
-    "category": "stone",
+    "category": "design-master",
     "subCategory": "stone",
     "textureCode": "MBL",
     "texture": "marble",
@@ -3030,10 +3022,10 @@
   {
     "id": 162,
     "productCode": "sdl-40409-rk",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-40409",
     "designName": "lava stone dark",
-    "category": "stone",
+    "category": "design-master",
     "subCategory": "stone",
     "textureCode": "RK",
     "texture": "rock",
@@ -3050,10 +3042,10 @@
   {
     "id": 163,
     "productCode": "sdl-40410-shg",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-40410",
     "designName": "moscato beige",
-    "category": "stone",
+    "category": "design-master",
     "subCategory": "stone",
     "textureCode": "SHG",
     "texture": "super high gloss",
@@ -3070,10 +3062,10 @@
   {
     "id": 164,
     "productCode": "sdl-40410-rk",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-40410",
     "designName": "moscato beige",
-    "category": "stone",
+    "category": "design-master",
     "subCategory": "stone",
     "textureCode": "RK",
     "texture": "rock",
@@ -3090,10 +3082,10 @@
   {
     "id": 165,
     "productCode": "sdl-40410-skr",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-40410",
     "designName": "moscato beige",
-    "category": "stone",
+    "category": "design-master",
     "subCategory": "stone",
     "textureCode": "SKR",
     "texture": "silk raso",
@@ -3110,10 +3102,10 @@
   {
     "id": 166,
     "productCode": "sdl-40411-mbl",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-40411",
     "designName": "satvario marble",
-    "category": "stone",
+    "category": "design-master",
     "subCategory": "stone",
     "textureCode": "MBL",
     "texture": "marble",
@@ -3130,10 +3122,10 @@
   {
     "id": 167,
     "productCode": "sdl-40411-rk",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-40411",
     "designName": "satvario marble",
-    "category": "stone",
+    "category": "design-master",
     "subCategory": "stone",
     "textureCode": "RK",
     "texture": "rock",
@@ -3150,10 +3142,10 @@
   {
     "id": 168,
     "productCode": "sdl-40413-ftc",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-40413",
     "designName": "rustic ferrous",
-    "category": "stone",
+    "category": "design-master",
     "subCategory": "stone",
     "textureCode": "FTC",
     "texture": "cemented flute",
@@ -3170,10 +3162,10 @@
   {
     "id": 169,
     "productCode": "sdl-40413-mbl",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-40413",
     "designName": "rustic ferrous",
-    "category": "stone",
+    "category": "design-master",
     "subCategory": "stone",
     "textureCode": "MBL",
     "texture": "marble",
@@ -3190,10 +3182,10 @@
   {
     "id": 170,
     "productCode": "sdl-40413-rk",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-40413",
     "designName": "rustic ferrous",
-    "category": "stone",
+    "category": "design-master",
     "subCategory": "stone",
     "textureCode": "RK",
     "texture": "rock",
@@ -3207,15 +3199,13 @@
     "pdfUrlPath": "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/pdf/sdl-40413-rk.pdf",
     "status": "active"
   },
-
- 
   {
     "id": 173,
     "productCode": "sdl-50501",
-    "productType": "design-master",
+    "productType": "decorative-hpl",
     "productName": "sdl-50501",
     "designName": "silver leaf",
-    "category": "foil",
+    "category": "design-master",
     "subCategory": "foil",
     "textureCode": "",
     "texture": "",
@@ -3229,23 +3219,13 @@
     "pdfUrlPath": "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/pdf/sdl-50501.pdf",
     "status": "active"
   },
-
- 
- 
-  
- 
- 
- 
-
- 
- 
   {
     "id": 192,
     "productCode": "sdl-1005-sf",
-    "productType": "ambiance",
+    "productType": "decorative-hpl",
     "productName": "sdl-1005",
     "designName": "polar blue",
-    "category": "solid",
+    "category": "ambience",
     "subCategory": "solid",
     "textureCode": "SF",
     "texture": "Suede",
@@ -3253,8 +3233,8 @@
     "thickness": "0.8mm",
     "width": "1220mm",
     "image": [
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-1005-SF.jpg",
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-1005-SF.jpg"
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-1005-SF.jpg",
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-1005-SF.jpg"
     ],
     "pdfUrlPath": "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/pdf/sdl-1005-sf.pdf",
     "status": "active"
@@ -3262,10 +3242,10 @@
   {
     "id": 193,
     "productCode": "sdl-1005-shg",
-    "productType": "ambiance",
+    "productType": "decorative-hpl",
     "productName": "sdl-1005",
     "designName": "polar blue",
-    "category": "solid",
+    "category": "ambience",
     "subCategory": "solid-textured",
     "textureCode": "SHG",
     "texture": "High Gloss",
@@ -3273,8 +3253,8 @@
     "thickness": "0.8mm",
     "width": "1220mm",
     "image": [
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-1005-SHG.jpg",
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-1005-SHG.jpg"
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-1005-SHG.jpg",
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-1005-SHG.jpg"
     ],
     "pdfUrlPath": "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/pdf/sdl-1005-shg.pdf",
     "status": "active"
@@ -3282,10 +3262,10 @@
   {
     "id": 196,
     "productCode": "sdl-1013-sf",
-    "productType": "ambiance",
+    "productType": "decorative-hpl",
     "productName": "sdl-1013",
     "designName": "poppy pink",
-    "category": "solid",
+    "category": "ambience",
     "subCategory": "solid",
     "textureCode": "SF",
     "texture": "Suede",
@@ -3293,8 +3273,8 @@
     "thickness": "0.8mm",
     "width": "1220mm",
     "image": [
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-1013-SF.jpg",
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-1013-SF.jpg"
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-1013-SF.jpg",
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-1013-SF.jpg"
     ],
     "pdfUrlPath": "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/pdf/sdl-1013-sf.pdf",
     "status": "active"
@@ -3302,10 +3282,10 @@
   {
     "id": 202,
     "productCode": "sdl-1029-sf",
-    "productType": "ambiance",
+    "productType": "decorative-hpl",
     "productName": "sdl-1029",
     "designName": "vivid orange",
-    "category": "solid",
+    "category": "ambience",
     "subCategory": "solid",
     "textureCode": "SF",
     "texture": "Suede",
@@ -3313,21 +3293,19 @@
     "thickness": "0.8mm",
     "width": "1220mm",
     "image": [
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-1029-SF.jpg",
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-1029-SF.jpg"
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-1029-SF.jpg",
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-1029-SF.jpg"
     ],
     "pdfUrlPath": "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/pdf/sdl-1029-sf.pdf",
     "status": "active"
   },
-
- 
   {
     "id": 206,
     "productCode": "sdl-2002-smm",
-    "productType": "ambiance",
+    "productType": "decorative-hpl",
     "productName": "sdl-2002",
     "designName": "metallic steel grey",
-    "category": "abstract",
+    "category": "ambience",
     "subCategory": "abstract",
     "textureCode": "SMM",
     "texture": "Soft Matt Metallic",
@@ -3335,8 +3313,8 @@
     "thickness": "0.8mm",
     "width": "1220mm",
     "image": [
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-2002-SMM.jpg",
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-2002-SMM.jpg"
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-2002-SMM.jpg",
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-2002-SMM.jpg"
     ],
     "pdfUrlPath": "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/pdf/sdl-2002-smm.pdf",
     "status": "active"
@@ -3344,10 +3322,10 @@
   {
     "id": 207,
     "productCode": "sdl-2004-smm",
-    "productType": "ambiance",
+    "productType": "decorative-hpl",
     "productName": "sdl-2004",
     "designName": "metallic white",
-    "category": "abstract",
+    "category": "ambience",
     "subCategory": "abstract",
     "textureCode": "SMM",
     "texture": "Soft Matt Metallic",
@@ -3355,8 +3333,8 @@
     "thickness": "0.8mm",
     "width": "1220mm",
     "image": [
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-2004-SMM.jpg",
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-2004-SMM.jpg"
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-2004-SMM.jpg",
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-2004-SMM.jpg"
     ],
     "pdfUrlPath": "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/pdf/sdl-2004-smm.pdf",
     "status": "active"
@@ -3364,10 +3342,10 @@
   {
     "id": 208,
     "productCode": "sdl-3001-sf",
-    "productType": "ambiance",
+    "productType": "decorative-hpl",
     "productName": "sdl-3001",
     "designName": "wheat brown",
-    "category": "woodgrain",
+    "category": "ambience",
     "subCategory": "woodgrain",
     "textureCode": "SF",
     "texture": "Suede",
@@ -3375,8 +3353,8 @@
     "thickness": "0.8mm",
     "width": "1220mm",
     "image": [
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3001-SF.jpg",
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3001-SF.jpg"
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3001-SF.jpg",
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3001-SF.jpg"
     ],
     "pdfUrlPath": "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/pdf/sdl-3001-sf.pdf",
     "status": "active"
@@ -3384,10 +3362,10 @@
   {
     "id": 209,
     "productCode": "sdl-3002-sf",
-    "productType": "ambiance",
+    "productType": "decorative-hpl",
     "productName": "sdl-3002",
     "designName": "wheat gelato",
-    "category": "woodgrain",
+    "category": "ambience",
     "subCategory": "woodgrain",
     "textureCode": "SF",
     "texture": "Suede",
@@ -3395,8 +3373,8 @@
     "thickness": "0.8mm",
     "width": "1220mm",
     "image": [
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3002-SF.jpg",
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3002-SF.jpg"
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3002-SF.jpg",
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3002-SF.jpg"
     ],
     "pdfUrlPath": "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/pdf/sdl-3002-sf.pdf",
     "status": "active"
@@ -3404,10 +3382,10 @@
   {
     "id": 210,
     "productCode": "sdl-3002-shg",
-    "productType": "ambiance",
+    "productType": "decorative-hpl",
     "productName": "sdl-3002",
     "designName": "wheat gelato",
-    "category": "woodgrain",
+    "category": "ambience",
     "subCategory": "woodgrain-textured",
     "textureCode": "SHG",
     "texture": "High Gloss",
@@ -3415,20 +3393,19 @@
     "thickness": "0.8mm",
     "width": "1220mm",
     "image": [
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3002-SHG.jpg",
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3002-SHG.jpg"
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3002-SHG.jpg",
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3002-SHG.jpg"
     ],
     "pdfUrlPath": "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/pdf/sdl-3002-shg.pdf",
     "status": "active"
   },
- 
   {
     "id": 212,
     "productCode": "sdl-3003-shg",
-    "productType": "ambiance",
+    "productType": "decorative-hpl",
     "productName": "sdl-3003",
     "designName": "dark walnut",
-    "category": "woodgrain",
+    "category": "ambience",
     "subCategory": "woodgrain-textured",
     "textureCode": "SHG",
     "texture": "High Gloss",
@@ -3436,8 +3413,8 @@
     "thickness": "0.8mm",
     "width": "1220mm",
     "image": [
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3003-SHG.jpg",
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3003-SHG.jpg"
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3003-SHG.jpg",
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3003-SHG.jpg"
     ],
     "pdfUrlPath": "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/pdf/sdl-3003-shg.pdf",
     "status": "active"
@@ -3445,10 +3422,10 @@
   {
     "id": 213,
     "productCode": "sdl-3004-sf",
-    "productType": "ambiance",
+    "productType": "decorative-hpl",
     "productName": "sdl-3004",
     "designName": "dark grey pine",
-    "category": "woodgrain",
+    "category": "ambience",
     "subCategory": "woodgrain",
     "textureCode": "SF",
     "texture": "Suede",
@@ -3456,8 +3433,8 @@
     "thickness": "0.8mm",
     "width": "1220mm",
     "image": [
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3004-SF.jpg",
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3004-SF.jpg"
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3004-SF.jpg",
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3004-SF.jpg"
     ],
     "pdfUrlPath": "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/pdf/sdl-3004-sf.pdf",
     "status": "active"
@@ -3465,10 +3442,10 @@
   {
     "id": 214,
     "productCode": "sdl-3004-shg",
-    "productType": "ambiance",
+    "productType": "decorative-hpl",
     "productName": "sdl-3004",
     "designName": "dark grey pine",
-    "category": "woodgrain",
+    "category": "ambience",
     "subCategory": "woodgrain-textured",
     "textureCode": "SHG",
     "texture": "High Gloss",
@@ -3476,20 +3453,19 @@
     "thickness": "0.8mm",
     "width": "1220mm",
     "image": [
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3004-SHG.jpg",
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3004-SHG.jpg"
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3004-SHG.jpg",
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3004-SHG.jpg"
     ],
     "pdfUrlPath": "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/pdf/sdl-3004-shg.pdf",
     "status": "active"
   },
- 
   {
     "id": 216,
     "productCode": "sdl-3006-sf",
-    "productType": "ambiance",
+    "productType": "decorative-hpl",
     "productName": "sdl-3006",
     "designName": "rich walnut",
-    "category": "woodgrain",
+    "category": "ambience",
     "subCategory": "woodgrain",
     "textureCode": "SF",
     "texture": "Suede",
@@ -3497,8 +3473,8 @@
     "thickness": "0.8mm",
     "width": "1220mm",
     "image": [
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3006-SF.jpg",
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3006-SF.jpg"
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3006-SF.jpg",
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3006-SF.jpg"
     ],
     "pdfUrlPath": "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/pdf/sdl-3006-sf.pdf",
     "status": "active"
@@ -3506,10 +3482,10 @@
   {
     "id": 217,
     "productCode": "sdl-3006-shg",
-    "productType": "ambiance",
+    "productType": "decorative-hpl",
     "productName": "sdl-3006",
     "designName": "rich walnut",
-    "category": "woodgrain",
+    "category": "ambience",
     "subCategory": "woodgrain-textured",
     "textureCode": "SHG",
     "texture": "High Gloss",
@@ -3517,8 +3493,8 @@
     "thickness": "0.8mm",
     "width": "1220mm",
     "image": [
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3006-SHG.jpg",
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3006-SHG.jpg"
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3006-SHG.jpg",
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3006-SHG.jpg"
     ],
     "pdfUrlPath": "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/pdf/sdl-3006-shg.pdf",
     "status": "active"
@@ -3526,10 +3502,10 @@
   {
     "id": 218,
     "productCode": "sdl-3007-sf",
-    "productType": "ambiance",
+    "productType": "decorative-hpl",
     "productName": "sdl-3007",
     "designName": "light grey pine",
-    "category": "woodgrain",
+    "category": "ambience",
     "subCategory": "woodgrain",
     "textureCode": "SF",
     "texture": "Suede",
@@ -3537,8 +3513,8 @@
     "thickness": "0.8mm",
     "width": "1220mm",
     "image": [
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3007-SF.jpg",
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3007-SF.jpg"
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3007-SF.jpg",
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3007-SF.jpg"
     ],
     "pdfUrlPath": "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/pdf/sdl-3007-sf.pdf",
     "status": "active"
@@ -3546,10 +3522,10 @@
   {
     "id": 219,
     "productCode": "sdl-3007-sft",
-    "productType": "ambiance",
+    "productType": "decorative-hpl",
     "productName": "sdl-3007",
     "designName": "light grey pine",
-    "category": "woodgrain",
+    "category": "ambience",
     "subCategory": "woodgrain-textured",
     "textureCode": "SFT",
     "texture": "Soft Matt",
@@ -3557,8 +3533,8 @@
     "thickness": "0.8mm",
     "width": "1220mm",
     "image": [
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3007-SFT.jpg",
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3007-SFT.jpg"
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3007-SFT.jpg",
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3007-SFT.jpg"
     ],
     "pdfUrlPath": "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/pdf/sdl-3007-sft.pdf",
     "status": "active"
@@ -3566,10 +3542,10 @@
   {
     "id": 220,
     "productCode": "sdl-3007-vnr",
-    "productType": "ambiance",
+    "productType": "decorative-hpl",
     "productName": "sdl-3007",
     "designName": "light grey pine",
-    "category": "woodgrain",
+    "category": "ambience",
     "subCategory": "woodgrain-textured",
     "textureCode": "VNR",
     "texture": "Veneer",
@@ -3577,8 +3553,8 @@
     "thickness": "0.8mm",
     "width": "1220mm",
     "image": [
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3007-VNR.jpg",
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3007-VNR.jpg"
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3007-VNR.jpg",
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3007-VNR.jpg"
     ],
     "pdfUrlPath": "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/pdf/sdl-3007-vnr.pdf",
     "status": "active"
@@ -3586,10 +3562,10 @@
   {
     "id": 221,
     "productCode": "sdl-3008-sf",
-    "productType": "ambiance",
+    "productType": "decorative-hpl",
     "productName": "sdl-3008",
     "designName": "choco sawline",
-    "category": "woodgrain",
+    "category": "ambience",
     "subCategory": "woodgrain",
     "textureCode": "SF",
     "texture": "Suede",
@@ -3597,8 +3573,8 @@
     "thickness": "0.8mm",
     "width": "1220mm",
     "image": [
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3008-SF.jpg",
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3008-SF.jpg"
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3008-SF.jpg",
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3008-SF.jpg"
     ],
     "pdfUrlPath": "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/pdf/sdl-3008-sf.pdf",
     "status": "active"
@@ -3606,10 +3582,10 @@
   {
     "id": 222,
     "productCode": "sdl-3008-shg",
-    "productType": "ambiance",
+    "productType": "decorative-hpl",
     "productName": "sdl-3008",
     "designName": "choco sawline",
-    "category": "woodgrain",
+    "category": "ambience",
     "subCategory": "woodgrain-textured",
     "textureCode": "SHG",
     "texture": "High Gloss",
@@ -3617,8 +3593,8 @@
     "thickness": "0.8mm",
     "width": "1220mm",
     "image": [
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3008-SHG.jpg",
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3008-SHG.jpg"
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3008-SHG.jpg",
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3008-SHG.jpg"
     ],
     "pdfUrlPath": "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/pdf/sdl-3008-shg.pdf",
     "status": "active"
@@ -3626,10 +3602,10 @@
   {
     "id": 223,
     "productCode": "sdl-3009-sf",
-    "productType": "ambiance",
+    "productType": "decorative-hpl",
     "productName": "sdl-3009",
     "designName": "sandalwood",
-    "category": "woodgrain",
+    "category": "ambience",
     "subCategory": "woodgrain",
     "textureCode": "SF",
     "texture": "Suede",
@@ -3637,8 +3613,8 @@
     "thickness": "0.8mm",
     "width": "1220mm",
     "image": [
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3009-SF.jpg",
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3009-SF.jpg"
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3009-SF.jpg",
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3009-SF.jpg"
     ],
     "pdfUrlPath": "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/pdf/sdl-3009-sf.pdf",
     "status": "active"
@@ -3646,10 +3622,10 @@
   {
     "id": 224,
     "productCode": "sdl-3009-shg",
-    "productType": "ambiance",
+    "productType": "decorative-hpl",
     "productName": "sdl-3009",
     "designName": "sandalwood",
-    "category": "woodgrain",
+    "category": "ambience",
     "subCategory": "woodgrain-textured",
     "textureCode": "SHG",
     "texture": "High Gloss",
@@ -3657,8 +3633,8 @@
     "thickness": "0.8mm",
     "width": "1220mm",
     "image": [
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3009-SHG.jpg",
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3009-SHG.jpg"
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3009-SHG.jpg",
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3009-SHG.jpg"
     ],
     "pdfUrlPath": "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/pdf/sdl-3009-shg.pdf",
     "status": "active"
@@ -3666,10 +3642,10 @@
   {
     "id": 225,
     "productCode": "sdl-3011-shg",
-    "productType": "ambiance",
+    "productType": "decorative-hpl",
     "productName": "sdl-3011",
     "designName": "caspio clay",
-    "category": "stone",
+    "category": "ambience",
     "subCategory": "stone",
     "textureCode": "SHG",
     "texture": "High Gloss",
@@ -3677,21 +3653,19 @@
     "thickness": "0.8mm",
     "width": "1220mm",
     "image": [
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3011-SHG.jpg",
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3011-SHG.jpg"
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3011-SHG.jpg",
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3011-SHG.jpg"
     ],
     "pdfUrlPath": "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/pdf/sdl-3011-shg.pdf",
     "status": "active"
   },
-
-
   {
     "id": 228,
     "productCode": "sdl-3015-sft",
-    "productType": "ambiance",
+    "productType": "decorative-hpl",
     "productName": "sdl-3015",
     "designName": "dandy wood",
-    "category": "woodgrain",
+    "category": "ambience",
     "subCategory": "woodgrain-textured",
     "textureCode": "SFT",
     "texture": "Soft Matt",
@@ -3699,8 +3673,8 @@
     "thickness": "0.8mm",
     "width": "1220mm",
     "image": [
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3015-SFT.jpg",
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3015-SFT.jpg"
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3015-SFT.jpg",
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3015-SFT.jpg"
     ],
     "pdfUrlPath": "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/pdf/sdl-3015-sft.pdf",
     "status": "active"
@@ -3708,10 +3682,10 @@
   {
     "id": 229,
     "productCode": "sdl-3018-sft",
-    "productType": "ambiance",
+    "productType": "decorative-hpl",
     "productName": "sdl-3018",
     "designName": "brown walnut",
-    "category": "woodgrain",
+    "category": "ambience",
     "subCategory": "woodgrain-textured",
     "textureCode": "SFT",
     "texture": "Soft Matt",
@@ -3719,8 +3693,8 @@
     "thickness": "0.8mm",
     "width": "1220mm",
     "image": [
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3018-SFT.jpg",
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3018-SFT.jpg"
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3018-SFT.jpg",
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3018-SFT.jpg"
     ],
     "pdfUrlPath": "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/pdf/sdl-3018-sft.pdf",
     "status": "active"
@@ -3728,10 +3702,10 @@
   {
     "id": 230,
     "productCode": "sdl-3019-sft",
-    "productType": "ambiance",
+    "productType": "decorative-hpl",
     "productName": "sdl-3019",
     "designName": "camphor brown oak",
-    "category": "woodgrain",
+    "category": "ambience",
     "subCategory": "woodgrain-textured",
     "textureCode": "SFT",
     "texture": "Soft Matt",
@@ -3739,8 +3713,8 @@
     "thickness": "0.8mm",
     "width": "1220mm",
     "image": [
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3019-SFT.jpg",
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3019-SFT.jpg"
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3019-SFT.jpg",
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3019-SFT.jpg"
     ],
     "pdfUrlPath": "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/pdf/sdl-3019-sft.pdf",
     "status": "active"
@@ -3748,10 +3722,10 @@
   {
     "id": 231,
     "productCode": "sdl-3026-sf",
-    "productType": "ambiance",
+    "productType": "decorative-hpl",
     "productName": "sdl-3026",
     "designName": "dark cairo walnut",
-    "category": "woodgrain",
+    "category": "ambience",
     "subCategory": "woodgrain",
     "textureCode": "SF",
     "texture": "Suede",
@@ -3759,8 +3733,8 @@
     "thickness": "0.8mm",
     "width": "1220mm",
     "image": [
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3026-SF.jpg",
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3026-SF.jpg"
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3026-SF.jpg",
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3026-SF.jpg"
     ],
     "pdfUrlPath": "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/pdf/sdl-3026-sf.pdf",
     "status": "active"
@@ -3768,10 +3742,10 @@
   {
     "id": 232,
     "productCode": "sdl-3026-shg",
-    "productType": "ambiance",
+    "productType": "decorative-hpl",
     "productName": "sdl-3026",
     "designName": "daek cairo walnut",
-    "category": "woodgrain",
+    "category": "ambience",
     "subCategory": "woodgrain-textured",
     "textureCode": "SHG",
     "texture": "High Gloss",
@@ -3779,8 +3753,8 @@
     "thickness": "0.8mm",
     "width": "1220mm",
     "image": [
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3026-SHG.jpg",
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3026-SHG.jpg"
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3026-SHG.jpg",
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3026-SHG.jpg"
     ],
     "pdfUrlPath": "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/pdf/sdl-3026-shg.pdf",
     "status": "active"
@@ -3788,10 +3762,10 @@
   {
     "id": 233,
     "productCode": "sdl-3027-sf",
-    "productType": "ambiance",
+    "productType": "decorative-hpl",
     "productName": "sdl-3027",
     "designName": "light sapwood",
-    "category": "woodgrain",
+    "category": "ambience",
     "subCategory": "woodgrain",
     "textureCode": "SF",
     "texture": "Suede",
@@ -3799,8 +3773,8 @@
     "thickness": "0.8mm",
     "width": "1220mm",
     "image": [
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3027-SF.jpg",
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3027-SF.jpg"
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3027-SF.jpg",
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3027-SF.jpg"
     ],
     "pdfUrlPath": "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/pdf/sdl-3027-sf.pdf",
     "status": "active"
@@ -3808,10 +3782,10 @@
   {
     "id": 234,
     "productCode": "sdl-3030-sf",
-    "productType": "ambiance",
+    "productType": "decorative-hpl",
     "productName": "sdl-3030",
     "designName": "borneo brown",
-    "category": "woodgrain",
+    "category": "ambience",
     "subCategory": "woodgrain",
     "textureCode": "SF",
     "texture": "Suede",
@@ -3819,8 +3793,8 @@
     "thickness": "0.8mm",
     "width": "1220mm",
     "image": [
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3030-SF.jpg",
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3030-SF.jpg"
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3030-SF.jpg",
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3030-SF.jpg"
     ],
     "pdfUrlPath": "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/pdf/sdl-3030-sf.pdf",
     "status": "active"
@@ -3828,10 +3802,10 @@
   {
     "id": 235,
     "productCode": "sdl-3030-shg",
-    "productType": "ambiance",
+    "productType": "decorative-hpl",
     "productName": "sdl-3030",
     "designName": "borneo brown",
-    "category": "woodgrain",
+    "category": "ambience",
     "subCategory": "woodgrain-textured",
     "textureCode": "SHG",
     "texture": "High Gloss",
@@ -3839,8 +3813,8 @@
     "thickness": "0.8mm",
     "width": "1220mm",
     "image": [
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3030-SHG.jpg",
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3030-SHG.jpg"
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3030-SHG.jpg",
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3030-SHG.jpg"
     ],
     "pdfUrlPath": "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/pdf/sdl-3030-shg.pdf",
     "status": "active"
@@ -3848,10 +3822,10 @@
   {
     "id": 236,
     "productCode": "sdl-3031-sf",
-    "productType": "ambiance",
+    "productType": "decorative-hpl",
     "productName": "sdl-3031",
     "designName": "dessert oak",
-    "category": "woodgrain",
+    "category": "ambience",
     "subCategory": "woodgrain",
     "textureCode": "SF",
     "texture": "Suede",
@@ -3859,8 +3833,8 @@
     "thickness": "0.8mm",
     "width": "1220mm",
     "image": [
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3031-SF.jpg",
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3031-SF.jpg"
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3031-SF.jpg",
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3031-SF.jpg"
     ],
     "pdfUrlPath": "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/pdf/sdl-3031-sf.pdf",
     "status": "active"
@@ -3868,10 +3842,10 @@
   {
     "id": 237,
     "productCode": "sdl-3031-shg",
-    "productType": "ambiance",
+    "productType": "decorative-hpl",
     "productName": "sdl-3031",
     "designName": "dessert oak",
-    "category": "woodgrain",
+    "category": "ambience",
     "subCategory": "woodgrain-textured",
     "textureCode": "SHG",
     "texture": "High Gloss",
@@ -3879,8 +3853,8 @@
     "thickness": "0.8mm",
     "width": "1220mm",
     "image": [
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3031-SHG.jpg",
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3031-SHG.jpg"
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3031-SHG.jpg",
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3031-SHG.jpg"
     ],
     "pdfUrlPath": "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/pdf/sdl-3031-shg.pdf",
     "status": "active"
@@ -3888,10 +3862,10 @@
   {
     "id": 238,
     "productCode": "sdl-3035-sf",
-    "productType": "ambiance",
+    "productType": "decorative-hpl",
     "productName": "sdl-3035",
     "designName": "cherry walnut",
-    "category": "woodgrain",
+    "category": "ambience",
     "subCategory": "woodgrain",
     "textureCode": "SF",
     "texture": "Suede",
@@ -3899,8 +3873,8 @@
     "thickness": "0.8mm",
     "width": "1220mm",
     "image": [
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3035-SF.jpg",
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3035-SF.jpg"
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3035-SF.jpg",
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3035-SF.jpg"
     ],
     "pdfUrlPath": "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/pdf/sdl-3035-sf.pdf",
     "status": "active"
@@ -3908,10 +3882,10 @@
   {
     "id": 239,
     "productCode": "sdl-3035-shg",
-    "productType": "ambiance",
+    "productType": "decorative-hpl",
     "productName": "sdl-3035",
     "designName": "cherry walnut",
-    "category": "woodgrain",
+    "category": "ambience",
     "subCategory": "woodgrain-textured",
     "textureCode": "SHG",
     "texture": "High Gloss",
@@ -3919,8 +3893,8 @@
     "thickness": "0.8mm",
     "width": "1220mm",
     "image": [
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3035-SHG.jpg",
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3035-SHG.jpg"
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3035-SHG.jpg",
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3035-SHG.jpg"
     ],
     "pdfUrlPath": "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/pdf/sdl-3035-shg.pdf",
     "status": "active"
@@ -3928,10 +3902,10 @@
   {
     "id": 240,
     "productCode": "sdl-3036-sf",
-    "productType": "ambiance",
+    "productType": "decorative-hpl",
     "productName": "sdl-3036",
     "designName": "aspen brown oak",
-    "category": "woodgrain",
+    "category": "ambience",
     "subCategory": "woodgrain",
     "textureCode": "SF",
     "texture": "Suede",
@@ -3939,8 +3913,8 @@
     "thickness": "0.8mm",
     "width": "1220mm",
     "image": [
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3036-SF.jpg",
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3036-SF.jpg"
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3036-SF.jpg",
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3036-SF.jpg"
     ],
     "pdfUrlPath": "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/pdf/sdl-3036-sf.pdf",
     "status": "active"
@@ -3948,10 +3922,10 @@
   {
     "id": 241,
     "productCode": "sdl-3036-shg",
-    "productType": "ambiance",
+    "productType": "decorative-hpl",
     "productName": "sdl-3036",
     "designName": "aspen brown oak",
-    "category": "woodgrain",
+    "category": "ambience",
     "subCategory": "woodgrain-textured",
     "textureCode": "SHG",
     "texture": "High Gloss",
@@ -3959,8 +3933,8 @@
     "thickness": "0.8mm",
     "width": "1220mm",
     "image": [
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3036-SHG.jpg",
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3036-SHG.jpg"
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3036-SHG.jpg",
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3036-SHG.jpg"
     ],
     "pdfUrlPath": "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/pdf/sdl-3036-shg.pdf",
     "status": "active"
@@ -3968,10 +3942,10 @@
   {
     "id": 242,
     "productCode": "sdl-3037-sf",
-    "productType": "ambiance",
+    "productType": "decorative-hpl",
     "productName": "sdl-3037",
     "designName": "grey dutch oak",
-    "category": "woodgrain",
+    "category": "ambience",
     "subCategory": "woodgrain",
     "textureCode": "SF",
     "texture": "Suede",
@@ -3979,8 +3953,8 @@
     "thickness": "0.8mm",
     "width": "1220mm",
     "image": [
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3037-SF.jpg",
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3037-SF.jpg"
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3037-SF.jpg",
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3037-SF.jpg"
     ],
     "pdfUrlPath": "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/pdf/sdl-3037-sf.pdf",
     "status": "active"
@@ -3988,10 +3962,10 @@
   {
     "id": 243,
     "productCode": "sdl-3041-sf",
-    "productType": "ambiance",
+    "productType": "decorative-hpl",
     "productName": "sdl-3041",
     "designName": "lacebark walnut",
-    "category": "woodgrain",
+    "category": "ambience",
     "subCategory": "woodgrain",
     "textureCode": "SF",
     "texture": "Suede",
@@ -3999,8 +3973,8 @@
     "thickness": "0.8mm",
     "width": "1220mm",
     "image": [
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3041-SF.jpg",
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3041-SF.jpg"
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3041-SF.jpg",
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3041-SF.jpg"
     ],
     "pdfUrlPath": "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/pdf/sdl-3041-sf.pdf",
     "status": "active"
@@ -4008,10 +3982,10 @@
   {
     "id": 244,
     "productCode": "sdl-3042-sf",
-    "productType": "ambiance",
+    "productType": "decorative-hpl",
     "productName": "sdl-3042",
     "designName": "leping walnut",
-    "category": "woodgrain",
+    "category": "ambience",
     "subCategory": "woodgrain",
     "textureCode": "SF",
     "texture": "Suede",
@@ -4019,8 +3993,8 @@
     "thickness": "0.8mm",
     "width": "1220mm",
     "image": [
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3042-SF.jpg",
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3042-SF.jpg"
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3042-SF.jpg",
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3042-SF.jpg"
     ],
     "pdfUrlPath": "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/pdf/sdl-3042-sf.pdf",
     "status": "active"
@@ -4028,10 +4002,10 @@
   {
     "id": 245,
     "productCode": "sdl-3042-vnr",
-    "productType": "ambiance",
+    "productType": "decorative-hpl",
     "productName": "sdl-3042",
     "designName": "leping walnut",
-    "category": "woodgrain",
+    "category": "ambience",
     "subCategory": "woodgrain-textured",
     "textureCode": "VNR",
     "texture": "Veneer",
@@ -4039,8 +4013,8 @@
     "thickness": "0.8mm",
     "width": "1220mm",
     "image": [
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3042-VNR.jpg",
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3042-VNR.jpg"
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3042-VNR.jpg",
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3042-VNR.jpg"
     ],
     "pdfUrlPath": "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/pdf/sdl-3042-vnr.pdf",
     "status": "active"
@@ -4048,10 +4022,10 @@
   {
     "id": 246,
     "productCode": "sdl-3043-sf",
-    "productType": "ambiance",
+    "productType": "decorative-hpl",
     "productName": "sdl-3043",
     "designName": "light dutch oak",
-    "category": "woodgrain",
+    "category": "ambience",
     "subCategory": "woodgrain",
     "textureCode": "SF",
     "texture": "Suede",
@@ -4059,8 +4033,8 @@
     "thickness": "0.8mm",
     "width": "1220mm",
     "image": [
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3043-SF.jpg",
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3043-SF.jpg"
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3043-SF.jpg",
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3043-SF.jpg"
     ],
     "pdfUrlPath": "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/pdf/sdl-3043-sf.pdf",
     "status": "active"
@@ -4068,10 +4042,10 @@
   {
     "id": 247,
     "productCode": "sdl-3045-shg",
-    "productType": "ambiance",
+    "productType": "decorative-hpl",
     "productName": "sdl-3045",
     "designName": "dark duress wood",
-    "category": "woodgrain",
+    "category": "ambience",
     "subCategory": "woodgrain-textured",
     "textureCode": "SHG",
     "texture": "High Gloss",
@@ -4079,8 +4053,8 @@
     "thickness": "0.8mm",
     "width": "1220mm",
     "image": [
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3045-SHG.jpg",
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3045-SHG.jpg"
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3045-SHG.jpg",
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3045-SHG.jpg"
     ],
     "pdfUrlPath": "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/pdf/sdl-3045-shg.pdf",
     "status": "active"
@@ -4088,10 +4062,10 @@
   {
     "id": 248,
     "productCode": "sdl-3046-shg",
-    "productType": "ambiance",
+    "productType": "decorative-hpl",
     "productName": "sdl-3046",
     "designName": "flame dark wood",
-    "category": "woodgrain",
+    "category": "ambience",
     "subCategory": "woodgrain-textured",
     "textureCode": "SHG",
     "texture": "High Gloss",
@@ -4099,8 +4073,8 @@
     "thickness": "0.8mm",
     "width": "1220mm",
     "image": [
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3046-SHG.jpg",
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3046-SHG.jpg"
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3046-SHG.jpg",
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3046-SHG.jpg"
     ],
     "pdfUrlPath": "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/pdf/sdl-3046-shg.pdf",
     "status": "active"
@@ -4108,10 +4082,10 @@
   {
     "id": 249,
     "productCode": "sdl-3047-sft",
-    "productType": "ambiance",
+    "productType": "decorative-hpl",
     "productName": "sdl-3047",
     "designName": "brescan walnut",
-    "category": "woodgrain",
+    "category": "ambience",
     "subCategory": "woodgrain-textured",
     "textureCode": "SFT",
     "texture": "Soft Matt",
@@ -4119,22 +4093,19 @@
     "thickness": "0.8mm",
     "width": "1220mm",
     "image": [
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3047-SFT.jpg",
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3047-SFT.jpg"
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3047-SFT.jpg",
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3047-SFT.jpg"
     ],
     "pdfUrlPath": "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/pdf/sdl-3047-sft.pdf",
     "status": "active"
   },
- 
- 
-  
   {
     "id": 253,
     "productCode": "sdl-3051-sft",
-    "productType": "ambiance",
+    "productType": "decorative-hpl",
     "productName": "sdl-3051",
     "designName": "dalton oak",
-    "category": "woodgrain",
+    "category": "ambience",
     "subCategory": "woodgrain-textured",
     "textureCode": "SFT",
     "texture": "Soft Matt",
@@ -4142,25 +4113,19 @@
     "thickness": "0.8mm",
     "width": "1220mm",
     "image": [
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3051-SFT.jpg",
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3051-SFT.jpg"
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3051-SFT.jpg",
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3051-SFT.jpg"
     ],
     "pdfUrlPath": "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/pdf/sdl-3051-sft.pdf",
     "status": "active"
   },
- 
-  
-
-  
-  
- 
   {
     "id": 261,
     "productCode": "sdl-3055-ash-hz",
-    "productType": "ambiance",
+    "productType": "decorative-hpl",
     "productName": "sdl-3055",
     "designName": "texas walnut",
-    "category": "woodgrain",
+    "category": "ambience",
     "subCategory": "woodgrain-textured",
     "textureCode": "ASH-HZ",
     "texture": "ASH-HZ",
@@ -4168,8 +4133,8 @@
     "thickness": "0.8mm",
     "width": "1220mm",
     "image": [
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3055-ASH-HZ.jpg",
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3055-ASH-HZ.jpg"
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3055-ASH-HZ.jpg",
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3055-ASH-HZ.jpg"
     ],
     "pdfUrlPath": "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/pdf/sdl-3055-ash-hz.pdf",
     "status": "active"
@@ -4177,10 +4142,10 @@
   {
     "id": 262,
     "productCode": "sdl-3055-sft",
-    "productType": "ambiance",
+    "productType": "decorative-hpl",
     "productName": "sdl-3055",
     "designName": "texas walnut",
-    "category": "woodgrain",
+    "category": "ambience",
     "subCategory": "woodgrain-textured",
     "textureCode": "SFT",
     "texture": "Soft Matt",
@@ -4188,8 +4153,8 @@
     "thickness": "0.8mm",
     "width": "1220mm",
     "image": [
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3055-SFT.jpg",
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3055-SFT.jpg"
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3055-SFT.jpg",
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3055-SFT.jpg"
     ],
     "pdfUrlPath": "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/pdf/sdl-3055-sft.pdf",
     "status": "active"
@@ -4197,10 +4162,10 @@
   {
     "id": 263,
     "productCode": "sdl-3055-shg",
-    "productType": "ambiance",
+    "productType": "decorative-hpl",
     "productName": "sdl-3055",
     "designName": "texas walnut",
-    "category": "woodgrain",
+    "category": "ambience",
     "subCategory": "woodgrain-textured",
     "textureCode": "SHG",
     "texture": "High Gloss",
@@ -4208,23 +4173,19 @@
     "thickness": "0.8mm",
     "width": "1220mm",
     "image": [
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3055-SHG.jpg",
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3055-SHG.jpg"
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3055-SHG.jpg",
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3055-SHG.jpg"
     ],
     "pdfUrlPath": "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/pdf/sdl-3055-shg.pdf",
     "status": "active"
   },
- 
- 
- 
- 
   {
     "id": 270,
     "productCode": "sdl-3059-shg",
-    "productType": "ambiance",
+    "productType": "decorative-hpl",
     "productName": "sdl-3059",
     "designName": "mangrove walnut",
-    "category": "woodgrain",
+    "category": "ambience",
     "subCategory": "woodgrain-textured",
     "textureCode": "SHG",
     "texture": "High Gloss",
@@ -4232,8 +4193,8 @@
     "thickness": "0.8mm",
     "width": "1220mm",
     "image": [
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3059-SHG.jpg",
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-3059-SHG.jpg"
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3059-SHG.jpg",
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-3059-SHG.jpg"
     ],
     "pdfUrlPath": "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/pdf/sdl-3059-shg.pdf",
     "status": "active"
@@ -4241,10 +4202,10 @@
   {
     "id": 272,
     "productCode": "sdl-4013-sft",
-    "productType": "ambiance",
+    "productType": "decorative-hpl",
     "productName": "sdl-4013",
     "designName": "satvario marble",
-    "category": "stone",
+    "category": "ambience",
     "subCategory": "stone",
     "textureCode": "SFT",
     "texture": "Soft Matt",
@@ -4252,8 +4213,8 @@
     "thickness": "0.8mm",
     "width": "1220mm",
     "image": [
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-4013-SFT.jpg",
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-4013-SFT.jpg"
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-4013-SFT.jpg",
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-4013-SFT.jpg"
     ],
     "pdfUrlPath": "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/pdf/sdl-4013-sft.pdf",
     "status": "active"
@@ -4261,10 +4222,10 @@
   {
     "id": 277,
     "productCode": "sdl-4019-shg",
-    "productType": "ambiance",
+    "productType": "decorative-hpl",
     "productName": "sdl-4019",
     "designName": "green stromboli",
-    "category": "stone",
+    "category": "ambience",
     "subCategory": "stone",
     "textureCode": "SHG",
     "texture": "High Gloss",
@@ -4272,8 +4233,8 @@
     "thickness": "0.8mm",
     "width": "1220mm",
     "image": [
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-4019-SHG.jpg",
-      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambiance/SDL-4019-SHG.jpg"
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-4019-SHG.jpg",
+      "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/products/ambience/SDL-4019-SHG.jpg"
     ],
     "pdfUrlPath": "https://skydecor-bucket-dubai.s3.ap-south-1.amazonaws.com/assets/pdf/sdl-4019-shg.pdf",
     "status": "active"
