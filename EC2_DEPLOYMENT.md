@@ -4,7 +4,7 @@ This project uses `.github/workflows/ci.yaml` to run the following pipeline:
 
 - Pull request to `main`: install dependencies, run tests, lint/build the frontend, build the backend, and validate both production Docker images. Nothing is pushed or deployed.
 - Push to `main`: run validation, build and push SHA-tagged plus `latest` images to Docker Hub, then deploy that exact commit and image tags to EC2.
-- Manual run on `main`: perform the same publish and deploy flow.
+- Manual run from the GitHub Actions **Run workflow** button: choose `deploy` on `main` to perform the same publish and deploy flow, or `validate-only` to run checks without publishing images.
 
 The production stack is `nginx + Next.js frontend + Express API + Redis`. MongoDB runs in MongoDB Atlas and is supplied through `PROD_MONGO_URI`.
 
@@ -136,7 +136,11 @@ openssl rand -hex 32
 
 ## 7. Run the first deployment
 
-Push or merge a commit into `main`, then watch **GitHub > Actions > CI/CD**. A successful run will:
+Push or merge a commit into `main`, then watch **GitHub > Actions > CI/CD**.
+
+To run the pipeline manually, open **GitHub > Actions > CI/CD > Run workflow**, select the `main` branch, choose `deploy`, and click **Run workflow**. Use `validate-only` when you only want tests and builds.
+
+A successful deploy run will:
 
 1. Validate the backend and frontend.
 2. Push `<dockerhub-user>/skydecor-api:<commit-sha>` and `<dockerhub-user>/skydecor-frontend:<commit-sha>`.
