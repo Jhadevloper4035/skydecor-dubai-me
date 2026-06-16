@@ -21,6 +21,7 @@ permissions:
 
 env:
   NEXT_PUBLIC_API_BASE_URL: http://app:8080/api/v1
+  DOCKERHUB_NAMESPACE: devil4035
 
 jobs:
   validate:
@@ -125,10 +126,10 @@ jobs:
         env:
           DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
         run: |
-          DOCKERHUB_NAMESPACE="$(printf '%s' "$DOCKERHUB_USERNAME" | tr -d '[:space:]' | tr '[:upper:]' '[:lower:]')"
+          DOCKERHUB_NAMESPACE="$(printf '%s' "${DOCKERHUB_USERNAME:-${DOCKERHUB_NAMESPACE}}" | tr -d '[:space:]' | tr '[:upper:]' '[:lower:]')"
 
           if [ -z "$DOCKERHUB_NAMESPACE" ]; then
-            echo "DOCKERHUB_USERNAME secret is empty" >&2
+            echo "Docker Hub username is empty" >&2
             exit 1
           fi
 
@@ -204,10 +205,10 @@ jobs:
       - name: Deploy release to EC2
         uses: appleboy/ssh-action@v1.2.5
         env:
-          DOCKERHUB_USERNAME: ${{ needs.publish.outputs.dockerhub_namespace }}
+          DOCKERHUB_USERNAME: ${{ needs.publish.outputs.dockerhub_namespace || 'devil4035' }}
           DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
-          APP_IMAGE: ${{ needs.publish.outputs.backend_image }}:${{ github.sha }}
-          FRONTEND_IMAGE: ${{ needs.publish.outputs.frontend_image }}:${{ github.sha }}
+          APP_IMAGE: ${{ needs.publish.outputs.backend_image || 'devil4035/skydecor-dubai-backend' }}:${{ github.sha }}
+          FRONTEND_IMAGE: ${{ needs.publish.outputs.frontend_image || 'devil4035/skydecor-dubai-frontend' }}:${{ github.sha }}
           GITHUB_REPOSITORY: ${{ github.repository }}
           GIT_COMMIT_SHA: ${{ github.sha }}
           NGINX_HTTP_PORT: ${{ secrets.PROD_NGINX_HTTP_PORT }}
@@ -228,7 +229,7 @@ jobs:
           S3_PRESIGNED_EXPIRES_SECONDS: ${{ secrets.S3_PRESIGNED_EXPIRES_SECONDS }}
         with:
           host: ${{ secrets.EC2_HOST }}
-          username: ${{ secrets.EC2_USER }}
+          username: ubuntu
           key: ${{ secrets.EC2_SSH_KEY }}
           fingerprint: ${{ secrets.EC2_HOST_FINGERPRINT }}
           envs: DOCKERHUB_USERNAME,DOCKERHUB_TOKEN,APP_IMAGE,FRONTEND_IMAGE,GITHUB_REPOSITORY,GIT_COMMIT_SHA,NGINX_HTTP_PORT,MONGO_URI,ALLOWED_ORIGINS,JWT_SECRET,JWT_EXPIRES_IN,QR_CODE_CACHE_TTL_SECONDS,BOOTSTRAP_SUPERADMIN_NAME,BOOTSTRAP_SUPERADMIN_EMAIL,BOOTSTRAP_SUPERADMIN_PASSWORD,AWS_REGION,AWS_ACCESS_KEY_ID,AWS_SECRET_ACCESS_KEY,S3_BUCKET,S3_PUBLIC_BASE_URL,S3_KEY_PREFIX,S3_PRESIGNED_EXPIRES_SECONDS

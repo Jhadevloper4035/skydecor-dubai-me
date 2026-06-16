@@ -297,16 +297,15 @@ Required GitHub repository secrets:
 
 ```env
 # Docker Hub
-DOCKERHUB_USERNAME=your-dockerhub-username
+DOCKERHUB_USERNAME=devil4035
 DOCKERHUB_TOKEN=your-dockerhub-access-token
-DOCKERHUB_IMAGE=your-dockerhub-username/skydecor-dubai-backend
-DOCKERHUB_FRONTEND_IMAGE=your-dockerhub-username/skydecor-dubai-frontend
+DOCKERHUB_IMAGE=devil4035/skydecor-dubai-backend
+DOCKERHUB_FRONTEND_IMAGE=devil4035/skydecor-dubai-frontend
 
 # EC2 SSH target
 EC2_HOST=your-ec2-public-ip-or-domain
-EC2_USERNAME=ubuntu
 EC2_SSH_KEY=-----BEGIN OPENSSH PRIVATE KEY-----
-EC2_APP_DIR=/home/ubuntu/skydecor
+EC2_HOST_FINGERPRINT=SHA256:your-ec2-host-fingerprint
 
 # Production app config
 PROD_NGINX_HTTP_PORT=80

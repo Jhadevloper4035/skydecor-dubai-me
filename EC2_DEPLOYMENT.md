@@ -100,10 +100,9 @@ Required secrets:
 
 | Secret | Example or purpose |
 | --- | --- |
-| `DOCKERHUB_USERNAME` | Docker Hub username or organization, not an email |
+| `DOCKERHUB_USERNAME` | Docker Hub username or organization. Defaults to `devil4035` in the workflow if unset |
 | `DOCKERHUB_TOKEN` | Docker Hub read/write access token |
 | `EC2_HOST` | EC2 Elastic IP or DNS name |
-| `EC2_USER` | `ubuntu` |
 | `EC2_SSH_KEY` | Complete private deployment key |
 | `EC2_HOST_FINGERPRINT` | EC2 SSH `SHA256:...` fingerprint |
 | `PROD_MONGO_URI` | MongoDB Atlas production URI |
