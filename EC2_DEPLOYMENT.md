@@ -12,8 +12,8 @@ The production stack is `nginx + Next.js frontend + Express API + Redis`. MongoD
 
 Create these repositories under your Docker Hub account or organization:
 
-- `skydecor-api`
-- `skydecor-frontend`
+- `skydecor-dubai-backend`
+- `skydecor-dubai-frontend`
 
 Create a Docker Hub access token with read/write permission. Do not use your Docker Hub password in GitHub Actions.
 
@@ -143,7 +143,7 @@ To run the pipeline manually, open **GitHub > Actions > CI/CD > Run workflow**, 
 A successful deploy run will:
 
 1. Validate the backend and frontend.
-2. Push `<dockerhub-user>/skydecor-api:<commit-sha>` and `<dockerhub-user>/skydecor-frontend:<commit-sha>`.
+2. Push `<dockerhub-user>/skydecor-dubai-backend:<commit-sha>` and `<dockerhub-user>/skydecor-dubai-frontend:<commit-sha>`.
 3. Write `/opt/skydecor/.env.production` on EC2 from GitHub secrets.
 4. Pull and start `docker-compose.prod.yaml`.
 5. Check `/health`, `/ready`, the home page, and the products API.

@@ -94,7 +94,7 @@ jobs:
           file: ./backend/Dockerfile
           target: production
           push: false
-          tags: skydecor-api:pr-${{ github.event.pull_request.number }}
+          tags: skydecor-dubai-backend:pr-${{ github.event.pull_request.number }}
 
       - name: Build frontend image
         uses: docker/build-push-action@v6
@@ -105,7 +105,7 @@ jobs:
           push: false
           build-args: |
             NEXT_PUBLIC_API_BASE_URL=${{ env.NEXT_PUBLIC_API_BASE_URL }}
-          tags: skydecor-frontend:pr-${{ github.event.pull_request.number }}
+          tags: skydecor-dubai-frontend:pr-${{ github.event.pull_request.number }}
 
   publish:
     name: Publish Docker images
@@ -138,8 +138,8 @@ jobs:
           fi
 
           echo "dockerhub_namespace=$DOCKERHUB_NAMESPACE" >> "$GITHUB_OUTPUT"
-          echo "backend_image=$DOCKERHUB_NAMESPACE/skydecor-api" >> "$GITHUB_OUTPUT"
-          echo "frontend_image=$DOCKERHUB_NAMESPACE/skydecor-frontend" >> "$GITHUB_OUTPUT"
+          echo "backend_image=$DOCKERHUB_NAMESPACE/skydecor-dubai-backend" >> "$GITHUB_OUTPUT"
+          echo "frontend_image=$DOCKERHUB_NAMESPACE/skydecor-dubai-frontend" >> "$GITHUB_OUTPUT"
 
       - name: Log in to Docker Hub
         uses: docker/login-action@v3
@@ -157,8 +157,8 @@ jobs:
           file: ./backend/Dockerfile
           target: production
           push: true
-          cache-from: type=gha,scope=skydecor-backend
-          cache-to: type=gha,mode=max,scope=skydecor-backend
+          cache-from: type=gha,scope=skydecor-dubai-backend
+          cache-to: type=gha,mode=max,scope=skydecor-dubai-backend
           tags: |
             ${{ steps.images.outputs.backend_image }}:${{ github.sha }}
             ${{ steps.images.outputs.backend_image }}:latest
@@ -170,8 +170,8 @@ jobs:
           file: ./forntend/Dockerfile
           target: production
           push: true
-          cache-from: type=gha,scope=skydecor-frontend
-          cache-to: type=gha,mode=max,scope=skydecor-frontend
+          cache-from: type=gha,scope=skydecor-dubai-frontend
+          cache-to: type=gha,mode=max,scope=skydecor-dubai-frontend
           build-args: |
             NEXT_PUBLIC_API_BASE_URL=${{ env.NEXT_PUBLIC_API_BASE_URL }}
           tags: |

@@ -92,8 +92,8 @@ Production variables:
 PORT=8080
 NGINX_HTTP_PORT=80
 NODE_ENV=production
-APP_IMAGE=<dockerhub-username>/skydecor-api:latest
-FRONTEND_IMAGE=<dockerhub-username>/skydecor-frontend:latest
+APP_IMAGE=<dockerhub-username>/skydecor-dubai-backend:latest
+FRONTEND_IMAGE=<dockerhub-username>/skydecor-dubai-frontend:latest
 TRUST_PROXY=1
 MONGO_URI=mongodb+srv://<user>:<password>@<cluster>.mongodb.net/skydecor?retryWrites=true&w=majority
 ALLOWED_ORIGINS=http://skydecor.me,http://www.skydecor.me,https://skydecor.me,https://www.skydecor.me
@@ -218,7 +218,7 @@ For the GitHub Actions, Docker Hub, and EC2 deployment setup, see [EC2_DEPLOYMEN
 From the repo root:
 
 ```bash
-APP_IMAGE=<dockerhub-username>/skydecor-api:latest FRONTEND_IMAGE=<dockerhub-username>/skydecor-frontend:latest docker compose -f docker-compose.prod.yaml --env-file .env.production up -d
+APP_IMAGE=<dockerhub-username>/skydecor-dubai-backend:latest FRONTEND_IMAGE=<dockerhub-username>/skydecor-dubai-frontend:latest docker compose -f docker-compose.prod.yaml --env-file .env.production up -d
 ```
 
 Production uses MongoDB Atlas through `MONGO_URI`; `docker-compose.prod.yaml` does not start a MongoDB container.
@@ -278,13 +278,13 @@ This project can be deployed on AWS using a container-based architecture:
 Typical Docker Hub image flow:
 
 ```bash
-docker build -t skydecor-api ./backend
-docker tag skydecor-api:latest <dockerhub-username>/skydecor-api:latest
-docker push <dockerhub-username>/skydecor-api:latest
+docker build -t skydecor-dubai-backend ./backend
+docker tag skydecor-dubai-backend:latest <dockerhub-username>/skydecor-dubai-backend:latest
+docker push <dockerhub-username>/skydecor-dubai-backend:latest
 
-docker build -t skydecor-frontend ./forntend
-docker tag skydecor-frontend:latest <dockerhub-username>/skydecor-frontend:latest
-docker push <dockerhub-username>/skydecor-frontend:latest
+docker build -t skydecor-dubai-frontend ./forntend
+docker tag skydecor-dubai-frontend:latest <dockerhub-username>/skydecor-dubai-frontend:latest
+docker push <dockerhub-username>/skydecor-dubai-frontend:latest
 ```
 
 ## CI/CD Pipeline
@@ -299,8 +299,8 @@ Required GitHub repository secrets:
 # Docker Hub
 DOCKERHUB_USERNAME=your-dockerhub-username
 DOCKERHUB_TOKEN=your-dockerhub-access-token
-DOCKERHUB_IMAGE=your-dockerhub-username/skydecor-api
-DOCKERHUB_FRONTEND_IMAGE=your-dockerhub-username/skydecor-frontend
+DOCKERHUB_IMAGE=your-dockerhub-username/skydecor-dubai-backend
+DOCKERHUB_FRONTEND_IMAGE=your-dockerhub-username/skydecor-dubai-frontend
 
 # EC2 SSH target
 EC2_HOST=your-ec2-public-ip-or-domain
@@ -357,8 +357,8 @@ Rollback example on EC2:
 
 ```bash
 make prod-rollback \
-  BACKEND_IMAGE=<dockerhub-username>/skydecor-api:<good-github-sha> \
-  FRONTEND_IMAGE=<dockerhub-username>/skydecor-frontend:<good-github-sha>
+  BACKEND_IMAGE=<dockerhub-username>/skydecor-dubai-backend:<good-github-sha> \
+  FRONTEND_IMAGE=<dockerhub-username>/skydecor-dubai-frontend:<good-github-sha>
 ```
 
 ## Seed Data
