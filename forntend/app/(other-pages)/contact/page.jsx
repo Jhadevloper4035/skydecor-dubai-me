@@ -4,7 +4,7 @@ import React from "react";
 export const metadata = {
   title: "Contact skydecor Dubai",
   description:
-    "Contact skydecor Dubai for laminate samples, product information, catalogues, and project support across the UAE.",
+    "Contact skydecor Dubai for HPL samples, product information, catalogs, and project support across the UAE.",
 };
 
 export default function ContactPage() {

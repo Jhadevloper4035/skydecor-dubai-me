@@ -1,14 +1,14 @@
 import Image from "next/image";
 
 const companyStory = [
-  "Established in 2016, skydecor creates decorative, acrylic, and PVC laminates with a focus on design, precision, and dependable quality.",
+  "Established in 2016, skydecor creates decorative, acrylic, and PVC HPL with a focus on design, precision, and dependable quality.",
   "Our advanced manufacturing facilities and Dubai warehouse support customers across the Middle East and global markets with versatile surfaces for modern interiors.",
 ];
 
 const commitments = [
   {
     title: "Vision",
-    text: "At skydecor Laminates, our vision is to be recognized as a premier brand that elevates the beauty of homes. We strive to infuse global expertise and distinctive design aesthetics into every space we transform.",
+    text: "At skydecor HPL, our vision is to be recognized as a premier brand that elevates the beauty of homes. We strive to infuse global expertise and distinctive design aesthetics into every space we transform.",
   },
   {
     title: "Mission",
@@ -51,7 +51,7 @@ const uspItems = [
   {
     icon: "fa-solid fa-link",
     title: "Phenolic Bonding",
-    text: "Strong, dependable adhesion engineered for lasting laminate performance.",
+    text: "Strong, dependable adhesion engineered for lasting HPL performance.",
   },
   {
     icon: "fa-solid fa-hammer",
@@ -88,9 +88,9 @@ export default function About() {
           <div className="tf-grid-layout md-col-2 radius-20 gap-0 overflow-hidden sd-about-story__card">
             <div className="banner-text style-2 bg-brown-2 mb-0 sd-about-story__content">
               <div className="box-title">
-                <p className="text-btn-uppercase">skydecor Laminates</p>
+                <p className="text-btn-uppercase">skydecor HPL</p>
                 <h2 className="banner-heading">
-                  Laminates made for better spaces
+                  HPL made for better spaces
                 </h2>
               </div>
 
@@ -104,7 +104,7 @@ export default function About() {
             <div className="image-100 sd-about-story__image">
               <Image
                 src="/images/about-us-image-1.jpg"
-                alt="skydecor laminates in a contemporary interior"
+                alt="skydecor HPL in a contemporary interior"
                 width={906}
                 height={1000}
                 sizes="(max-width: 767px) 100vw, 50vw"

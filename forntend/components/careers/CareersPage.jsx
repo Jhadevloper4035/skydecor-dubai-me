@@ -30,12 +30,12 @@ const values = [
   {
     icon: "fas fa-arrow-trend-up",
     title: "Growth stays active",
-    text: "We keep improving the way we present, sell, deliver, and support premium laminates.",
+    text: "We keep improving the way we present, sell, deliver, and support premium HPL.",
   },
 ];
 
 const stats = [
-  { value: "400+", label: "Laminate finishes" },
+  { value: "400+", label: "HPL finishes" },
   { value: "25+", label: "Design-led product families" },
   { value: "UAE", label: "Market focused team" },
   { value: "B2B", label: "Dealer and project network" },
@@ -81,7 +81,7 @@ export default function CareersPage({ jobs = [] }) {
               <span className="sd-events-kicker">skydecor Careers</span>
               <h1>Build beautiful surface journeys with us</h1>
               <p>
-                Join the team bringing premium laminate collections, practical
+                Join the team bringing premium HPL collections, practical
                 design advice, and dependable service to interiors across Dubai.
               </p>
               <div className="sd-careers-hero__actions">

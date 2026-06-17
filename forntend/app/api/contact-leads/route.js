@@ -35,7 +35,7 @@ export async function POST(request) {
     payload = await request.json();
   } catch {
     return NextResponse.json(
-      { message: "Invalid enquiry payload." },
+      { message: "Invalid inquiry payload." },
       { status: 400 }
     );
   }
@@ -43,7 +43,7 @@ export async function POST(request) {
   if (cleanText(payload.website)) {
     return NextResponse.json({
       data: { leadId: "accepted" },
-      message: "Enquiry received.",
+      message: "Inquiry received.",
     });
   }
 
@@ -56,7 +56,7 @@ export async function POST(request) {
     phone: cleanText(payload.phone, 40),
     company: cleanText(payload.company, 160),
     city: cleanText(payload.city, 120),
-    enquiryType: cleanText(payload.enquiryType, 120),
+    inquiryType: cleanText(payload.inquiryType, 120),
     productLineup: cleanList(payload.productLineup),
     message: cleanText(payload.message, MAX_TEXT_LENGTH),
     metadata: {
@@ -81,7 +81,7 @@ export async function POST(request) {
   } catch (error) {
     console.error("Unable to store contact lead:", error);
     return NextResponse.json(
-      { message: "Unable to submit your enquiry right now." },
+      { message: "Unable to submit your inquiry right now." },
       { status: 500 }
     );
   }
@@ -89,7 +89,7 @@ export async function POST(request) {
   return NextResponse.json(
     {
       data: { leadId: lead.id },
-      message: "Enquiry received.",
+      message: "Inquiry received.",
     },
     { status: 201 }
   );

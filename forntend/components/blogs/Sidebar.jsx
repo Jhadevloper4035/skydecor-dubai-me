@@ -65,7 +65,7 @@ export default function Sidebar() {
       <div className="sidebar-item sidebar-categories">
         <h5 className="sidebar-heading">Categories</h5>
         <ul>
-          {(categories.length ? categories : ["Laminates", "Interiors", "Design"]).map((category) => (
+          {(categories.length ? categories : ["HPL", "Interiors", "Design"]).map((category) => (
             <li key={category}>
               <span className="text-button">{category}</span>
             </li>

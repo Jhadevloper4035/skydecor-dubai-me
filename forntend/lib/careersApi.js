@@ -43,9 +43,9 @@ export const localJobs = [
     employmentType: "full-time",
     experienceLevel: "2+ years",
     summary:
-      "Build relationships with architects, designers, contractors, and dealers while growing skydecor laminate sales across Dubai.",
+      "Build relationships with architects, designers, contractors, and dealers while growing skydecor HPL sales across Dubai.",
     description:
-      "This role is for someone who enjoys meeting people, understanding project needs, and presenting premium laminate solutions with confidence. You will work closely with customers from first enquiry through sample selection and order coordination.",
+      "This role is for someone who enjoys meeting people, understanding project needs, and presenting premium HPL solutions with confidence. You will work closely with customers from first inquiry through sample selection and order coordination.",
     responsibilities: [
       "Visit architects, interior designers, contractors, and dealer partners.",
       "Understand project requirements and recommend suitable skydecor products.",
@@ -53,7 +53,7 @@ export const localJobs = [
       "Represent skydecor professionally at events, showrooms, and trade meetings.",
     ],
     requirements: [
-      "Experience in laminates, interiors, building materials, or B2B sales.",
+      "Experience in HPL, interiors, building materials, or B2B sales.",
       "Strong communication and relationship-building skills.",
       "Comfortable with daily field visits across Dubai and nearby markets.",
     ],
@@ -73,11 +73,11 @@ export const localJobs = [
     employmentType: "full-time",
     experienceLevel: "1-3 years",
     summary:
-      "Help customers and design professionals select finishes, palettes, and laminate combinations for residential and commercial spaces.",
+      "Help customers and design professionals select finishes, palettes, and HPL combinations for residential and commercial spaces.",
     description:
       "You will support walk-in customers, design studios, and project teams by translating design intent into practical surface recommendations. The role combines product knowledge, visual taste, and patient consultation.",
     responsibilities: [
-      "Guide customers through laminate finishes, textures, and color families.",
+      "Guide customers through HPL finishes, textures, and color families.",
       "Prepare finish combinations for kitchens, wardrobes, retail, and hospitality spaces.",
       "Support sample boards, product displays, and experience-center walkthroughs.",
     ],

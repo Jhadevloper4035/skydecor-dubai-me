@@ -72,7 +72,7 @@ export default function CareerDetail({ job }) {
             <div className="sd-career-apply" id="apply">
               <h3>Apply for this role</h3>
               <p>
-                Share your details below. This enquiry will be stored with this
+                Share your details below. This inquiry will be stored with this
                 job role prefilled.
               </p>
               <JobApplicationForm job={job} />

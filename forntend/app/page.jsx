@@ -12,7 +12,7 @@ import VideoSection from "@/components/VideoSection";
 export const metadata = {
   title: "Premium Decorative Surfaces | skydecor Dubai",
   description:
-    "Explore skydecor decorative laminates, panels, boards, and interior surface solutions for residential and commercial projects across the UAE.",
+    "Explore skydecor decorative HPL, panels, boards, and interior surface solutions for residential and commercial projects across the UAE.",
 };
 
 

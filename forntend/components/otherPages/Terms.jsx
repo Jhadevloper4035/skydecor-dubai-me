@@ -2,7 +2,7 @@ const sections = [
   {
     title: "Website use",
     content:
-      "This website provides information about skydecor products and services. You may use it for lawful personal or business enquiries and must not interfere with its operation or security.",
+      "This website provides information about skydecor products and services. You may use it for lawful personal or business inquiries and must not interfere with its operation or security.",
   },
   {
     title: "Product information",
@@ -10,9 +10,9 @@ const sections = [
       "We aim to keep product descriptions, colours, finishes, dimensions, and availability accurate. Screen settings and production variations can affect appearance, so samples and current technical documents should be reviewed before specification or purchase.",
   },
   {
-    title: "Enquiries and orders",
+    title: "Inquiries and orders",
     content:
-      "A website enquiry is not an accepted order or a guarantee of stock. Pricing, lead times, delivery, payment, and project requirements are confirmed separately by the skydecor team.",
+      "A website inquiry is not an accepted order or a guarantee of stock. Pricing, lead times, delivery, payment, and project requirements are confirmed separately by the skydecor team.",
   },
   {
     title: "Intellectual property",

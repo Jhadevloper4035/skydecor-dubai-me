@@ -35,7 +35,7 @@ export const certificates = [
   ["test", "Lead Free Test FR FLEXI", "4.png", "lead-free-test.pdf"],
   ["test", "Anti Bacterial Test FR FLEXI", "5.png", "anti-bacterial-test.pdf"],
   ["test", "Abrasion Resistance FR FLEXI", "6.png", "text-certificate.pdf"],
-  ["test", "Anti Bacterial Test Acrylic Laminates", "acrylic-anti-bacterial-test-certificate.jpeg", "acrylic-anti-bacterial-test-certificate.pdf"],
+  ["test", "Anti Bacterial Test Acrylic HPL", "acrylic-anti-bacterial-test-certificate.jpeg", "acrylic-anti-bacterial-test-certificate.pdf"],
   ["quality", "CII Green Products & Services Council", "7.png", "cii-green-products.pdf"],
   ["quality", "Environmental Product Declaration", "epd.jpeg", "epd.pdf"],
   ["quality", "FSC Certificate", "certificate-fsc-en.jpeg", "certificate-fsc-en.pdf"],

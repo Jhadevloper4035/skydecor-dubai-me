@@ -18,7 +18,7 @@ const ctaItems = [
   {
     id: 3,
     icon: "/images/icon-service-item-3.svg",
-    line1: "Premium Laminates",
+    line1: "Premium HPL",
     line2: "at Competitive Prices",
     delay: "0.4s",
   },
@@ -61,7 +61,7 @@ export default function CtaBox() {
                   Transform Your Space with skydecor
                 </h2>
                 <p className="wow fadeInUp" data-wow-delay="0.2s">
-                  Whether you're fitting out a home, office, or commercial space in Dubai or across the UAE, our laminate experts are ready to help you choose the perfect finish.
+                  Whether you're fitting out a home, office, or commercial space in Dubai or across the UAE, our HPL experts are ready to help you choose the perfect finish.
                 </p>
               </div>
               <div className="cta-btn wow fadeInUp" data-wow-delay="0.4s">
@@ -74,7 +74,7 @@ export default function CtaBox() {
           <div className="col-xl-6">
             <div className="cta-client-box wow fadeInUp" data-wow-delay="0.6s">
               <h3 className="heading">Trusted by Designers & Contractors Across the UAE</h3>
-              <p>From interior designers to large-scale contractors — skydecor is the preferred laminate supplier in Dubai for quality, variety, and reliability.</p>
+              <p>From interior designers to large-scale contractors — skydecor is the preferred HPL supplier in Dubai for quality, variety, and reliability.</p>
             </div>
           </div>
         </div>

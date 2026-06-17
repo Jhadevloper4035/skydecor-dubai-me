@@ -343,8 +343,8 @@ export const getProductFromApi = async (slugOrId) => {
   }
 };
 
-export const submitProductEnquiry = async (payload) => {
-  const postProductEnquiry = async (url) => {
+export const submitProductInquiry = async (payload) => {
+  const postProductInquiry = async (url) => {
     const response = await fetch(url, {
       method: "POST",
       headers: {
@@ -359,11 +359,11 @@ export const submitProductEnquiry = async (payload) => {
   let primaryError;
 
   try {
-    const { data, response } = await postProductEnquiry(buildUrl("/product-enquiries"));
+    const { data, response } = await postProductInquiry(buildUrl("/product-enquiries"));
 
     if (response.ok) return data.data?.productEnquiry;
 
-    primaryError = new Error(data.message || "Unable to submit product enquiry.");
+    primaryError = new Error(data.message || "Unable to submit product inquiry.");
 
     if (response.status !== 404 && response.status < 500) {
       throw primaryError;
@@ -372,18 +372,18 @@ export const submitProductEnquiry = async (payload) => {
     primaryError = error;
   }
 
-  const { data, response } = await postProductEnquiry("/api/product-enquiries");
+  const { data, response } = await postProductInquiry("/api/product-inquiries");
 
   if (!response.ok) {
     throw new Error(
-      data.message || primaryError?.message || "Unable to submit product enquiry."
+      data.message || primaryError?.message || "Unable to submit product inquiry."
     );
   }
 
-  return data.data?.productEnquiry;
+  return data.data?.productInquiry || data.data?.productEnquiry;
 };
 
-export const submitGeneralEnquiry = async (payload) => {
+export const submitGeneralInquiry = async (payload) => {
   const response = await fetch(buildUrl("/enquiries"), {
     method: "POST",
     headers: {

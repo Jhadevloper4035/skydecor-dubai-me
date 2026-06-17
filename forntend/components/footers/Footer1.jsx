@@ -10,7 +10,7 @@ import ScrollTop from "../common/ScrollTop";
 const importantLinks = [
   { label: "About Us", href: "/about-us" },
   { label: "All Products", href: "/products" },
-  { label: "Catalogues", href: "/catalogue" },
+  { label: "Catalogs", href: "/catalog" },
   { label: "Certificates", href: "/certificates" },
   { label: "Blog", href: "/blog-default" },
   { label: "Careers", href: "/career" },
@@ -84,7 +84,7 @@ export default function Footer1({ hasPaddingBottom = false }) {
                 </a>
               </address>
               <p>
-                Decorative laminates and interior surface solutions for projects
+                Decorative HPL and interior surface solutions for projects
                 across Dubai and the UAE.
               </p>
               <div className="sd-footer__contact-actions">

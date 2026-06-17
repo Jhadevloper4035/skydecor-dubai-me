@@ -5,7 +5,7 @@ import { NextResponse } from "next/server";
 
 export const runtime = "nodejs";
 
-const DEFAULT_PRODUCT_ENQUIRIES_FILE = "/tmp/skydecor-product-enquiries.jsonl";
+const DEFAULT_PRODUCT_INQUIRIES_FILE = "/tmp/skydecor-product-inquiries.jsonl";
 const MAX_TEXT_LENGTH = 2500;
 
 const cleanText = (value, maxLength = 240) =>
@@ -14,13 +14,13 @@ const cleanText = (value, maxLength = 240) =>
     .trim()
     .slice(0, maxLength);
 
-const getProductEnquiriesFilePath = () =>
-  process.env.PRODUCT_ENQUIRIES_FILE || DEFAULT_PRODUCT_ENQUIRIES_FILE;
+const getProductInquiriesFilePath = () =>
+  process.env.PRODUCT_INQUIRIES_FILE || DEFAULT_PRODUCT_INQUIRIES_FILE;
 
-const storeProductEnquiry = async (productEnquiry) => {
-  const filePath = getProductEnquiriesFilePath();
+const storeProductInquiry = async (productInquiry) => {
+  const filePath = getProductInquiriesFilePath();
   await mkdir(path.dirname(filePath), { recursive: true });
-  await appendFile(filePath, `${JSON.stringify(productEnquiry)}\n`, "utf8");
+  await appendFile(filePath, `${JSON.stringify(productInquiry)}\n`, "utf8");
 };
 
 export async function POST(request) {
@@ -30,19 +30,19 @@ export async function POST(request) {
     payload = await request.json();
   } catch {
     return NextResponse.json(
-      { message: "Invalid product enquiry payload." },
+      { message: "Invalid product inquiry payload." },
       { status: 400 }
     );
   }
 
   if (cleanText(payload.website)) {
     return NextResponse.json({
-      data: { productEnquiry: { id: "accepted" } },
-      message: "Product enquiry received.",
+      data: { productInquiry: { id: "accepted" } },
+      message: "Product inquiry received.",
     });
   }
 
-  const productEnquiry = {
+  const productInquiry = {
     id: crypto.randomUUID(),
     source: "product-detail",
     submittedAt: new Date().toISOString(),
@@ -65,10 +65,10 @@ export async function POST(request) {
   };
 
   if (
-    !productEnquiry.productCode ||
-    !productEnquiry.name ||
-    !productEnquiry.email ||
-    !productEnquiry.phone
+    !productInquiry.productCode ||
+    !productInquiry.name ||
+    !productInquiry.email ||
+    !productInquiry.phone
   ) {
     return NextResponse.json(
       { message: "Please fill all required fields." },
@@ -77,19 +77,19 @@ export async function POST(request) {
   }
 
   try {
-    await storeProductEnquiry(productEnquiry);
+    await storeProductInquiry(productInquiry);
   } catch (error) {
-    console.error("Unable to store product enquiry:", error);
+    console.error("Unable to store product inquiry:", error);
     return NextResponse.json(
-      { message: "Unable to submit your product enquiry right now." },
+      { message: "Unable to submit your product inquiry right now." },
       { status: 500 }
     );
   }
 
   return NextResponse.json(
     {
-      data: { productEnquiry },
-      message: "Product enquiry received.",
+      data: { productInquiry },
+      message: "Product inquiry received.",
     },
     { status: 201 }
   );

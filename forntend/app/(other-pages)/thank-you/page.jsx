@@ -3,7 +3,7 @@ import Link from "next/link";
 export const metadata = {
   title: "Thank You | skydecor Dubai",
   description:
-    "Thank you for contacting skydecor Dubai. Our team will review your enquiry and respond shortly.",
+    "Thank you for contacting skydecor Dubai. Our team will review your inquiry and respond shortly.",
 };
 
 export default async function ThankYouPage({ searchParams }) {
@@ -17,10 +17,10 @@ export default async function ThankYouPage({ searchParams }) {
           <span className="sd-thank-you__icon" aria-hidden="true">
             <i className="fa-solid fa-check" />
           </span>
-          <p className="sd-events-kicker">Enquiry Submitted</p>
+          <p className="sd-events-kicker">Inquiry Submitted</p>
           <h1>Thank you for contacting skydecor</h1>
           <p>
-            Your enquiry has been received. Our Dubai team will review your
+            Your inquiry has been received. Our Dubai team will review your
             product interests and contact you shortly with the next steps.
           </p>
           {leadId ? (
@@ -32,8 +32,8 @@ export default async function ThankYouPage({ searchParams }) {
             <Link href="/products" className="tf-btn btn-fill">
               <span className="text text-button">Explore Products</span>
             </Link>
-            <Link href="/catalogue" className="btn-line">
-              View Catalogues
+            <Link href="/catalog" className="btn-line">
+              View Catalogs
             </Link>
           </div>
         </div>

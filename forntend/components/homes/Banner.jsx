@@ -11,7 +11,7 @@ export default function Banner() {
               <p className="text-btn-uppercase">Product Type</p>
               <h2 className="banner-heading">Ambience collection</h2>
               <p className="body-text-1">
-                Lightweight yet durable, our 0.8mm laminates are perfect for
+                Lightweight yet durable, our 0.8mm HPL is perfect for
                 interior wall panels, furniture surfaces, and decorative
                 applications — available in a wide range of textures and finishes.
               </p>
@@ -28,7 +28,7 @@ export default function Banner() {
           <div className="image-100">
             <Image
               src="/images/collections/0.8mm.jpeg"
-              alt="Ambience laminate collection"
+              alt="Ambience HPL collection"
               className="lazyload"
               width={400}
               height={484}
@@ -41,7 +41,7 @@ export default function Banner() {
           <div className="image-100">
             <Image
               src="/images/collections/1mm.jpeg"
-              alt="Design Master laminate collection"
+              alt="Design Master HPL collection"
               className="lazyload"
               width={400}
               height={300}
@@ -52,7 +52,7 @@ export default function Banner() {
               <p className="text-btn-uppercase">Product Type</p>
               <h2 className="banner-heading">Design Master</h2>
               <p className="body-text-1">
-                Our 1mm laminates offer superior strength and a premium finish,
+                Our 1mm HPL offers superior strength and a premium finish,
                 ideal for high-traffic surfaces, modular kitchens, and
                 commercial interiors across Dubai & UAE.
               </p>

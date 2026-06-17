@@ -2,7 +2,7 @@
 
 import React, { useMemo, useState } from "react";
 import Slider1 from "../sliders/Slider1";
-import ProductEnquiryModal from "../ProductEnquiryModal";
+import ProductInquiryModal from "../ProductInquiryModal";
 import ProductShareModal from "../ProductShareModal";
 import { useContextElement } from "@/context/Context";
 
@@ -134,11 +134,11 @@ export default function Details1({ product = {} }) {
 
                   <div className="tf-product-info-by-btn sky-product-action-row mb_10 mt_24">
                     <a
-                      href="#product_enquiry"
+                      href="#product_inquiry"
                       data-bs-toggle="modal"
                       className="btn-style-2 flex-grow-1 text-btn-uppercase fw-6 btn-add-to-cart"
                     >
-                      <span>Product Enquiry</span>
+                      <span>Product Inquiry</span>
                     </a>
                     <a
                       href="#compare"
@@ -180,7 +180,7 @@ export default function Details1({ product = {} }) {
                         <p className="text-caption-1">Delivery &amp; Return</p>
                       </a>
                       <a
-                        href="#product_enquiry"
+                        href="#product_inquiry"
                         data-bs-toggle="modal"
                         className="tf-product-extra-icon"
                       >
@@ -231,7 +231,7 @@ export default function Details1({ product = {} }) {
                           <div className="line-bt" />
                           <div>
                             <h6>skydecor Dubai</h6>
-                            <p>Product consultations and laminate enquiries available.</p>
+                            <p>Product consultations and HPL inquiries available.</p>
                           </div>
                           <div>
                             <p>Dubai, United Arab Emirates</p>
@@ -248,7 +248,7 @@ export default function Details1({ product = {} }) {
           </div>
         </div>
       </section>
-      <ProductEnquiryModal product={product} />
+      <ProductInquiryModal product={product} />
       <ProductShareModal product={product} />
       <div className="modal fade modalCentered" id="delivery_return">
         <div className="modal-dialog modal-dialog-centered">

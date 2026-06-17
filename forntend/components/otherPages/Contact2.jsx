@@ -5,11 +5,11 @@ import { productNavigation } from "@/data/menu";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
-const enquiryTypes = [
+const inquiryTypes = [
   "Product information",
-  "Catalogue request",
+  "Catalog request",
   "Sample request",
-  "Dealer / distributor enquiry",
+  "Dealer / distributor inquiry",
   "Project quotation",
   "Technical support ",
 ];
@@ -20,7 +20,7 @@ const initialFormState = {
   phone: "",
   company: "",
   city: "",
-  enquiryType: enquiryTypes[0],
+  inquiryType: inquiryTypes[0],
   productLineup: [],
   message: "",
   consent: false,
@@ -70,7 +70,7 @@ export default function Contact2() {
       const data = await response.json().catch(() => ({}));
 
       if (!response.ok) {
-        throw new Error(data.message || "Unable to submit your enquiry.");
+        throw new Error(data.message || "Unable to submit your inquiry.");
       }
 
       setFormData(initialFormState);
@@ -78,7 +78,7 @@ export default function Contact2() {
     } catch (error) {
       setStatus("failed");
       setErrorMessage(
-        error.message || "We could not submit your enquiry. Please try again."
+        error.message || "We could not submit your inquiry. Please try again."
       );
     }
   };
@@ -199,15 +199,15 @@ export default function Contact2() {
                 />
               </fieldset>
               <fieldset>
-                <label htmlFor="contact-lead-type">Enquiry type *</label>
+                <label htmlFor="contact-lead-type">Inquiry type *</label>
                 <select
                   id="contact-lead-type"
-                  name="enquiryType"
-                  value={formData.enquiryType}
+                  name="inquiryType"
+                  value={formData.inquiryType}
                   onChange={updateField}
                   required
                 >
-                  {enquiryTypes.map((type) => (
+                  {inquiryTypes.map((type) => (
                     <option value={type} key={type}>
                       {type}
                     </option>
@@ -257,7 +257,7 @@ export default function Contact2() {
                 required
               />
               <span>
-                I agree to be contacted by skydecor about this enquiry.
+                I agree to be contacted by skydecor about this inquiry.
               </span>
             </label>
 
@@ -273,7 +273,7 @@ export default function Contact2() {
               disabled={isSubmitting || !formData.consent}
             >
               <span className="text text-button">
-                {isSubmitting ? "Sending..." : "Send Enquiry"}
+                {isSubmitting ? "Sending..." : "Send Inquiry"}
               </span>
               <i className="icon icon-arrowUpRight" />
             </button>

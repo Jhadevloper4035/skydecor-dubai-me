@@ -75,6 +75,16 @@ const nextConfig = {
         destination: "/products",
         permanent: true,
       },
+      {
+        source: "/catalogue",
+        destination: "/catalog",
+        permanent: true,
+      },
+      {
+        source: "/catalouge",
+        destination: "/catalog",
+        permanent: true,
+      },
     ];
   },
   sassOptions: {

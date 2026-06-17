@@ -284,61 +284,61 @@ const shopLink = ({ category, subCategory, query } = {}) => {
 };
 
 export const productLinks = [
-  { href: shopLink({ category: "abstract" }), name: "Abstract Laminates" },
-  { href: shopLink({ category: "solid" }), name: "Solid Laminates" },
-  { href: shopLink({ category: "stone" }), name: "Stone Laminates" },
-  { href: shopLink({ category: "woodgrain" }), name: "Woodgrain Laminates" },
-  { href: shopLink({ query: "leather" }), name: "Leather Laminates" },
+  { href: shopLink({ category: "abstract" }), name: "Abstract HPL" },
+  { href: shopLink({ category: "solid" }), name: "Solid HPL" },
+  { href: shopLink({ category: "stone" }), name: "Stone HPL" },
+  { href: shopLink({ category: "woodgrain" }), name: "Woodgrain HPL" },
+  { href: shopLink({ query: "leather" }), name: "Leather HPL" },
   {
     href: shopLink({ category: "abstract", subCategory: "metallic" }),
-    name: "Metallics Laminates",
+    name: "Metallics HPL",
   },
-  { href: shopLink({ category: "woodgrain" }), name: "Woods Laminates" },
+  { href: shopLink({ category: "woodgrain" }), name: "Woods HPL" },
   {
     href: shopLink({ category: "abstract", query: "high gloss" }),
-    name: "Metallics High Gloss Laminates",
+    name: "Metallics High Gloss HPL",
   },
-  { href: shopLink({ category: "fabric" }), name: "Fabric Laminates" },
-  { href: shopLink({ query: "groovex" }), name: "Groovex Laminates" },
-  { href: shopLink({ query: "soffline" }), name: "Soffline Laminates" },
-  { href: shopLink({ query: "verto" }), name: "Verto Laminates" },
+  { href: shopLink({ category: "fabric" }), name: "Fabric HPL" },
+  { href: shopLink({ query: "groovex" }), name: "Groovex HPL" },
+  { href: shopLink({ query: "soffline" }), name: "Soffline HPL" },
+  { href: shopLink({ query: "verto" }), name: "Verto HPL" },
 ];
 
 export const swatchLinks = [
-  { href: shopLink({ category: "abstract" }), name: "Abstract Laminates" },
-  { href: shopLink({ category: "solid" }), name: "Solid Laminates" },
-  { href: shopLink({ category: "stone" }), name: "Stone Laminates" },
-  { href: shopLink({ category: "woodgrain" }), name: "Woodgrain Laminates" },
-  { href: shopLink({ query: "leather" }), name: "Leather Laminates" },
+  { href: shopLink({ category: "abstract" }), name: "Abstract HPL" },
+  { href: shopLink({ category: "solid" }), name: "Solid HPL" },
+  { href: shopLink({ category: "stone" }), name: "Stone HPL" },
+  { href: shopLink({ category: "woodgrain" }), name: "Woodgrain HPL" },
+  { href: shopLink({ query: "leather" }), name: "Leather HPL" },
   {
     href: shopLink({ category: "abstract", subCategory: "metallic" }),
-    name: "Metallics Laminates",
+    name: "Metallics HPL",
   },
-  { href: shopLink({ category: "woodgrain" }), name: "Woods Laminates" },
+  { href: shopLink({ category: "woodgrain" }), name: "Woods HPL" },
 ];
 
 export const productFeatures = [
-  { href: shopLink({ category: "abstract" }), name: "Abstract Laminates" },
-  { href: shopLink({ category: "solid" }), name: "Solid Laminates" },
-  { href: shopLink({ category: "stone" }), name: "Stone Laminates" },
-  { href: shopLink({ category: "woodgrain" }), name: "Woodgrain Laminates" },
-  { href: shopLink({ query: "leather" }), name: "Leather Laminates" },
+  { href: shopLink({ category: "abstract" }), name: "Abstract HPL" },
+  { href: shopLink({ category: "solid" }), name: "Solid HPL" },
+  { href: shopLink({ category: "stone" }), name: "Stone HPL" },
+  { href: shopLink({ category: "woodgrain" }), name: "Woodgrain HPL" },
+  { href: shopLink({ query: "leather" }), name: "Leather HPL" },
   {
     href: shopLink({ category: "abstract", subCategory: "metallic" }),
-    name: "Metallics Laminates",
+    name: "Metallics HPL",
   },
-  { href: shopLink({ category: "woodgrain" }), name: "Woods Laminates" },
+  { href: shopLink({ category: "woodgrain" }), name: "Woods HPL" },
   {
     href: shopLink({ category: "abstract", query: "high gloss" }),
-    name: "Metallics High Gloss Laminates",
+    name: "Metallics High Gloss HPL",
   },
-  { href: shopLink({ category: "fabric" }), name: "Fabric Laminates" },
-  { href: shopLink({ query: "groovex" }), name: "Groovex Laminates" },
-  { href: shopLink({ query: "soffline" }), name: "Soffline Laminates" },
-  { href: shopLink({ query: "verto" }), name: "Verto Laminates" },
-  { href: shopLink({ category: "abstract" }), name: "Abstract Laminates" },
-  { href: shopLink({ category: "solid" }), name: "Solid Laminates", badge: "New" },
-  { href: shopLink({ category: "stone" }), name: "Stone Laminates", badge: "New" },
+  { href: shopLink({ category: "fabric" }), name: "Fabric HPL" },
+  { href: shopLink({ query: "groovex" }), name: "Groovex HPL" },
+  { href: shopLink({ query: "soffline" }), name: "Soffline HPL" },
+  { href: shopLink({ query: "verto" }), name: "Verto HPL" },
+  { href: shopLink({ category: "abstract" }), name: "Abstract HPL" },
+  { href: shopLink({ category: "solid" }), name: "Solid HPL", badge: "New" },
+  { href: shopLink({ category: "stone" }), name: "Stone HPL", badge: "New" },
 ];
 
 
@@ -352,7 +352,7 @@ export const blogLinks = [
 ];
 
 export const otherPageLinks = [
-  { href: "/catalogue", name: "Catalogues" },
+  { href: "/catalog", name: "Catalogs" },
   // { href: "/events", name: "Events" },
   // { href: "/FAQs", name: "FAQs" },
   // { href: "/term-of-use", name: "Terms Of Use" },

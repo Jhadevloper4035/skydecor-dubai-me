@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 
-import { submitProductEnquiry } from "@/lib/productsApi";
+import { submitProductInquiry } from "@/lib/productsApi";
 
 const initialFormState = {
   name: "",
@@ -22,7 +22,7 @@ const normalizeProductCode = (product = {}) =>
 const getProductName = (product = {}) =>
   String(product.productName || product.title || product.designName || "Product").trim();
 
-export default function ProductEnquiryModal({ product = {} }) {
+export default function ProductInquiryModal({ product = {} }) {
   const modalRef = useRef(null);
   const [formData, setFormData] = useState(initialFormState);
   const [status, setStatus] = useState("idle");
@@ -64,7 +64,7 @@ export default function ProductEnquiryModal({ product = {} }) {
     }));
   };
 
-  const submitEnquiry = async (event) => {
+  const submitInquiry = async (event) => {
     event.preventDefault();
     setStatus("submitting");
     setErrorMessage("");
@@ -82,13 +82,13 @@ export default function ProductEnquiryModal({ product = {} }) {
     if (formData.message.trim()) payload.message = formData.message.trim();
 
     try {
-      await submitProductEnquiry(payload);
+      await submitProductInquiry(payload);
       setStatus("succeeded");
       setFormData(initialFormState);
     } catch (error) {
       setStatus("failed");
       setErrorMessage(
-        error.message || "We could not send your enquiry. Please try again."
+        error.message || "We could not send your inquiry. Please try again."
       );
     }
   };
@@ -96,19 +96,19 @@ export default function ProductEnquiryModal({ product = {} }) {
   return (
     <div
       ref={modalRef}
-      className="modal fade modalCentered sd-product-enquiry-modal"
-      id="product_enquiry"
+      className="modal fade modalCentered sd-product-inquiry-modal"
+      id="product_inquiry"
       tabIndex="-1"
-      aria-labelledby="product-enquiry-title"
+      aria-labelledby="product-inquiry-title"
       aria-hidden="true"
     >
       <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable">
         <div className="modal-content">
-          <div className="sd-product-enquiry-modal__header">
+          <div className="sd-product-inquiry-modal__header">
             <div>
               <span>skydecor Product Support</span>
-              <h5 id="product-enquiry-title">
-                {isSucceeded ? "Thank you for your enquiry" : "Enquire about this product"}
+              <h5 id="product-inquiry-title">
+                {isSucceeded ? "Thank you for your inquiry" : "Ask about this product"}
               </h5>
             </div>
             <button
@@ -120,13 +120,13 @@ export default function ProductEnquiryModal({ product = {} }) {
           </div>
 
           {isSucceeded ? (
-            <div className="sd-product-enquiry-success" role="status">
-              <span className="sd-product-enquiry-success__icon" aria-hidden="true">
+            <div className="sd-product-inquiry-success" role="status">
+              <span className="sd-product-inquiry-success__icon" aria-hidden="true">
                 <i className="fa-solid fa-check" />
               </span>
               <h4>Your request has been received</h4>
               <p>
-                Thank you for enquiring about <strong>{productCode}</strong>. Our
+                Thank you for asking about <strong>{productCode}</strong>. Our
                 product team will contact you shortly with availability and details.
               </p>
               <button
@@ -138,18 +138,18 @@ export default function ProductEnquiryModal({ product = {} }) {
               </button>
             </div>
           ) : (
-            <div className="modal-body sd-product-enquiry-modal__body">
-              <p className="sd-product-enquiry-modal__intro">
+            <div className="modal-body sd-product-inquiry-modal__body">
+              <p className="sd-product-inquiry-modal__intro">
                 Share your requirements and our team will assist with product
                 availability, samples, and project quantities.
               </p>
 
-              <form className="sd-product-enquiry-form" onSubmit={submitEnquiry}>
-                <div className="sd-product-enquiry-form__product">
+              <form className="sd-product-inquiry-form" onSubmit={submitInquiry}>
+                <div className="sd-product-inquiry-form__product">
                   <fieldset>
-                    <label htmlFor="product-enquiry-code">Product code</label>
+                    <label htmlFor="product-inquiry-code">Product code</label>
                     <input
-                      id="product-enquiry-code"
+                      id="product-inquiry-code"
                       type="text"
                       value={productCode}
                       readOnly
@@ -157,9 +157,9 @@ export default function ProductEnquiryModal({ product = {} }) {
                     />
                   </fieldset>
                   <fieldset>
-                    <label htmlFor="product-enquiry-product">Product name</label>
+                    <label htmlFor="product-inquiry-product">Product name</label>
                     <input
-                      id="product-enquiry-product"
+                      id="product-inquiry-product"
                       type="text"
                       value={productName}
                       readOnly
@@ -168,11 +168,11 @@ export default function ProductEnquiryModal({ product = {} }) {
                   </fieldset>
                 </div>
 
-                <div className="sd-product-enquiry-form__grid">
+                <div className="sd-product-inquiry-form__grid">
                   <fieldset>
-                    <label htmlFor="product-enquiry-name">Full name *</label>
+                    <label htmlFor="product-inquiry-name">Full name *</label>
                     <input
-                      id="product-enquiry-name"
+                      id="product-inquiry-name"
                       type="text"
                       name="name"
                       placeholder="Your full name"
@@ -184,9 +184,9 @@ export default function ProductEnquiryModal({ product = {} }) {
                     />
                   </fieldset>
                   <fieldset>
-                    <label htmlFor="product-enquiry-phone">Phone number *</label>
+                    <label htmlFor="product-inquiry-phone">Phone number *</label>
                     <input
-                      id="product-enquiry-phone"
+                      id="product-inquiry-phone"
                       type="tel"
                       name="phone"
                       placeholder="Your phone number"
@@ -198,9 +198,9 @@ export default function ProductEnquiryModal({ product = {} }) {
                     />
                   </fieldset>
                   <fieldset>
-                    <label htmlFor="product-enquiry-email">Email address *</label>
+                    <label htmlFor="product-inquiry-email">Email address *</label>
                     <input
-                      id="product-enquiry-email"
+                      id="product-inquiry-email"
                       type="email"
                       name="email"
                       placeholder="you@example.com"
@@ -212,9 +212,9 @@ export default function ProductEnquiryModal({ product = {} }) {
                     />
                   </fieldset>
                   <fieldset>
-                    <label htmlFor="product-enquiry-company">Company</label>
+                    <label htmlFor="product-inquiry-company">Company</label>
                     <input
-                      id="product-enquiry-company"
+                      id="product-inquiry-company"
                       type="text"
                       name="companyName"
                       placeholder="Company name"
@@ -224,10 +224,10 @@ export default function ProductEnquiryModal({ product = {} }) {
                       maxLength={160}
                     />
                   </fieldset>
-                  <fieldset className="sd-product-enquiry-form__quantity">
-                    <label htmlFor="product-enquiry-quantity">Required quantity</label>
+                  <fieldset className="sd-product-inquiry-form__quantity">
+                    <label htmlFor="product-inquiry-quantity">Required quantity</label>
                     <input
-                      id="product-enquiry-quantity"
+                      id="product-inquiry-quantity"
                       type="number"
                       min="1"
                       max="100000"
@@ -239,9 +239,9 @@ export default function ProductEnquiryModal({ product = {} }) {
                 </div>
 
                 <fieldset>
-                  <label htmlFor="product-enquiry-message">Project requirements</label>
+                  <label htmlFor="product-inquiry-message">Project requirements</label>
                   <textarea
-                    id="product-enquiry-message"
+                    id="product-inquiry-message"
                     name="message"
                     rows={4}
                     placeholder="Tell us about samples, quantity, location, or timeline"
@@ -251,7 +251,7 @@ export default function ProductEnquiryModal({ product = {} }) {
                   />
                 </fieldset>
 
-                <label className="sd-product-enquiry-form__consent">
+                <label className="sd-product-inquiry-form__consent">
                   <input
                     type="checkbox"
                     name="consent"
@@ -261,12 +261,12 @@ export default function ProductEnquiryModal({ product = {} }) {
                   />
                   <span>
                     I agree that skydecor may use these details to respond to my
-                    product enquiry.
+                    product inquiry.
                   </span>
                 </label>
 
                 {errorMessage ? (
-                  <p className="sd-product-enquiry-form__error" role="alert">
+                  <p className="sd-product-inquiry-form__error" role="alert">
                     {errorMessage}
                   </p>
                 ) : null}
@@ -277,7 +277,7 @@ export default function ProductEnquiryModal({ product = {} }) {
                   disabled={isSubmitting || !formData.consent || !productCode}
                 >
                   <span className="text">
-                    {isSubmitting ? "Sending enquiry..." : "Submit Product Enquiry"}
+                    {isSubmitting ? "Sending inquiry..." : "Submit Product Inquiry"}
                   </span>
                   <i className="icon icon-arrowUpRight" />
                 </button>

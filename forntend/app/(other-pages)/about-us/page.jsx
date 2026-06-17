@@ -5,7 +5,7 @@ import React from "react";
 export const metadata = {
   title: "About skydecor | Decorative Surface Solutions",
   description:
-    "Learn about skydecor and our decorative laminates, panels, and interior surface solutions for residential and commercial projects.",
+    "Learn about skydecor and our decorative HPL, panels, and interior surface solutions for residential and commercial projects.",
 };
 
 export default function AboutUsPage() {

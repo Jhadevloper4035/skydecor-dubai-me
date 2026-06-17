@@ -387,13 +387,13 @@ export const newsItems3 = [
 ];
 export const allBlogs = [
   {
-    id: "choosing-laminate-finishes",
-    slug: "choosing-laminate-finishes",
+    id: "choosing-hpl-finishes",
+    slug: "choosing-hpl-finishes",
     imgSrc: "https://skydecor.in/images/blogs/4.png",
-    alt: "Decorative laminate finishes for interior design",
+    alt: "Decorative HPL finishes for interior design",
     date: "15 Jun 2026",
     author: "skydecor Dubai",
-    title: "How to Choose the Right Laminate Finish",
+    title: "How to Choose the Right HPL Finish",
     description:
       "A practical guide to balancing appearance, touch, maintenance, and everyday performance when selecting a decorative surface.",
     content: [
@@ -401,7 +401,7 @@ export const allBlogs = [
       "Review physical samples in the project lighting before making a final decision. Colour, texture, and sheen can look different on a screen and can shift throughout the day.",
       "Consider cleaning, traffic, edge details, and nearby materials as part of the same decision. Our team can help compare suitable collections for your project requirements.",
     ],
-    categories: ["Laminates", "Design Guidance"],
+    categories: ["HPL", "Design Guidance"],
     tags: ["finishes", "interiors", "samples"],
   },
   {
@@ -431,13 +431,13 @@ export const allBlogs = [
     author: "skydecor Dubai",
     title: "Everyday Care for Decorative Surfaces",
     description:
-      "Simple cleaning habits can preserve the appearance of laminate and decorative surfaces in busy residential and commercial spaces.",
+      "Simple cleaning habits can preserve the appearance of HPL and decorative surfaces in busy residential and commercial spaces.",
     content: [
       "For routine cleaning, use a soft damp cloth with a mild non-abrasive cleaner. Wipe spills promptly and dry the surface after cleaning.",
       "Avoid abrasive pads, harsh chemicals, and tools that can scratch the finish. Product-specific guidance should always take priority for specialist surfaces.",
       "Good installation details also support long-term performance. Edges, joints, and areas around water should be finished for the conditions of the application.",
     ],
-    categories: ["Care", "Laminates"],
+    categories: ["Care", "HPL"],
     tags: ["maintenance", "cleaning", "surfaces"],
   },
 ];

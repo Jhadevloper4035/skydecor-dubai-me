@@ -8,7 +8,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const quickLinks = [
-  { href: "/catalogue", label: "Catalogues" },
+  { href: "/catalog", label: "Catalogs" },
   { href: "/certificates", label: "Certificates" },
   { href: "/contact", label: "Contact Us", mobileLabel: "Contact" },
 ];

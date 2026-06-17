@@ -7,14 +7,14 @@ export const events = [
     location: "Dubai Design District, Dubai",
     coverImage: "/images/our-project-image-1.jpg",
     excerpt:
-      "A curated surface-material showcase for designers, architects, and project owners exploring premium laminate applications.",
+      "A curated surface-material showcase for designers, architects, and project owners exploring premium HPL applications.",
     description: [
-      "skydecor Dubai hosted an immersive product experience focused on contemporary laminate surfaces for residential, retail, hospitality, and workplace interiors.",
+      "skydecor Dubai hosted an immersive product experience focused on contemporary HPL surfaces for residential, retail, hospitality, and workplace interiors.",
       "The event brought together architects, contractors, and design consultants for live product walkthroughs, finish comparisons, and conversations around practical material selection for UAE projects.",
       "Guests explored woodgrain, solid, stone, and textured finishes through sample boards, mood settings, and guided consultations with the skydecor team.",
     ],
     highlights: [
-      "Live laminate finish presentation",
+      "Live HPL finish presentation",
       "Designer and contractor networking",
       "Material guidance for active Dubai projects",
       "Hands-on product sample display",
@@ -39,7 +39,7 @@ export const events = [
       "An intimate knowledge session for architecture and interior teams featuring material demos, design discussions, and project consultation.",
     description: [
       "Our experience center hosted a focused architects meet designed to help professionals evaluate finishes with real samples and project-specific context.",
-      "The session covered durability, finish coordination, and how premium laminate surfaces can support fast-moving commercial and residential interiors.",
+      "The session covered durability, finish coordination, and how premium HPL surfaces can support fast-moving commercial and residential interiors.",
       "The event closed with one-to-one conversations around upcoming projects, sample requirements, and specification support.",
     ],
     highlights: [
@@ -67,15 +67,15 @@ export const events = [
     excerpt:
       "A trade-show presence built around new surface ideas, product conversations, and meeting partners from across the region.",
     description: [
-      "skydecor participated in Dubai Wood Show with a display crafted for professionals who work with wood, panels, laminates, and interior surface materials.",
-      "Visitors explored our product range, discussed upcoming requirements, and connected with the team for catalogues, samples, and project support.",
+      "skydecor participated in Dubai Wood Show with a display crafted for professionals who work with wood, panels, HPL, and interior surface materials.",
+      "Visitors explored our product range, discussed upcoming requirements, and connected with the team for catalogs, samples, and project support.",
       "The event helped strengthen relationships with dealers, designers, and construction teams across the UAE market.",
     ],
     highlights: [
       "Regional trade-show participation",
       "Product range display",
       "Dealer and designer meetings",
-      "Catalogue and sample requests",
+      "Catalog and sample requests",
     ],
     gallery: [
       "/images/gallery/gallery-22.jpg",

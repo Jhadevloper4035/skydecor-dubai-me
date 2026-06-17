@@ -5,28 +5,26 @@ import PhotoSwipeLightbox from "photoswipe/lightbox";
 import { useEffect, useMemo, useRef, useState } from "react";
 
 import {
-  catalogueCategories,
-  catalogues,
-  getCatalogueCategoryLabel,
-} from "@/data/catalogues";
+  catalogCategories,
+  catalogs,
+  getCatalogCategoryLabel,
+} from "@/data/catalogs";
 
-export default function CataloguesPage() {
+export default function CatalogsPage() {
   const lightboxRef = useRef(null);
   const [activeCategory, setActiveCategory] = useState("all");
-  const visibleCatalogues = useMemo(
+  const visibleCatalogs = useMemo(
     () =>
       activeCategory === "all"
-        ? catalogues
-        : catalogues.filter(
-            (catalogue) => catalogue.category === activeCategory,
-          ),
+        ? catalogs
+        : catalogs.filter((catalog) => catalog.category === activeCategory),
     [activeCategory],
   );
 
   useEffect(() => {
     const lightbox = new PhotoSwipeLightbox({
-      gallery: ".sd-catalogues-grid",
-      children: ".sd-catalogue-card__image",
+      gallery: ".sd-catalogs-grid",
+      children: ".sd-catalog-card__image",
       pswpModule: () => import("photoswipe"),
     });
 
@@ -37,29 +35,29 @@ export default function CataloguesPage() {
       lightbox.destroy();
       lightboxRef.current = null;
     };
-  }, [visibleCatalogues]);
+  }, [visibleCatalogs]);
 
   return (
-    <main className="sd-catalogues-page">
-      <section className="sd-catalogues-library flat-spacing">
+    <main className="sd-catalogs-page">
+      <section className="sd-catalogs-library flat-spacing">
         <div className="container">
-          <div className="sd-catalogues-library__head">
+          <div className="sd-catalogs-library__head">
             <div>
               <span className="sd-events-kicker">Browse Collections</span>
-              <h3 className="heading">E-catalogues</h3>
+              <h3 className="heading">E-catalogs</h3>
             </div>
             <p aria-live="polite">
-              Showing <strong>{visibleCatalogues.length}</strong>{" "}
-              {visibleCatalogues.length === 1 ? "catalogue" : "catalogues"}
+              Showing <strong>{visibleCatalogs.length}</strong>{" "}
+              {visibleCatalogs.length === 1 ? "catalog" : "catalogs"}
             </p>
           </div>
 
           <div
-            className="sd-catalogues-tabs"
+            className="sd-catalogs-tabs"
             role="tablist"
-            aria-label="Filter catalogues"
+            aria-label="Filter catalogs"
           >
-            {catalogueCategories.map((category) => (
+            {catalogCategories.map((category) => (
               <button
                 type="button"
                 role="tab"
@@ -73,41 +71,41 @@ export default function CataloguesPage() {
             ))}
           </div>
 
-          <div className="sd-catalogues-grid">
-            {visibleCatalogues.map((catalogue) => (
-              <article className="sd-catalogue-card" key={catalogue.id}>
+          <div className="sd-catalogs-grid">
+            {visibleCatalogs.map((catalog) => (
+              <article className="sd-catalog-card" key={catalog.id}>
                 <a
-                  className="sd-catalogue-card__image"
-                  href={catalogue.image}
+                  className="sd-catalog-card__image"
+                  href={catalog.image}
                   target="_blank"
                   rel="noopener noreferrer"
                   data-pswp-width="1240"
                   data-pswp-height="1520"
-                  aria-label={`View ${catalogue.title} catalogue cover`}
+                  aria-label={`View ${catalog.title} catalog cover`}
                 >
                   <Image
-                    src={catalogue.image}
-                    alt={`${catalogue.title} catalogue cover`}
+                    src={catalog.image}
+                    alt={`${catalog.title} catalog cover`}
                     width={620}
                     height={760}
                   />
-                  <span className="sd-catalogue-card__tag">
-                    {getCatalogueCategoryLabel(catalogue.category)}
+                  <span className="sd-catalog-card__tag">
+                    {getCatalogCategoryLabel(catalog.category)}
                   </span>
-                  <span className="sd-catalogue-card__preview">
+                  <span className="sd-catalog-card__preview">
                     <i className="fa-solid fa-magnifying-glass-plus" />
-                    View catalogue
+                    View catalog
                   </span>
                 </a>
-                <div className="sd-catalogue-card__body">
-                  <h4>{catalogue.title}</h4>
-                  <p>{catalogue.description}</p>
+                <div className="sd-catalog-card__body">
+                  <h4>{catalog.title}</h4>
+                  <p>{catalog.description}</p>
                   <a
-                    href={catalogue.pdf}
+                    href={catalog.pdf}
                     target="_blank"
                     rel="noopener noreferrer"
-                    download={catalogue.fileName}
-                    className="sd-catalogue-card__download"
+                    download={catalog.fileName}
+                    className="sd-catalog-card__download"
                   >
                     Download PDF
                     <i className="fa-solid fa-arrow-down" />

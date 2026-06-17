@@ -41,7 +41,7 @@ export default function Sidebar2() {
         </div>
         <div className="writer-content">
           <p>
-            Insights from the skydecor Dubai team on laminates, surfaces,
+            Insights from the skydecor Dubai team on HPL, surfaces,
             interiors, product launches, and design events.
           </p>
           <ul className="tf-social-icon">

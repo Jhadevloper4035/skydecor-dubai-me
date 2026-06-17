@@ -7,19 +7,19 @@ const faqs = [
       "Our range includes PVC HPL, decorative HPL, acrylic HPL, edgeband, MDF boards, acoustic panels, and Matteva surfaces.",
   },
   {
-    question: "Can I request samples or a catalogue?",
+    question: "Can I request samples or a catalog?",
     answer:
-      "Yes. Send your preferred collection, finish, and project details through our contact page. Our team will help with samples and the latest catalogues.",
+      "Yes. Send your preferred collection, finish, and project details through our contact page. Our team will help with samples and the latest catalogs.",
   },
   {
-    question: "How do I choose the right laminate for my project?",
+    question: "How do I choose the right HPL for my project?",
     answer:
       "Share the application, expected traffic, desired finish, and technical requirements. We can help shortlist suitable products for residential or commercial interiors.",
   },
   {
     question: "Do you support projects across the UAE?",
     answer:
-      "skydecor Dubai handles product and project enquiries across Dubai and the UAE. Availability and delivery details are confirmed for each enquiry.",
+      "skydecor Dubai handles product and project inquiries across Dubai and the UAE. Availability and delivery details are confirmed for each inquiry.",
   },
   {
     question: "Where can I find product specifications?",
