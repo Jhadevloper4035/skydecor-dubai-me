@@ -10,13 +10,13 @@ test("catalogue library contains valid categorized downloads", () => {
       .map((category) => category.value)
   );
 
-  assert.equal(catalogues.length, 8);
-  assert.equal(new Set(catalogues.map((catalogue) => catalogue.id)).size, 8);
+  assert.equal(catalogues.length, 2);
+  assert.equal(new Set(catalogues.map((catalogue) => catalogue.id)).size, 2);
 
   for (const catalogue of catalogues) {
     assert.ok(categories.has(catalogue.category));
     assert.ok(catalogue.title.length > 0);
-    assert.match(catalogue.image, /^https:\/\/skydecor\.in\/images\/catalouges\/.+/);
-    assert.match(catalogue.pdf, /^https:\/\/skydecor\.in\/catalouges\/.+\.pdf$/);
+    assert.match(catalogue.image, /^https:\/\/rantechnology\.in\/skydecor\/.+\.(png|jpe?g|webp)$/);
+    assert.match(catalogue.pdf, /^https:\/\/rantechnology\.in\/skydecor\/.+\.pdf$/);
   }
 });
