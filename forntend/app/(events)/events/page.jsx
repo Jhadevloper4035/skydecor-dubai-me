@@ -2,9 +2,9 @@ import EventsList from "@/components/events/EventsList";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Events | SkyDecor Dubai",
+  title: "Events | skydecor Dubai",
   description:
-    "Explore SkyDecor Dubai events, exhibitions, product showcases, and design community updates.",
+    "Explore skydecor Dubai events, exhibitions, product showcases, and design community updates.",
 };
 
 export default function EventsPage() {

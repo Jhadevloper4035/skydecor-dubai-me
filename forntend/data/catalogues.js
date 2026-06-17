@@ -1,5 +1,3 @@
-
-
 export const catalogueCategories = [
   { value: "all", label: "All Collections" },
   { value: "new", label: "New Arrivals" },
@@ -10,26 +8,24 @@ export const catalogues = [
   {
     id: 1,
     category: "new",
-    title: "Design Master",
+    title: "Design Master 1mm+",
     description:
-      "Explore SkyDecor’s premium Design Master collection, crafted to bring elegance, durability, and distinctive style to modern residential and commercial spaces.",
+      "Explore premium 1mm+ decorative laminates featuring elegant textures, contemporary patterns, and durable finishes for residential and commercial interiors.",
     image: "https://rantechnology.in/skydecor/design-master.png",
     pdf: "https://rantechnology.in/skydecor/dubai-design-master.pdf",
-    fileName: "design_master.pdf",
+    fileName: "Design_Master_1mm_Plus.pdf",
   },
   {
     id: 2,
     category: "popular",
     title: "Ambience Collection",
     description:
-      "Discover SkyDecor’s Ambience Collection, featuring stylish and versatile decorative surfaces designed to create refined, seamless, and contemporary interiors.",
+      "Discover sophisticated decorative laminates designed to create warm, stylish, and inviting interior spaces with modern colours, textures, and finishes.",
     image: "https://rantechnology.in/skydecor/ambience.png",
-    pdf: "https://rantechnology.in/skydecor/ambience.png",
-    fileName: "ambience-collection.pdf",
+    pdf: "https://rantechnology.in/skydecor/ambience.pdf",
+    fileName: "Ambience_Collection.pdf",
   },
 ];
-
-
 
 export const getCatalogueCategoryLabel = (category) =>
   catalogueCategories.find((item) => item.value === category)?.label || category;

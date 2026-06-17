@@ -4,7 +4,7 @@ export const slides = [
   {
     imgSrc: "/images/banners/banner1.webp",
     alt: "skydecor-laminate",
-    subheading: "SKYDECOR DUBAI LAMINATES",
+    subheading: "skydecor DUBAI LAMINATES",
     heading: "Premium 1mm Laminates",
     btnText: "Explore Collection",
   },
@@ -60,7 +60,7 @@ export const slides = [
   {
     imgSrc: "/images/banners/banner9.jpg",
     alt: "skydecor-laminate",
-    subheading: "SKYDECOR EXCLUSIVE",
+    subheading: "skydecor EXCLUSIVE",
     heading: "Upgrade Your\nInterior Spaces",
     btnText: "Explore Range",
   }

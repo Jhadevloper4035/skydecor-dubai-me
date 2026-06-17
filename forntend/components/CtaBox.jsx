@@ -58,7 +58,7 @@ export default function CtaBox() {
               <div className="section-title">
                 <h3 className="heading wow fadeInUp">Get In Touch</h3>
                 <h2 className="heading text-anime-style-3" data-cursor="-opaque">
-                  Transform Your Space with SkyDecor
+                  Transform Your Space with skydecor
                 </h2>
                 <p className="wow fadeInUp" data-wow-delay="0.2s">
                   Whether you're fitting out a home, office, or commercial space in Dubai or across the UAE, our laminate experts are ready to help you choose the perfect finish.
@@ -74,7 +74,7 @@ export default function CtaBox() {
           <div className="col-xl-6">
             <div className="cta-client-box wow fadeInUp" data-wow-delay="0.6s">
               <h3 className="heading">Trusted by Designers & Contractors Across the UAE</h3>
-              <p>From interior designers to large-scale contractors — SkyDecor is the preferred laminate supplier in Dubai for quality, variety, and reliability.</p>
+              <p>From interior designers to large-scale contractors — skydecor is the preferred laminate supplier in Dubai for quality, variety, and reliability.</p>
             </div>
           </div>
         </div>

@@ -1,11 +1,11 @@
-import BlogDefault from "@/components/blogs/BlogDefault";
+import BlogGrid from "@/components/blogs/BlogGrid";
 import Link from "next/link";
 import React from "react";
 
 export const metadata = {
-  title: "Design Journal | SkyDecor Dubai",
+  title: "Design Journal | skydecor Dubai",
   description:
-    "SkyDecor articles about decorative surfaces, material selection, care, and interior project planning.",
+    "skydecor articles about decorative surfaces, material selection, care, and interior project planning.",
 };
 
 export default function BlogDefaultPage() {
@@ -36,7 +36,7 @@ export default function BlogDefaultPage() {
           </div>
         </div>
       </div>
-      <BlogDefault />
+      <BlogGrid />
     </>
   );
 }

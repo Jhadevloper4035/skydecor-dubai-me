@@ -1,14 +1,14 @@
 import Image from "next/image";
 
 const companyStory = [
-  "Established in 2016, SkyDecor creates decorative, acrylic, and PVC laminates with a focus on design, precision, and dependable quality.",
+  "Established in 2016, skydecor creates decorative, acrylic, and PVC laminates with a focus on design, precision, and dependable quality.",
   "Our advanced manufacturing facilities and Dubai warehouse support customers across the Middle East and global markets with versatile surfaces for modern interiors.",
 ];
 
 const commitments = [
   {
     title: "Vision",
-    text: "At SkyDecor Laminates, our vision is to be recognized as a premier brand that elevates the beauty of homes. We strive to infuse global expertise and distinctive design aesthetics into every space we transform.",
+    text: "At skydecor Laminates, our vision is to be recognized as a premier brand that elevates the beauty of homes. We strive to infuse global expertise and distinctive design aesthetics into every space we transform.",
   },
   {
     title: "Mission",
@@ -16,34 +16,34 @@ const commitments = [
   },
   {
     title: "Core Values",
-    text: "SkyDecor is committed to integrating eco-friendly materials and sustainable practices, fostering a greener and more sustainable future. Our objective is to deliver products that are both aesthetically captivating and environmentally conscious, ensuring safety and responsibility in every creation.",
+    text: "skydecor is committed to integrating eco-friendly materials and sustainable practices, fostering a greener and more sustainable future. Our objective is to deliver products that are both aesthetically captivating and environmentally conscious, ensuring safety and responsibility in every creation.",
   },
 ];
 
 const manufacturingGallery = [
   {
     src: "/images/about/manufacturing/unit-1.webp",
-    alt: "Aerial view of the SkyDecor manufacturing facility",
+    alt: "Aerial view of the skydecor manufacturing facility",
   },
   {
     src: "/images/about/manufacturing/unit-2.webp",
-    alt: "Aerial front view of the SkyDecor manufacturing facility",
+    alt: "Aerial front view of the skydecor manufacturing facility",
   },
   {
     src: "/images/about/manufacturing/unit-3.webp",
-    alt: "Wide aerial view of the SkyDecor production plant",
+    alt: "Wide aerial view of the skydecor production plant",
   },
   {
     src: "/images/about/manufacturing/unit-4.webp",
-    alt: "SkyDecor production plant and surrounding facilities",
+    alt: "skydecor production plant and surrounding facilities",
   },
   {
     src: "/images/about/manufacturing/unit-5.webp",
-    alt: "SkyDecor manufacturing team gathered at the facility",
+    alt: "skydecor manufacturing team gathered at the facility",
   },
   {
     src: "/images/about/manufacturing/unit-6.webp",
-    alt: "SkyDecor production team",
+    alt: "skydecor production team",
   },
 ];
 
@@ -88,7 +88,7 @@ export default function About() {
           <div className="tf-grid-layout md-col-2 radius-20 gap-0 overflow-hidden sd-about-story__card">
             <div className="banner-text style-2 bg-brown-2 mb-0 sd-about-story__content">
               <div className="box-title">
-                <p className="text-btn-uppercase">SkyDecor Laminates</p>
+                <p className="text-btn-uppercase">skydecor Laminates</p>
                 <h2 className="banner-heading">
                   Laminates made for better spaces
                 </h2>
@@ -104,7 +104,7 @@ export default function About() {
             <div className="image-100 sd-about-story__image">
               <Image
                 src="/images/about-us-image-1.jpg"
-                alt="SkyDecor laminates in a contemporary interior"
+                alt="skydecor laminates in a contemporary interior"
                 width={906}
                 height={1000}
                 sizes="(max-width: 767px) 100vw, 50vw"
@@ -148,7 +148,7 @@ export default function About() {
           <figure className="sd-about-manufacturing__hero">
             <Image
               src="/images/about/manufacturing/unit-1.webp"
-              alt="Aerial view of the SkyDecor manufacturing facility"
+              alt="Aerial view of the skydecor manufacturing facility"
               fill
               priority={false}
               sizes="(max-width: 767px) 100vw, 1320px"

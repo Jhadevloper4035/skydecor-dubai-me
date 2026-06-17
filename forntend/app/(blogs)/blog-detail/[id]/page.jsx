@@ -11,12 +11,12 @@ export async function generateMetadata({ params }) {
 
   if (!blog) {
     return {
-      title: "Blog Not Found | SkyDecor Dubai",
+      title: "Blog Not Found | skydecor Dubai",
     };
   }
 
   return {
-    title: `${blog.title} | SkyDecor Dubai Blog`,
+    title: `${blog.title} | skydecor Dubai Blog`,
     description: blog.excerpt || blog.description,
   };
 }

@@ -1,9 +1,9 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Thank You | SkyDecor Dubai",
+  title: "Thank You | skydecor Dubai",
   description:
-    "Thank you for contacting SkyDecor Dubai. Our team will review your enquiry and respond shortly.",
+    "Thank you for contacting skydecor Dubai. Our team will review your enquiry and respond shortly.",
 };
 
 export default async function ThankYouPage({ searchParams }) {
@@ -18,7 +18,7 @@ export default async function ThankYouPage({ searchParams }) {
             <i className="fa-solid fa-check" />
           </span>
           <p className="sd-events-kicker">Enquiry Submitted</p>
-          <h1>Thank you for contacting SkyDecor</h1>
+          <h1>Thank you for contacting skydecor</h1>
           <p>
             Your enquiry has been received. Our Dubai team will review your
             product interests and contact you shortly with the next steps.

@@ -448,6 +448,6 @@ export const productNavigation = {
     buttonText: "Shop Now",
     href: "/shop-collection",
     image: "/images/collections/cls-header.jpg",
-    imageAlt: "Best-selling SkyDecor collections",
+    imageAlt: "Best-selling skydecor collections",
   },
 };

@@ -9,12 +9,12 @@ export async function generateMetadata({ params }) {
 
   if (!job) {
     return {
-      title: "Job Not Found | SkyDecor Dubai",
+      title: "Job Not Found | skydecor Dubai",
     };
   }
 
   return {
-    title: `${job.title} | SkyDecor Careers`,
+    title: `${job.title} | skydecor Careers`,
     description: job.summary,
   };
 }

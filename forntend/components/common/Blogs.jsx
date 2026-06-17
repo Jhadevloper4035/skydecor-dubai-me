@@ -59,7 +59,7 @@ export default function Blogs({
                   <Image
                     className="aspect-ratio-1 ls-is-cached lazyload"
                     data-src={post.imgSrc}
-                    alt={post.alt || post.title || "SkyDecor article"}
+                    alt={post.alt || post.title || "skydecor article"}
                     src={post.imgSrc}
                     width={615}
                     height={461}

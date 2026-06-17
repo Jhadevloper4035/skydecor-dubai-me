@@ -18,10 +18,10 @@ export default function EventsList() {
     <section className="flat-spacing sd-events-page">
       <div className="container">
         <div className="sd-events-heading">
-          <span className="sd-events-kicker">Skydecor Events</span>
+          <span className="sd-events-kicker">skydecor Events</span>
           <h3 className="heading">Event Updates & News</h3>
           <p>
-            Follow Skydecor Dubai events, product showcases, exhibitions, and
+            Follow skydecor Dubai events, product showcases, exhibitions, and
             design community sessions.
           </p>
         </div>

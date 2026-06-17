@@ -3,9 +3,9 @@ import About from "@/components/otherPages/About";
 import React from "react";
 
 export const metadata = {
-  title: "About SkyDecor | Decorative Surface Solutions",
+  title: "About skydecor | Decorative Surface Solutions",
   description:
-    "Learn about SkyDecor and our decorative laminates, panels, and interior surface solutions for residential and commercial projects.",
+    "Learn about skydecor and our decorative laminates, panels, and interior surface solutions for residential and commercial projects.",
 };
 
 export default function AboutUsPage() {
@@ -18,7 +18,7 @@ export default function AboutUsPage() {
         <div className="container-full">
           <div className="row">
             <div className="col-12">
-              <h3 className="heading text-center">About SkyDecor</h3>
+              <h3 className="heading text-center">About skydecor</h3>
               <ul className="breadcrumbs d-flex align-items-center justify-content-center">
                 <li>
                   <Link className="link" href={`/`}>
@@ -28,7 +28,7 @@ export default function AboutUsPage() {
                 <li>
                   <i className="icon-arrRight" />
                 </li>
-                <li>About SkyDecor</li>
+                <li>About skydecor</li>
               </ul>
             </div>
           </div>

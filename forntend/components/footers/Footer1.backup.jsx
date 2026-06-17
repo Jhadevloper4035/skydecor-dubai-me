@@ -269,7 +269,7 @@ export default function Footer1({
                   <div className="footer-bottom-wrap">
                     <div className="left">
                       <p className="text-caption-1">
-                        ©{new Date().getFullYear()} Skydecor All Rights Reserved.
+                        ©{new Date().getFullYear()} skydecor All Rights Reserved.
                       </p>
                     </div>
                     <div className="tf-payment">

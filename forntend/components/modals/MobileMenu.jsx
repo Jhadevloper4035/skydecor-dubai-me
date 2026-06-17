@@ -262,7 +262,7 @@ export default function MobileMenu() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  WhatsApp SkyDecor
+                  WhatsApp skydecor
                 </a>
               </li>
             </ul>

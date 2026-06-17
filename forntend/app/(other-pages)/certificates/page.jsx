@@ -2,9 +2,9 @@ import CertificatesPage from "@/components/certificates/CertificatesPage";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Certificates & Test Reports | SkyDecor Dubai",
+  title: "Certificates & Test Reports | skydecor Dubai",
   description:
-    "Explore SkyDecor quality certificates, ISO certifications, GREENGUARD documents, and independent product test reports.",
+    "Explore skydecor quality certificates, ISO certifications, GREENGUARD documents, and independent product test reports.",
 };
 
 export default function CertificatesRoute() {

@@ -114,7 +114,7 @@ export default function Details1({ product = {} }) {
                   <div className="sky-product-meta">
                     <span>
                       <i className="fa-solid fa-layer-group" />
-                      {collectionPath || "Skydecor Products"}
+                      {collectionPath || "skydecor Products"}
                     </span>
                     <span>
                       <i className="fa-solid fa-palette" />
@@ -230,7 +230,7 @@ export default function Details1({ product = {} }) {
                           </div>
                           <div className="line-bt" />
                           <div>
-                            <h6>SkyDecor Dubai</h6>
+                            <h6>skydecor Dubai</h6>
                             <p>Product consultations and laminate enquiries available.</p>
                           </div>
                           <div>

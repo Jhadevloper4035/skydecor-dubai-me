@@ -46,7 +46,7 @@ export default function Topbar() {
               <SwiperSlide className="swiper-slide">
                 <p className="top-bar-text text-line-clamp-1 text-btn-uppercase fw-semibold letter-1 text-white">
                   Premium Laminates &amp; Wall Panels - Transform Your Space with
-                  <span className="text-primary"> SkyDecor</span>
+                  <span className="text-primary"> skydecor</span>
                 </p>
               </SwiperSlide>
               <SwiperSlide className="swiper-slide">

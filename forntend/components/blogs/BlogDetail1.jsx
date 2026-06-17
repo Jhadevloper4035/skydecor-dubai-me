@@ -13,7 +13,7 @@ export default function BlogDetail1({ blog: initialBlog }) {
   const selectedBlog = useAppSelector(selectSelectedBlog);
   const blog =
     selectedBlog?.slug === initialBlog?.slug ? selectedBlog : initialBlog;
-  const categories = blog.categories?.length ? blog.categories : ["SkyDecor"];
+  const categories = blog.categories?.length ? blog.categories : ["skydecor"];
   const tags = blog.tags?.length ? blog.tags : categories;
   const paragraphs = blog.content?.length ? blog.content : [blog.description];
 

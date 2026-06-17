@@ -2,8 +2,8 @@ import ProductDetailStoreView from "@/components/productDetails/ProductDetailSto
 import React from "react";
 
 export const metadata = {
-  title: "Product Detail || SkyDecor Dubai",
-  description: "SkyDecor Dubai product detail",
+  title: "Product Detail || skydecor Dubai",
+  description: "skydecor Dubai product detail",
 };
 
 export default async function ProductDetailPage({ params }) {

@@ -3,9 +3,9 @@ import { getJobs } from "@/lib/careersApi";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Careers | SkyDecor Dubai",
+  title: "Careers | skydecor Dubai",
   description:
-    "Explore open roles at SkyDecor Dubai and apply for sales, design advisory, and operations jobs.",
+    "Explore open roles at skydecor Dubai and apply for sales, design advisory, and operations jobs.",
 };
 
 export default async function CareerPage() {

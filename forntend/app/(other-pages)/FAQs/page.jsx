@@ -2,9 +2,9 @@ import Faqs from "@/components/otherPages/Faqs";
 import React from "react";
 import Link from "next/link";
 export const metadata = {
-  title: "Frequently Asked Questions | SkyDecor Dubai",
+  title: "Frequently Asked Questions | skydecor Dubai",
   description:
-    "Answers about SkyDecor surface products, samples, specifications, care, and project support in the UAE.",
+    "Answers about skydecor surface products, samples, specifications, care, and project support in the UAE.",
 };
 
 export default function FAQSPage() {

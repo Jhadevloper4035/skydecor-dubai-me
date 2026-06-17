@@ -71,6 +71,7 @@ export default function ProductEnquiryModal({ product = {} }) {
 
     const payload = {
       productCode,
+      productName,
       name: formData.name.trim(),
       email: formData.email.trim(),
       phone: formData.phone.trim(),
@@ -105,7 +106,7 @@ export default function ProductEnquiryModal({ product = {} }) {
         <div className="modal-content">
           <div className="sd-product-enquiry-modal__header">
             <div>
-              <span>SkyDecor Product Support</span>
+              <span>skydecor Product Support</span>
               <h5 id="product-enquiry-title">
                 {isSucceeded ? "Thank you for your enquiry" : "Enquire about this product"}
               </h5>
@@ -259,7 +260,7 @@ export default function ProductEnquiryModal({ product = {} }) {
                     required
                   />
                   <span>
-                    I agree that SkyDecor may use these details to respond to my
+                    I agree that skydecor may use these details to respond to my
                     product enquiry.
                   </span>
                 </label>

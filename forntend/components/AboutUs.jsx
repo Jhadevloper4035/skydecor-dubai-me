@@ -2,7 +2,7 @@
 import Link from "next/link";
 
 const companyStory = [
-  "Established in 2016, SkyDecor creates decorative, acrylic, and PVC laminates with a focus on design, precision, and dependable quality.",
+  "Established in 2016, skydecor creates decorative, acrylic, and PVC laminates with a focus on design, precision, and dependable quality.",
   "Our advanced manufacturing facilities and Dubai warehouse support customers across the Middle East and global markets with versatile surfaces for modern interiors.",
 ];
 

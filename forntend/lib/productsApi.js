@@ -344,17 +344,40 @@ export const getProductFromApi = async (slugOrId) => {
 };
 
 export const submitProductEnquiry = async (payload) => {
-  const response = await fetch(buildUrl("/product-enquiries"), {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(payload),
-  });
-  const data = await response.json().catch(() => ({}));
+  const postProductEnquiry = async (url) => {
+    const response = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    });
+    const data = await response.json().catch(() => ({}));
+
+    return { data, response };
+  };
+  let primaryError;
+
+  try {
+    const { data, response } = await postProductEnquiry(buildUrl("/product-enquiries"));
+
+    if (response.ok) return data.data?.productEnquiry;
+
+    primaryError = new Error(data.message || "Unable to submit product enquiry.");
+
+    if (response.status !== 404 && response.status < 500) {
+      throw primaryError;
+    }
+  } catch (error) {
+    primaryError = error;
+  }
+
+  const { data, response } = await postProductEnquiry("/api/product-enquiries");
 
   if (!response.ok) {
-    throw new Error(data.message || "Unable to submit product enquiry.");
+    throw new Error(
+      data.message || primaryError?.message || "Unable to submit product enquiry."
+    );
   }
 
   return data.data?.productEnquiry;

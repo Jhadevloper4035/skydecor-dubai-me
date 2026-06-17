@@ -29,7 +29,7 @@ export default function Sidebar2() {
             <div className="name">
               <h6>
                 <a className="link" href="#">
-                  SkyDecor Dubai
+                  skydecor Dubai
                 </a>
               </h6>
               <p className="text-caption-1">Surface Design Team</p>
@@ -41,7 +41,7 @@ export default function Sidebar2() {
         </div>
         <div className="writer-content">
           <p>
-            Insights from the SkyDecor Dubai team on laminates, surfaces,
+            Insights from the skydecor Dubai team on laminates, surfaces,
             interiors, product launches, and design events.
           </p>
           <ul className="tf-social-icon">

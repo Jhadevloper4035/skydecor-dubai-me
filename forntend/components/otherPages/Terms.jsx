@@ -2,7 +2,7 @@ const sections = [
   {
     title: "Website use",
     content:
-      "This website provides information about SkyDecor products and services. You may use it for lawful personal or business enquiries and must not interfere with its operation or security.",
+      "This website provides information about skydecor products and services. You may use it for lawful personal or business enquiries and must not interfere with its operation or security.",
   },
   {
     title: "Product information",
@@ -12,12 +12,12 @@ const sections = [
   {
     title: "Enquiries and orders",
     content:
-      "A website enquiry is not an accepted order or a guarantee of stock. Pricing, lead times, delivery, payment, and project requirements are confirmed separately by the SkyDecor team.",
+      "A website enquiry is not an accepted order or a guarantee of stock. Pricing, lead times, delivery, payment, and project requirements are confirmed separately by the skydecor team.",
   },
   {
     title: "Intellectual property",
     content:
-      "SkyDecor names, logos, product imagery, text, and design materials may not be copied, republished, or used commercially without permission, except where use is allowed by applicable law.",
+      "skydecor names, logos, product imagery, text, and design materials may not be copied, republished, or used commercially without permission, except where use is allowed by applicable law.",
   },
   {
     title: "Third-party services",
@@ -27,7 +27,7 @@ const sections = [
   {
     title: "Liability",
     content:
-      "To the extent permitted by applicable law, SkyDecor is not responsible for losses caused by reliance on incomplete website information, temporary unavailability, or third-party services. Nothing here excludes rights or liabilities that cannot legally be excluded.",
+      "To the extent permitted by applicable law, skydecor is not responsible for losses caused by reliance on incomplete website information, temporary unavailability, or third-party services. Nothing here excludes rights or liabilities that cannot legally be excluded.",
   },
   {
     title: "Updates and contact",

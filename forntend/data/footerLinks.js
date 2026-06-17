@@ -17,7 +17,7 @@ export const socialLinks = [
     iconClass: "fab fa-whatsapp fa-xs",
   },
   {
-    href: "https://www.youtube.com/@SKYDECORINDIA",
+    href: "https://www.youtube.com/@skydecorindia",
     className: "social-youtube",
     iconClass: "fab fa-youtube fa-xs",
   },

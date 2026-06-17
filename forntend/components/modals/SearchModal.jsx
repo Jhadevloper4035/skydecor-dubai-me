@@ -101,6 +101,27 @@ const buildKeywordTags = (products = []) => {
 const getProductTitle = (product = {}) =>
   product.productName || product.title || product.designName || product.productCode || "Product";
 
+const closeSearchModal = () => {
+  if (typeof window === "undefined") return;
+
+  const searchModal = document.getElementById("search");
+  const bootstrapModal = window.bootstrap?.Modal?.getInstance(searchModal);
+
+  if (bootstrapModal) {
+    bootstrapModal.hide();
+    return;
+  }
+
+  searchModal?.classList.remove("show");
+  searchModal?.setAttribute("aria-hidden", "true");
+  searchModal?.removeAttribute("aria-modal");
+  searchModal?.removeAttribute("role");
+  document.body.classList.remove("modal-open");
+  document.body.style.removeProperty("overflow");
+  document.body.style.removeProperty("padding-right");
+  document.querySelectorAll(".modal-backdrop").forEach((backdrop) => backdrop.remove());
+};
+
 export default function SearchModal() {
   const router = useRouter();
   const hasRequestedProducts = useRef(false);
@@ -195,7 +216,17 @@ export default function SearchModal() {
 
     if (!trimmedQuery) return;
 
+    closeSearchModal();
     router.push(`/products?query=${encodeURIComponent(trimmedQuery)}`);
+  };
+
+  const handleSuggestionClick = (event, product) => {
+    event.preventDefault();
+    const href = getProductDetailHref(product);
+
+    closeSearchModal();
+    setQuery("");
+    router.push(href);
   };
 
   return (
@@ -268,7 +299,7 @@ export default function SearchModal() {
                   <Link
                     href={getProductDetailHref(product)}
                     className="sky-search-suggestion-item"
-                    data-bs-dismiss="modal"
+                    onClick={(event) => handleSuggestionClick(event, product)}
                     key={getProductKey(product)}
                   >
                     <Image

@@ -19,12 +19,12 @@ export async function generateMetadata({ params }) {
 
   if (!event) {
     return {
-      title: "Event Not Found | SkyDecor Dubai",
+      title: "Event Not Found | skydecor Dubai",
     };
   }
 
   return {
-    title: `${event.title} | SkyDecor Dubai Events`,
+    title: `${event.title} | skydecor Dubai Events`,
     description: event.excerpt,
   };
 }

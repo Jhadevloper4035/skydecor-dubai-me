@@ -2,9 +2,9 @@ import CataloguesPage from "@/components/catalogues/CataloguesPage";
 import Link from "next/link";
 
 export const metadata = {
-  title: "E-Catalogues & Product Brochures | SkyDecor Dubai",
+  title: "E-Catalogues & Product Brochures | skydecor Dubai",
   description:
-    "Browse and download SkyDecor product catalogues for decorative laminates, acrylic surfaces, liner laminates, and Soffitto panels.",
+    "Browse and download skydecor product catalogues for decorative laminates, acrylic surfaces, liner laminates, and Soffitto panels.",
 };
 
 export default function CatalogueRoute() {

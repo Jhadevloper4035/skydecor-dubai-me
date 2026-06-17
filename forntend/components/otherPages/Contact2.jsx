@@ -111,7 +111,7 @@ export default function Contact2() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Chat with SkyDecor
+                  Chat with skydecor
                 </a>
               </div>
             </div>
@@ -257,7 +257,7 @@ export default function Contact2() {
                 required
               />
               <span>
-                I agree to be contacted by SkyDecor about this enquiry.
+                I agree to be contacted by skydecor about this enquiry.
               </span>
             </label>
 

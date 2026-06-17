@@ -23,7 +23,7 @@ const footerSections = [
     title: "Quick Links",
     links: [
       { label: "All Products", href: "/products" },
-      { label: "About SkyDecor", href: "/about-us" },
+      { label: "About skydecor", href: "/about-us" },
       { label: "Contact Our Team", href: "/contact" },
       { label: "Careers", href: "/career" },
     ],
@@ -58,10 +58,10 @@ export default function Footer1({ hasPaddingBottom = false }) {
       >
         <div className="container-full">
           <div className="sd-footer__brand">
-            <Link href="/" aria-label="SkyDecor home">
+            <Link href="/" aria-label="skydecor home">
               <Image
                 src="/images/logo/white-logo.png"
-                alt="SkyDecor"
+                alt="skydecor"
                 width={230}
                 height={87}
               />
@@ -72,7 +72,7 @@ export default function Footer1({ hasPaddingBottom = false }) {
             <section className="sd-footer__contact" aria-labelledby="footer-contact">
               <h2 id="footer-contact">Headquarters &amp; Contact</h2>
               <address>
-                <strong>SkyDecor Dubai</strong>
+                <strong>skydecor Dubai</strong>
                 <span>Dubai, United Arab Emirates</span>
                 <a href="mailto:info@skydecor.eu">info@skydecor.eu</a>
                 <a
@@ -127,7 +127,7 @@ export default function Footer1({ hasPaddingBottom = false }) {
 
           <div className="sd-footer__bottom">
             <p>
-              © {new Date().getFullYear()} SkyDecor Dubai. All rights reserved.
+              © {new Date().getFullYear()} skydecor Dubai. All rights reserved.
             </p>
 
             <nav className="sd-footer__important-links" aria-label="Footer links">
