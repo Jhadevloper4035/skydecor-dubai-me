@@ -11,7 +11,7 @@ const enquiryTypes = [
   "Sample request",
   "Dealer / distributor enquiry",
   "Project quotation",
-  "Technical support",
+  "Technical support ",
 ];
 
 const initialFormState = {
