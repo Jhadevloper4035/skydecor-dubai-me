@@ -169,6 +169,32 @@ export default function RootLayout({ children }) {
   }, [pathname]);
   return (
     <html lang="en" data-scroll-behavior="smooth" suppressHydrationWarning>
+      <head>
+        <link
+          rel="icon"
+          type="image/png"
+          href="https://rantechnology.in/skydecor/favicon/favicon-96x96.png"
+          sizes="96x96"
+        />
+        <link
+          rel="icon"
+          type="image/svg+xml"
+          href="https://rantechnology.in/skydecor/favicon/favicon.svg"
+        />
+        <link
+          rel="shortcut icon"
+          href="https://rantechnology.in/skydecor/favicon/favicon.ico"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="https://rantechnology.in/skydecor/favicon/apple-touch-icon.png"
+        />
+        <link
+          rel="manifest"
+          href="https://rantechnology.in/skydecor/favicon/site.webmanifest"
+        />
+      </head>
       <body className="popup-loader" suppressHydrationWarning>
         <StoreProvider>
           <Context>
