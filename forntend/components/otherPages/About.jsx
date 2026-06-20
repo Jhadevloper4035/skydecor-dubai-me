@@ -22,28 +22,28 @@ const commitments = [
 
 const manufacturingGallery = [
   {
-    src: "/images/about/manufacturing/unit-1.webp",
-    alt: "Aerial view of the skydecor manufacturing facility",
+    src: "/images/warehouse/1.jpeg",
+    alt: "skydecor warehouse team loading laminate sheets for delivery",
   },
   {
-    src: "/images/about/manufacturing/unit-2.webp",
-    alt: "Aerial front view of the skydecor manufacturing facility",
+    src: "/images/warehouse/4.jpeg",
+    alt: "Entrance to the skydecor warehouse in Dubai",
   },
   {
-    src: "/images/about/manufacturing/unit-3.webp",
-    alt: "Wide aerial view of the skydecor production plant",
+    src: "/images/warehouse/5.jpeg",
+    alt: "Laminate sheets being prepared for dispatch at the skydecor warehouse",
   },
   {
-    src: "/images/about/manufacturing/unit-4.webp",
-    alt: "skydecor production plant and surrounding facilities",
+    src: "/images/warehouse/6.jpeg",
+    alt: "Laminate racks and packaged stock inside the skydecor warehouse",
   },
   {
-    src: "/images/about/manufacturing/unit-5.webp",
-    alt: "skydecor manufacturing team gathered at the facility",
+    src: "/images/warehouse/8.jpeg",
+    alt: "Organized laminate sheet storage racks at the skydecor warehouse",
   },
   {
-    src: "/images/about/manufacturing/unit-6.webp",
-    alt: "skydecor production team",
+    src: "/images/warehouse/9.jpeg",
+    alt: "Packaged inventory inside the skydecor warehouse",
   },
 ];
 
@@ -147,8 +147,8 @@ export default function About() {
 
           <figure className="sd-about-manufacturing__hero">
             <Image
-              src="/images/about/manufacturing/unit-1.webp"
-              alt="Aerial view of the skydecor manufacturing facility"
+              src="/images/warehouse/4.jpeg"
+              alt="Entrance to the skydecor warehouse in Dubai"
               fill
               priority={false}
               sizes="(max-width: 767px) 100vw, 1320px"

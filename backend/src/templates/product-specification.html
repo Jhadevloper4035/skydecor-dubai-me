@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Specification - <%= productCode %></title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', 'Arial', 'Helvetica', sans-serif;
+      background-color: #ffffff;
+      padding: 0;
+      margin: 0;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .container {
+      width: 100%;
+      margin: 0 auto;
+      background-color: #ffffff;
+    }
+
+    .header {
+      background-color: #34495e;
+      padding: 15px 40px;
+      width: 100%;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .header-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .header-table td {
+      vertical-align: middle;
+    }
+
+    .logo-section {
+      text-align: left;
+    }
+
+    .logo-img {
+      max-width: 180px;
+      height: auto;
+      display: block;
+    }
+
+    .badge-cell {
+      text-align: right;
+    }
+
+    .badge {
+      background-color: #f39c12;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 3px;
+      font-size: 9px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: inline-block;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .product-content {
+      background-color: #ffffff;
+      padding: 0;
+    }
+
+    .product-code {
+      font-size: 20px;
+      font-weight: 500;
+      color: #2c3e50;
+      padding: 15px 40px 10px 40px;
+      text-align: center;
+      background-color: #ffffff;
+      text-transform: uppercase;
+    }
+
+    .product-image-container {
+      text-align: center;
+      background-color: #ffffff;
+      padding: 10px 40px 15px 40px;
+    }
+
+    .product-image-container img {
+      width: 240px;
+      max-height: 480px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      object-fit: contain;
+      aspect-ratio: 1/2;
+    }
+
+    .spec-section {
+      background-color: #ffffff;
+      padding: 15px 0 20px 0;
+    }
+
+    .spec-header {
+      background-color: #34495e;
+      color: white;
+      padding: 10px 40px;
+      font-size: 18px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      text-align: center;
+      margin: 0 40px 15px 40px;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .spec-table-wrapper {
+      padding: 0 40px;
+    }
+
+    .spec-table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #ffffff;
+      border: 1px solid #ecf0f1;
+      margin-bottom: 20px;
+    }
+
+    .spec-table tr {
+      border-bottom: 1px solid #ecf0f1;
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+
+    .spec-table tr:last-child {
+      border-bottom: none;
+    }
+
+    .spec-label {
+      width: 45%;
+      padding: 10px 15px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #2c3e50;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      background-color: #f8f9fa;
+      vertical-align: top;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .spec-value {
+      width: 55%;
+      padding: 10px 15px;
+      font-size: 12px;
+      color: #2c3e50;
+      font-weight: 400;
+      background-color: #ffffff;
+      border-left: 3px solid #f39c12;
+      vertical-align: top;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .footer {
+      background-color: #34495e;
+      padding: 12px 40px;
+      text-align: center;
+      width: 100%;
+      margin-top: 0;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .footer-links {
+      margin-bottom: 4px;
+    }
+
+    .footer-link {
+      font-size: 10px;
+      color: #ecf0f1;
+      text-decoration: none;
+      font-weight: 400;
+      display: inline;
+    }
+
+    .footer-divider {
+      color: #95a5a6;
+      font-size: 10px;
+      margin: 0 6px;
+    }
+
+    .copyright {
+      font-size: 8px;
+      color: #95a5a6;
+      margin-top: 2px;
+      font-weight: 300;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    @media print {
+      body {
+        background-color: white;
+      }
+
+      .container {
+        width: 100%;
+      }
+
+      .header,
+      .badge,
+      .spec-header,
+      .spec-label,
+      .spec-value,
+      .footer {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      @page {
+        margin: 0;
+        size: A4 portrait;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <table class="header-table">
+        <tr>
+          <td class="logo-section">
+            <img src="https://skydecor.in/images/logo/ai-white.png" alt="Skydecor Logo" class="logo-img">
+          </td>
+          <td class="badge-cell">
+            <div class="badge">Product Specification</div>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="product-content">
+      <div class="product-code">
+        <%= productCode %>
+      </div>
+
+      <div class="product-image-container">
+        <img src="<%= image %>" alt="<%= productName %>" onerror="this.style.display='none'">
+      </div>
+    </div>
+
+    <div class="spec-section">
+      <div class="spec-header">Product Specifications</div>
+
+      <div class="spec-table-wrapper">
+        <table class="spec-table">
+          <tr>
+            <td class="spec-label">Product Type</td>
+            <td class="spec-value"><%= productType %></td>
+          </tr>
+
+          <tr>
+            <td class="spec-label">Product Name</td>
+            <td class="spec-value"><%= productName %></td>
+          </tr>
+
+          <% if (designName) { %>
+          <tr>
+            <td class="spec-label">Design Name</td>
+            <td class="spec-value"><%= designName %></td>
+          </tr>
+          <% } %>
+
+          <tr>
+            <td class="spec-label">Category</td>
+            <td class="spec-value"><%= category %></td>
+          </tr>
+
+          <tr>
+            <td class="spec-label">Subcategory</td>
+            <td class="spec-value"><%= subCategory %></td>
+          </tr>
+
+          <tr>
+            <td class="spec-label">Texture</td>
+            <td class="spec-value"><%= texture %> (<%= textureCode %>)</td>
+          </tr>
+
+          <tr>
+            <td class="spec-label">Size</td>
+            <td class="spec-value"><%= size %></td>
+          </tr>
+
+          <tr>
+            <td class="spec-label">Width</td>
+            <td class="spec-value"><%= width %></td>
+          </tr>
+
+          <tr>
+            <td class="spec-label">Thickness</td>
+            <td class="spec-value"><%= thickness %></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="footer-links">
+        <span class="footer-link">www.skydecor.me</span>
+        <span class="footer-divider">|</span>
+        <span class="footer-link">info@skydecor.me</span>
+        <span class="footer-divider">|</span>
+        <span class="footer-link"> +971 58 209 3821</span>
+      </div>
+      <div class="copyright">© 2026 Skydecor. All Rights Reserved</div>
+    </div>
+  </div>
+</body>
+
+</html>
