@@ -1,4 +1,8 @@
+"use client";
+
 import Image from "next/image";
+import PhotoSwipeLightbox from "photoswipe/lightbox";
+import { useEffect, useRef } from "react";
 
 const companyStory = [
   "Established in 2016, skydecor creates decorative, acrylic, and PVC HPL with a focus on design, precision, and dependable quality.",
@@ -26,24 +30,36 @@ const manufacturingGallery = [
     alt: "skydecor warehouse team loading laminate sheets for delivery",
   },
   {
-    src: "/images/warehouse/4.jpeg",
+    src: "/images/warehouse/2.jpeg",
+    alt: "Laminate sheets being loaded onto a skydecor delivery vehicle",
+  },
+  {
+    src: "/images/warehouse/3.jpeg",
     alt: "Entrance to the skydecor warehouse in Dubai",
   },
   {
-    src: "/images/warehouse/5.jpeg",
+    src: "/images/warehouse/4.jpeg",
     alt: "Laminate sheets being prepared for dispatch at the skydecor warehouse",
+  },
+  {
+    src: "/images/warehouse/5.jpeg",
+    alt: "Laminate racks and packaged stock inside the skydecor warehouse",
   },
   {
     src: "/images/warehouse/6.jpeg",
     alt: "Laminate racks and packaged stock inside the skydecor warehouse",
   },
   {
-    src: "/images/warehouse/8.jpeg",
+    src: "/images/warehouse/7.jpeg",
     alt: "Organized laminate sheet storage racks at the skydecor warehouse",
   },
   {
-    src: "/images/warehouse/9.jpeg",
+    src: "/images/warehouse/8.jpeg",
     alt: "Packaged inventory inside the skydecor warehouse",
+  },
+  {
+    src: "/images/warehouse/9.jpeg",
+    alt: "Warehouse operations office at the skydecor Dubai facility",
   },
 ];
 
@@ -81,6 +97,24 @@ const uspItems = [
 ];
 
 export default function About() {
+  const lightboxRef = useRef(null);
+
+  useEffect(() => {
+    const lightbox = new PhotoSwipeLightbox({
+      gallery: ".sd-about-manufacturing__gallery",
+      children: "a",
+      pswpModule: () => import("photoswipe"),
+    });
+
+    lightbox.init();
+    lightboxRef.current = lightbox;
+
+    return () => {
+      lightbox.destroy();
+      lightboxRef.current = null;
+    };
+  }, []);
+
   return (
     <>
       <section className="flat-spacing sd-about-story">
@@ -145,21 +179,17 @@ export default function About() {
             </div>
           </div>
 
-          <figure className="sd-about-manufacturing__hero">
-            <Image
-              src="/images/warehouse/4.jpeg"
-              alt="Entrance to the skydecor warehouse in Dubai"
-              fill
-              priority={false}
-              sizes="(max-width: 767px) 100vw, 1320px"
-            />
-          </figure>
-
           <div className="sd-about-manufacturing__gallery">
-            {manufacturingGallery.map((image) => (
-              <figure
+            {manufacturingGallery.map((image, index) => (
+              <a
                 className="sd-about-manufacturing__gallery-item"
+                href={image.src}
                 key={image.src}
+                data-pswp-width="1280"
+                data-pswp-height="960"
+                target="_blank"
+                rel="noreferrer"
+                aria-label={`Open manufacturing unit gallery image ${index + 1}`}
               >
                 <Image
                   src={image.src}
@@ -167,7 +197,13 @@ export default function About() {
                   fill
                   sizes="(max-width: 575px) 100vw, (max-width: 991px) 50vw, 33vw"
                 />
-              </figure>
+                <span
+                  className="sd-about-manufacturing__gallery-zoom"
+                  aria-hidden="true"
+                >
+                  <i className="fa-solid fa-magnifying-glass-plus" />
+                </span>
+              </a>
             ))}
           </div>
         </div>
