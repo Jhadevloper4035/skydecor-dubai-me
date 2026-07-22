@@ -60,7 +60,12 @@ export default function Team() {
                   <ul className="tf-social-icon">
                     {member.social.map((social, socialIndex) => (
                       <li key={socialIndex}>
-                        <a href={social.href} className={social.className}>
+                        <a
+                          href={social.href}
+                          className={social.className}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           <i className={social.icon} />
                         </a>
                       </li>

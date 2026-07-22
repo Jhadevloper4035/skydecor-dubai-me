@@ -7,18 +7,17 @@ import CtaBox from "@/components/CtaBox";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import AboutUs from "@/components/AboutUs";
 import VideoSection from "@/components/VideoSection";
+import SeoJsonLd from "@/components/common/SeoJsonLd";
+import { organizationSchema, pageSeoMetadata, websiteSchema } from "@/lib/seoMetadata";
 
 
-export const metadata = {
-  title: "Premium Decorative Surfaces | skydecor Dubai",
-  description:
-    "Explore skydecor decorative HPL, panels, boards, and interior surface solutions for residential and commercial projects across the UAE.",
-};
+export const metadata = pageSeoMetadata("home");
 
 
 export default function Home() {
   return (
     <>
+      <SeoJsonLd data={[organizationSchema(), websiteSchema()]} />
       <Hero />
       <CategorySection />
       <Products />

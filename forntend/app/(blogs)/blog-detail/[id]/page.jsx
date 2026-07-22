@@ -1,8 +1,9 @@
 import BlogDetail1 from "@/components/blogs/BlogDetail1";
 import RelatedBlogs from "@/components/blogs/RelatedBlogs";
+import SeoJsonLd from "@/components/common/SeoJsonLd";
 
 import { findFallbackBlog, getBlogFromApi } from "@/lib/contentApi";
-import React from "react";
+import { articleSchema, pageMetadata, pageSeoMetadata } from "@/lib/seoMetadata";
 import { notFound } from "next/navigation";
 
 export async function generateMetadata({ params }) {
@@ -10,15 +11,18 @@ export async function generateMetadata({ params }) {
   const blog = (await getBlogFromApi(id)) || findFallbackBlog(id);
 
   if (!blog) {
-    return {
-      title: "Blog Not Found | skydecor Dubai",
-    };
+    return pageSeoMetadata("blogNotFound", {
+      path: `/blog-detail/${id}`,
+    });
   }
 
-  return {
-    title: `${blog.title} | skydecor Dubai Blog`,
+  return pageMetadata({
+    title: `${blog.title} | Skydecor Dubai Blog`,
+    path: `/blog-detail/${blog.slug || id}`,
+    image: blog.coverImage || blog.imgSrc,
     description: blog.excerpt || blog.description,
-  };
+    type: "article",
+  });
 }
 
 export default async function BlogDetailsPage1({ params }) {
@@ -29,6 +33,7 @@ export default async function BlogDetailsPage1({ params }) {
 
   return (
     <>
+      <SeoJsonLd data={articleSchema(blog, `/blog-detail/${blog.slug || id}`)} />
       <BlogDetail1 blog={blog} />
       <RelatedBlogs />
     </>

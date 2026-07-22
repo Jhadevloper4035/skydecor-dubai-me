@@ -114,7 +114,7 @@ JWT_EXPIRES_IN=1d
 REDIS_URL=redis://redis:6379
 QR_CODE_CACHE_TTL_SECONDS=300
 BOOTSTRAP_SUPERADMIN_NAME=Super Admin
-BOOTSTRAP_SUPERADMIN_EMAIL=admin@example.com
+BOOTSTRAP_SUPERADMIN_EMAIL=admin@example.me
 BOOTSTRAP_SUPERADMIN_PASSWORD=change-this-password
 ```
 
@@ -317,7 +317,7 @@ PROD_QR_CODE_CACHE_TTL_SECONDS=300
 
 # Optional: set only for first deploy to create the first superadmin, then remove or leave empty
 BOOTSTRAP_SUPERADMIN_NAME=Super Admin
-BOOTSTRAP_SUPERADMIN_EMAIL=admin@example.com
+BOOTSTRAP_SUPERADMIN_EMAIL=admin@example.me
 BOOTSTRAP_SUPERADMIN_PASSWORD=change-this-password
 ```
 

@@ -392,7 +392,7 @@ export const allBlogs = [
     imgSrc: "https://skydecor.in/images/blogs/4.png",
     alt: "Decorative HPL finishes for interior design",
     date: "15 Jun 2026",
-    author: "skydecor Dubai",
+    author: "Skydecor Dubai",
     title: "How to Choose the Right HPL Finish",
     description:
       "A practical guide to balancing appearance, touch, maintenance, and everyday performance when selecting a decorative surface.",
@@ -410,7 +410,7 @@ export const allBlogs = [
     imgSrc: "https://skydecor.in/images/blogs/2.png",
     alt: "Surface samples arranged for project planning",
     date: "08 Jun 2026",
-    author: "skydecor Dubai",
+    author: "Skydecor Dubai",
     title: "Why Surface Samples Matter in Project Planning",
     description:
       "Samples help design teams check colour, grain, texture, and material coordination before a surface is specified at scale.",
@@ -428,7 +428,7 @@ export const allBlogs = [
     imgSrc: "https://skydecor.in/images/blogs/3.png",
     alt: "Clean decorative interior surface",
     date: "01 Jun 2026",
-    author: "skydecor Dubai",
+    author: "Skydecor Dubai",
     title: "Everyday Care for Decorative Surfaces",
     description:
       "Simple cleaning habits can preserve the appearance of HPL and decorative surfaces in busy residential and commercial spaces.",

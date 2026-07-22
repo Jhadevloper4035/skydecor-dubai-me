@@ -13,6 +13,7 @@ export default function Slider1({
   slideItems = slides,
   thumbSlidePerView = 6,
   thumbSlidePerViewOnMobile = 6,
+  thumbsBottom = false,
 }) {
   const sliderRef = useRef(null);
   const items = useMemo(() => {
@@ -132,7 +133,7 @@ export default function Slider1({
       <Swiper
         className="swiper tf-product-media-thumbs other-image-zoom"
         dir="ltr"
-        direction="vertical"
+        direction={thumbsBottom ? "horizontal" : "vertical"}
         spaceBetween={10}
         slidesPerView={thumbSlidePerView}
         onSwiper={setThumbsSwiper}
@@ -165,7 +166,7 @@ export default function Slider1({
                 : thumbSlidePerViewOnMobile,
           },
           1200: {
-            direction: "vertical",
+            direction: thumbsBottom ? "horizontal" : "vertical",
             slidesPerView: thumbSlidePerView,
           },
         }}
@@ -229,6 +230,9 @@ export default function Slider1({
                 width={slide.width}
                 height={slide.height}
               />
+              <span className="sky-gallery-zoom" aria-hidden="true">
+                <i className="fas fa-magnifying-glass" />
+              </span>
             </a>
           </SwiperSlide>
         ))}

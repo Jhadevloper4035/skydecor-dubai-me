@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const faqs = [
   {
-    question: "Which surface products does skydecor supply?",
+    question: "Which surface products does Skydecor supply?",
     answer:
       "Our range includes PVC HPL, decorative HPL, acrylic HPL, edgeband, MDF boards, acoustic panels, and Matteva surfaces.",
   },
@@ -19,7 +19,7 @@ const faqs = [
   {
     question: "Do you support projects across the UAE?",
     answer:
-      "skydecor Dubai handles product and project inquiries across Dubai and the UAE. Availability and delivery details are confirmed for each inquiry.",
+      "Skydecor Dubai handles product and project inquiries across Dubai and the UAE. Availability and delivery details are confirmed for each inquiry.",
   },
   {
     question: "Where can I find product specifications?",

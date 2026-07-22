@@ -1,11 +1,8 @@
 import CatalogsPage from "@/components/catalogs/CatalogsPage";
 import Link from "next/link";
+import { pageSeoMetadata } from "@/lib/seoMetadata";
 
-export const metadata = {
-  title: "E-Catalogs & Product Brochures | skydecor Dubai",
-  description:
-    "Browse and download skydecor product catalogs for decorative HPL, acrylic surfaces, liner HPL, and Soffitto panels.",
-};
+export const metadata = pageSeoMetadata("catalog");
 
 export default function CatalogRoute() {
   return (

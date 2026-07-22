@@ -162,7 +162,7 @@ export default function JobApplicationForm({ job }) {
           required
         />
         <span>
-          I agree that skydecor may use these details to review and respond to my
+          I agree that Skydecor may use these details to review and respond to my
           application.
         </span>
       </label>

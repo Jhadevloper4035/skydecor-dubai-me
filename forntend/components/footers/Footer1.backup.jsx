@@ -120,7 +120,7 @@ export default function Footer1({
                     <ul className="footer-info">
                       <li>
                         <i className="far fa-envelope" />
-                        <p>themesflat@gmail.com</p>
+                        <p>info@skydecor.me</p>
                       </li>
                       <li>
                         <i className="far fa-phone" />
@@ -134,7 +134,12 @@ export default function Footer1({
                     >
                       {socialLinks.map((link, index) => (
                         <li key={index}>
-                          <a href={link.href} className={link.className}>
+                          <a
+                            href={link.href}
+                            className={link.className}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
                             <i className={link.iconClass} />
                           </a>
                         </li>
@@ -269,7 +274,7 @@ export default function Footer1({
                   <div className="footer-bottom-wrap">
                     <div className="left">
                       <p className="text-caption-1">
-                        ©{new Date().getFullYear()} skydecor All Rights Reserved.
+                        ©{new Date().getFullYear()} Skydecor All Rights Reserved.
                       </p>
                     </div>
                     <div className="tf-payment">

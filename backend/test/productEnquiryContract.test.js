@@ -12,7 +12,7 @@ test('product enquiries retain the canonical product relationship', async () => 
     productCode: 'sdl-40408-skr',
     productName: 'sdl-40408',
     name: 'Project Designer',
-    email: 'designer@example.com',
+    email: 'designer@example.me',
     phone: '+971500000000',
     quantity: 25,
   });
@@ -21,7 +21,7 @@ test('product enquiries retain the canonical product relationship', async () => 
 
   assert.equal(enquiry.product.toString(), productId.toString());
   assert.equal(enquiry.productCode, 'SDL-40408-SKR');
-  assert.equal(enquiry.email, 'designer@example.com');
+  assert.equal(enquiry.email, 'designer@example.me');
   assert.equal(enquiry.status, 'new');
   assert.equal(enquiry.source, 'website');
 });
@@ -30,7 +30,7 @@ test('product enquiries require a product relationship and code', async () => {
   const enquiry = new ProductEnquiry({
     productName: 'Missing Product',
     name: 'Project Designer',
-    email: 'designer@example.com',
+    email: 'designer@example.me',
     phone: '+971500000000',
   });
 

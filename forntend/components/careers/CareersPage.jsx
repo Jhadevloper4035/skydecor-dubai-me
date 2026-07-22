@@ -78,7 +78,7 @@ export default function CareersPage({ jobs = [] }) {
         <div className="container">
           <div className="sd-careers-hero__grid">
             <div className="sd-careers-hero__content">
-              <span className="sd-events-kicker">skydecor Careers</span>
+              <span className="sd-events-kicker">Skydecor Careers</span>
               <h1>Build beautiful surface journeys with us</h1>
               <p>
                 Join the team bringing premium HPL collections, practical
@@ -90,14 +90,14 @@ export default function CareersPage({ jobs = [] }) {
                   <i className="icon icon-arrowUpRight" />
                 </Link>
                 <Link href="/about-us" className="btn-line">
-                  About skydecor
+                  About Skydecor
                 </Link>
               </div>
             </div>
             <div className="sd-careers-hero__image">
               <Image
                 src="/images/intro-video-image.jpg"
-                alt="skydecor team discussing interior material selections"
+                alt="Skydecor team discussing interior material selections"
                 width={820}
                 height={560}
                 priority
@@ -178,7 +178,7 @@ export default function CareersPage({ jobs = [] }) {
                 </p>
               </div>
               <Link href="/contact" className="tf-btn btn-fill">
-                <span className="text text-button">Contact skydecor</span>
+                <span className="text text-button">Contact Skydecor</span>
                 <i className="icon icon-arrowUpRight" />
               </Link>
             </div>

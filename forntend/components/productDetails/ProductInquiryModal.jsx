@@ -106,7 +106,7 @@ export default function ProductInquiryModal({ product = {} }) {
         <div className="modal-content">
           <div className="sd-product-inquiry-modal__header">
             <div>
-              <span>skydecor Product Support</span>
+              <span>Skydecor Product Support</span>
               <h5 id="product-inquiry-title">
                 {isSucceeded ? "Thank you for your inquiry" : "Ask about this product"}
               </h5>
@@ -203,7 +203,7 @@ export default function ProductInquiryModal({ product = {} }) {
                       id="product-inquiry-email"
                       type="email"
                       name="email"
-                      placeholder="you@example.com"
+                      placeholder="you@example.me"
                       value={formData.email}
                       onChange={updateField}
                       autoComplete="email"
@@ -260,7 +260,7 @@ export default function ProductInquiryModal({ product = {} }) {
                     required
                   />
                   <span>
-                    I agree that skydecor may use these details to respond to my
+                    I agree that Skydecor may use these details to respond to my
                     product inquiry.
                   </span>
                 </label>

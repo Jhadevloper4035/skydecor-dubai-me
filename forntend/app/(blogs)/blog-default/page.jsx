@@ -1,12 +1,9 @@
 import BlogGrid from "@/components/blogs/BlogGrid";
 import Link from "next/link";
 import React from "react";
+import { pageSeoMetadata } from "@/lib/seoMetadata";
 
-export const metadata = {
-  title: "Design Journal | skydecor Dubai",
-  description:
-    "skydecor articles about decorative surfaces, material selection, care, and interior project planning.",
-};
+export const metadata = pageSeoMetadata("blogDefault");
 
 export default function BlogDefaultPage() {
   return (

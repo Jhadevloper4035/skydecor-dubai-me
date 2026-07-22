@@ -1,9 +1,11 @@
 import EventDetail from "@/components/events/EventDetail";
+import SeoJsonLd from "@/components/common/SeoJsonLd";
 import {
   findFallbackEvent,
   getEventFromApi,
   localEvents,
 } from "@/lib/contentApi";
+import { eventSchema, pageMetadata, pageSeoMetadata } from "@/lib/seoMetadata";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -18,15 +20,17 @@ export async function generateMetadata({ params }) {
     findFallbackEvent(resolvedParams?.slug);
 
   if (!event) {
-    return {
-      title: "Event Not Found | skydecor Dubai",
-    };
+    return pageSeoMetadata("eventNotFound", {
+      path: `/events/${resolvedParams?.slug}`,
+    });
   }
 
-  return {
-    title: `${event.title} | skydecor Dubai Events`,
+  return pageMetadata({
+    title: `${event.title} | Skydecor Dubai Events`,
     description: event.excerpt,
-  };
+    image: event.coverImage,
+    path: `/events/${event.slug || resolvedParams?.slug}`,
+  });
 }
 
 export default async function EventDetailPage({ params }) {
@@ -39,6 +43,7 @@ export default async function EventDetailPage({ params }) {
 
   return (
     <>
+      <SeoJsonLd data={eventSchema(event, `/events/${event.slug || resolvedParams?.slug}`)} />
       <div
         className="page-title"
         style={{ backgroundImage: "url(/images/section/page-title.jpg)" }}

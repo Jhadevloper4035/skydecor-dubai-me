@@ -1,10 +1,9 @@
 import Terms from "@/components/otherPages/Terms";
 import React from "react";
 import Link from "next/link";
-export const metadata = {
-  title: "Terms of Use | skydecor Dubai",
-  description: "Terms governing use of the skydecor Dubai website.",
-};
+import { pageSeoMetadata } from "@/lib/seoMetadata";
+
+export const metadata = pageSeoMetadata("terms");
 
 export default function TermsOfUsePage() {
   return (

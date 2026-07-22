@@ -93,10 +93,7 @@ export default function Products3({ parentClass = "flat-spacing-3" }) {
     <section className={parentClass}>
       <div className="container">
         <div className="heading-section text-center wow fadeInUp">
-          <h3 className="heading">Our Products</h3>
-          <p className="subheading text-secondary">
-            Explore our premium HPL collection
-          </p>
+          <h3 className="heading">Our Products Range</h3>
         </div>
         <div className="flat-animate-tab">
           <ul className="tab-product justify-content-sm-center" role="tablist">

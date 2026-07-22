@@ -3,16 +3,17 @@
 import Image from "next/image";
 import PhotoSwipeLightbox from "photoswipe/lightbox";
 import { useEffect, useRef } from "react";
+import DirectorSection from "@/components/otherPages/DirectorSection";
 
 const companyStory = [
-  "Established in 2016, skydecor creates decorative, acrylic, and PVC HPL with a focus on design, precision, and dependable quality.",
+  "Established in 2016, Skydecor creates decorative, acrylic, and PVC HPL with a focus on design, precision, and dependable quality.",
   "Our advanced manufacturing facilities and Dubai warehouse support customers across the Middle East and global markets with versatile surfaces for modern interiors.",
 ];
 
 const commitments = [
   {
     title: "Vision",
-    text: "At skydecor HPL, our vision is to be recognized as a premier brand that elevates the beauty of homes. We strive to infuse global expertise and distinctive design aesthetics into every space we transform.",
+    text: "At Skydecor HPL, our vision is to be recognized as a premier brand that elevates the beauty of homes. We strive to infuse global expertise and distinctive design aesthetics into every space we transform.",
   },
   {
     title: "Mission",
@@ -20,46 +21,46 @@ const commitments = [
   },
   {
     title: "Core Values",
-    text: "skydecor is committed to integrating eco-friendly materials and sustainable practices, fostering a greener and more sustainable future. Our objective is to deliver products that are both aesthetically captivating and environmentally conscious, ensuring safety and responsibility in every creation.",
+    text: "Skydecor is committed to integrating eco-friendly materials and sustainable practices, fostering a greener and more sustainable future. Our objective is to deliver products that are both aesthetically captivating and environmentally conscious, ensuring safety and responsibility in every creation.",
   },
 ];
 
 const manufacturingGallery = [
   {
     src: "/images/warehouse/1.jpeg",
-    alt: "skydecor warehouse team loading laminate sheets for delivery",
+    alt: "Skydecor warehouse team loading laminate sheets for delivery",
   },
   {
     src: "/images/warehouse/2.jpeg",
-    alt: "Laminate sheets being loaded onto a skydecor delivery vehicle",
+    alt: "Laminate sheets being loaded onto a Skydecor delivery vehicle",
   },
   {
     src: "/images/warehouse/3.jpeg",
-    alt: "Entrance to the skydecor warehouse in Dubai",
+    alt: "Entrance to the Skydecor warehouse in Dubai",
   },
   {
     src: "/images/warehouse/4.jpeg",
-    alt: "Laminate sheets being prepared for dispatch at the skydecor warehouse",
+    alt: "Laminate sheets being prepared for dispatch at the Skydecor warehouse",
   },
   {
     src: "/images/warehouse/5.jpeg",
-    alt: "Laminate racks and packaged stock inside the skydecor warehouse",
+    alt: "Laminate racks and packaged stock inside the Skydecor warehouse",
   },
   {
     src: "/images/warehouse/6.jpeg",
-    alt: "Laminate racks and packaged stock inside the skydecor warehouse",
+    alt: "Laminate racks and packaged stock inside the Skydecor warehouse",
   },
   {
     src: "/images/warehouse/7.jpeg",
-    alt: "Organized laminate sheet storage racks at the skydecor warehouse",
+    alt: "Organized laminate sheet storage racks at the Skydecor warehouse",
   },
   {
     src: "/images/warehouse/8.jpeg",
-    alt: "Packaged inventory inside the skydecor warehouse",
+    alt: "Packaged inventory inside the Skydecor warehouse",
   },
   {
     src: "/images/warehouse/9.jpeg",
-    alt: "Warehouse operations office at the skydecor Dubai facility",
+    alt: "Warehouse operations office at the Skydecor Dubai facility",
   },
 ];
 
@@ -122,7 +123,7 @@ export default function About() {
           <div className="tf-grid-layout md-col-2 radius-20 gap-0 overflow-hidden sd-about-story__card">
             <div className="banner-text style-2 bg-brown-2 mb-0 sd-about-story__content">
               <div className="box-title">
-                <p className="text-btn-uppercase">skydecor HPL</p>
+                <p className="text-btn-uppercase">Skydecor HPL</p>
                 <h2 className="banner-heading">
                   HPL made for better spaces
                 </h2>
@@ -138,7 +139,7 @@ export default function About() {
             <div className="image-100 sd-about-story__image">
               <Image
                 src="/images/about-us-image-1.jpg"
-                alt="skydecor HPL in a contemporary interior"
+                alt="Skydecor HPL in a contemporary interior"
                 width={906}
                 height={1000}
                 sizes="(max-width: 767px) 100vw, 50vw"
@@ -147,6 +148,8 @@ export default function About() {
           </div>
         </div>
       </section>
+
+      <DirectorSection />
 
       <section className="sd-about-commitments">
         <div className="container">

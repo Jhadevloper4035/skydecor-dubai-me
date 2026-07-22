@@ -111,7 +111,7 @@ export default function Contact2() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Chat with skydecor
+                  Chat with Skydecor
                 </a>
               </div>
             </div>
@@ -164,7 +164,7 @@ export default function Contact2() {
                   id="contact-lead-email"
                   name="email"
                   type="email"
-                  placeholder="you@example.com"
+                  placeholder="you@example.me"
                   value={formData.email}
                   onChange={updateField}
                   autoComplete="email"
@@ -257,7 +257,7 @@ export default function Contact2() {
                 required
               />
               <span>
-                I agree to be contacted by skydecor about this inquiry.
+                I agree to be contacted by Skydecor about this inquiry.
               </span>
             </label>
 

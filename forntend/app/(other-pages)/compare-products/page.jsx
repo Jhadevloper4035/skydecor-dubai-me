@@ -1,6 +1,9 @@
 import ProductCompare from "@/components/otherPages/ProductCompare";
 import Link from "next/link";
 import React from "react";
+import { pageSeoMetadata } from "@/lib/seoMetadata";
+
+export const metadata = pageSeoMetadata("compareProducts");
 
 export default function CompareProductsPage() {
   return (

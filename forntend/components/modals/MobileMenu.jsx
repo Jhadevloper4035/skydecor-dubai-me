@@ -25,6 +25,9 @@ export default function MobileMenu() {
         link.href
       )
   );
+  const isResourceActive =
+    resourceLinks.some((link) => isSameSection(pathname, link.href)) ||
+    pathname.split("/")[1]?.startsWith("blog");
 
   return (
     <div className="offcanvas offcanvas-start canvas-mb" id="mobileMenu">
@@ -175,9 +178,7 @@ export default function MobileMenu() {
                 <button
                   type="button"
                   className={`collapsed mb-menu-link ${
-                    resourceLinks.some((link) => isSameSection(pathname, link.href))
-                      ? "active"
-                      : ""
+                    isResourceActive ? "active" : ""
                   }`}
                   data-bs-toggle="collapse"
                   aria-expanded="false"
@@ -203,18 +204,6 @@ export default function MobileMenu() {
                     ))}
                   </ul>
                 </div>
-              </li>
-
-              <li className="nav-mb-item">
-                <Link
-                  href="/blog-default"
-                  className={`mb-menu-link ${
-                    isSameSection(pathname, "/blog-default") ? "active" : ""
-                  }`}
-                  {...dismissOffcanvas}
-                >
-                  <span>Blog</span>
-                </Link>
               </li>
 
               <li className="nav-mb-item">
@@ -262,7 +251,7 @@ export default function MobileMenu() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  WhatsApp skydecor
+                  WhatsApp Skydecor
                 </a>
               </li>
             </ul>

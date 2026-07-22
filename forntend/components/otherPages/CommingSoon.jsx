@@ -69,7 +69,12 @@ export default function CommingSoon() {
           </form>
           <ul className="tf-social-icon style-default style-white justify-content-center">
             <li>
-              <a href="#" className="social-facebook">
+              <a
+                href="https://www.facebook.com/Skydecormiddleeast"
+                className="social-facebook"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <i className="icon icon-fb" />
               </a>
             </li>
@@ -79,7 +84,12 @@ export default function CommingSoon() {
               </a>
             </li>
             <li>
-              <a href="#" className="social-instagram">
+              <a
+                href="https://www.instagram.com/skydecor.me/?hl=en"
+                className="social-instagram"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <i className="icon icon-instagram" />
               </a>
             </li>

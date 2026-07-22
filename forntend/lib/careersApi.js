@@ -43,14 +43,14 @@ export const localJobs = [
     employmentType: "full-time",
     experienceLevel: "2+ years",
     summary:
-      "Build relationships with architects, designers, contractors, and dealers while growing skydecor HPL sales across Dubai.",
+      "Build relationships with architects, designers, contractors, and dealers while growing Skydecor HPL sales across Dubai.",
     description:
       "This role is for someone who enjoys meeting people, understanding project needs, and presenting premium HPL solutions with confidence. You will work closely with customers from first inquiry through sample selection and order coordination.",
     responsibilities: [
       "Visit architects, interior designers, contractors, and dealer partners.",
-      "Understand project requirements and recommend suitable skydecor products.",
+      "Understand project requirements and recommend suitable Skydecor products.",
       "Coordinate samples, quotations, follow-ups, and sales pipeline updates.",
-      "Represent skydecor professionally at events, showrooms, and trade meetings.",
+      "Represent Skydecor professionally at events, showrooms, and trade meetings.",
     ],
     requirements: [
       "Experience in HPL, interiors, building materials, or B2B sales.",
@@ -98,7 +98,7 @@ export const localJobs = [
     employmentType: "full-time",
     experienceLevel: "2+ years",
     summary:
-      "Coordinate stock movement, dispatch readiness, inventory checks, and warehouse documentation for skydecor product operations.",
+      "Coordinate stock movement, dispatch readiness, inventory checks, and warehouse documentation for Skydecor product operations.",
     description:
       "This role keeps product flow reliable. You will coordinate with sales, logistics, and warehouse teams to make sure inventory and dispatch activity is accurate and timely.",
     responsibilities: [
@@ -121,7 +121,7 @@ export const normalizeJob = (job = {}) => ({
   id: job._id || job.id || job.slug,
   slug: job.slug,
   title: job.title || "Open Position",
-  department: job.department || "skydecor",
+  department: job.department || "Skydecor",
   location: job.location || "Dubai, UAE",
   employmentType: job.employmentType || "full-time",
   experienceLevel: job.experienceLevel || "",

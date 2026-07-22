@@ -1,12 +1,9 @@
 import Link from "next/link";
 import About from "@/components/otherPages/About";
 import React from "react";
+import { pageSeoMetadata } from "@/lib/seoMetadata";
 
-export const metadata = {
-  title: "About skydecor | Decorative Surface Solutions",
-  description:
-    "Learn about skydecor and our decorative HPL, panels, and interior surface solutions for residential and commercial projects.",
-};
+export const metadata = pageSeoMetadata("aboutUs");
 
 export default function AboutUsPage() {
   return (
@@ -18,7 +15,7 @@ export default function AboutUsPage() {
         <div className="container-full">
           <div className="row">
             <div className="col-12">
-              <h3 className="heading text-center">About skydecor</h3>
+              <h3 className="heading text-center">About Skydecor</h3>
               <ul className="breadcrumbs d-flex align-items-center justify-content-center">
                 <li>
                   <Link className="link" href={`/`}>
@@ -28,7 +25,7 @@ export default function AboutUsPage() {
                 <li>
                   <i className="icon-arrRight" />
                 </li>
-                <li>About skydecor</li>
+                <li>About Skydecor</li>
               </ul>
             </div>
           </div>

@@ -1,11 +1,8 @@
 import EventsList from "@/components/events/EventsList";
 import Link from "next/link";
+import { pageSeoMetadata } from "@/lib/seoMetadata";
 
-export const metadata = {
-  title: "Events | skydecor Dubai",
-  description:
-    "Explore skydecor Dubai events, exhibitions, product showcases, and design community updates.",
-};
+export const metadata = pageSeoMetadata("events");
 
 export default function EventsPage() {
   return (

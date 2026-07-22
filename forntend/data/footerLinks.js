@@ -2,12 +2,12 @@ import { contactDetails } from "./contactDetails";
 
 export const socialLinks = [
   {
-    href: "https://www.facebook.com/skydecorlam",
+    href: "https://www.facebook.com/Skydecormiddleeast",
     className: "social-facebook",
     iconClass: "fab fa-facebook-f fa-xs",
   },
   {
-    href: "https://www.instagram.com/skydecorindia/",
+    href: "https://www.instagram.com/skydecor.me/?hl=en",
     className: "social-instagram",
     iconClass: "fab fa-instagram fa-xs",
   },

@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 
 const getProductTitle = (product = {}) =>
-  String(product.productCode || product.productCodeSlug || product.productName || "skydecor Product")
+  String(product.productCode || product.productCodeSlug || product.productName || "Skydecor Product")
     .trim()
     .toUpperCase();
 

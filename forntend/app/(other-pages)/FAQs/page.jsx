@@ -1,11 +1,9 @@
 import Faqs from "@/components/otherPages/Faqs";
 import React from "react";
 import Link from "next/link";
-export const metadata = {
-  title: "Frequently Asked Questions | skydecor Dubai",
-  description:
-    "Answers about skydecor surface products, samples, specifications, care, and project support in the UAE.",
-};
+import { pageSeoMetadata } from "@/lib/seoMetadata";
+
+export const metadata = pageSeoMetadata("faq");
 
 export default function FAQSPage() {
   return (

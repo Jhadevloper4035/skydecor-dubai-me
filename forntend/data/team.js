@@ -5,7 +5,13 @@ export const teamMembers = [
     name: "Annette Black",
     position: "Founder/CEO",
     wowDelay: "0s",
-    social: [{ href: "#", className: "social-facebook", icon: "icon icon-fb" }],
+    social: [
+      {
+        href: "https://www.facebook.com/Skydecormiddleeast",
+        className: "social-facebook",
+        icon: "icon icon-fb",
+      },
+    ],
   },
   {
     imgSrc: "/images/team/team-2.jpg",
@@ -13,7 +19,13 @@ export const teamMembers = [
     name: "Jane Cooper",
     position: "Sales Director",
     wowDelay: "0.1s",
-    social: [{ href: "#", className: "social-facebook", icon: "icon icon-fb" }],
+    social: [
+      {
+        href: "https://www.facebook.com/Skydecormiddleeast",
+        className: "social-facebook",
+        icon: "icon icon-fb",
+      },
+    ],
   },
   {
     imgSrc: "/images/team/team-3.jpg",
@@ -21,7 +33,13 @@ export const teamMembers = [
     name: "Brooklyn Simmons",
     position: "Manager",
     wowDelay: "0.2s",
-    social: [{ href: "#", className: "social-facebook", icon: "icon icon-fb" }],
+    social: [
+      {
+        href: "https://www.facebook.com/Skydecormiddleeast",
+        className: "social-facebook",
+        icon: "icon icon-fb",
+      },
+    ],
   },
   {
     imgSrc: "/images/team/team-4.jpg",
@@ -29,6 +47,12 @@ export const teamMembers = [
     name: "Theresa Webb",
     position: "Product Manager",
     wowDelay: "0.3s",
-    social: [{ href: "#", className: "social-facebook", icon: "icon icon-fb" }],
+    social: [
+      {
+        href: "https://www.facebook.com/Skydecormiddleeast",
+        className: "social-facebook",
+        icon: "icon icon-fb",
+      },
+    ],
   },
 ];

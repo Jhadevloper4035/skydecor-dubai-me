@@ -9,6 +9,10 @@ export default function Nav() {
   const allProductsLink = productNavigation.allProducts;
   const mainRangeLinks = productNavigation.ranges;
   const productMenuLinks = [allProductsLink, ...mainRangeLinks];
+  const isResourceActive =
+    otherPageLinks.some(
+      (link) => link.href.split("/")[1] === pathname.split("/")[1],
+    ) || pathname.split("/")[1]?.startsWith("blog");
 
   return (
     <>
@@ -105,12 +109,7 @@ export default function Nav() {
 
       <li
   className={`menu-item position-relative has-submenu ${
-    otherPageLinks.some(
-      (link) =>
-        link.href.split("/")[1] === pathname.split("/")[1],
-    )
-      ? "active"
-      : ""
+    isResourceActive ? "active" : ""
   }`}
 >
   <Link
@@ -148,20 +147,6 @@ export default function Nav() {
 </li>
 
      
-
-
-
-
-      <li
-        className={`menu-item ${
-          pathname.split("/")[1]?.startsWith("blog") ? "active" : ""
-        }`}
-      >
-        <Link href="/blog-default" className="item-link">
-          Blog
-        </Link>
-      </li>
-
       <li
         className={`menu-item ${
           pathname.split("/")[1] === "contact" ? "active" : ""

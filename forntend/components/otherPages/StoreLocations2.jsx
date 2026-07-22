@@ -17,7 +17,7 @@ export default function StoreLocations2() {
                     <h6 className="tf-store-title">New York Office</h6>
                     <div className="tf-store-info">
                       <p>Phone: +1 666 234 8888</p>
-                      <p>Email: themesflat@gmail.com</p>
+                      <p>Email: info@skydecor.me</p>
                       <p>Address: 432 Park Avenue, New York, New York</p>
                     </div>
                   </a>
@@ -31,7 +31,7 @@ export default function StoreLocations2() {
                     <h6 className="tf-store-title">Houston Office</h6>
                     <div className="tf-store-info">
                       <p>Phone: +1 666 234 8888</p>
-                      <p>Email: themesflat@gmail.com</p>
+                      <p>Email: info@skydecor.me</p>
                       <p>Address: 432 Park Avenue, New York, New York</p>
                     </div>
                   </a>
@@ -45,7 +45,7 @@ export default function StoreLocations2() {
                     <h6 className="tf-store-title">San Francisco Office</h6>
                     <div className="tf-store-info">
                       <p>Phone: +1 415 987 6543</p>
-                      <p>Email: themesflat@gmail.com</p>
+                      <p>Email: info@skydecor.me</p>
                       <p>
                         Address: 321 Market Street, San Francisco, California
                       </p>
@@ -61,7 +61,7 @@ export default function StoreLocations2() {
                     <h6 className="tf-store-title">Miami Office</h6>
                     <div className="tf-store-info">
                       <p>Phone: +1 305 543 2109</p>
-                      <p>Email: themesflat@gmail.com</p>
+                      <p>Email: info@skydecor.me</p>
                       <p>Address: 654 Ocean Drive, Miami, Florida</p>
                     </div>
                   </a>
@@ -111,19 +111,29 @@ export default function StoreLocations2() {
                           <h6 className="mb_8">Information:</h6>
                           <p className="text-secondary">
                             +1 666 234 8888 <br />
-                            themesflat@gmail.com
+                            info@skydecor.me
                           </p>
                         </li>
                         <li>
                           <h6 className="mb_8">Our social media:</h6>
                           <ul className="tf-social-icon style-2">
                             <li>
-                              <a href="#" className="social-facebook">
+                              <a
+                                href="https://www.facebook.com/Skydecormiddleeast"
+                                className="social-facebook"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
                                 <i className="icon icon-fb" />
                               </a>
                             </li>
                             <li>
-                              <a href="#" className="social-instagram">
+                              <a
+                                href="https://www.instagram.com/skydecor.me/?hl=en"
+                                className="social-instagram"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
                                 <i className="icon icon-instagram" />
                               </a>
                             </li>
@@ -177,19 +187,29 @@ export default function StoreLocations2() {
                           <h6 className="mb_8">Information:</h6>
                           <p className="text-secondary">
                             +1 713 432 8765 <br />
-                            themesflat@gmail.com
+                            info@skydecor.me
                           </p>
                         </li>
                         <li>
                           <h6 className="mb_8">Our social media:</h6>
                           <ul className="tf-social-icon style-2">
                             <li>
-                              <a href="#" className="social-facebook">
+                              <a
+                                href="https://www.facebook.com/Skydecormiddleeast"
+                                className="social-facebook"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
                                 <i className="icon icon-fb" />
                               </a>
                             </li>
                             <li>
-                              <a href="#" className="social-instagram">
+                              <a
+                                href="https://www.instagram.com/skydecor.me/?hl=en"
+                                className="social-instagram"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
                                 <i className="icon icon-instagram" />
                               </a>
                             </li>
@@ -245,19 +265,29 @@ export default function StoreLocations2() {
                           <h6 className="mb_8">Information:</h6>
                           <p className="text-secondary">
                             +1 415 987 6543 <br />
-                            themesflat@gmail.com
+                            info@skydecor.me
                           </p>
                         </li>
                         <li>
                           <h6 className="mb_8">Our social media:</h6>
                           <ul className="tf-social-icon style-2">
                             <li>
-                              <a href="#" className="social-facebook">
+                              <a
+                                href="https://www.facebook.com/Skydecormiddleeast"
+                                className="social-facebook"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
                                 <i className="icon icon-fb" />
                               </a>
                             </li>
                             <li>
-                              <a href="#" className="social-instagram">
+                              <a
+                                href="https://www.instagram.com/skydecor.me/?hl=en"
+                                className="social-instagram"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
                                 <i className="icon icon-instagram" />
                               </a>
                             </li>
@@ -311,19 +341,29 @@ export default function StoreLocations2() {
                           <h6 className="mb_8">Information:</h6>
                           <p className="text-secondary">
                             +1 305 543 2109 <br />
-                            themesflat@gmail.com
+                            info@skydecor.me
                           </p>
                         </li>
                         <li>
                           <h6 className="mb_8">Our social media:</h6>
                           <ul className="tf-social-icon style-2">
                             <li>
-                              <a href="#" className="social-facebook">
+                              <a
+                                href="https://www.facebook.com/Skydecormiddleeast"
+                                className="social-facebook"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
                                 <i className="icon icon-fb" />
                               </a>
                             </li>
                             <li>
-                              <a href="#" className="social-instagram">
+                              <a
+                                href="https://www.instagram.com/skydecor.me/?hl=en"
+                                className="social-instagram"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
                                 <i className="icon icon-instagram" />
                               </a>
                             </li>

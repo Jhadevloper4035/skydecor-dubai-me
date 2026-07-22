@@ -1,10 +1,9 @@
 import Image from "next/image";
 import React from "react";
 import Link from "next/link";
-export const metadata = {
-  title: "Page Not Found | skydecor Dubai",
-  description: "The requested skydecor Dubai page could not be found.",
-};
+import { pageSeoMetadata } from "@/lib/seoMetadata";
+
+export const metadata = pageSeoMetadata("notFound");
 
 export default function PageNotFoundPage() {
   return (

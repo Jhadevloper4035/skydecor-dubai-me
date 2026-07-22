@@ -1,10 +1,7 @@
 import Link from "next/link";
+import { pageSeoMetadata } from "@/lib/seoMetadata";
 
-export const metadata = {
-  title: "Thank You | skydecor Dubai",
-  description:
-    "Thank you for contacting skydecor Dubai. Our team will review your inquiry and respond shortly.",
-};
+export const metadata = pageSeoMetadata("thankYou");
 
 export default async function ThankYouPage({ searchParams }) {
   const resolvedSearchParams = await searchParams;
@@ -18,7 +15,7 @@ export default async function ThankYouPage({ searchParams }) {
             <i className="fa-solid fa-check" />
           </span>
           <p className="sd-events-kicker">Inquiry Submitted</p>
-          <h1>Thank you for contacting skydecor</h1>
+          <h1>Thank you for contacting Skydecor</h1>
           <p>
             Your inquiry has been received. Our Dubai team will review your
             product interests and contact you shortly with the next steps.

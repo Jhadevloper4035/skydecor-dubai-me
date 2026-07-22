@@ -1,12 +1,9 @@
 import CareersPage from "@/components/careers/CareersPage";
 import { getJobs } from "@/lib/careersApi";
+import { pageSeoMetadata } from "@/lib/seoMetadata";
 import Link from "next/link";
 
-export const metadata = {
-  title: "Careers | skydecor Dubai",
-  description:
-    "Explore open roles at skydecor Dubai and apply for sales, design advisory, and operations jobs.",
-};
+export const metadata = pageSeoMetadata("career");
 
 export default async function CareerPage() {
   const jobs = await getJobs();

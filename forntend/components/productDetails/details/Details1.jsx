@@ -1,10 +1,28 @@
 "use client";
 
-import React, { useMemo, useState } from "react";
-import Slider1 from "../sliders/Slider1";
+import Drift from "drift-zoom";
+import PhotoSwipeLightbox from "photoswipe/lightbox";
+import { useEffect, useMemo, useRef, useState } from "react";
 import ProductInquiryModal from "../ProductInquiryModal";
 import ProductShareModal from "../ProductShareModal";
-import { useContextElement } from "@/context/Context";
+
+const FALLBACK_IMAGE = "/images/placeholder.jpg";
+const LIGHTBOX_IMAGE_WIDTH =300;
+const LIGHTBOX_IMAGE_HEIGHT = 600;
+
+const DEFAULT_DESCRIPTION =
+  "Explore premium Skydecor surface finishes for reliable interior applications, furniture, wall panels, and project-ready design details.";
+
+const DEFAULT_FEATURES = [
+  "Premium decorative HPL surface",
+  "Durable finish for residential and commercial interiors",
+  "Easy to clean and maintain",
+  "Suitable for furniture, wall panels, and cabinetry",
+  "Available for project and sample inquiries",
+];
+
+const DEFAULT_WARRANTY =
+  "Warranty and performance terms vary by collection, thickness, and product application.";
 
 const titleCase = (value = "") =>
   String(value)
@@ -20,12 +38,6 @@ const displayValue = (value, fallback = "-") => {
   return titleCase(value);
 };
 
-const formatProductName = (product = {}) =>
-  upperValue(product.productName || product.title || product.designName || product.productCode);
-
-const formatProductCode = (product = {}) =>
-  upperValue(product.productCode || product.productCodeSlug || product._id || product.id);
-
 const formatThickness = (value = "") => {
   const normalized = String(value).trim();
   if (!normalized) return "-";
@@ -34,214 +46,248 @@ const formatThickness = (value = "") => {
     .replace(/(\d)(mm)$/i, "$1 mm");
 };
 
-const ProductSpecRow = ({ label, value }) => (
-  <div className="sky-product-spec-row">
-    <div className="sky-product-spec-label">{label}</div>
-    <div className="sky-product-spec-value">{value || "-"}</div>
-  </div>
-);
+const getProductImages = (product = {}) => {
+  const images = product?.images?.length
+    ? product.images
+    : [
+        product?.imgSrc,
+        ...(Array.isArray(product?.image) ? product.image : [product?.image]),
+      ];
+
+  const cleanImages = images.filter(Boolean);
+  return cleanImages.length ? cleanImages : [FALLBACK_IMAGE];
+};
+
+const getProductFeatures = (product = {}) => {
+  const features = Array.isArray(product.features)
+    ? product.features
+    : String(product.features || "")
+        .split(/\n|,/)
+        .map((feature) => feature.trim())
+        .filter(Boolean);
+
+  return features.length ? features : DEFAULT_FEATURES;
+};
+
+const getProductSpecs = (product = {}) =>
+  [
+    ["Product Code", upperValue(product.productCode || product.productCodeSlug)],
+    ["Product Name", displayValue(product.productName || product.title)],
+    ["Design Name", displayValue(product.designName)],
+    ["Product Type", displayValue(product.productType)],
+    ["Category", displayValue(product.category)],
+    ["Sub Category", displayValue(product.subCategory)],
+    ["Texture Code", upperValue(product.textureCode)],
+    ["Texture", displayValue(product.texture)],
+    ["Size", displayValue(product.size)],
+    ["Thickness", formatThickness(product.thickness)],
+    ["Width", displayValue(product.width)],
+  ].filter(([, value]) => value && value !== "-");
 
 export default function Details1({ product = {} }) {
-  const [activeColor, setActiveColor] = useState("gray");
-  const productId = product._id || product.id || product.productCode;
-  const productTitle = formatProductCode(product);
-  const productName = formatProductName(product);
-  const designName = displayValue(product?.designName);
-  const {
-    addToCompareItem,
-    isAddedtoCompareItem,
-  } = useContextElement();
-  const safeProductImages = useMemo(() => {
-    const productImages = product?.images?.length
-      ? product.images
-      : [
-          product?.imgSrc,
-          ...(Array.isArray(product?.image) ? product.image : [product?.image]),
-        ].filter(Boolean);
-
-    return productImages.length ? productImages : ["/images/placeholder.jpg"];
-  }, [product]);
-  const slideItems = useMemo(
-    () =>
-      safeProductImages.map((src, index) => ({
-        id: index + 1,
-        color: "gray",
-        src,
-        alt: productTitle,
-        width: 600,
-        height: 800,
-      })),
-    [productTitle, safeProductImages]
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
+  const galleryRef = useRef(null);
+  const productName = displayValue(
+    product.productName || product.title || product.designName || product.productCode,
+    "Product"
   );
-  const collectionPath = [
+
+  const productImages = useMemo(() => getProductImages(product), [product]);
+  const thumbnailImages = productImages.slice(0, 4);
+  const activeImage = productImages[activeImageIndex] || productImages[0];
+
+  const productPath = [
     displayValue(product.productType),
     displayValue(product.category),
     displayValue(product.subCategory),
   ]
     .filter((value) => value && value !== "-")
     .join(" / ");
+
   const detailsHref = product.pdfUrlPath || "#";
+  const subtitle = [
+    upperValue(product.textureCode),
+    upperValue(product.designName),
+  ]
+    .filter(Boolean)
+    .join(" / ");
+  const description =
+    product.description || product.shortDescription || DEFAULT_DESCRIPTION;
+  const specs = getProductSpecs(product);
+  const features = getProductFeatures(product);
+  const warranty = product.warrantyText || product.warranty || DEFAULT_WARRANTY;
+
+  useEffect(() => {
+    const root = galleryRef.current;
+    const zoomImage = root?.querySelector(".tf-image-zoom");
+    if (!zoomImage) return undefined;
+
+    const drift = new Drift(zoomImage, {
+      zoomFactor: 2,
+      inlinePane: true,
+      handleTouch: false,
+      containInline: true,
+    });
+    const lightbox = new PhotoSwipeLightbox({
+      gallery: "#product-detail-gallery",
+      children: ".product-detail__preview-link",
+      pswpModule: () => import("photoswipe"),
+    });
+
+    lightbox.init();
+
+    return () => {
+      drift.destroy?.();
+      lightbox.destroy();
+    };
+  }, [activeImage]);
 
   return (
     <>
-      <section className="flat-spacing sky-product-detail-section">
-        <div className="tf-main-product section-image-zoom">
-          <div className="container">
-            <div className="row">
-              <div className="col-md-6">
-                <div className="tf-product-media-wrap sticky-top">
-                  <div className="tf-zoom-main" />
-                  <Slider1
-                    setActiveColor={setActiveColor}
-                    activeColor={activeColor}
-                    firstItem={safeProductImages[0]}
-                    slideItems={slideItems}
+      <section className="product-detail sky-product-detail-section section-image-zoom">
+        <div className="container-lg">
+          <div className="product-detail__layout">
+            <div
+              className="product-detail__gallery"
+              id="product-detail-gallery"
+              ref={galleryRef}
+              aria-label={`${productName} images`}
+            >
+              <figure className="product-detail__preview">
+                <a
+                  className="product-detail__preview-link"
+                  href={activeImage}
+                  data-pswp-width={LIGHTBOX_IMAGE_WIDTH}
+                  data-pswp-height={LIGHTBOX_IMAGE_HEIGHT}
+                >
+                  <img
+                    className="tf-image-zoom"
+                    src={activeImage}
+                    data-zoom={activeImage}
+                    alt={productName}
                   />
-                </div>
+                </a>
+                <span className="product-detail__zoom-icon" aria-hidden="true">
+                  <i className="fas fa-magnifying-glass" />
+                </span>
+              </figure>
+              <div className="product-detail__thumbs" aria-label="Application images">
+                {thumbnailImages.map((image, index) => (
+                  <button
+                    className={index === activeImageIndex ? "active" : ""}
+                    type="button"
+                    key={`${image}-${index}`}
+                    onClick={() => setActiveImageIndex(index)}
+                    aria-label={`Show ${productName} image ${index + 1}`}
+                  >
+                    <img src={image} alt={`${productName} thumbnail ${index + 1}`} />
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div className="product-detail__summary">
+              <h1>{productName}</h1>
+              <p className="product-detail__eyebrow">
+                {subtitle || productPath || "Skydecor Product"}
+              </p>
+              <p className="product-detail__copy">{description}</p>
+
+              <div className="product-detail__specs">
+                <h2>Specifications</h2>
+                <table>
+                  <tbody>
+                    {specs.map(([label, value]) => (
+                      <tr key={label}>
+                        <th scope="row">{label}</th>
+                        <td>{value || "-"}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
               </div>
 
-              <div className="col-md-6">
-                <div className="sky-product-detail-panel tf-product-info-list">
-                  <header className="sky-product-detail-header">
-                    <h1>{productTitle}</h1>
-                    <p>
-                      {[upperValue(product.textureCode), upperValue(product.designName)]
-                        .filter(Boolean)
-                        .join(" - ")}
-                    </p>
-                  </header>
+              <div className="product-detail__actions">
+                <a
+                  className="product-detail__inquiry"
+                  href="#product_inquiry"
+                  data-bs-toggle="modal"
+                >
+                  <span>Make an Inquiry</span>
+                  <i className="far fa-comment" />
+                </a>
+                <a
+                  className={`product-detail__download ${product.pdfUrlPath ? "" : "disabled"}`}
+                  href={detailsHref}
+                  target={product.pdfUrlPath ? "_blank" : undefined}
+                  rel={product.pdfUrlPath ? "noopener noreferrer" : undefined}
+                  download
+                  aria-disabled={!product.pdfUrlPath}
+                >
+                  <span>Download PDF</span>
+                  <i className="fas fa-download" />
+                </a>
+                <a
+                  className="product-detail__share"
+                  href="#share_social"
+                  data-bs-toggle="modal"
+                >
+                  <span>Share</span>
+                  <i className="fas fa-share-nodes" />
+                </a>
+              </div>
 
-                  <div className="sky-product-meta">
-                    <span>
-                      <i className="fa-solid fa-layer-group" />
-                      {collectionPath || "skydecor Products"}
-                    </span>
-                    <span>
-                      <i className="fa-solid fa-palette" />
-                      Code: {productTitle}
-                    </span>
-                  </div>
-
-                  <div className="sky-product-specs">
-                    <ProductSpecRow label="Product Name" value={productName} />
-                    <ProductSpecRow label="Design Name" value={designName} />
-                    <ProductSpecRow label="Product Type" value={displayValue(product.productType)} />
-                    <ProductSpecRow label="Category" value={displayValue(product.category)} />
-                    <ProductSpecRow label="Sub Category" value={displayValue(product.subCategory)} />
-                    <ProductSpecRow label="Texture" value={displayValue(product.texture)} />
-                    <ProductSpecRow label="Thickness" value={formatThickness(product.thickness)} />
-                  </div>
-
-                  <div className="tf-product-info-by-btn sky-product-action-row mb_10 mt_24">
-                    <a
-                      href="#product_inquiry"
-                      data-bs-toggle="modal"
-                      className="btn-style-2 flex-grow-1 text-btn-uppercase fw-6 btn-add-to-cart"
+              <div className="product-detail__tabs">
+                <ul className="nav" role="tablist">
+                  <li role="presentation">
+                    <button
+                      className="active"
+                      id="features-tab"
+                      data-bs-toggle="tab"
+                      data-bs-target="#features-panel"
+                      type="button"
+                      role="tab"
+                      aria-controls="features-panel"
+                      aria-selected="true"
                     >
-                      <span>Product Inquiry</span>
-                    </a>
-                    <a
-                      href="#compare"
-                      data-bs-toggle="offcanvas"
-                      aria-controls="compare"
-                      onClick={() => addToCompareItem(productId)}
-                      className="box-icon hover-tooltip compare btn-icon-action"
+                      Features
+                    </button>
+                  </li>
+                  <li role="presentation">
+                    <button
+                      id="warranty-tab"
+                      data-bs-toggle="tab"
+                      data-bs-target="#warranty-panel"
+                      type="button"
+                      role="tab"
+                      aria-controls="warranty-panel"
+                      aria-selected="false"
                     >
-                      <i className="fas fa-right-left" />
-                      <span className="tooltip text-caption-2">
-                        {isAddedtoCompareItem(productId) ? "Already compared" : "Compare"}
-                      </span>
-                    </a>
-                  </div>
-
-                  <a
-                    href={detailsHref}
-                    target={product.pdfUrlPath ? "_blank" : undefined}
-                    rel={product.pdfUrlPath ? "noopener noreferrer" : undefined}
-                    download
-                    className={`btn-style-3 text-btn-uppercase ${
-                      product.pdfUrlPath ? "" : "disabled"
-                    }`}
-                    aria-disabled={!product.pdfUrlPath}
+                      Warranty
+                    </button>
+                  </li>
+                </ul>
+                <div className="tab-content">
+                  <div
+                    className="tab-pane fade show active"
+                    id="features-panel"
+                    role="tabpanel"
+                    aria-labelledby="features-tab"
                   >
-                    Download Product PDF
-                  </a>
-
-                  {/* <div className="tf-product-info-help mt_24">
-                    <div className="tf-product-info-extra-link">
-                      <a
-                        href="#delivery_return"
-                        data-bs-toggle="modal"
-                        className="tf-product-extra-icon"
-                      >
-                        <div className="icon">
-                          <i className="fas fa-truck" />
-                        </div>
-                        <p className="text-caption-1">Delivery &amp; Return</p>
-                      </a>
-                      <a
-                        href="#product_inquiry"
-                        data-bs-toggle="modal"
-                        className="tf-product-extra-icon"
-                      >
-                        <div className="icon">
-                          <i className="far fa-circle-question" />
-                        </div>
-                        <p className="text-caption-1">Ask A Question</p>
-                      </a>
-                      <a
-                        href="#share_social"
-                        data-bs-toggle="modal"
-                        className="tf-product-extra-icon sky-product-extra-button"
-                      >
-                        <div className="icon">
-                          <i className="fas fa-share" />
-                        </div>
-                        <p className="text-caption-1">Share</p>
-                      </a>
-                    </div>
-                    <div className="tf-product-info-time">
-                      <div className="icon">
-                        <i className="far fa-clock" />
-                      </div>
-                      <p className="text-caption-1">
-                        Estimated Delivery:&nbsp;&nbsp;<span>12-26 days</span>
-                        (International), <span>3-6 days</span> (United States)
-                      </p>
-                    </div>
-                    <div className="dropdown dropdown-store-location">
-                      <div
-                        className="dropdown-title dropdown-backdrop"
-                        data-bs-toggle="dropdown"
-                        aria-haspopup="true"
-                      >
-                        <div className="tf-product-info-view link">
-                          <div className="icon">
-                            <i className="fas fa-location-dot" />
-                          </div>
-                          <span>View Store Information</span>
-                        </div>
-                      </div>
-                      <div className="dropdown-menu dropdown-menu-end">
-                        <div className="dropdown-content">
-                          <div className="dropdown-content-heading">
-                            <h5>Store Location</h5>
-                            <i className="icon icon-close" />
-                          </div>
-                          <div className="line-bt" />
-                          <div>
-                            <h6>skydecor Dubai</h6>
-                            <p>Product consultations and HPL inquiries available.</p>
-                          </div>
-                          <div>
-                            <p>Dubai, United Arab Emirates</p>
-                            <p>Email: info@skydecor.eu</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div> */}
-
+                    <ul>
+                      {features.map((feature) => (
+                        <li key={feature}>{feature}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div
+                    className="tab-pane fade"
+                    id="warranty-panel"
+                    role="tabpanel"
+                    aria-labelledby="warranty-tab"
+                  >
+                    <p>{warranty}</p>
+                  </div>
                 </div>
               </div>
             </div>

@@ -352,7 +352,9 @@ export const blogLinks = [
 ];
 
 export const otherPageLinks = [
-  { href: "/catalog", name: "Catalogs" },
+  { href: "/blog-default", name: "Blog" },
+  { href: "/catalog", name: "Catalogues" },
+  { href: "/certificates", name: "Certificates" },
   // { href: "/events", name: "Events" },
   // { href: "/FAQs", name: "FAQs" },
   // { href: "/term-of-use", name: "Terms Of Use" },
@@ -448,6 +450,6 @@ export const productNavigation = {
     buttonText: "Shop Now",
     href: "/shop-collection",
     image: "/images/collections/cls-header.jpg",
-    imageAlt: "Best-selling skydecor collections",
+    imageAlt: "Best-selling Skydecor collections",
   },
 };

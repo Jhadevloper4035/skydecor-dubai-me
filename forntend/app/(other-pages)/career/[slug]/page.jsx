@@ -1,5 +1,7 @@
 import CareerDetail from "@/components/careers/CareerDetail";
+import SeoJsonLd from "@/components/common/SeoJsonLd";
 import { getJobBySlug } from "@/lib/careersApi";
+import { jobPostingSchema, pageMetadata, pageSeoMetadata } from "@/lib/seoMetadata";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -8,15 +10,16 @@ export async function generateMetadata({ params }) {
   const job = await getJobBySlug(resolvedParams?.slug);
 
   if (!job) {
-    return {
-      title: "Job Not Found | skydecor Dubai",
-    };
+    return pageSeoMetadata("jobNotFound", {
+      path: `/career/${resolvedParams?.slug}`,
+    });
   }
 
-  return {
-    title: `${job.title} | skydecor Careers`,
+  return pageMetadata({
+    title: `${job.title} | Skydecor Careers`,
     description: job.summary,
-  };
+    path: `/career/${job.slug || resolvedParams?.slug}`,
+  });
 }
 
 export default async function CareerDetailPage({ params }) {
@@ -27,6 +30,7 @@ export default async function CareerDetailPage({ params }) {
 
   return (
     <>
+      <SeoJsonLd data={jobPostingSchema(job, `/career/${job.slug || resolvedParams?.slug}`)} />
       <div
         className="page-title"
         style={{ backgroundImage: "url(/images/section/page-title.jpg)" }}

@@ -1,11 +1,8 @@
 import CertificatesPage from "@/components/certificates/CertificatesPage";
 import Link from "next/link";
+import { pageSeoMetadata } from "@/lib/seoMetadata";
 
-export const metadata = {
-  title: "Certificates & Test Reports | skydecor Dubai",
-  description:
-    "Explore skydecor quality certificates, ISO certifications, GREENGUARD documents, and independent product test reports.",
-};
+export const metadata = pageSeoMetadata("certificates");
 
 export default function CertificatesRoute() {
   return (

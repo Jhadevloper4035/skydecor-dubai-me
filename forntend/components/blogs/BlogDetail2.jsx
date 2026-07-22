@@ -17,7 +17,7 @@ export default function BlogDetail2({ blog: initialBlog }) {
   const selectedBlog = useAppSelector(selectSelectedBlog);
   const blog =
     selectedBlog?.slug === initialBlog?.slug ? selectedBlog : initialBlog;
-  const categories = blog.categories?.length ? blog.categories : ["skydecor"];
+  const categories = blog.categories?.length ? blog.categories : ["Skydecor"];
   const paragraphs = blog.content?.length ? blog.content : [blog.description];
 
   useEffect(() => {
