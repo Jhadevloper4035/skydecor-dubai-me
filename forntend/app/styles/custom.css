@@ -8430,6 +8430,7 @@ header.main-header .header-sticky.active {
 .cta-item .icon-box img {
     width: 100%;
     max-width: 40px;
+    filter: brightness(0) invert(1);
 }
 
 .cta-item-content {
@@ -16774,7 +16775,13 @@ header.main-header .header-sticky.active {
 }
 
 .sd-quick-product .tf-product-info-name .name {
-  margin-bottom: 8px;
+  margin: 0 0 8px;
+  color: var(--main);
+  font-family: var(--heading-font, inherit);
+  font-size: clamp(28px, 3vw, 38px);
+  font-weight: 500;
+  line-height: 1.12 !important;
+  text-align: left;
 }
 
 .sd-quick-product__path {
@@ -16823,4 +16830,84 @@ header.main-header .header-sticky.active {
 .sd-quick-product__specs td {
   color: var(--main);
   font-weight: 600;
+}
+
+.modal-quick-view .modal-content {
+  max-width: min(980px, 94vw) !important;
+  overflow: hidden !important;
+}
+
+.modal-quick-view .tf-quick-view-image {
+  width: 44% !important;
+}
+
+.modal-quick-view .tf-quick-view-image > .wrap-quick-view {
+  padding: 18px 0 18px 18px !important;
+}
+
+.modal-quick-view .tf-quick-view-image .quickView-item {
+  height: calc(100vh - 36px) !important;
+  max-height: none !important;
+  border-radius: 10px !important;
+}
+
+.modal-quick-view .wrap {
+  padding: 26px 32px 34px !important;
+}
+
+.modal-quick-view .header {
+  align-items: center;
+  min-height: auto;
+  margin-bottom: 22px;
+  padding: 0 0 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+.modal-quick-view .header .title {
+  margin: 0;
+  color: var(--main);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.3;
+  text-transform: capitalize;
+}
+
+.modal-quick-view .header .icon-close-popup {
+  flex: 0 0 38px;
+  width: 38px;
+  height: 38px;
+  background: #f7f7f7;
+  border-radius: 50%;
+}
+
+.modal-quick-view .sd-quick-product .tf-product-info-heading {
+  display: block;
+}
+
+.modal-quick-view .sd-quick-product .tf-product-info-name {
+  margin-bottom: 0;
+  text-align: left;
+}
+
+.modal-quick-view .sd-quick-product .tf-product-info-name > .text {
+  margin-bottom: 8px;
+  color: #9b978f;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  line-height: 1.2;
+}
+
+.modal-quick-view .sd-quick-product__specs {
+  margin-top: 22px;
+  padding-top: 18px;
+}
+
+.modal-quick-view .sd-quick-product__specs th,
+.modal-quick-view .sd-quick-product__specs td {
+  padding: 9px 0;
+}
+
+.modal-quick-view .tf-product-info-choose-option {
+  margin-top: 22px;
 }
