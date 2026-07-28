@@ -990,10 +990,14 @@ body[style*="overflow: hidden"] :is(.fixed-top, .fixed-bottom, .is-fixed, .stick
 }
 
 .sd-about-directors__head {
-    margin-bottom: clamp(34px, 4vw, 52px);
+    margin: 0 auto clamp(34px, 4vw, 52px);
+    text-align: center;
 }
 
 .sd-about-directors__head h2 {
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
     color: #fff;
 }
 
@@ -1104,17 +1108,20 @@ body[style*="overflow: hidden"] :is(.fixed-top, .fixed-bottom, .is-fixed, .stick
 
 .sd-about-manufacturing__intro {
     max-width: 720px;
-    margin-bottom: clamp(34px, 4vw, 48px);
+    margin: 0 auto clamp(34px, 4vw, 48px);
+    text-align: center;
 }
 
 .sd-about-manufacturing__intro h2 {
     max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 16px;
 }
 
 .sd-about-manufacturing__description {
     max-width: 620px;
-    margin: 0;
+    margin: 0 auto;
     color: var(--text-color);
     font-size: 15px;
     line-height: 1.7;
@@ -1137,7 +1144,7 @@ body[style*="overflow: hidden"] :is(.fixed-top, .fixed-bottom, .is-fixed, .stick
 
 .sd-about-manufacturing__hero:hover img,
 .sd-about-manufacturing__gallery-item:hover img {
-    transform: scale(1.025);
+    transform: scale(1.035);
 }
 
 .sd-about-manufacturing__gallery {
@@ -1154,7 +1161,6 @@ body[style*="overflow: hidden"] :is(.fixed-top, .fixed-bottom, .is-fixed, .stick
     aspect-ratio: 4 / 3;
     margin: 0;
     overflow: hidden;
-    border-radius: 14px;
     background: #d6d7d7;
     cursor: zoom-in;
 }
@@ -1166,24 +1172,26 @@ body[style*="overflow: hidden"] :is(.fixed-top, .fixed-bottom, .is-fixed, .stick
 
 .sd-about-manufacturing__gallery-zoom {
     position: absolute;
-    right: 14px;
-    bottom: 14px;
+    right: 0;
+    bottom: 0;
     z-index: 1;
     display: grid;
-    width: 42px;
-    height: 42px;
+    width: 40px;
+    height: 40px;
     place-items: center;
-    border-radius: 50%;
     color: #fff;
-    background: rgb(0 0 0 / 58%);
-    font-size: 15px;
-    transition: background-color 0.25s ease, transform 0.25s ease;
+    background: rgba(0, 0, 0, 0.68);
+    font-size: 14px;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.25s ease, transform 0.25s ease, background-color 0.25s ease;
 }
 
 .sd-about-manufacturing__gallery-item:hover .sd-about-manufacturing__gallery-zoom,
 .sd-about-manufacturing__gallery-item:focus-visible .sd-about-manufacturing__gallery-zoom {
     background: var(--main);
-    transform: scale(1.08);
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .sd-about-usps {

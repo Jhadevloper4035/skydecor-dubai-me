@@ -64,39 +64,6 @@ const manufacturingGallery = [
   },
 ];
 
-const uspItems = [
-  {
-    icon: "fa-solid fa-link",
-    title: "Phenolic Bonding",
-    text: "Strong, dependable adhesion engineered for lasting HPL performance.",
-  },
-  {
-    icon: "fa-solid fa-hammer",
-    title: "Carpenter Friendly",
-    text: "Easy to handle, cut, and install across everyday interior applications.",
-  },
-  {
-    icon: "fa-solid fa-broom",
-    title: "Easy to Clean",
-    text: "Low-maintenance surfaces designed for simple, routine care.",
-  },
-  {
-    icon: "fa-solid fa-shield-halved",
-    title: "Long Life",
-    text: "Durable finishes that retain their character through regular use.",
-  },
-  {
-    icon: "fa-solid fa-ruler-combined",
-    title: "Full Thickness",
-    text: "Consistent construction supports reliable fabrication and finishing.",
-  },
-  {
-    icon: "fa-solid fa-house",
-    title: "Made for Interiors",
-    text: "Versatile surfaces for furniture, wall panels, kitchens, and more.",
-  },
-];
-
 export default function About() {
   const lightboxRef = useRef(null);
 
@@ -212,28 +179,6 @@ export default function About() {
         </div>
       </section>
 
-      <section className="flat-spacing sd-about-usps">
-        <div className="container">
-          <div className="sd-about-section-head">
-            <p className="sd-about-eyebrow">Our USPs</p>
-            <h2>Designed for everyday performance</h2>
-          </div>
-
-          <div className="sd-about-usps__grid">
-            {uspItems.map((item) => (
-              <article className="sd-about-usp" key={item.title}>
-                <span className="sd-about-usp__icon" aria-hidden="true">
-                  <i className={item.icon} />
-                </span>
-                <div>
-                  <h3>{item.title}</h3>
-                  <p>{item.text}</p>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
     </>
   );
 }

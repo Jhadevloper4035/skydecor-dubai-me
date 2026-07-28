@@ -177,28 +177,8 @@ export default function About() {
         </div>
       </section>
 
-      <section className="flat-spacing sd-about-usps">
-        <div className="container">
-          <div className="sd-about-section-head">
-            <p className="sd-about-eyebrow">Our USPs</p>
-            <h2>Designed for everyday performance</h2>
-          </div>
 
-          <div className="sd-about-usps__grid">
-            {uspItems.map((item) => (
-              <article className="sd-about-usp" key={item.title}>
-                <span className="sd-about-usp__icon" aria-hidden="true">
-                  <i className={item.icon} />
-                </span>
-                <div>
-                  <h3>{item.title}</h3>
-                  <p>{item.text}</p>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+
     </>
   );
 }
