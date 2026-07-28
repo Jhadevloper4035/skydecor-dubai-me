@@ -3,28 +3,28 @@ import Link from "next/link";
 const whyChooseItems = [
   {
     id: 1,
-    icon: "/images/icon-why-choose-us-item.svg",
+    icon: "/images/icon-service-item-1.svg",
     title: "High-Quality Craftsmanship",
     description: "We use premium materials and work with trusted artisans to ensure durability, beauty, and flawless",
     delay: "",
   },
   {
     id: 2,
-    icon: "/images/icon-why-choose-us-item.svg",
+    icon: "/images/icon-service-item-2.svg",
     title: "On-Time & Hassle-Free Execution",
     description: "We follow a structured workflow and maintain transparent communication to deliver projects on schedule.",
     delay: "0.2s",
   },
   {
     id: 3,
-    icon: "/images/icon-why-choose-us-item.svg",
+    icon: "/images/icon-service-item-3.svg",
     title: "Sustainable & Smart Design Approach",
     description: "We focus on eco-friendly designs, energy-efficient concepts, and future-ready architectural planning.",
     delay: "0.4s",
   },
   {
     id: 4,
-    icon: "/images/icon-why-choose-us-item.svg",
+    icon: "/images/icon-service-item-4.svg",
     title: "End-to-End Project Handling",
     description: "From concept, planning, and design to execution and final styling — we manage everything seamlessly.",
     delay: "0.6s",
