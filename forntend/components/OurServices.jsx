@@ -4,7 +4,7 @@ import Link from "next/link";
 const services = [
   {
     id: 1,
-    image: "/images/service-1.jpg",
+    image: "/images/application/bedroom.jpg",
     icon: "/images/icon-service-item-1.svg",
     title: "Bedroom Design",
     description: "We design beautiful, functional homes that reflect your.",
@@ -12,7 +12,7 @@ const services = [
   },
   {
     id: 2,
-    image: "/images/our-project-image-1.jpg",
+    image: "/images/application/livingroom.jpg",
     icon: "/images/icon-service-item-2.svg",
     title: "Living Room Design",
     description:
@@ -21,7 +21,7 @@ const services = [
   },
   {
     id: 3,
-    image: "/images/our-project-image-2.jpg",
+    image: "/images/application/kicthen.jpg",
     icon: "/images/icon-service-item-3.svg",
     title: "Kitchen Design",
     description: "Customized interior solutions that combine comfort,",
@@ -29,7 +29,7 @@ const services = [
   },
   {
     id: 4,
-    image: "/images/our-project-image-3.jpg",
+    image: "/images/application/workspace.jpg",
     icon: "/images/icon-service-item-4.svg",
     title: "Workspace Design",
     description: "Custom furniture concepts, décor selection, color ",

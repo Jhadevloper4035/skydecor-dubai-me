@@ -82,7 +82,7 @@ export default function Products3({ parentClass = "flat-spacing-3" }) {
   }, [activeTabKey, tabs]);
 
   const activeTab = tabs.find((tab) => tab.key === activeTabKey) || tabs[0];
-  const filteredProducts = activeTab?.products.slice(0, 8) || [];
+  const filteredProducts = activeTab?.products.slice(0, 10) || [];
 
   return (
     <section className={parentClass}>
@@ -113,7 +113,7 @@ export default function Products3({ parentClass = "flat-spacing-3" }) {
               className="tab-pane active show tabFilter filtered"
               role="tabpanel"
             >
-              <div className="tf-grid-layout tf-col-2 lg-col-3 xl-col-4">
+              <div className="tf-grid-layout tf-col-2 lg-col-3 xl-col-5 sd-product-range-grid">
                 {filteredProducts.map((product, index) => (
                   <div
                     key={product._id || product.id || product.productCode || index}

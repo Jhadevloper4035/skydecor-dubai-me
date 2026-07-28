@@ -16196,35 +16196,34 @@ header.main-header .header-sticky.active {
 }
 
 .tab-product .nav-tab-item .sd-tab-button {
-  position: relative;
-  padding: 0 0 8px;
-  border: 0;
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 28px;
+  border: 1px solid #e3ded6;
   background: transparent;
-  color: var(--secondary-2);
+  color: var(--main);
   font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-transform: uppercase;
   white-space: nowrap;
   cursor: pointer;
+  transition: background-color 0.22s ease, border-color 0.22s ease, color 0.22s ease;
 }
 
 .tab-product .nav-tab-item .sd-tab-button::after {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  height: 2px;
-  background: var(--main);
-  content: "";
-  transform: scaleX(0);
-  transition: transform 0.25s ease;
+  display: none;
 }
 
 .tab-product .nav-tab-item .sd-tab-button:hover,
 .tab-product .nav-tab-item .sd-tab-button.active {
-  color: var(--main);
-}
-
-.tab-product .nav-tab-item .sd-tab-button.active::after {
-  transform: scaleX(1);
+  border-color: var(--main);
+  background: var(--main);
+  color: #fff;
 }
 
 .nav-ul-mb button.mb-menu-link,
@@ -16766,4 +16765,62 @@ header.main-header .header-sticky.active {
   color: var(--main);
   font-size: 14px;
   line-height: 1;
+}
+
+@media (min-width: 1200px) {
+  .sd-product-range-grid.xl-col-5 {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+
+.sd-quick-product .tf-product-info-name .name {
+  margin-bottom: 8px;
+}
+
+.sd-quick-product__path {
+  margin: 0;
+  color: var(--secondary-2);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.sd-quick-product__specs {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+
+.sd-quick-product__specs h6 {
+  margin: 0 0 12px;
+  color: var(--main);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.sd-quick-product__specs table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.sd-quick-product__specs tr {
+  border-bottom: 1px solid var(--line);
+}
+
+.sd-quick-product__specs th,
+.sd-quick-product__specs td {
+  padding: 10px 0;
+  vertical-align: top;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.sd-quick-product__specs th {
+  width: 42%;
+  color: var(--secondary-2);
+  font-weight: 500;
+}
+
+.sd-quick-product__specs td {
+  color: var(--main);
+  font-weight: 600;
 }
