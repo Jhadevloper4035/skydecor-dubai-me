@@ -53,18 +53,9 @@ export default function ProductShareModal({ product = {} }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="box-icon social-facebook"
+                aria-label="Share on Facebook"
               >
                 <i className="fab fa-facebook-f" />
-              </a>
-            </li>
-            <li>
-              <a
-                href={`https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="box-icon social-twiter"
-              >
-                <i className="fab fa-x-twitter" />
               </a>
             </li>
             <li>
@@ -72,7 +63,8 @@ export default function ProductShareModal({ product = {} }) {
                 href={`https://api.whatsapp.com/send?text=${encodedTitle}%20${encodedUrl}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="box-icon social-instagram"
+                className="box-icon social-whatsapp"
+                aria-label="Share on WhatsApp"
               >
                 <i className="fab fa-whatsapp" />
               </a>
@@ -82,19 +74,10 @@ export default function ProductShareModal({ product = {} }) {
                 href={shareUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="box-icon social-tiktok"
+                className="box-icon social-link"
+                aria-label="Open share link"
               >
                 <i className="fas fa-link" />
-              </a>
-            </li>
-            <li>
-              <a
-                href={`https://pinterest.com/pin/create/button/?url=${encodedUrl}&description=${encodedTitle}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="box-icon social-pinterest"
-              >
-                <i className="fab fa-pinterest-p" />
               </a>
             </li>
           </ul>

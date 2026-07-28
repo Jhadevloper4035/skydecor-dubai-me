@@ -4,22 +4,22 @@ import React, { useEffect } from "react";
 import Pagination from "../common/Pagination";
 import Link from "next/link";
 import Image from "next/image";
-import { useAppDispatch, useAppSelector } from "@/store/hooks";
-import { fetchBlogs, selectBlogs } from "@/store/contentSlice";
+import useContentStore from "@/store/contentStore";
+import Sidebar from "./Sidebar";
 export default function BlogGrid() {
-  const dispatch = useAppDispatch();
-  const blogs = useAppSelector(selectBlogs);
+  const blogs = useContentStore((state) => state.blogs);
+  const fetchBlogs = useContentStore((state) => state.fetchBlogs);
 
   useEffect(() => {
-    dispatch(fetchBlogs());
-  }, [dispatch]);
+    fetchBlogs();
+  }, [fetchBlogs]);
 
   return (
     <div className="main-content-page">
       <div className="container">
         <div className="row">
-          <div className="col-12">
-            <div className="tf-grid-layout md-col-3">
+          <div className="col-lg-8 mb-lg-30">
+            <div className="tf-grid-layout md-col-2 sd-blog-grid">
               {blogs.map((blog, index) => (
                 <div className="wg-blog style-1 hover-image" key={index}>
                   <div className="image">
@@ -60,6 +60,9 @@ export default function BlogGrid() {
                       </h6>
                       <div className="body-text">{blog.description}</div>
                     </div>
+                    <Link href={blog.href} className="link text-button bot-button">
+                      Read More
+                    </Link>
                   </div>
                 </div>
               ))}
@@ -67,6 +70,9 @@ export default function BlogGrid() {
                 <Pagination />
               </ul>
             </div>
+          </div>
+          <div className="col-lg-4">
+            <Sidebar />
           </div>
         </div>
       </div>

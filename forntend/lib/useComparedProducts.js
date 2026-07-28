@@ -3,14 +3,8 @@
 import { useEffect, useMemo } from "react";
 
 import { allProducts } from "@/data/products";
-import {
-  fetchProducts,
-  selectProductItems,
-  selectProductsStatus,
-  selectSelectedProduct,
-} from "@/store/productsSlice";
-import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { localProducts, normalizeProduct } from "@/lib/productsApi";
+import useProductStore from "@/store/productStore";
 
 const normalizeLookup = (value) => String(value || "").trim().toLowerCase();
 
@@ -50,16 +44,16 @@ const uniqueCatalogProducts = (products = []) => {
 };
 
 export default function useComparedProducts(compareItem = []) {
-  const dispatch = useAppDispatch();
-  const products = useAppSelector(selectProductItems);
-  const productsStatus = useAppSelector(selectProductsStatus);
-  const selectedProduct = useAppSelector(selectSelectedProduct);
+  const products = useProductStore((state) => state.items);
+  const productsStatus = useProductStore((state) => state.itemsStatus);
+  const selectedProduct = useProductStore((state) => state.selectedProduct);
+  const fetchProducts = useProductStore((state) => state.fetchProducts);
 
   useEffect(() => {
     if (compareItem.length && productsStatus === "idle") {
-      dispatch(fetchProducts({ limit: 1000, isActive: true }));
+      fetchProducts({ limit: 1000, isActive: true });
     }
-  }, [compareItem.length, dispatch, productsStatus]);
+  }, [compareItem.length, fetchProducts, productsStatus]);
 
   return useMemo(() => {
     const catalog = uniqueCatalogProducts([

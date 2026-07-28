@@ -4,16 +4,15 @@ import React, { useEffect } from "react";
 import Sidebar from "./Sidebar";
 import Link from "next/link";
 import Image from "next/image";
-import { useAppDispatch, useAppSelector } from "@/store/hooks";
-import { fetchBlogs, selectBlogs } from "@/store/contentSlice";
+import useContentStore from "@/store/contentStore";
 
 export default function BlogDefault() {
-  const dispatch = useAppDispatch();
-  const blogs = useAppSelector(selectBlogs);
+  const blogs = useContentStore((state) => state.blogs);
+  const fetchBlogs = useContentStore((state) => state.fetchBlogs);
 
   useEffect(() => {
-    dispatch(fetchBlogs());
-  }, [dispatch]);
+    fetchBlogs();
+  }, [fetchBlogs]);
 
   return (
     <div className="main-content-page">

@@ -1,6 +1,8 @@
 "use client";
 const filterOptions = [
   "Sort by (Default)",
+  "Newest First",
+  "Oldest First",
   "Title Ascending",
   "Title Descending",
   "Price Ascending",

@@ -32,7 +32,7 @@ const sections = [
   {
     title: "Updates and contact",
     content:
-      "We may update these terms as the website and services change. For questions about these terms or website content, contact info@skydecor.me.",
+      "We may update these terms as the website and services change. For questions about these terms or website content, contact sales.mgr@skydecor.me.",
   },
 ];
 

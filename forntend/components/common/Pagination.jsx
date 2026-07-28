@@ -34,7 +34,9 @@ export default function Pagination({
             currentPage === 1 ? "disabled" : ""
           }`}
         >
-          <i className="icon-arrLeft" />
+          <span aria-hidden="true" className="pagination-arrow">
+            &lsaquo;
+          </span>
         </a>
       </li>
       {renderPageNumbers()}
@@ -44,7 +46,9 @@ export default function Pagination({
             currentPage === totalPages ? "disabled" : ""
           }`}
         >
-          <i className="icon-arrRight" />
+          <span aria-hidden="true" className="pagination-arrow">
+            &rsaquo;
+          </span>
         </a>
       </li>
     </>

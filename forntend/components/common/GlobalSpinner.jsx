@@ -3,20 +3,19 @@
 import { useEffect, useState } from "react";
 
 import { useAppSelector } from "@/store/hooks";
+import useProductStore from "@/store/productStore";
 import styles from "./GlobalSpinner.module.css";
-
-const PRODUCT_LOADING_STATUSES = [
-  "itemsStatus",
-  "filterOptionsStatus",
-  "selectedProductStatus",
-];
 
 export default function GlobalSpinner() {
   const isInitialLoading = useAppSelector((state) => state.ui.isInitialLoading);
   const loadingCount = useAppSelector((state) => state.ui.loadingCount);
-  const isProductLoading = useAppSelector((state) =>
-    PRODUCT_LOADING_STATUSES.some((key) => state.products?.[key] === "loading")
-  );
+  const itemsStatus = useProductStore((state) => state.itemsStatus);
+  const filterOptionsStatus = useProductStore((state) => state.filterOptionsStatus);
+  const selectedProductStatus = useProductStore((state) => state.selectedProductStatus);
+  const isProductLoading =
+    itemsStatus === "loading" ||
+    filterOptionsStatus === "loading" ||
+    selectedProductStatus === "loading";
   const [show, setShow] = useState(true);
 
   useEffect(() => {

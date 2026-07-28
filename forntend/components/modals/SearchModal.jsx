@@ -1,15 +1,15 @@
 "use client";
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 import {
   getProductDetailHref,
-  getProductsFromApi,
   localProducts,
   normalizeProduct,
 } from "@/lib/productsApi";
+import useProductStore from "@/store/productStore";
 import ProductCard1 from "../productCards/ProductCard1";
 
 const RECENTLY_VIEWED_KEY = "skydecor_recently_viewed_products";
@@ -124,18 +124,18 @@ const closeSearchModal = () => {
 
 export default function SearchModal() {
   const router = useRouter();
-  const hasRequestedProducts = useRef(false);
-  const [backendProducts, setBackendProducts] = useState([]);
-  const [productsStatus, setProductsStatus] = useState("idle");
+  const storeProducts = useProductStore((state) => state.items);
+  const productsStatus = useProductStore((state) => state.itemsStatus);
+  const fetchProducts = useProductStore((state) => state.fetchProducts);
   const [loading, setLoading] = useState(false);
   const [query, setQuery] = useState("");
   const [visibleCount, setVisibleCount] = useState(DEFAULT_VISIBLE_COUNT);
   const [recentlyViewedKeys, setRecentlyViewedKeys] = useState([]);
   const catalogProducts = useMemo(() => {
-    const sourceProducts = backendProducts.length ? backendProducts : localProducts;
+    const sourceProducts = productsStatus === "succeeded" ? storeProducts : localProducts;
 
     return uniqueProducts(sourceProducts.map(normalizeProduct));
-  }, [backendProducts]);
+  }, [productsStatus, storeProducts]);
   const keywordTags = useMemo(() => buildKeywordTags(catalogProducts), [catalogProducts]);
   const searchResults = useMemo(
     () => searchProducts(catalogProducts, query),
@@ -157,24 +157,8 @@ export default function SearchModal() {
   const emptyText = "Recently viewed products will appear here after you open product detail pages.";
 
   useEffect(() => {
-    let shouldUpdate = true;
-
     const loadProducts = async () => {
-      if (hasRequestedProducts.current) return;
-
-      hasRequestedProducts.current = true;
-      setProductsStatus("loading");
-      const products = await getProductsFromApi({ limit: 1000, isActive: true });
-
-      if (!shouldUpdate) return;
-
-      if (products?.length) {
-        setBackendProducts(products);
-        setProductsStatus("succeeded");
-      } else {
-        hasRequestedProducts.current = false;
-        setProductsStatus("failed");
-      }
+      fetchProducts({ limit: 1000, isActive: true });
     };
 
     const refreshRecentlyViewed = () => setRecentlyViewedKeys(readRecentlyViewedKeys());
@@ -189,10 +173,9 @@ export default function SearchModal() {
     searchModal?.addEventListener("shown.bs.modal", handleSearchModalShown);
 
     return () => {
-      shouldUpdate = false;
       searchModal?.removeEventListener("shown.bs.modal", handleSearchModalShown);
     };
-  }, []);
+  }, [fetchProducts]);
 
   useEffect(() => {
     setVisibleCount(DEFAULT_VISIBLE_COUNT);

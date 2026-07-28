@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Grid5 from "../productDetails/grids/Grid5";
 import { useContextElement } from "@/context/Context";
+import { getProductDetailHref } from "@/lib/productsApi";
 
 export default function QuickView() {
   const [activeColor, setActiveColor] = useState("gray");
@@ -91,7 +92,7 @@ export default function QuickView() {
                 <div>
                   <div className="tf-product-info-by-btn mb_10">
                     <a
-                      href={`/product-detail/${quickViewItem.productCodeSlug || quickViewItem._id || quickViewItem.id}`}
+                      href={getProductDetailHref(quickViewItem)}
                       className="btn-style-2 flex-grow-1 text-btn-uppercase fw-6"
                       data-bs-dismiss="modal"
                     >

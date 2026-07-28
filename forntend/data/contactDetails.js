@@ -1,6 +1,8 @@
 export const contactDetails = {
-  email: "info@skydecor.me",
-  phoneLabel: "+971 58 209 3821",
-  phoneHref: "tel:+971582093821",
+  companyName: "Skydecor International General Trading",
+  address: "B23, Phase-1, Dubai Industrial City, Dubai, UAE",
+  email: "sales.mgr@skydecor.me",
+  phoneLabel: "04-5751322, 058-8939560",
+  phoneHref: "tel:045751322",
   whatsappHref: "https://alvo.chat/3Ijc",
 };

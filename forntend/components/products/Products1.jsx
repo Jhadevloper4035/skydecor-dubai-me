@@ -12,14 +12,7 @@ import {
   filterProductsLocally,
   localProducts,
 } from "@/lib/productsApi";
-import { useAppDispatch, useAppSelector } from "@/store/hooks";
-import {
-  fetchProductFilters,
-  fetchProducts,
-  selectProductFilterOptions,
-  selectProductItems,
-  selectProductsStatus,
-} from "@/store/productsSlice";
+import useProductStore from "@/store/productStore";
 
 const normalizeFilterValue = (value = "") =>
   String(value).trim().toLowerCase().replace(/\s+/g, "-");
@@ -86,6 +79,9 @@ const filterProductsByRoute = (products, { productType, category, subCategory, q
 
 const selectedFilterValue = (value) => (value === "All" ? "" : value);
 
+const productDateValue = (product = {}) =>
+  new Date(product.createdAt || product.updatedAt || 0).getTime() || 0;
+
 export default function Products1({
   parentClass = "flat-spacing",
   initialProductType = "",
@@ -95,10 +91,11 @@ export default function Products1({
 }) {
   const [activeLayout, setActiveLayout] = useState(4);
   const productResultsRef = useRef(null);
-  const storeDispatch = useAppDispatch();
-  const storeProducts = useAppSelector(selectProductItems);
-  const productsStatus = useAppSelector(selectProductsStatus);
-  const filterOptions = useAppSelector(selectProductFilterOptions);
+  const storeProducts = useProductStore((state) => state.items);
+  const productsStatus = useProductStore((state) => state.itemsStatus);
+  const filterOptions = useProductStore((state) => state.filterOptions);
+  const fetchProducts = useProductStore((state) => state.fetchProducts);
+  const fetchProductFilters = useProductStore((state) => state.fetchProductFilters);
   const routeFilters = useMemo(
     () => ({
       productType: initialProductType,
@@ -266,9 +263,9 @@ export default function Products1({
       texture: selectedFilterValue(texture),
     };
 
-    storeDispatch(fetchProductFilters(apiFilters));
+    fetchProductFilters(apiFilters);
   }, [
-    storeDispatch,
+    fetchProductFilters,
     productType,
     category,
     subCategory,
@@ -279,11 +276,11 @@ export default function Products1({
   ]);
 
   useEffect(() => {
-    storeDispatch(fetchProducts({
+    fetchProducts({
       limit: 1000,
       isActive: true,
-    }));
-  }, [storeDispatch]);
+    });
+  }, [fetchProducts]);
 
   useEffect(() => {
     const products = filterProductsLocally(sourceProducts, {
@@ -356,6 +353,16 @@ export default function Products1({
         type: "SET_SORTED",
         payload: [...filtered].sort((a, b) => b.title.localeCompare(a.title)),
       });
+    } else if (sortingOption === "Newest First") {
+      filterDispatch({
+        type: "SET_SORTED",
+        payload: [...filtered].sort((a, b) => productDateValue(b) - productDateValue(a)),
+      });
+    } else if (sortingOption === "Oldest First") {
+      filterDispatch({
+        type: "SET_SORTED",
+        payload: [...filtered].sort((a, b) => productDateValue(a) - productDateValue(b)),
+      });
     } else {
       filterDispatch({ type: "SET_SORTED", payload: filtered });
     }
@@ -367,6 +374,8 @@ export default function Products1({
     (currentPage - 1) * itemPerPage,
     currentPage * itemPerPage
   );
+  const visibleStart = sorted.length ? (currentPage - 1) * itemPerPage + 1 : 0;
+  const visibleEnd = Math.min(currentPage * itemPerPage, sorted.length);
 
   return (
     <>
@@ -390,7 +399,7 @@ export default function Products1({
                 }`}
               >
                 <i className="icon icon-checkCircle" />
-                <p className="text-caption-1">Shop sale items only</p>
+                <p className="text-caption-1">Use filters to refine products</p>
               </div>
             </div>
             <ul className="tf-control-layout">
@@ -408,7 +417,12 @@ export default function Products1({
             ref={productResultsRef}
             className="wrapper-control-shop product-results-anchor"
           >
-            <FilterMeta productLength={sorted.length} allProps={allProps} />
+            <FilterMeta
+              productLength={sorted.length}
+              visibleStart={visibleStart}
+              visibleEnd={visibleEnd}
+              allProps={allProps}
+            />
 
             {activeLayout == 1 ? (
               <div className="tf-list-layout wrapper-shop" id="listLayout">

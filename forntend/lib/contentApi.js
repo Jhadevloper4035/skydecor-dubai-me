@@ -114,7 +114,7 @@ export const normalizeBlog = (blog = {}) => {
     slug,
     title: blog.title || "Skydecor Blog",
     date: blog.date || formatDate(blog.publishedAt || blog.createdAt, ""),
-    author: blog.author || blog.authorName || "Skydecor Dubai",
+    author: "Admin",
     imgSrc: image,
     coverImage: image,
     description: excerpt,

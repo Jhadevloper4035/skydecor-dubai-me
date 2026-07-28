@@ -59,7 +59,9 @@ export default function ProductListingPage({
                     key={`${breadcrumb.name}-${breadcrumb.href || "current"}`}
                   >
                     <li>
-                      <i className="icon-arrRight" />
+                      <span className="breadcrumb-separator" aria-hidden="true">
+                        &gt;
+                      </span>
                     </li>
                     <li>
                       {breadcrumb.href ? (

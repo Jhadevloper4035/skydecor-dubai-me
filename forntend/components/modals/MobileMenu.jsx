@@ -228,7 +228,7 @@ export default function MobileMenu() {
             </div>
             <div className="mb-contact">
               <p className="text-caption-1">
-                Dubai, United Arab Emirates
+                {contactDetails.address}
               </p>
               <Link
                 href="/contact"

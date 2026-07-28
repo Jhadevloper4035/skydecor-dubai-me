@@ -2,10 +2,11 @@
 
 import React from "react";
 import Nav from "./Nav";
-import Topbar from "./Topbar";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { contactDetails } from "@/data/contactDetails";
+import { socialLinks } from "@/data/footerLinks";
 
 const quickLinks = [
   { href: "/catalog", label: "Catalogs" },
@@ -20,23 +21,16 @@ export default function Header1() {
 
   return (
     <header id="header" className="header-default header-style-4">
-      <Topbar />
       <div className="main-header">
         <div className="container">
           <div className="row wrapper-header align-items-center">
             <div className="col-xl-5 d-none d-xl-block">
-              <ul className="header-list-categories">
-                {quickLinks.map((link) => (
-                  <li
-                    className={`categories-item ${
-                      isActiveQuickLink(link.href) ? "active" : ""
-                    }`}
-                    key={link.href}
-                  >
-                    <Link href={link.href}>{link.label}</Link>
-                  </li>
-                ))}
-              </ul>
+              <div className="sd-header-contact">
+                <a href={contactDetails.phoneHref}>{contactDetails.phoneLabel}</a>
+                <a href={`mailto:${contactDetails.email}`}>
+                  {contactDetails.email}
+                </a>
+              </div>
             </div>
 
             <div className="col-md-4 col-3 d-xl-none">
@@ -64,7 +58,7 @@ export default function Header1() {
 
             <div className="col-xl-5 col-md-4 col-3">
               <div className="wrapper-header-right">
-                <ul className="nav-icon d-flex justify-content-end align-items-center">
+                <ul className="nav-icon sd-header-actions d-flex justify-content-end align-items-center">
                   <li className="nav-search">
                     <a
                       href="#search"
@@ -97,7 +91,19 @@ export default function Header1() {
                       </svg>
                     </a>
                   </li>
-
+                  {socialLinks.map((link) => (
+                    <li className="d-none d-xl-inline-flex" key={link.className}>
+                      <a
+                        href={link.href}
+                        className={`sd-header-social ${link.className}`}
+                        aria-label={link.className.replace("social-", "")}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <i className={link.iconClass} aria-hidden="true" />
+                      </a>
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>

@@ -2,6 +2,7 @@
 
 import { contactDetails } from "@/data/contactDetails";
 import { productNavigation } from "@/data/menu";
+import useInquiryStore from "@/store/inquiryStore";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
@@ -30,8 +31,9 @@ const initialFormState = {
 export default function Contact2() {
   const router = useRouter();
   const [formData, setFormData] = useState(initialFormState);
-  const [status, setStatus] = useState("idle");
-  const [errorMessage, setErrorMessage] = useState("");
+  const status = useInquiryStore((state) => state.contactStatus);
+  const errorMessage = useInquiryStore((state) => state.contactError);
+  const submitContactLead = useInquiryStore((state) => state.submitContactLead);
   const productLineupOptions = productNavigation.ranges.map((range) => range.name);
   const isSubmitting = status === "submitting";
 
@@ -56,31 +58,12 @@ export default function Contact2() {
 
   const submitLead = async (event) => {
     event.preventDefault();
-    setStatus("submitting");
-    setErrorMessage("");
 
     try {
-      const response = await fetch("/api/contact-leads", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-      const data = await response.json().catch(() => ({}));
-
-      if (!response.ok) {
-        throw new Error(data.message || "Unable to submit your inquiry.");
-      }
-
+      const data = await submitContactLead(formData);
       setFormData(initialFormState);
-      router.push(`/thank-you?lead=${encodeURIComponent(data.data?.leadId || "")}`);
-    } catch (error) {
-      setStatus("failed");
-      setErrorMessage(
-        error.message || "We could not submit your inquiry. Please try again."
-      );
-    }
+      router.push(`/thank-you?lead=${encodeURIComponent(data?.leadId || "")}`);
+    } catch {}
   };
 
   return (
@@ -103,6 +86,10 @@ export default function Contact2() {
               <div>
                 <span>Email</span>
                 <a href={`mailto:${contactDetails.email}`}>{contactDetails.email}</a>
+              </div>
+              <div>
+                <span>Location</span>
+                <p>{contactDetails.address}</p>
               </div>
               <div>
                 <span>WhatsApp</span>

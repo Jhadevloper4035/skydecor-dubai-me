@@ -227,6 +227,15 @@ h3 {
   aspect-ratio: 1 / 2;
 }
 
+.card-product .card-product-wrapper:not(.hover-image-ready):hover .img-product {
+  opacity: 1 !important;
+}
+
+.card-product .card-product-wrapper:not(.hover-image-ready):hover .img-hover {
+  opacity: 0 !important;
+  transform: none !important;
+}
+
 .menu-item a {
   white-space: nowrap;
 }
@@ -241,7 +250,6 @@ h3 {
 
 #header.header-style-4 .main-header .wrapper-header {
   min-height: 84px;
-  padding: 14px 0 2px;
 }
 
 #header.header-style-4 .header-bottom .wrapper-header {

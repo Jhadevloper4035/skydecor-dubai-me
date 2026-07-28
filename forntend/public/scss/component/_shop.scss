@@ -300,21 +300,23 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 .tf-btn-filter {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     cursor: pointer;
-    gap: 4px;
+    gap: 8px;
+    min-height: 34px;
     color: var(--main);
-    border: solid 2px var(--line);
-    border-radius: 4px;
+    border: 1px solid #d7cfac;
+    border-radius: 1000px;
     text-transform: capitalize;
-    padding: 3px 10px;
-    font-weight: 400;
-    background-color: var(--white);
+    padding: 7px 18px;
+    font-weight: 500;
+    background-color: #f7f2df;
     max-width: 100%;
     text-wrap: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     .icon {
-        font-size: 20px;
+        font-size: 16px;
     }
     .icon-close {
         font-size: 14px;
@@ -477,20 +479,42 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
     }
     .filter-tag {
         font-size: 14px;
-        line-height: 22px;
-        display: flex;
+        line-height: 1;
+        display: inline-flex;
         align-items: center;
+        justify-content: center;
         gap: 6px;
-        padding: 4px 12px;
-        border: 1px solid var(--line);
+        min-height: 34px;
+        min-width: 138px;
+        padding: 7px 16px;
+        border: 1px solid #d7cfac;
         border-radius: 1000px;
+        background: #f7f2df;
+        color: var(--main);
+        text-align: center;
         @include mixin.transition3;
         cursor: pointer;
         .remove-tag {
+            position: relative;
             font-size: 12px;
             width: 20px;
             height: 20px;
             @include mixin.flex(center, center);
+            &::before,
+            &::after {
+                position: absolute;
+                width: 10px;
+                height: 1.5px;
+                border-radius: 2px;
+                background: currentColor;
+                content: "";
+            }
+            &::before {
+                transform: rotate(45deg);
+            }
+            &::after {
+                transform: rotate(-45deg);
+            }
         }
         &:hover {
             border-color: var(--main);
@@ -506,8 +530,16 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
         }
     }
     .remove-all-filters {
-        padding: 4px 12px;
-        border:1px solid var(--main);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 34px;
+        padding: 7px 18px;
+        border: 1px solid var(--main);
+        border-radius: 1000px;
+        background: var(--main);
+        color: var(--white);
+        text-align: center;
         .icon {
             font-size: 12px;
         }

@@ -2,17 +2,25 @@
 import Link from "next/link";
 import React, { useEffect } from "react";
 import Image from "next/image";
-import { useAppDispatch, useAppSelector } from "@/store/hooks";
-import { fetchBlogs, selectBlogs } from "@/store/contentSlice";
+import useContentStore from "@/store/contentStore";
 export default function Sidebar() {
-  const dispatch = useAppDispatch();
-  const blogs = useAppSelector(selectBlogs);
+  const blogs = useContentStore((state) => state.blogs);
+  const fetchBlogs = useContentStore((state) => state.fetchBlogs);
   const categories = [...new Set(blogs.flatMap((post) => post.categories || []))].slice(0, 5);
   const tags = [...new Set(blogs.flatMap((post) => post.tags || []))].slice(0, 8);
+  const fallbackTags = [
+    "Fashion Trends",
+    "Sustainable Fashion",
+    "Street Style",
+    "Beauty Tips",
+    "Vintage Fashion",
+    "Eco Friendly",
+    "Tips",
+  ];
 
   useEffect(() => {
-    dispatch(fetchBlogs());
-  }, [dispatch]);
+    fetchBlogs();
+  }, [fetchBlogs]);
 
   return (
     <div className="sidebar maxw-360">
@@ -75,9 +83,11 @@ export default function Sidebar() {
       <div className="sidebar-item sidebar-tag">
         <h5 className="sidebar-heading">Popular Tag</h5>
         <ul className="list-tags">
-          {(tags.length ? tags : ["surfaces", "decor", "design", "dubai"]).map((tag) => (
+          {(tags.length ? tags : fallbackTags).map((tag) => (
             <li key={tag}>
-              <span className="text-caption-1">{tag}</span>
+              <a className="text-caption-1" href="#">
+                {tag}
+              </a>
             </li>
           ))}
         </ul>

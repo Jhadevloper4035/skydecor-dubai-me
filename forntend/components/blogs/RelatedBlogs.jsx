@@ -2,17 +2,16 @@
 import Link from "next/link";
 import React, { useEffect } from "react";
 import Image from "next/image";
-import { useAppDispatch, useAppSelector } from "@/store/hooks";
-import { fetchBlogs, selectBlogs } from "@/store/contentSlice";
+import useContentStore from "@/store/contentStore";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 export default function RelatedBlogs() {
-  const dispatch = useAppDispatch();
-  const blogs = useAppSelector(selectBlogs);
+  const blogs = useContentStore((state) => state.blogs);
+  const fetchBlogs = useContentStore((state) => state.fetchBlogs);
 
   useEffect(() => {
-    dispatch(fetchBlogs());
-  }, [dispatch]);
+    fetchBlogs();
+  }, [fetchBlogs]);
 
   return (
     <section className="flat-spacing">

@@ -38,14 +38,6 @@ const displayValue = (value, fallback = "-") => {
   return titleCase(value);
 };
 
-const formatThickness = (value = "") => {
-  const normalized = String(value).trim();
-  if (!normalized) return "-";
-  return normalized
-    .replace(/\s*mm$/i, " mm")
-    .replace(/(\d)(mm)$/i, "$1 mm");
-};
-
 const getProductImages = (product = {}) => {
   const images = product?.images?.length
     ? product.images
@@ -80,7 +72,7 @@ const getProductSpecs = (product = {}) =>
     ["Texture Code", upperValue(product.textureCode)],
     ["Texture", displayValue(product.texture)],
     ["Size", displayValue(product.size)],
-    ["Thickness", formatThickness(product.thickness)],
+    ["Thickness", "Starting from 0.5mm to 18mm"],
     ["Width", displayValue(product.width)],
   ].filter(([, value]) => value && value !== "-");
 

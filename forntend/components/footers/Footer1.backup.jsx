@@ -120,11 +120,11 @@ export default function Footer1({
                     <ul className="footer-info">
                       <li>
                         <i className="far fa-envelope" />
-                        <p>info@skydecor.me</p>
+                        <p>sales.mgr@skydecor.me</p>
                       </li>
                       <li>
                         <i className="far fa-phone" />
-                        <p>315-666-6688</p>
+                        <p>04-5751322, 058-8939560</p>
                       </li>
                     </ul>
                     <ul

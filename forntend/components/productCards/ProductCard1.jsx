@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useContextElement } from "@/context/Context";
@@ -52,15 +52,16 @@ const getProductImages = (product = {}) => {
 export default function ProductCard1({
   product,
   gridClass = "",
-  parentClass = "card-product wow fadeInUp",
+  parentClass = "card-product",
   isNotImageRatio = false,
   radiusClass = "",
 }) {
   const { imgSrc, imgHover } = getProductImages(product);
   const productId = product._id || product.id;
   const productHref = getProductDetailHref(product);
-
-  const [currentImage, setCurrentImage] = useState(imgSrc);
+  const hasHoverImage = imgHover && imgHover !== imgSrc;
+  const [hoverImageRequested, setHoverImageRequested] = useState(false);
+  const [hoverImageReady, setHoverImageReady] = useState(false);
 
   const {
     addToCompareItem,
@@ -68,16 +69,14 @@ export default function ProductCard1({
     setQuickViewItem,
   } = useContextElement();
 
-  useEffect(() => {
-    setCurrentImage(getProductImages(product).imgSrc);
-  }, [product]);
-
   return (
     <div className={`${parentClass} ${gridClass}`}>
       <div
         className={`card-product-wrapper ${
           isNotImageRatio ? "aspect-ratio-0" : ""
-        } ${radiusClass}`}
+        } ${radiusClass} ${hoverImageReady ? "hover-image-ready" : ""}`}
+        onMouseEnter={() => setHoverImageRequested(true)}
+        onFocus={() => setHoverImageRequested(true)}
       >
         <Link
           href={productHref}
@@ -87,20 +86,23 @@ export default function ProductCard1({
             loading="lazy"
             decoding="async"
             className="lazyload img-product"
-            src={currentImage}
+            src={imgSrc}
             alt={product.productName || product.designName || "Product"}
             width={600}
             height={800}
           />
-          <Image
-            loading="lazy"
-            decoding="async"
-            className="lazyload img-hover"
-            src={imgHover}
-            alt={product.productName || product.designName || "Product"}
-            width={600}
-            height={800}
-          />
+          {hasHoverImage && hoverImageRequested && (
+            <Image
+              loading="lazy"
+              decoding="async"
+              className="lazyload img-hover"
+              src={imgHover}
+              alt={product.productName || product.designName || "Product"}
+              width={600}
+              height={800}
+              onLoad={() => setHoverImageReady(true)}
+            />
+          )}
         </Link>
 
         <div className="list-product-btn product-card-actions">

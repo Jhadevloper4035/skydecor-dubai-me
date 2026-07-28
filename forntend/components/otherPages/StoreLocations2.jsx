@@ -10,59 +10,59 @@ export default function StoreLocations2() {
               <ul className="tf-store-list style-row" role="tablist">
                 <li className="nav-tab-item" role="presentation">
                   <a
-                    href="#New-York"
+                    href="#Dubai-Industrial-City"
                     className="tf-store-item active"
                     data-bs-toggle="tab"
                   >
-                    <h6 className="tf-store-title">New York Office</h6>
+                    <h6 className="tf-store-title">Skydecor International General Trading</h6>
                     <div className="tf-store-info">
-                      <p>Phone: +1 666 234 8888</p>
-                      <p>Email: info@skydecor.me</p>
-                      <p>Address: 432 Park Avenue, New York, New York</p>
+                      <p>Phone: 04-5751322, 058-8939560</p>
+                      <p>Email: sales.mgr@skydecor.me</p>
+                      <p>B23, Phase-1, Dubai Industrial City, Dubai, UAE</p>
                     </div>
                   </a>
                 </li>
                 <li className="nav-tab-item" role="presentation">
                   <a
-                    href="#Houston"
+                    href="#Dubai-Industrial-City-2"
                     className="tf-store-item"
                     data-bs-toggle="tab"
                   >
-                    <h6 className="tf-store-title">Houston Office</h6>
+                    <h6 className="tf-store-title">Skydecor International General Trading</h6>
                     <div className="tf-store-info">
-                      <p>Phone: +1 666 234 8888</p>
-                      <p>Email: info@skydecor.me</p>
-                      <p>Address: 432 Park Avenue, New York, New York</p>
+                      <p>Phone: 04-5751322, 058-8939560</p>
+                      <p>Email: sales.mgr@skydecor.me</p>
+                      <p>B23, Phase-1, Dubai Industrial City, Dubai, UAE</p>
                     </div>
                   </a>
                 </li>
                 <li className="nav-tab-item" role="presentation">
                   <a
-                    href="#San-Francisco"
+                    href="#Dubai-Industrial-City-3"
                     className="tf-store-item"
                     data-bs-toggle="tab"
                   >
-                    <h6 className="tf-store-title">San Francisco Office</h6>
+                    <h6 className="tf-store-title">Skydecor International General Trading</h6>
                     <div className="tf-store-info">
-                      <p>Phone: +1 415 987 6543</p>
-                      <p>Email: info@skydecor.me</p>
+                      <p>Phone: 04-5751322, 058-8939560</p>
+                      <p>Email: sales.mgr@skydecor.me</p>
                       <p>
-                        Address: 321 Market Street, San Francisco, California
+                        B23, Phase-1, Dubai Industrial City, Dubai, UAE
                       </p>
                     </div>
                   </a>
                 </li>
                 <li className="nav-tab-item" role="presentation">
                   <a
-                    href="#Miami"
+                    href="#Dubai-Industrial-City-4"
                     className="tf-store-item"
                     data-bs-toggle="tab"
                   >
-                    <h6 className="tf-store-title">Miami Office</h6>
+                    <h6 className="tf-store-title">Skydecor International General Trading</h6>
                     <div className="tf-store-info">
-                      <p>Phone: +1 305 543 2109</p>
-                      <p>Email: info@skydecor.me</p>
-                      <p>Address: 654 Ocean Drive, Miami, Florida</p>
+                      <p>Phone: 04-5751322, 058-8939560</p>
+                      <p>Email: sales.mgr@skydecor.me</p>
+                      <p>B23, Phase-1, Dubai Industrial City, Dubai, UAE</p>
                     </div>
                   </a>
                 </li>
@@ -70,7 +70,7 @@ export default function StoreLocations2() {
               <div className="tab-content">
                 <div
                   className="tab-pane active show"
-                  id="New-York"
+                  id="Dubai-Industrial-City"
                   role="tabpanel"
                 >
                   <div className="wg-card-store align-items-center tf-grid-layout md-col-2 gap-0">
@@ -85,12 +85,12 @@ export default function StoreLocations2() {
                       />
                     </div>
                     <div className="card-store-info">
-                      <h3 className="card-store-heading">New York Office</h3>
+                      <h3 className="card-store-heading">Skydecor International General Trading</h3>
                       <ul>
                         <li>
                           <h6 className="mb_8">Address:</h6>
                           <p className="text-secondary">
-                            2163 Phillips Gap Rd West Jefferson, North Carolina
+                            B23, Phase-1, Dubai Industrial City, Dubai, UAE
                           </p>
                         </li>
                         <li>
@@ -110,8 +110,8 @@ export default function StoreLocations2() {
                         <li>
                           <h6 className="mb_8">Information:</h6>
                           <p className="text-secondary">
-                            +1 666 234 8888 <br />
-                            info@skydecor.me
+                            04-5751322, 058-8939560 <br />
+                            sales.mgr@skydecor.me
                           </p>
                         </li>
                         <li>
@@ -148,7 +148,7 @@ export default function StoreLocations2() {
                     </div>
                   </div>
                 </div>
-                <div className="tab-pane" id="Houston" role="tabpanel">
+                <div className="tab-pane" id="Dubai-Industrial-City-2" role="tabpanel">
                   <div className="wg-card-store align-items-center tf-grid-layout md-col-2 gap-0">
                     <div className="card-store-img">
                       <Image
@@ -161,12 +161,12 @@ export default function StoreLocations2() {
                       />
                     </div>
                     <div className="card-store-info">
-                      <h3 className="card-store-heading">Houston Office</h3>
+                      <h3 className="card-store-heading">Skydecor International General Trading</h3>
                       <ul>
                         <li>
                           <h6 className="mb_8">Address:</h6>
                           <p className="text-secondary">
-                            789 Main Street, Houston, Texas
+                            B23, Phase-1, Dubai Industrial City, Dubai, UAE
                           </p>
                         </li>
                         <li>
@@ -186,8 +186,8 @@ export default function StoreLocations2() {
                         <li>
                           <h6 className="mb_8">Information:</h6>
                           <p className="text-secondary">
-                            +1 713 432 8765 <br />
-                            info@skydecor.me
+                            04-5751322, 058-8939560 <br />
+                            sales.mgr@skydecor.me
                           </p>
                         </li>
                         <li>
@@ -224,7 +224,7 @@ export default function StoreLocations2() {
                     </div>
                   </div>
                 </div>
-                <div className="tab-pane" id="San-Francisco" role="tabpanel">
+                <div className="tab-pane" id="Dubai-Industrial-City-3" role="tabpanel">
                   <div className="wg-card-store align-items-center tf-grid-layout md-col-2 gap-0">
                     <div className="card-store-img">
                       <Image
@@ -238,13 +238,13 @@ export default function StoreLocations2() {
                     </div>
                     <div className="card-store-info">
                       <h3 className="card-store-heading">
-                        San Francisco Office
+                        Skydecor International General Trading
                       </h3>
                       <ul>
                         <li>
                           <h6 className="mb_8">Address:</h6>
                           <p className="text-secondary">
-                            321 Market Street, San Francisco, California
+                            B23, Phase-1, Dubai Industrial City, Dubai, UAE
                           </p>
                         </li>
                         <li>
@@ -264,8 +264,8 @@ export default function StoreLocations2() {
                         <li>
                           <h6 className="mb_8">Information:</h6>
                           <p className="text-secondary">
-                            +1 415 987 6543 <br />
-                            info@skydecor.me
+                            04-5751322, 058-8939560 <br />
+                            sales.mgr@skydecor.me
                           </p>
                         </li>
                         <li>
@@ -302,7 +302,7 @@ export default function StoreLocations2() {
                     </div>
                   </div>
                 </div>
-                <div className="tab-pane" id="Miami" role="tabpanel">
+                <div className="tab-pane" id="Dubai-Industrial-City-4" role="tabpanel">
                   <div className="wg-card-store align-items-center tf-grid-layout md-col-2 gap-0">
                     <div className="card-store-img">
                       <Image
@@ -315,12 +315,12 @@ export default function StoreLocations2() {
                       />
                     </div>
                     <div className="card-store-info">
-                      <h3 className="card-store-heading">Miami Office</h3>
+                      <h3 className="card-store-heading">Skydecor International General Trading</h3>
                       <ul>
                         <li>
                           <h6 className="mb_8">Address:</h6>
                           <p className="text-secondary">
-                            654 Ocean Drive, Miami, Florida
+                            B23, Phase-1, Dubai Industrial City, Dubai, UAE
                           </p>
                         </li>
                         <li>
@@ -340,8 +340,8 @@ export default function StoreLocations2() {
                         <li>
                           <h6 className="mb_8">Information:</h6>
                           <p className="text-secondary">
-                            +1 305 543 2109 <br />
-                            info@skydecor.me
+                            04-5751322, 058-8939560 <br />
+                            sales.mgr@skydecor.me
                           </p>
                         </li>
                         <li>

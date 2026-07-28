@@ -7,6 +7,7 @@ export const runtime = "nodejs";
 
 const MAX_TEXT_LENGTH = 2500;
 const DEFAULT_LEADS_FILE = "/tmp/skydecor-contact-leads.jsonl";
+const ENQUIRY_RECIPIENT_EMAIL = "sales.mgr@skydecor.me";
 
 const cleanText = (value, maxLength = 240) =>
   String(value || "")
@@ -50,6 +51,7 @@ export async function POST(request) {
   const lead = {
     id: crypto.randomUUID(),
     source: "contact-page",
+    recipientEmail: ENQUIRY_RECIPIENT_EMAIL,
     submittedAt: new Date().toISOString(),
     name: cleanText(payload.name, 120),
     email: cleanText(payload.email, 180).toLowerCase(),

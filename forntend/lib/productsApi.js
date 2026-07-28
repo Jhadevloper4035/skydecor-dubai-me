@@ -121,10 +121,20 @@ const productContainsQuery = (product, query) => {
 };
 
 export const getProductDetailHref = (product = {}) => {
+  const normalizedProduct = normalizeProductHierarchy(product);
   const lookupValue =
-    product.productCodeSlug || product.productCode || product._id || product.id;
+    normalizedProduct.productCodeSlug ||
+    normalizeChoice(normalizedProduct.productCode) ||
+    normalizedProduct._id ||
+    normalizedProduct.id;
+  const productType = normalizeChoice(
+    normalizedProduct.productTypeSlug || normalizedProduct.productType
+  ) || "product";
+  const category = normalizeChoice(
+    normalizedProduct.categorySlug || normalizedProduct.category
+  ) || "category";
 
-  return `/product-detail/${lookupValue}`;
+  return `/products/product-type/${productType}/category/${category}/${lookupValue}`;
 };
 
 export const normalizeProduct = (product = {}) => {

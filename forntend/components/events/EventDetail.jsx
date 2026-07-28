@@ -4,27 +4,23 @@ import Image from "next/image";
 import Link from "next/link";
 import PhotoSwipeLightbox from "photoswipe/lightbox";
 import { useEffect, useRef } from "react";
-import { useAppDispatch, useAppSelector } from "@/store/hooks";
-import {
-  fetchEventBySlug,
-  selectSelectedEvent,
-  setSelectedEvent,
-} from "@/store/contentSlice";
+import useContentStore from "@/store/contentStore";
 
 export default function EventDetail({ event: initialEvent }) {
-  const dispatch = useAppDispatch();
   const lightboxRef = useRef(null);
-  const selectedEvent = useAppSelector(selectSelectedEvent);
+  const selectedEvent = useContentStore((state) => state.selectedEvent);
+  const setSelectedEvent = useContentStore((state) => state.setSelectedEvent);
+  const fetchEventBySlug = useContentStore((state) => state.fetchEventBySlug);
   const event =
     selectedEvent?.slug === initialEvent?.slug ? selectedEvent : initialEvent;
 
   useEffect(() => {
-    if (initialEvent) dispatch(setSelectedEvent(initialEvent));
-  }, [dispatch, initialEvent]);
+    if (initialEvent) setSelectedEvent(initialEvent);
+  }, [initialEvent, setSelectedEvent]);
 
   useEffect(() => {
-    if (initialEvent?.slug) dispatch(fetchEventBySlug(initialEvent.slug));
-  }, [dispatch, initialEvent?.slug]);
+    if (initialEvent?.slug) fetchEventBySlug(initialEvent.slug);
+  }, [fetchEventBySlug, initialEvent?.slug]);
 
   useEffect(() => {
     const lightbox = new PhotoSwipeLightbox({

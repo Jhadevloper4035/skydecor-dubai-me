@@ -3,16 +3,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "@/store/hooks";
-import { fetchEvents, selectEvents } from "@/store/contentSlice";
+import useContentStore from "@/store/contentStore";
 
 export default function EventsList() {
-  const dispatch = useAppDispatch();
-  const events = useAppSelector(selectEvents);
+  const events = useContentStore((state) => state.events);
+  const fetchEvents = useContentStore((state) => state.fetchEvents);
 
   useEffect(() => {
-    dispatch(fetchEvents());
-  }, [dispatch]);
+    fetchEvents();
+  }, [fetchEvents]);
 
   return (
     <section className="flat-spacing sd-events-page">

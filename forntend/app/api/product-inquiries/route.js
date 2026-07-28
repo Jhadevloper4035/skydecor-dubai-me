@@ -7,6 +7,7 @@ export const runtime = "nodejs";
 
 const DEFAULT_PRODUCT_INQUIRIES_FILE = "/tmp/skydecor-product-inquiries.jsonl";
 const MAX_TEXT_LENGTH = 2500;
+const ENQUIRY_RECIPIENT_EMAIL = "sales.mgr@skydecor.me";
 
 const cleanText = (value, maxLength = 240) =>
   String(value || "")
@@ -45,6 +46,7 @@ export async function POST(request) {
   const productInquiry = {
     id: crypto.randomUUID(),
     source: "product-detail",
+    recipientEmail: ENQUIRY_RECIPIENT_EMAIL,
     submittedAt: new Date().toISOString(),
     productCode: cleanText(payload.productCode, 120).toUpperCase(),
     productName: cleanText(payload.productName, 180),

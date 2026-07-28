@@ -4,18 +4,17 @@ import { useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Link from "next/link";
 import { Pagination } from "swiper/modules";
-import { useAppDispatch, useAppSelector } from "@/store/hooks";
-import { fetchBlogs, selectBlogs } from "@/store/contentSlice";
+import useContentStore from "@/store/contentStore";
 
 export default function Blogs({
   parentClass = "flat-spacing ",
 }) {
-  const dispatch = useAppDispatch();
-  const blogs = useAppSelector(selectBlogs);
+  const blogs = useContentStore((state) => state.blogs);
+  const fetchBlogs = useContentStore((state) => state.fetchBlogs);
 
   useEffect(() => {
-    dispatch(fetchBlogs());
-  }, [dispatch]);
+    fetchBlogs();
+  }, [fetchBlogs]);
 
   return (
     <section className={parentClass}>
@@ -75,7 +74,9 @@ export default function Blogs({
                         {post.title}
                       </Link>
                     </h6>
-
+                    {post.description ? (
+                      <p className="body-text text-secondary">{post.description}</p>
+                    ) : null}
                   </div>
                 </div>
               </div>

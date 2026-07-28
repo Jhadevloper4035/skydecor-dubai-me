@@ -1,6 +1,7 @@
 "use client";
 import ProductCard1 from "@/components/productCards/ProductCard1";
-import { getProductsFromApi, localProducts } from "@/lib/productsApi";
+import { localProducts } from "@/lib/productsApi";
+import useProductStore from "@/store/productStore";
 import React, { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 
@@ -17,6 +18,7 @@ const normalizeKey = (value = "") =>
     .toLowerCase()
     .replace(/\s+/g, "-");
 
+    
 const getProductCollection = (product = {}) => {
   const productType = normalizeKey(product.productTypeSlug || product.productType);
   const category = normalizeKey(product.categorySlug || product.category);
@@ -39,22 +41,15 @@ const getProductCollection = (product = {}) => {
 };
 
 export default function Products3({ parentClass = "flat-spacing-3" }) {
-  const [products, setProducts] = useState(localProducts);
+  const storeProducts = useProductStore((state) => state.items);
+  const productsStatus = useProductStore((state) => state.itemsStatus);
+  const fetchProducts = useProductStore((state) => state.fetchProducts);
   const [activeTabKey, setActiveTabKey] = useState("");
+  const products = productsStatus === "succeeded" ? storeProducts : localProducts;
 
   useEffect(() => {
-    let isMounted = true;
-
-    getProductsFromApi({ limit: 1000, isActive: true }).then((apiProducts) => {
-      if (isMounted && apiProducts?.length) {
-        setProducts(apiProducts);
-      }
-    });
-
-    return () => {
-      isMounted = false;
-    };
-  }, []);
+    fetchProducts({ limit: 1000, isActive: true });
+  }, [fetchProducts]);
 
   const tabs = useMemo(() => {
     const collectionMap = new Map();

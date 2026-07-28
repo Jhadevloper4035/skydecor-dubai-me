@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 
-import { submitProductInquiry } from "@/lib/productsApi";
+import useInquiryStore from "@/store/inquiryStore";
 
 const initialFormState = {
   name: "",
@@ -25,8 +25,10 @@ const getProductName = (product = {}) =>
 export default function ProductInquiryModal({ product = {} }) {
   const modalRef = useRef(null);
   const [formData, setFormData] = useState(initialFormState);
-  const [status, setStatus] = useState("idle");
-  const [errorMessage, setErrorMessage] = useState("");
+  const status = useInquiryStore((state) => state.productInquiryStatus);
+  const errorMessage = useInquiryStore((state) => state.productInquiryError);
+  const submitProductInquiry = useInquiryStore((state) => state.submitProductInquiry);
+  const resetProductInquiry = useInquiryStore((state) => state.resetProductInquiry);
   const productCode = normalizeProductCode(product);
   const productName = getProductName(product);
   const isSubmitting = status === "submitting";
@@ -34,21 +36,19 @@ export default function ProductInquiryModal({ product = {} }) {
 
   useEffect(() => {
     setFormData(initialFormState);
-    setStatus("idle");
-    setErrorMessage("");
-  }, [productCode]);
+    resetProductInquiry();
+  }, [productCode, resetProductInquiry]);
 
   useEffect(() => {
     const modal = modalRef.current;
     const resetModal = () => {
       setFormData(initialFormState);
-      setStatus("idle");
-      setErrorMessage("");
+      resetProductInquiry();
     };
 
     modal?.addEventListener("hidden.bs.modal", resetModal);
     return () => modal?.removeEventListener("hidden.bs.modal", resetModal);
-  }, []);
+  }, [resetProductInquiry]);
 
   const updateField = (event) => {
     const { checked, name, type, value } = event.target;
@@ -66,8 +66,6 @@ export default function ProductInquiryModal({ product = {} }) {
 
   const submitInquiry = async (event) => {
     event.preventDefault();
-    setStatus("submitting");
-    setErrorMessage("");
 
     const payload = {
       productCode,
@@ -83,14 +81,8 @@ export default function ProductInquiryModal({ product = {} }) {
 
     try {
       await submitProductInquiry(payload);
-      setStatus("succeeded");
       setFormData(initialFormState);
-    } catch (error) {
-      setStatus("failed");
-      setErrorMessage(
-        error.message || "We could not send your inquiry. Please try again."
-      );
-    }
+    } catch {}
   };
 
   return (

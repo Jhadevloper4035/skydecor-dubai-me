@@ -11,17 +11,21 @@ const formatLabel = (value = "") =>
     .trim()
     .replace(/\b\w/g, (letter) => letter.toUpperCase());
 
-export default function Breadcumb({ product = {} }) {
+const formatSlug = (value = "") =>
+  String(value).trim().toLowerCase().replace(/\s+/g, "-");
+
+export default function Breadcumb({ product = {}, currentSlug = "" }) {
   const productType = String(product.productType || "").trim();
   const category = String(product.category || "").trim();
-  const productCode = String(
+  const productCode = formatSlug(
+    product.productCodeSlug ||
+      currentSlug ||
     product.productCode ||
-      product.productCodeSlug ||
       product.title ||
       product._id ||
       product.id ||
       "Product",
-  ).trim();
+  );
   const breadcrumbLinks = [
     productType
       ? {
@@ -63,7 +67,7 @@ export default function Breadcumb({ product = {} }) {
             <span className="text text-caption-1" aria-hidden="true">
               &gt;
             </span>
-            <span className="text text-caption-1 text-uppercase">
+            <span className="text text-caption-1">
               {productCode}
             </span>
           </div>

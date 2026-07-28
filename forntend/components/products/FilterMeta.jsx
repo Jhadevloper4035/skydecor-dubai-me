@@ -1,6 +1,11 @@
 import React from "react";
 
-export default function FilterMeta({ allProps, productLength }) {
+export default function FilterMeta({
+  allProps,
+  productLength,
+  visibleStart = 0,
+  visibleEnd = 0,
+}) {
   const appliedFilters = [
     ["productType", "setProductType"],
     ["category", "setCategory"],
@@ -13,7 +18,17 @@ export default function FilterMeta({ allProps, productLength }) {
   return (
     <div className="meta-filter-shop" style={{}}>
       <div id="product-count-grid" className="count-text">
-        <span className="count">{productLength}</span> Products Found
+        {productLength ? (
+          <>
+            Showing <span className="count">{visibleStart}</span>-
+            <span className="count">{visibleEnd}</span> of{" "}
+            <span className="count">{productLength}</span> Products
+          </>
+        ) : (
+          <>
+            <span className="count">0</span> Products Found
+          </>
+        )}
       </div>
 
       <div id="applied-filters">

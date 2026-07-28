@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { socialLinks } from "@/data/footerLinks";
+import { contactDetails } from "@/data/contactDetails";
 import { productNavigation } from "@/data/menu";
 import ScrollTop from "../common/ScrollTop";
 
@@ -72,9 +73,9 @@ export default function Footer1({ hasPaddingBottom = false }) {
             <section className="sd-footer__contact" aria-labelledby="footer-contact">
               <h2 id="footer-contact">Headquarters &amp; Contact</h2>
               <address>
-                <strong>Skydecor Dubai</strong>
-                <span>Dubai, United Arab Emirates</span>
-                <a href="mailto:info@skydecor.me">info@skydecor.me</a>
+                <strong>{contactDetails.companyName}</strong>
+                <span>{contactDetails.address}</span>
+                <a href="mailto:sales.mgr@skydecor.me">sales.mgr@skydecor.me</a>
                 <a
                   href="https://alvo.chat/3Ijc"
                   target="_blank"

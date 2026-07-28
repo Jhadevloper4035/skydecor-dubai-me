@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { submitJobApplication } from "@/lib/careersApi";
+import useInquiryStore from "@/store/inquiryStore";
 
 const emptyForm = {
   fullName: "",
@@ -24,8 +24,9 @@ const buildPayload = (job, values) =>
 
 export default function JobApplicationForm({ job }) {
   const [values, setValues] = useState(emptyForm);
-  const [status, setStatus] = useState("idle");
-  const [message, setMessage] = useState("");
+  const status = useInquiryStore((state) => state.jobApplicationStatus);
+  const errorMessage = useInquiryStore((state) => state.jobApplicationError);
+  const submitJobApplication = useInquiryStore((state) => state.submitJobApplication);
 
   const handleChange = (event) => {
     const { checked, name, type, value } = event.target;
@@ -37,21 +38,18 @@ export default function JobApplicationForm({ job }) {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    setStatus("loading");
-    setMessage("");
 
     try {
       await submitJobApplication(buildPayload(job, values));
-      setStatus("success");
-      setMessage("Application submitted successfully. Our team will review it soon.");
       setValues(emptyForm);
-    } catch (error) {
-      setStatus("error");
-      setMessage(error.message || "Unable to submit application.");
-    }
+    } catch {}
   };
 
   const isLoading = status === "loading";
+  const message =
+    status === "success"
+      ? "Application submitted successfully. Our team will review it soon."
+      : errorMessage;
 
   return (
     <form className="sd-career-form" onSubmit={handleSubmit}>
