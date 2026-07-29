@@ -5,8 +5,7 @@ export const aboutDirectors = [
     image: "/images/director/mr-manoj-bhansal.jpg",
     alt: "Mr Manoj Bansal portrait",
     paragraphs: [
-      "Guiding Skydecor Dubai with a clear focus on premium decorative surfaces, reliable customer service, and long-term market growth across the UAE.",
-      "The leadership approach combines product knowledge, practical project understanding, and close coordination with architects, designers, contractors, and dealer partners.",
+      "Manoj Bansal is the Managing Director of Skydecor Laminates, bringing extensive industry expertise and strategic leadership to the company's growth journey. His commitment to operational excellence, product quality, and strong business relationships has been instrumental in expanding Skydecor's presence and reinforcing its reputation for delivering innovative and reliable decorative surface solutions.",
     ],
   },
   {
@@ -15,18 +14,16 @@ export const aboutDirectors = [
     image: "/images/director/mr-ustav-garg.jpg",
     alt: "Mr Utsav Garg portrait",
     paragraphs: [
-      "Overseeing warehouse readiness, dispatch planning, and product availability so customers receive dependable support from inquiry through delivery.",
-      "The operations team keeps stock movement organized, quality checks consistent, and communication steady for residential and commercial projects.",
+      "Utsav Garg is the Managing Director of Skydecor Laminates, driving the brand's vision through innovation, quality, and customer-centric leadership. With a forward-thinking approach and a passion for excellence, he has played a pivotal role in establishing Skydecor as one of India's fastest-growing surface decor brands, known for its premium laminates and design-led solutions.",
     ],
   },
   {
-    name: "Director - Sales",
-    role: "Client Relations & Market Development",
+    name: "Mr Paul Kalathingal",
+    role: "Managing Director",
     image: "/images/director/mr-paul.jpeg",
-    alt: "Skydecor Dubai sales director portrait",
+    alt: "Mr Paul Kalathingal portrait",
     paragraphs: [
-      "Building strong relationships with consultants, contractors, dealers, and interior professionals while helping customers choose the right Skydecor collection.",
-      "The sales direction is centered on responsive guidance, sample support, catalogue clarity, and practical product recommendations for every project scale.",
+      "Paul Kalathingal, Managing Director, brings 29 years of international business experience across the Middle East and Asia Pacific to Sky Decor in UAE. Before entering the UAE's interior and architecture sector, he built his career in technical and business development roles within the international oilfield services industry, working across MENA and Asia Pacific. In 2015, he founded Poly Craft Group, and later established the joint venture with Sky Decor, where he now leads the division's strategy and operations across the UAE market.",
     ],
   },
 ];
