@@ -77,12 +77,12 @@ const nextConfig = {
       },
       {
         source: "/catalogue",
-        destination: "/catalog",
+        destination: "/e-catalogues",
         permanent: true,
       },
       {
         source: "/catalouge",
-        destination: "/catalog",
+        destination: "/e-catalogues",
         permanent: true,
       },
     ];

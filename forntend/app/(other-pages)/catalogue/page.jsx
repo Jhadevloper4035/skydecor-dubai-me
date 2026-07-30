@@ -4,5 +4,5 @@ import { redirect } from "next/navigation";
 export const metadata = pageSeoMetadata("legacyCatalog");
 
 export default function LegacyCatalogRoute() {
-  redirect("/catalog");
+  redirect("/e-catalogues");
 }

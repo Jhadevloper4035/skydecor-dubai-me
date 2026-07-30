@@ -9,7 +9,7 @@ import { contactDetails } from "@/data/contactDetails";
 import { socialLinks } from "@/data/footerLinks";
 
 const quickLinks = [
-  { href: "/catalog", label: "Catalogs" },
+  { href: "/e-catalogues", label: "E-Catalogues" },
   { href: "/certificates", label: "Certificates" },
   { href: "/contact", label: "Contact Us", mobileLabel: "Contact" },
 ];

@@ -5,6 +5,7 @@ import Footer1 from "@/components/footers/Footer1";
 import GlobalSpinner from "@/components/common/GlobalSpinner";
 import LegacyScripts from "@/components/common/LegacyScripts";
 import RouteLoadingController from "@/components/common/RouteLoadingController";
+import FloatingWhatsApp from "@/components/common/FloatingWhatsApp";
 
 import '@fortawesome/fontawesome-free/css/all.min.css'
 
@@ -210,6 +211,7 @@ export default function RootLayout({ children }) {
             <MobileMenu />
             <SearchModal />
             <LegacyScripts />
+            <FloatingWhatsApp />
           </Context>
         </StoreProvider>
       </body>

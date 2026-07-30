@@ -12,7 +12,7 @@ import ScrollTop from "../common/ScrollTop";
 const importantLinks = [
   { label: "About Us", href: "/about-us" },
   { label: "All Products", href: "/products" },
-  { label: "Catalogs", href: "/catalog" },
+  { label: "E-Catalogues", href: "/e-catalogues" },
   { label: "Certificates", href: "/certificates" },
   { label: "Blog", href: "/blog-default" },
   { label: "Careers", href: "/career" },
@@ -27,7 +27,7 @@ const footerSections = [
       { label: "Home", href: "/" },
       { label: "About Us", href: "/about-us" },
       { label: "All Products", href: "/products" },
-      { label: "Catalogs", href: "/catalog" },
+      { label: "E-Catalogues", href: "/e-catalogues" },
       { label: "Certificates", href: "/certificates" },
       { label: "Blog", href: "/blog-default" },
       { label: "Contact", href: "/contact" },

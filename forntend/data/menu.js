@@ -353,7 +353,7 @@ export const blogLinks = [
 
 export const otherPageLinks = [
   { href: "/blog-default", name: "Blog" },
-  { href: "/catalog", name: "Catalogues" },
+  { href: "/e-catalogues", name: "E-Catalogues" },
   { href: "/certificates", name: "Certificates" },
   // { href: "/events", name: "Events" },
   // { href: "/FAQs", name: "FAQs" },

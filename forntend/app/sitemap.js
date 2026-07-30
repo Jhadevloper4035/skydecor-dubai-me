@@ -15,7 +15,7 @@ const staticRoutes = [
   "/contact",
   "/FAQs",
   "/term-of-use",
-  "/catalog",
+  "/e-catalogues",
   "/certificates",
   "/career",
   "/events",

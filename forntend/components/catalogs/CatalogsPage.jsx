@@ -44,18 +44,18 @@ export default function CatalogsPage() {
           <div className="sd-catalogs-library__head">
             <div>
               <span className="sd-events-kicker">Browse Collections</span>
-              <h3 className="heading">E-catalogs</h3>
+              <h3 className="heading">E-Catalogues</h3>
             </div>
             <p aria-live="polite">
               Showing <strong>{visibleCatalogs.length}</strong>{" "}
-              {visibleCatalogs.length === 1 ? "catalog" : "catalogs"}
+              {visibleCatalogs.length === 1 ? "catalogue" : "catalogues"}
             </p>
           </div>
 
           <div
             className="sd-catalogs-tabs"
             role="tablist"
-            aria-label="Filter catalogs"
+            aria-label="Filter catalogues"
           >
             {catalogCategories.map((category) => (
               <button
@@ -81,11 +81,11 @@ export default function CatalogsPage() {
                   rel="noopener noreferrer"
                   data-pswp-width="1240"
                   data-pswp-height="1520"
-                  aria-label={`View ${catalog.title} catalog cover`}
+                  aria-label={`View ${catalog.title} catalogue cover`}
                 >
                   <Image
                     src={catalog.image}
-                    alt={`${catalog.title} catalog cover`}
+                    alt={`${catalog.title} catalogue cover`}
                     width={620}
                     height={760}
                   />
@@ -94,7 +94,7 @@ export default function CatalogsPage() {
                   </span>
                   <span className="sd-catalog-card__preview">
                     <i className="fa-solid fa-magnifying-glass-plus" />
-                    View catalog
+                    View catalogue
                   </span>
                 </a>
                 <div className="sd-catalog-card__body">

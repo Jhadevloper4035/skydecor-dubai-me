@@ -26,7 +26,7 @@ export const seoPages = {
   contact: {
     title: "Contact Skydecor Dubai",
     description:
-      "Contact Skydecor Dubai for HPL samples, product information, catalogs, and project support across the UAE.",
+      "Contact Skydecor Dubai for HPL samples, product information, catalogues, and project support across the UAE.",
     path: "/contact",
   },
   faq: {
@@ -41,10 +41,10 @@ export const seoPages = {
     path: "/term-of-use",
   },
   catalog: {
-    title: "E-Catalogs & Product Brochures | Skydecor Dubai",
+    title: "E-Catalogues & Product Brochures | Skydecor Dubai",
     description:
-      "Browse and download Skydecor product catalogs for decorative HPL, acrylic surfaces, liner HPL, and Soffitto panels.",
-    path: "/catalog",
+      "Browse and download Skydecor product catalogues for decorative HPL, acrylic surfaces, liner HPL, and Soffitto panels.",
+    path: "/e-catalogues",
   },
   certificates: {
     title: "Certificates & Test Reports | Skydecor Dubai",
@@ -91,9 +91,9 @@ export const seoPages = {
     noIndex: true,
   },
   legacyCatalog: {
-    title: "Catalogs",
-    description: "This Skydecor Dubai catalogue URL has moved to the catalogs page.",
-    path: "/catalog",
+    title: "E-Catalogues",
+    description: "This Skydecor Dubai catalogue URL has moved to the E-Catalogues page.",
+    path: "/e-catalogues",
     noIndex: true,
   },
   legacyContact: {

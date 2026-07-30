@@ -1001,6 +1001,18 @@ body[style*="overflow: hidden"] :is(.fixed-top, .fixed-bottom, .is-fixed, .stick
     background: #d9d0c4;
 }
 
+.sd-about-commitments .sd-about-section-head {
+    width: 100%;
+    max-width: none;
+    margin: 0 auto clamp(32px, 4vw, 48px);
+    text-align: center;
+}
+
+.sd-about-commitments .sd-about-section-head h2 {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .sd-about-directors {
     padding: clamp(64px, 7vw, 96px) 0;
     background: #242321;
@@ -1097,6 +1109,7 @@ body[style*="overflow: hidden"] :is(.fixed-top, .fixed-bottom, .is-fixed, .stick
     padding: clamp(28px, 3vw, 40px) clamp(22px, 3vw, 36px);
     border-right: 1px solid rgba(37, 30, 24, 0.26);
     border-bottom: 1px solid rgba(37, 30, 24, 0.26);
+    text-align: center;
 }
 
 .sd-about-commitment:last-child {
@@ -1114,7 +1127,7 @@ body[style*="overflow: hidden"] :is(.fixed-top, .fixed-bottom, .is-fixed, .stick
 
 .sd-about-commitment p {
     max-width: 360px;
-    margin: 0;
+    margin: 0 auto;
     color: #514a43;
     font-size: 14px;
     line-height: 1.65;
@@ -16958,5 +16971,51 @@ header.main-header .header-sticky.active {
   .modal-quick-view .tf-product-info-list {
     max-width: none;
     margin-left: 30px;
+  }
+}
+
+.sd-floating-whatsapp {
+  position: fixed;
+  right: 20px;
+  bottom: 24px;
+  z-index: 1000;
+}
+
+.sd-floating-whatsapp__button {
+  display: inline-flex;
+  width: 60px;
+  height: 60px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #42db87;
+  color: #fff;
+  font-size: 30px;
+  text-decoration: none;
+  box-shadow: 0 0 0 0 rgba(66, 219, 135, 0.78);
+  animation: sd-whatsapp-pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+}
+
+.sd-floating-whatsapp__button:hover {
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+@keyframes sd-whatsapp-pulse {
+  to {
+    box-shadow: 0 0 0 30px rgba(66, 219, 135, 0);
+  }
+}
+
+@media (max-width: 575px) {
+  .sd-floating-whatsapp {
+    right: 14px;
+    bottom: 18px;
+  }
+
+  .sd-floating-whatsapp__button {
+    width: 54px;
+    height: 54px;
+    font-size: 27px;
   }
 }

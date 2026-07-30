@@ -29,8 +29,8 @@ export default async function ThankYouPage({ searchParams }) {
             <Link href="/products" className="tf-btn btn-fill">
               <span className="text text-button">Explore Products</span>
             </Link>
-            <Link href="/catalog" className="btn-line">
-              View Catalogs
+            <Link href="/e-catalogues" className="btn-line">
+              View E-Catalogues
             </Link>
           </div>
         </div>

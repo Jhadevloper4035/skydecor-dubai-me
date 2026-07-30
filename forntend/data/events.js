@@ -68,14 +68,14 @@ export const events = [
       "A trade-show presence built around new surface ideas, product conversations, and meeting partners from across the region.",
     description: [
       "Skydecor participated in Dubai Wood Show with a display crafted for professionals who work with wood, panels, HPL, and interior surface materials.",
-      "Visitors explored our product range, discussed upcoming requirements, and connected with the team for catalogs, samples, and project support.",
+      "Visitors explored our product range, discussed upcoming requirements, and connected with the team for catalogues, samples, and project support.",
       "The event helped strengthen relationships with dealers, designers, and construction teams across the UAE market.",
     ],
     highlights: [
       "Regional trade-show participation",
       "Product range display",
       "Dealer and designer meetings",
-      "Catalog and sample requests",
+      "Catalogue and sample requests",
     ],
     gallery: [
       "/images/gallery/gallery-22.jpg",
