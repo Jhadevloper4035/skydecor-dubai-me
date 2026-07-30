@@ -480,11 +480,11 @@
 }
 
 .sd-catalogs-library__head {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: 30px;
+    display: grid;
+    justify-items: center;
+    gap: 12px;
     margin-bottom: 28px;
+    text-align: center;
 }
 
 .sd-catalogs-library__head p {
@@ -500,6 +500,7 @@
 .sd-catalogs-tabs {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 10px;
     margin-bottom: 38px;
 }
@@ -667,13 +668,12 @@
     }
 
     .sd-catalogs-library__head {
-        align-items: flex-start;
-        flex-direction: column;
         gap: 10px;
     }
 
     .sd-catalogs-tabs {
         flex-wrap: nowrap;
+        justify-content: flex-start;
         margin-right: -15px;
         padding-right: 15px;
         overflow-x: auto;
@@ -2018,11 +2018,11 @@ body[style*="overflow: hidden"] :is(.fixed-top, .fixed-bottom, .is-fixed, .stick
 }
 
 .sd-certificates-library__head {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: 30px;
+    display: grid;
+    justify-items: center;
+    gap: 12px;
     margin-bottom: 28px;
+    text-align: center;
 }
 
 .sd-certificates-library__head p {
@@ -2039,6 +2039,7 @@ body[style*="overflow: hidden"] :is(.fixed-top, .fixed-bottom, .is-fixed, .stick
 .sd-certificates-tabs {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 10px;
     margin-bottom: 36px;
 }
@@ -2327,13 +2328,12 @@ body[style*="overflow: hidden"] :is(.fixed-top, .fixed-bottom, .is-fixed, .stick
     }
 
     .sd-certificates-library__head {
-        align-items: flex-start;
-        flex-direction: column;
         gap: 10px;
     }
 
     .sd-certificates-tabs {
         flex-wrap: nowrap;
+        justify-content: flex-start;
         margin-right: -15px;
         padding-right: 15px;
         overflow-x: auto;
