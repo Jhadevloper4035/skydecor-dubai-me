@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 
 import { socialLinks } from "@/data/footerLinks";
 import { contactDetails } from "@/data/contactDetails";
@@ -23,34 +24,53 @@ const footerSections = [
   {
     title: "Quick Links",
     links: [
+      { label: "Home", href: "/" },
+      { label: "About Us", href: "/about-us" },
       { label: "All Products", href: "/products" },
-      { label: "About Skydecor", href: "/about-us" },
-      { label: "Contact Our Team", href: "/contact" },
-      { label: "Careers", href: "/career" },
-    ],
-  },
-  {
-    title: "Design Ideas",
-    links: [
-      { label: "Bedroom Design", href: "/bedroom-design" },
-      { label: "Living Room Design", href: "/living-room-design" },
-      { label: "Kitchen Design", href: "/kitchen-design" },
-      { label: "Workspace Design", href: "/workspace-design" },
-      { label: "Kidroom design", href: "/kidroom-design" },
+      { label: "Catalogs", href: "/catalog" },
+      { label: "Certificates", href: "/certificates" },
+      { label: "Blog", href: "/blog-default" },
+      { label: "Contact", href: "/contact" },
     ],
   },
   {
     title: "Legal",
     links: [
       { label: "Terms of Use", href: "/term-of-use" },
-      { label: "Website Terms", href: "/term-of-use" },
+      { label: "Privacy Policy", href: "/term-of-use" },
       { label: "FAQs", href: "/FAQs" },
-      { label: "Contact", href: "/contact" },
     ],
   },
 ];
 
 export default function Footer1({ hasPaddingBottom = false }) {
+  const [newsletterEmail, setNewsletterEmail] = useState("");
+  const [newsletterStatus, setNewsletterStatus] = useState("idle");
+
+  const handleNewsletterSubmit = async (event) => {
+    event.preventDefault();
+    setNewsletterStatus("loading");
+
+    try {
+      const response = await fetch("/api/newsletter-subscribers", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: newsletterEmail,
+        }),
+      });
+
+      const data = await response.json().catch(() => ({}));
+
+      if (!response.ok) throw new Error(data.message || "Newsletter signup failed.");
+
+      setNewsletterEmail("");
+      setNewsletterStatus("success");
+    } catch {
+      setNewsletterStatus("error");
+    }
+  };
+
   return (
     <>
       <footer
@@ -123,6 +143,30 @@ export default function Footer1({ hasPaddingBottom = false }) {
                   </ul>
                 </section>
               ))}
+              <section className="sd-footer__newsletter" aria-labelledby="footer-newsletter">
+                <h2 id="footer-newsletter">Newsletter</h2>
+                <p>Get product updates, catalogue launches, and project ideas by email.</p>
+                <form onSubmit={handleNewsletterSubmit}>
+                  <input
+                    type="email"
+                    name="email"
+                    value={newsletterEmail}
+                    onChange={(event) => setNewsletterEmail(event.target.value)}
+                    placeholder="Enter your email"
+                    aria-label="Email address"
+                    required
+                  />
+                  <button
+                    type="submit"
+                    aria-label="Subscribe"
+                    disabled={newsletterStatus === "loading"}
+                  >
+                    {newsletterStatus === "loading" ? "Sending" : "Submit"}
+                  </button>
+                </form>
+                {newsletterStatus === "success" && <span>Thank you for subscribing.</span>}
+                {newsletterStatus === "error" && <span>Please try again.</span>}
+              </section>
             </div>
           </div>
 

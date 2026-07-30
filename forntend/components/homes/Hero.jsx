@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 export default function Hero() {
   return (
-    <section className="tf-slideshow slider-default slider-effect-fade">
+    <section className="tf-slideshow slider-default slider-effect-fade sd-hero">
       <Swiper
         effect="fade"
         spaceBetween={0}
@@ -42,8 +42,13 @@ export default function Hero() {
                         </span>
                       ))}
                     </div>
+                    {slide.description && (
+                      <p className="fade-item fade-item-3 sd-hero__description text-white">
+                        {slide.description}
+                      </p>
+                    )}
                   </div>
-                  <div className="fade-item fade-item-3 box-btn-slider">
+                  <div className="fade-item fade-item-4 box-btn-slider">
                     <Link
                       href={`/products`}
                       className="tf-btn btn-fill btn-white"

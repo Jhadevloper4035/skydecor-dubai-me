@@ -113,7 +113,7 @@ export default function Nav() {
   }`}
 >
   <Link
-    href="/resources"
+    href={otherPageLinks[0].href}
     className="item-link"
     aria-haspopup="true"
   >

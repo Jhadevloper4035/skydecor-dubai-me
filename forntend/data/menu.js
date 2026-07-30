@@ -422,26 +422,6 @@ export const productNavigation = {
         { name: "Woodgrain", href: "/products/product-type/mdf-boards/category/woodgrain" },
       ],
     },
-    {
-      name: "Acoustic Panels",
-      href: "/products/product-type/acoustic-panels",
-      categoryLinks: [
-        { name: "Abstract", href: "/products/product-type/acoustic-panels/category/abstract" },
-        { name: "Solid", href: "/products/product-type/acoustic-panels/category/solid" },
-        { name: "Stone", href: "/products/product-type/acoustic-panels/category/stone" },
-        { name: "Woodgrain", href: "/products/product-type/acoustic-panels/category/woodgrain" },
-      ],
-    },
-    {
-      name: "Matteva",
-      href: "/products/product-type/matteva",
-      categoryLinks: [
-        { name: "Abstract", href: "/products/product-type/matteva/category/abstract" },
-        { name: "Solid", href: "/products/product-type/matteva/category/solid" },
-        { name: "Stone", href: "/products/product-type/matteva/category/stone" },
-        { name: "Woodgrain", href: "/products/product-type/matteva/category/woodgrain" },
-      ],
-    },
   ],
   bestSeller: {
     heading: "Best seller",

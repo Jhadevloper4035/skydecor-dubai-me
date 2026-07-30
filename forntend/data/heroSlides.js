@@ -6,6 +6,7 @@ export const slides = [
     alt: "Skydecor-hpl",
     subheading: "Skydecor DUBAI HPL",
     heading: "Premium 1mm HPL",
+    description: "Durable high-pressure laminates for walls, furniture, partitions, and commercial interiors.",
     btnText: "Explore Collection",
   },
   {
@@ -13,6 +14,7 @@ export const slides = [
     alt: "Skydecor-hpl",
     subheading: "LUXURY SURFACES",
     heading: "Elegant 0.8mm Designs",
+    description: "Lightweight decorative surfaces with refined textures for modern residential and retail spaces.",
     btnText: "View Designs",
   },
   {
@@ -20,6 +22,7 @@ export const slides = [
     alt: "Skydecor-hpl",
     subheading: "MODERN INTERIORS",
     heading: "Stylish & Durable\nHPL Sheets",
+    description: "Scratch-resistant HPL sheets made for clean finishing and long-lasting interior applications.",
     btnText: "Explore Collection",
   },
   {
@@ -27,6 +30,7 @@ export const slides = [
     alt: "Skydecor-hpl",
     subheading: "HIGH GLOSS & MATTE",
     heading: "Finish That Defines\nLuxury Spaces",
+    description: "Choose high gloss or matte finishes to match premium joinery, panels, and feature walls.",
     btnText: "Explore Range",
   },
   {
@@ -34,6 +38,7 @@ export const slides = [
     alt: "Skydecor-hpl",
     subheading: "INTERIOR SOLUTIONS",
     heading: "Designed for\nModern Living",
+    description: "Interior surface solutions built for homes, offices, hospitality, and retail environments.",
     btnText: "Discover More",
   },
   {
@@ -41,6 +46,7 @@ export const slides = [
     alt: "Skydecor-hpl",
     subheading: "PREMIUM QUALITY",
     heading: "Engineered for\nDurability & Style",
+    description: "Reliable laminate collections with decorative finishes for demanding daily-use spaces.",
     btnText: "View Collection",
   },
   {
@@ -48,6 +54,7 @@ export const slides = [
     alt: "Skydecor-hpl",
     subheading: "DUBAI COLLECTION",
     heading: "Global Designs\nTimeless Appeal",
+    description: "A curated Dubai-ready range of colors, grains, stones, and abstract surface designs.",
     btnText: "Explore Range",
   },
   {
@@ -55,6 +62,7 @@ export const slides = [
     alt: "Skydecor-hpl",
     subheading: "1mm & 0.8mm HPL",
     heading: "Perfect Balance of\nStrength & Elegance",
+    description: "Flexible thickness options for furniture makers, designers, and project contractors.",
     btnText: "Browse Now",
   },
   {
@@ -62,6 +70,7 @@ export const slides = [
     alt: "Skydecor-hpl",
     subheading: "Skydecor EXCLUSIVE",
     heading: "Upgrade Your\nInterior Spaces",
+    description: "Bring cleaner detailing, richer textures, and durable finishes into every interior project.",
     btnText: "Explore Range",
   }
 ];

@@ -44,7 +44,7 @@ export default function Blogs({
             },
           }}
           dir="ltr"
-          className="swiper tf-sw-recent"
+          className="swiper tf-sw-recent sd-home-blog-slider"
           modules={[Pagination]}
           pagination={{ clickable: true }}
         >
@@ -78,6 +78,10 @@ export default function Blogs({
                       <p className="body-text text-secondary">{post.description}</p>
                     ) : null}
                   </div>
+                  <Link href={post.href} className="link text-button sd-home-blog-readmore">
+                    Read More
+                    <i className="icon icon-arrowUpRight" aria-hidden="true" />
+                  </Link>
                 </div>
               </div>
             </SwiperSlide>

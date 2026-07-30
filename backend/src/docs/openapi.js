@@ -584,6 +584,7 @@ const openApiDocument = {
     { name: 'Products' },
     { name: 'Product Enquiries' },
     { name: 'Enquiries' },
+    { name: 'Newsletter Subscribers' },
     { name: 'QR Codes' },
     { name: 'Uploads' },
     { name: 'Scan' },
@@ -857,6 +858,84 @@ const openApiDocument = {
     ...resourcePaths('product-enquiry', productEnquiryCrud),
     ...resourcePaths('enquiries', enquiryCrud),
     ...resourcePaths('enquiry', enquiryCrud),
+    '/api/v1/newsletter-subscribers': {
+      get: {
+        tags: ['Newsletter Subscribers'],
+        summary: 'List newsletter subscribers',
+        security: bearerAuth,
+        parameters: [
+          ...pageLimitParams,
+          enumQuery('status', ['subscribed', 'unsubscribed']),
+          textQuery('email', 'subscriber@example.me'),
+        ],
+        responses: {
+          200: {
+            ...ok('newsletter subscribers list'),
+            content: {
+              'application/json': {
+                schema: listResponse('subscribers', 'NewsletterSubscriber'),
+              },
+            },
+          },
+          401: unauthorized,
+        },
+      },
+      post: {
+        tags: ['Newsletter Subscribers'],
+        summary: 'Create newsletter subscriber',
+        requestBody: jsonBody('NewsletterSubscriberCreate'),
+        responses: {
+          201: {
+            ...created('newsletter subscriber created'),
+            content: {
+              'application/json': {
+                schema: itemResponse('subscriber', 'NewsletterSubscriber'),
+              },
+            },
+          },
+          400: validationError,
+        },
+      },
+    },
+    '/api/v1/newsletter': {
+      get: {
+        tags: ['Newsletter Subscribers'],
+        summary: 'List newsletter subscribers',
+        security: bearerAuth,
+        parameters: [
+          ...pageLimitParams,
+          enumQuery('status', ['subscribed', 'unsubscribed']),
+          textQuery('email', 'subscriber@example.me'),
+        ],
+        responses: {
+          200: {
+            ...ok('newsletter subscribers list'),
+            content: {
+              'application/json': {
+                schema: listResponse('subscribers', 'NewsletterSubscriber'),
+              },
+            },
+          },
+          401: unauthorized,
+        },
+      },
+      post: {
+        tags: ['Newsletter Subscribers'],
+        summary: 'Create newsletter subscriber',
+        requestBody: jsonBody('NewsletterSubscriberCreate'),
+        responses: {
+          201: {
+            ...created('newsletter subscriber created'),
+            content: {
+              'application/json': {
+                schema: itemResponse('subscriber', 'NewsletterSubscriber'),
+              },
+            },
+          },
+          400: validationError,
+        },
+      },
+    },
     ...resourcePaths('products', productCrud, {
       '/api/v1/{base}/filters': {
         get: {
@@ -1531,6 +1610,29 @@ const openApiDocument = {
       },
       EnquiryUpdate: {
         allOf: [{ $ref: '#/components/schemas/EnquiryCreate' }],
+      },
+      NewsletterSubscriber: {
+        type: 'object',
+        properties: {
+          _id: objectId,
+          email: { type: 'string', format: 'email', example: 'subscriber@example.me' },
+          source: { type: 'string', enum: ['footer', 'website', 'admin'] },
+          status: { type: 'string', enum: ['subscribed', 'unsubscribed'] },
+          subscribedAt: dateTime,
+          lastSubmittedAt: dateTime,
+          ipAddress: { type: 'string' },
+          userAgent: { type: 'string' },
+          createdAt: dateTime,
+          updatedAt: dateTime,
+        },
+      },
+      NewsletterSubscriberCreate: {
+        type: 'object',
+        required: ['email'],
+        properties: {
+          email: { type: 'string', format: 'email', example: 'subscriber@example.me' },
+          source: { type: 'string', enum: ['footer', 'website', 'admin'], default: 'footer' },
+        },
       },
       ProductEnquiry: {
         type: 'object',
