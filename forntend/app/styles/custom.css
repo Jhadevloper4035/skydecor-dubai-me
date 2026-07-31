@@ -16976,8 +16976,8 @@ header.main-header .header-sticky.active {
 
 .sd-floating-whatsapp {
   position: fixed;
-  right: 20px;
-  bottom: 24px;
+  right: 76px;
+  bottom: 74px;
   z-index: 1000;
 }
 
@@ -17009,8 +17009,8 @@ header.main-header .header-sticky.active {
 
 @media (max-width: 575px) {
   .sd-floating-whatsapp {
-    right: 14px;
-    bottom: 18px;
+    right: 68px;
+    bottom: 66px;
   }
 
   .sd-floating-whatsapp__button {

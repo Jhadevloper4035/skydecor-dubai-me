@@ -4,5 +4,5 @@ export const contactDetails = {
   email: "sales.mgr@skydecor.me",
   phoneLabel: "04-5751322, 058-8939560",
   phoneHref: "tel:045751322",
-  whatsappHref: "https://alvo.chat/3Ijc",
+  whatsappHref: "https://wa.me/971582093821",
 };

@@ -97,7 +97,7 @@ export default function Footer1({ hasPaddingBottom = false }) {
                 <span>{contactDetails.address}</span>
                 <a href="mailto:sales.mgr@skydecor.me">sales.mgr@skydecor.me</a>
                 <a
-                  href="https://alvo.chat/3Ijc"
+                  href={contactDetails.whatsappHref}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
