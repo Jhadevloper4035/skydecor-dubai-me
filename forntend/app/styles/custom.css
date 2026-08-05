@@ -4584,7 +4584,7 @@ a:focus {
     display: inline-block;
     font-family: var(--default-font);
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 400;
     line-height: 1.6em;
     text-transform: capitalize;
     color: var(--primary-color);
