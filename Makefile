@@ -1,6 +1,6 @@
 # SkyDecor Dubai - Docker Makefile
 
-up:
+dev-up:
 	docker compose -f docker-compose.yaml --env-file .env.development --profile dev up -d
 
 up-all:

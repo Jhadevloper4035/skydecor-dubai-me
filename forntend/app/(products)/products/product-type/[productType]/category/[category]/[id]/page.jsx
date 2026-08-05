@@ -2,6 +2,7 @@ import ProductDetailStoreView from "@/components/productDetails/ProductDetailSto
 import SeoJsonLd from "@/components/common/SeoJsonLd";
 import { findFallbackProduct, getProductFromApi } from "@/lib/productsApi";
 import { pageMetadata, productSchema, readableText } from "@/lib/seoMetadata";
+import { notFound } from "next/navigation";
 
 const cleanText = (value = "") => String(value || "").trim();
 
@@ -20,6 +21,16 @@ const getPath = ({ productType, category, id }) =>
 export async function generateMetadata({ params }) {
   const { productType, category, id } = await params;
   const product = await getProductForPage(id);
+
+  if (!product) {
+    return pageMetadata({
+      title: "Product Not Found | Skydecor Dubai",
+      description: "The requested Skydecor Dubai product could not be found.",
+      path: getPath({ productType, category, id }),
+      noIndex: true,
+    });
+  }
+
   const productCode = getProductCode(product, id);
   const productName = readableText(
     product.productName || product.title || product.designName
@@ -48,6 +59,7 @@ export async function generateMetadata({ params }) {
 export default async function ProductDetailPage({ params }) {
   const { productType, category, id } = await params;
   const product = await getProductForPage(id);
+  if (!product) notFound();
 
   return (
     <>

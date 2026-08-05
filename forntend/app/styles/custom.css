@@ -15,8 +15,8 @@
     --divider-color: #00000014;
     --dark-divider-color: #FFFFFF1A;
     --error-color: rgb(230, 87, 87);
-    --default-font: "DM Sans", sans-serif;
-    --accent-font: "Space Grotesk", sans-serif;
+    --default-font: "Poppins", sans-serif;
+    --accent-font: "Montserrat", sans-serif;
 }
 
 /* Product-card actions use one quiet, consistent icon language. */
@@ -2872,7 +2872,7 @@ body[style*="overflow: hidden"] :is(.fixed-top, .fixed-bottom, .is-fixed, .stick
 }
 
 .sky-product-detail-section {
-    font-family: "Kumbh Sans", sans-serif;
+    font-family: "Poppins", sans-serif;
     font-size: 16px;
     line-height: 26px;
     color: var(--main);
@@ -2881,14 +2881,14 @@ body[style*="overflow: hidden"] :is(.fixed-top, .fixed-bottom, .is-fixed, .stick
 #ask_question,
 #delivery_return,
 #share_social {
-    font-family: "Kumbh Sans", sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
 .sky-product-detail-section :where(h1, h2, h3, h4, h5, h6, p, a, button, label, input, textarea, select, .sky-product-spec-label, .sky-product-spec-value),
 #ask_question :where(h1, h2, h3, h4, h5, h6, p, a, button, label, input, textarea, select),
 #delivery_return :where(h1, h2, h3, h4, h5, h6, p, a, button, label, input, textarea, select),
 #share_social :where(h1, h2, h3, h4, h5, h6, p, a, button, label, input, textarea, select) {
-    font-family: "Kumbh Sans", sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
 #share_social .sky-share-close {
@@ -4602,7 +4602,7 @@ a:focus {
     letter-spacing: -0.02em;
     text-transform: uppercase;
     margin-bottom: 0;
-    cursor: none;
+    cursor: auto;
 }
 
 .section-title h2 {
@@ -4612,7 +4612,7 @@ a:focus {
     letter-spacing: -0.02em;
     text-transform: uppercase;
     margin-bottom: 0;
-    cursor: none;
+    cursor: auto;
 }
 
 .section-title p {
@@ -5166,7 +5166,7 @@ header.main-header .header-sticky.active {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    cursor: none;
+    cursor: auto;
     -webkit-transition: all 0.4s ease-in-out;
     -o-transition: all 0.4s ease-in-out;
     transition: all 0.4s ease-in-out;
@@ -5331,7 +5331,7 @@ header.main-header .header-sticky.active {
     -webkit-writing-mode: vertical-rl;
         -ms-writing-mode: tb-rl;
             writing-mode: vertical-rl;
-    cursor: none;
+    cursor: auto;
     color: transparent;
     background-clip: text;
     -webkit-background-clip: text;
@@ -6463,7 +6463,7 @@ header.main-header .header-sticky.active {
 .project-item-image a {
     display: block;
     border-radius: 20px;
-    cursor: none;
+    cursor: auto;
     overflow: hidden;
 }
 
@@ -7032,7 +7032,7 @@ header.main-header .header-sticky.active {
 }
 
 .testimonial-slider .swiper-wrapper {
-    cursor: none;
+    cursor: auto;
 }
 
 .testimonial-item {
@@ -7430,7 +7430,7 @@ header.main-header .header-sticky.active {
 }
 
 .post-featured-image a {
-    cursor: none;
+    cursor: auto;
     display: block;
     border-radius: 20px;
     overflow: hidden;
@@ -7977,7 +7977,7 @@ header.main-header .header-sticky.active {
     color: var(--white-color);
     text-transform: uppercase;
     margin-bottom: 10px;
-    cursor: none;
+    cursor: auto;
 }
 
 .page-header-box ol {
@@ -8243,7 +8243,7 @@ header.main-header .header-sticky.active {
 
 .watch-our-video-circle a {
     display: block;
-    cursor: none;
+    cursor: auto;
     border-radius: 50%;
 }
 
@@ -8487,7 +8487,7 @@ header.main-header .header-sticky.active {
 
 .team-item-image a {
     display: block;
-    cursor: none;
+    cursor: auto;
 }
 
 .team-item-image figure {
@@ -9724,7 +9724,7 @@ header.main-header .header-sticky.active {
 }
 
 .page-gallery-box .photo-gallery a {
-    cursor: none;
+    cursor: auto;
 }
 
 .page-gallery-box .photo-gallery figure {
@@ -9759,7 +9759,7 @@ header.main-header .header-sticky.active {
 .video-gallery-image a {
     position: relative;
     display: block;
-    cursor: none;
+    cursor: auto;
 }
 
 .video-gallery-image a::before {
@@ -9811,7 +9811,7 @@ header.main-header .header-sticky.active {
     border-radius: 50%;
     height: 60px;
     width: 60px;
-    cursor: none;
+    cursor: auto;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -11604,7 +11604,7 @@ header.main-header .header-sticky.active {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    cursor: none;
+    cursor: auto;
     -webkit-transition: all 0.4s ease-in-out;
     -o-transition: all 0.4s ease-in-out;
     transition: all 0.4s ease-in-out;
@@ -12782,7 +12782,7 @@ header.main-header .header-sticky.active {
 }
 
 .testimonial-slider-metal .swiper-wrapper {
-    cursor: none;
+    cursor: auto;
 }
 
 .testimonial-item-metal {
@@ -13720,7 +13720,7 @@ header.main-header .header-sticky.active {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    cursor: none;
+    cursor: auto;
     -webkit-transition: all 0.4s ease-in-out;
     -o-transition: all 0.4s ease-in-out;
     transition: all 0.4s ease-in-out;
@@ -14171,7 +14171,7 @@ header.main-header .header-sticky.active {
 .service-item-image-elite a {
     display: block;
     border-radius: 20px;
-    cursor: none;
+    cursor: auto;
     overflow: hidden;
 }
 
@@ -15160,7 +15160,7 @@ header.main-header .header-sticky.active {
 }
 
 .testimonial-slider-elite .swiper-wrapper {
-    cursor: none;
+    cursor: auto;
 }
 
 .testimonial-item-elite {
@@ -17018,4 +17018,20 @@ header.main-header .header-sticky.active {
     height: 54px;
     font-size: 27px;
   }
+}
+
+a,
+button,
+[role="button"],
+summary,
+label,
+select,
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+.btn,
+.button,
+.tf-btn,
+.link {
+  cursor: pointer;
 }

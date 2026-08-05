@@ -244,7 +244,7 @@ body {
 }
 
 .banner-heading {
-  font-family: "Cormorant Garamond", serif;
+  font-family: "Montserrat", sans-serif;
   font-size: clamp(36px, 5vw, 64px);
   font-weight: 300;
   font-style: normal;
@@ -256,7 +256,46 @@ body {
 
 h3 {
   line-height: 35px !important;
-  font-family: ui-monospace;
+  font-family: "Montserrat", sans-serif;
+}
+
+body,
+p,
+li,
+a,
+button,
+input,
+textarea,
+select,
+label {
+  font-family: "Poppins", sans-serif;
+}
+
+.title-display,
+.heading,
+.banner-heading,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
+}
+
+.title-display :where(a, span),
+.heading :where(a, span),
+h1 :where(a, span),
+h2 :where(a, span),
+h3 :where(a, span),
+h4 :where(a, span),
+h5 :where(a, span),
+h6 :where(a, span),
+.sky-product-detail-section :where(h1, h2, h3, h4, h5, h6),
+#ask_question :where(h1, h2, h3, h4, h5, h6),
+#delivery_return :where(h1, h2, h3, h4, h5, h6),
+#share_social :where(h1, h2, h3, h4, h5, h6) {
+  font-family: "Montserrat", sans-serif;
 }
 
 .social-whatsapp:hover {

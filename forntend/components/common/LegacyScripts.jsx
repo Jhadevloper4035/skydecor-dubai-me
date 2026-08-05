@@ -7,7 +7,6 @@ const legacyScripts = [
   "/js/bootstrap.min.js",
   "/js/gsap.min.js",
   "/js/ScrollTrigger.min.js",
-  "/js/SmoothScroll.js",
   "/js/SplitText.min.js",
   "/js/jquery.counterup.min.js",
   "/js/jquery.magnific-popup.min.js",

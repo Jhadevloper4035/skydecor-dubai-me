@@ -1,219 +1,49 @@
-"use client";
-
-import Header1 from "@/components/headers/Header1";
-import Footer1 from "@/components/footers/Footer1";
-import GlobalSpinner from "@/components/common/GlobalSpinner";
-import LegacyScripts from "@/components/common/LegacyScripts";
-import RouteLoadingController from "@/components/common/RouteLoadingController";
-import FloatingWhatsApp from "@/components/common/FloatingWhatsApp";
-
-import '@fortawesome/fontawesome-free/css/all.min.css'
-
-import './styles/animate.css'
-import './styles/bootstrap.min.css'
-import './styles/custom.css'
-import './styles/magnific-popup.css'
-import './styles/mousecursor.css'
-import './styles/slicknav.min.css'
-import './styles/swiper-bundle.min.css'
-
-
-import { usePathname } from "next/navigation";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import "./styles/animate.css";
+import "./styles/bootstrap.min.css";
+import "./styles/custom.css";
+import "./styles/magnific-popup.css";
+import "./styles/mousecursor.css";
+import "./styles/slicknav.min.css";
+import "./styles/swiper-bundle.min.css";
 import "../public/scss/main.scss";
 import "photoswipe/style.css";
 import "react-range-slider-input/dist/style.css";
 import "../public/css/image-compare-viewer.min.css";
 
+import AppShell from "./AppShell";
+import { pageSeoMetadata } from "@/lib/seoMetadata";
 
-import { Suspense, useEffect, useState } from "react";
-import Context from "@/context/Context";
-import StoreProvider from "@/store/StoreProvider";
-
-import QuickView from "@/components/modals/QuickView";
-import Compare from "@/components/modals/Compare";
-import MobileMenu from "@/components/modals/MobileMenu";
-import SearchModal from "@/components/modals/SearchModal";
-
-
-const hasVisibleBootstrapLayer = () =>
-  Boolean(
-    document.querySelector(
-      ".modal.show, .modal.showing, .offcanvas.show, .offcanvas.showing"
-    )
-  );
-
-const cleanupStaleBootstrapLayers = () => {
-  window.setTimeout(() => {
-    if (hasVisibleBootstrapLayer()) return;
-
-    document
-      .querySelectorAll(".modal-backdrop, .offcanvas-backdrop")
-      .forEach((backdrop) => backdrop.remove());
-    document.body.classList.remove("modal-open");
-    document.body.style.removeProperty("overflow");
-    document.body.style.removeProperty("padding-right");
-  }, 350);
+export const metadata = {
+  ...pageSeoMetadata("home"),
+  icons: {
+    icon: [
+      {
+        url: "https://rantechnology.in/skydecor/favicon/favicon-96x96.png",
+        type: "image/png",
+        sizes: "96x96",
+      },
+      {
+        url: "https://rantechnology.in/skydecor/favicon/favicon.svg",
+        type: "image/svg+xml",
+      },
+    ],
+    shortcut: "https://rantechnology.in/skydecor/favicon/favicon.ico",
+    apple: [
+      {
+        url: "https://rantechnology.in/skydecor/favicon/apple-touch-icon.png",
+        sizes: "180x180",
+      },
+    ],
+  },
+  manifest: "https://rantechnology.in/skydecor/favicon/site.webmanifest",
 };
 
 export default function RootLayout({ children }) {
-  const pathname = usePathname();
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      // Import the script only on the client side
-      import("bootstrap/dist/js/bootstrap.esm").then(() => {
-        // Module is imported, you can access any exported functionality if
-      });
-    }
-  }, []);
-  useEffect(() => {
-    const handleScroll = () => {
-      const header = document.querySelector("header");
-      if (window.scrollY > 100) {
-        header.classList.add("header-bg");
-      } else {
-        header.classList.remove("header-bg");
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    // Cleanup function to remove event listener on component unmount
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []); // Empty dependency array means this effect runs once on mount and cleans up on unmount
-
-  const [scrollDirection, setScrollDirection] = useState("down");
-
-  useEffect(() => {
-    setScrollDirection("up");
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-
-      if (currentScrollY > 250) {
-        if (currentScrollY > lastScrollY.current) {
-          // Scrolling down
-          setScrollDirection("down");
-        } else {
-          // Scrolling up
-          setScrollDirection("up");
-        }
-      } else {
-        // Below 250px
-        setScrollDirection("down");
-      }
-
-      lastScrollY.current = currentScrollY;
-    };
-
-    const lastScrollY = { current: window.scrollY };
-
-    // Add scroll event listener
-    window.addEventListener("scroll", handleScroll);
-
-    // Cleanup: remove event listener when component unmounts
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [pathname]);
-  useEffect(() => {
-    // Close any open modal
-    import("bootstrap").then((bs) => {
-      document.querySelectorAll(".modal.show").forEach((modal) => {
-        bs.Modal.getInstance(modal)?.hide();
-      });
-      document.querySelectorAll(".offcanvas.show").forEach((offcanvas) => {
-        bs.Offcanvas.getInstance(offcanvas)?.hide();
-      });
-      cleanupStaleBootstrapLayers();
-    });
-  }, [pathname]);
-
-  useEffect(() => {
-    const handleBootstrapHidden = () => cleanupStaleBootstrapLayers();
-    const handleDismissClick = (event) => {
-      if (
-        event.target.closest(
-          '[data-bs-dismiss="modal"], [data-bs-dismiss="offcanvas"]'
-        )
-      ) {
-        cleanupStaleBootstrapLayers();
-      }
-    };
-
-    document.addEventListener("hidden.bs.modal", handleBootstrapHidden);
-    document.addEventListener("hidden.bs.offcanvas", handleBootstrapHidden);
-    document.addEventListener("click", handleDismissClick, true);
-
-    return () => {
-      document.removeEventListener("hidden.bs.modal", handleBootstrapHidden);
-      document.removeEventListener("hidden.bs.offcanvas", handleBootstrapHidden);
-      document.removeEventListener("click", handleDismissClick, true);
-    };
-  }, []);
-
-  useEffect(() => {
-    const header = document.querySelector("header");
-    if (header) {
-      if (scrollDirection == "up") {
-        header.style.top = "0px";
-      } else {
-        header.style.top = "-185px";
-      }
-    }
-  }, [scrollDirection]);
-  useEffect(() => {
-    import("@/utlis/wow").then(({ default: WOW }) => {
-      const wow = new WOW({ mobile: false, live: false });
-      wow.init();
-    });
-  }, [pathname]);
   return (
     <html lang="en" data-scroll-behavior="smooth" suppressHydrationWarning>
-      <head>
-        <link
-          rel="icon"
-          type="image/png"
-          href="https://rantechnology.in/skydecor/favicon/favicon-96x96.png"
-          sizes="96x96"
-        />
-        <link
-          rel="icon"
-          type="image/svg+xml"
-          href="https://rantechnology.in/skydecor/favicon/favicon.svg"
-        />
-        <link
-          rel="shortcut icon"
-          href="https://rantechnology.in/skydecor/favicon/favicon.ico"
-        />
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="https://rantechnology.in/skydecor/favicon/apple-touch-icon.png"
-        />
-        <link
-          rel="manifest"
-          href="https://rantechnology.in/skydecor/favicon/site.webmanifest"
-        />
-      </head>
       <body className="popup-loader" suppressHydrationWarning>
-        <StoreProvider>
-          <Context>
-            <GlobalSpinner />
-            <Suspense fallback={null}>
-              <RouteLoadingController />
-            </Suspense>
-            <Header1 />
-            <div id="wrapper">{children}</div>
-            <Footer1 />
-            <QuickView />
-            <Compare />
-            <MobileMenu />
-            <SearchModal />
-            <LegacyScripts />
-            <FloatingWhatsApp />
-          </Context>
-        </StoreProvider>
+        <AppShell>{children}</AppShell>
       </body>
     </html>
   );

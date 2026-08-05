@@ -415,9 +415,9 @@ export const findFallbackProduct = (slugOrId) =>
     (product) => {
       const lookupValue = String(slugOrId).toLowerCase();
       return (
-      String(product.id) === String(slugOrId) ||
-      product.productCodeSlug === lookupValue ||
-      String(product.productCode || "").toLowerCase() === lookupValue
+        String(product.id) === String(slugOrId) ||
+        product.productCodeSlug === lookupValue ||
+        String(product.productCode || "").toLowerCase() === lookupValue
       );
-    },
-  ) || localProducts[0] || normalizeProduct(allProducts[0]);
+    }
+  ) || null;
