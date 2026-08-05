@@ -41,7 +41,7 @@ export default function AppShell({ children }) {
 
   useEffect(() => {
     import("bootstrap/dist/js/bootstrap.esm");
-  }, []);
+  }, []); 
 
   useEffect(() => {
     const handleScroll = () => {

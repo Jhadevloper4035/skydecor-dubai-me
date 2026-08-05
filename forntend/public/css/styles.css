@@ -12822,7 +12822,8 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 .heading-section h3,
 .heading-section .heading {
   margin-bottom: 12px;
-  text-transform: capitalize;
+  text-transform: uppercase;
+  font-weight:400;
 }
 .heading-section p {
   color: #64666c;
