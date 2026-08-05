@@ -151,6 +151,12 @@ export default function RelatedProducts({ product = {}, products = [], productsS
   return (
     <section className="flat-spacing">
       <div className="container flat-animate-tab">
+        <div className="section-title section-title-center text-center">
+          <h3 className="heading wow fadeInUp">Complete The Look</h3>
+          <h2 className="heading wow fadeInUp sd-related-products__heading" data-wow-delay="0.2s">
+            More Surfaces To Explore
+          </h2>
+        </div>
         <ul
           className="tab-product justify-content-sm-center wow fadeInUp"
           data-wow-delay="0s"

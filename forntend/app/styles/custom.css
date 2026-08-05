@@ -3645,10 +3645,10 @@ body[style*="overflow: hidden"] :is(.fixed-top, .fixed-bottom, .is-fixed, .stick
     gap: 10px;
     min-height: 46px;
     padding: 0 14px 0 18px;
-    border: 1px solid #0f6b43;
+    border: 1px solid var(--accent-color);
     border-radius: 999px;
     background: #fff;
-    color: #0f6b43;
+    color: var(--accent-color);
     font-size: 13px;
     font-weight: 600;
     line-height: 1;
@@ -3659,7 +3659,7 @@ body[style*="overflow: hidden"] :is(.fixed-top, .fixed-bottom, .is-fixed, .stick
 
 .sky-product-detail-section .product-detail__actions a:hover,
 .sky-product-detail-section .product-detail__download {
-    background: #0f6b43;
+    background: var(--accent-color);
     color: #fff;
 }
 
@@ -3675,7 +3675,7 @@ body[style*="overflow: hidden"] :is(.fixed-top, .fixed-bottom, .is-fixed, .stick
     width: 28px;
     height: 28px;
     border-radius: 50%;
-    background: #0f6b43;
+    background: var(--accent-color);
     color: #fff;
     font-size: 12px;
 }
@@ -3683,7 +3683,7 @@ body[style*="overflow: hidden"] :is(.fixed-top, .fixed-bottom, .is-fixed, .stick
 .sky-product-detail-section .product-detail__download i,
 .sky-product-detail-section .product-detail__actions a:hover i {
     background: #fff;
-    color: #0f6b43;
+    color: var(--accent-color);
 }
 
 .sky-product-detail-section .product-detail__tabs .nav {
@@ -4606,7 +4606,7 @@ a:focus {
 }
 
 .section-title h2 {
-    font-size: 52px;
+    font-size: 42px;
     font-weight: 400;
     line-height: 1.2em;
     letter-spacing: -0.02em;
@@ -16257,6 +16257,10 @@ header.main-header .header-sticky.active {
   border-color: var(--main);
   background: var(--main);
   color: #fff;
+}
+
+.sd-related-products__heading {
+  font-size: min(42px, 10vw);
 }
 
 .nav-ul-mb button.mb-menu-link,
