@@ -80,13 +80,8 @@ const configs = {
     UPLOAD_MAX_IMAGE_BYTES: parseByteSize(process.env.UPLOAD_MAX_IMAGE_BYTES, 5 * 1024 * 1024),
     UPLOAD_MAX_BATCH_FILES: parsePositiveInt(process.env.UPLOAD_MAX_BATCH_FILES, 10),
     UPLOAD_ALLOW_SVG: parseBoolean(process.env.UPLOAD_ALLOW_SVG, false),
-    JWT_SECRET: process.env.JWT_SECRET,
-    JWT_EXPIRES_IN: process.env.JWT_EXPIRES_IN ?? '1d',
     REDIS_URL: process.env.REDIS_URL,
     QR_CODE_CACHE_TTL_SECONDS: parsePositiveInt(process.env.QR_CODE_CACHE_TTL_SECONDS, 300),
-    BOOTSTRAP_SUPERADMIN_NAME: process.env.BOOTSTRAP_SUPERADMIN_NAME,
-    BOOTSTRAP_SUPERADMIN_EMAIL: process.env.BOOTSTRAP_SUPERADMIN_EMAIL,
-    BOOTSTRAP_SUPERADMIN_PASSWORD: process.env.BOOTSTRAP_SUPERADMIN_PASSWORD,
     AWS_REGION: process.env.AWS_REGION,
     AWS_ACCESS_KEY_ID: process.env.AWS_ACCESS_KEY_ID,
     AWS_SECRET_ACCESS_KEY: process.env.AWS_SECRET_ACCESS_KEY,
@@ -117,13 +112,8 @@ const configs = {
     UPLOAD_MAX_IMAGE_BYTES: parseByteSize(process.env.UPLOAD_MAX_IMAGE_BYTES, 5 * 1024 * 1024),
     UPLOAD_MAX_BATCH_FILES: parsePositiveInt(process.env.UPLOAD_MAX_BATCH_FILES, 10),
     UPLOAD_ALLOW_SVG: parseBoolean(process.env.UPLOAD_ALLOW_SVG, false),
-    JWT_SECRET: process.env.JWT_SECRET,
-    JWT_EXPIRES_IN: process.env.JWT_EXPIRES_IN ?? '1d',
     REDIS_URL: process.env.REDIS_URL,
     QR_CODE_CACHE_TTL_SECONDS: parsePositiveInt(process.env.QR_CODE_CACHE_TTL_SECONDS, 300),
-    BOOTSTRAP_SUPERADMIN_NAME: process.env.BOOTSTRAP_SUPERADMIN_NAME,
-    BOOTSTRAP_SUPERADMIN_EMAIL: process.env.BOOTSTRAP_SUPERADMIN_EMAIL,
-    BOOTSTRAP_SUPERADMIN_PASSWORD: process.env.BOOTSTRAP_SUPERADMIN_PASSWORD,
     AWS_REGION: process.env.AWS_REGION,
     AWS_ACCESS_KEY_ID: process.env.AWS_ACCESS_KEY_ID,
     AWS_SECRET_ACCESS_KEY: process.env.AWS_SECRET_ACCESS_KEY,
@@ -154,13 +144,8 @@ const configs = {
     UPLOAD_MAX_IMAGE_BYTES: parseByteSize(process.env.UPLOAD_MAX_IMAGE_BYTES, 5 * 1024 * 1024),
     UPLOAD_MAX_BATCH_FILES: parsePositiveInt(process.env.UPLOAD_MAX_BATCH_FILES, 10),
     UPLOAD_ALLOW_SVG: parseBoolean(process.env.UPLOAD_ALLOW_SVG, false),
-    JWT_SECRET: process.env.JWT_SECRET ?? 'test-jwt-secret',
-    JWT_EXPIRES_IN: process.env.JWT_EXPIRES_IN ?? '1h',
     REDIS_URL: process.env.REDIS_URL,
     QR_CODE_CACHE_TTL_SECONDS: parsePositiveInt(process.env.QR_CODE_CACHE_TTL_SECONDS, 60),
-    BOOTSTRAP_SUPERADMIN_NAME: process.env.BOOTSTRAP_SUPERADMIN_NAME,
-    BOOTSTRAP_SUPERADMIN_EMAIL: process.env.BOOTSTRAP_SUPERADMIN_EMAIL,
-    BOOTSTRAP_SUPERADMIN_PASSWORD: process.env.BOOTSTRAP_SUPERADMIN_PASSWORD,
     AWS_REGION: process.env.AWS_REGION,
     AWS_ACCESS_KEY_ID: process.env.AWS_ACCESS_KEY_ID,
     AWS_SECRET_ACCESS_KEY: process.env.AWS_SECRET_ACCESS_KEY,
@@ -184,12 +169,6 @@ if (!env.MONGO_URI) {
 
 if (env.NODE_ENV === 'production' && env.ALLOWED_ORIGINS.length === 0) {
   throw new Error('ALLOWED_ORIGINS must contain at least one origin in production.');
-}
-
-if (!env.JWT_SECRET || env.JWT_SECRET.length < 32) {
-  throw new Error(
-    'JWT_SECRET environment variable is required and must be at least 32 characters.',
-  );
 }
 
 export default env;

@@ -1,6 +1,5 @@
 import { Router } from 'express';
 
-import authRouter from './auth.js';
 import blogRouter from './blog.js';
 import enquiryRouter from './enquiry.js';
 import eventRouter from './event.js';
@@ -15,7 +14,6 @@ import uploadRouter from './upload.js';
 
 const router = Router();
 
-router.use('/auth', authRouter);
 router.use('/blogs', blogRouter);
 router.use('/events', eventRouter);
 router.use('/jobs', jobRouter);

@@ -23,9 +23,6 @@ export const seedDB = async () => {
     // await QRCode.deleteMany();
     // await QRCode.insertMany(productDataPath);
 
-    await Product.collection.dropIndex('slug_1').catch((error) => {
-      if (error.codeName !== 'IndexNotFound') throw error;
-    });
     await Product.deleteMany();
     await Product.insertMany(productData);
 

@@ -9,7 +9,6 @@ import {
   getPageSeos,
   updatePageSeo,
 } from '../controller/pageSeo.controller.js';
-import { requireAdmin } from '../middleware/auth.js';
 import { validate } from '../validator/index.js';
 import {
   createPageSeoValidator,
@@ -19,27 +18,21 @@ import {
   updatePageSeoValidator,
 } from '../validator/pageSeo.validator.js';
 import { singleImagePresignedUrlValidator } from '../validator/upload.validator.js';
-
 const router = Router();
-
 router
   .route('/')
   .get(listPageSeosValidator, validate, getPageSeos)
-  .post(requireAdmin, createPageSeoValidator, validate, createPageSeo);
-
+  .post(createPageSeoValidator, validate, createPageSeo);
 router.get('/slug/:slug', pageSeoSlugValidator, validate, getPageSeoBySlug);
 router.post(
   '/image/presigned-url',
-  requireAdmin,
   singleImagePresignedUrlValidator,
   validate,
   createPageSeoImagePresignedUrl,
 );
-
 router
   .route('/:id')
   .get(pageSeoIdValidator, validate, getPageSeo)
-  .patch(requireAdmin, pageSeoIdValidator, updatePageSeoValidator, validate, updatePageSeo)
-  .delete(requireAdmin, pageSeoIdValidator, validate, deletePageSeo);
-
+  .patch(pageSeoIdValidator, updatePageSeoValidator, validate, updatePageSeo)
+  .delete(pageSeoIdValidator, validate, deletePageSeo);
 export default router;
