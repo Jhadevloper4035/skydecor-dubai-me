@@ -1216,10 +1216,18 @@ const openApiDocument = {
         type: 'object',
         properties: {
           _id: objectId,
+<<<<<<< HEAD
           name: { type: 'string', example: 'SkyDecor Admin' },
           email: { type: 'string', format: 'email', example: 'admin@skydecor.me' },
           role: { type: 'string', enum: ['admin', 'superadmin'], example: 'admin' },
           isActive: { type: 'boolean', example: true },
+=======
+          fullName: { type: 'string', example: 'Curve and Comfort Admin' },
+          email: { type: 'string', format: 'email', example: 'admin@curve-and-comfort.com' },
+          mobileNumber: { type: 'string', example: '+971500000000' },
+          role: { type: 'string', enum: ['admin', 'superadmin'], example: 'admin' },
+          isBlocked: { type: 'boolean', example: false },
+>>>>>>> 3775944 (skydecor dubai final changes)
           lastLoginAt: dateTime,
           createdAt: dateTime,
           updatedAt: dateTime,
@@ -1229,12 +1237,17 @@ const openApiDocument = {
         type: 'object',
         required: ['email', 'password'],
         properties: {
+<<<<<<< HEAD
           email: { type: 'string', format: 'email', example: 'admin@skydecor.me' },
+=======
+          email: { type: 'string', format: 'email', example: 'admin@curve-and-comfort.com' },
+>>>>>>> 3775944 (skydecor dubai final changes)
           password: { type: 'string', format: 'password', example: 'StrongPass123' },
         },
       },
       AdminCreate: {
         type: 'object',
+<<<<<<< HEAD
         required: ['name', 'email', 'password'],
         properties: {
           name: { type: 'string', example: 'Operations Admin' },
@@ -1246,6 +1259,28 @@ const openApiDocument = {
       },
       AdminUpdate: {
         allOf: [{ $ref: '#/components/schemas/AdminCreate' }],
+=======
+        required: ['fullName', 'email', 'password', 'mobileNumber'],
+        properties: {
+          fullName: { type: 'string', example: 'Operations Admin' },
+          email: { type: 'string', format: 'email', example: 'ops@curve-and-comfort.com' },
+          password: { type: 'string', minLength: 8, example: 'StrongPass123' },
+          mobileNumber: { type: 'string', example: '+971500000001' },
+          role: { type: 'string', enum: ['admin', 'superadmin'], default: 'admin' },
+          isBlocked: { type: 'boolean', default: false },
+        },
+      },
+      AdminUpdate: {
+        type: 'object',
+        properties: {
+          fullName: { type: 'string', example: 'Operations Admin' },
+          email: { type: 'string', format: 'email', example: 'ops@curve-and-comfort.com' },
+          password: { type: 'string', minLength: 8, example: 'StrongPass123' },
+          mobileNumber: { type: 'string', example: '+971500000001' },
+          role: { type: 'string', enum: ['admin', 'superadmin'] },
+          isBlocked: { type: 'boolean' },
+        },
+>>>>>>> 3775944 (skydecor dubai final changes)
       },
       Blog: {
         type: 'object',

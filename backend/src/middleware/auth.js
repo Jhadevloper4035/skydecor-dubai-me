@@ -25,8 +25,13 @@ export const requireAuth = catchAsync(async (req, _res, next) => {
 
   const admin = await Admin.findById(payload.sub).select('+password');
 
+<<<<<<< HEAD
   if (!admin || !admin.isActive) {
     return next(new AppError('Admin account is not active.', 401, 'ADMIN_NOT_ACTIVE'));
+=======
+  if (!admin || admin.isBlocked) {
+    return next(new AppError('Admin account is blocked.', 401, 'ADMIN_BLOCKED'));
+>>>>>>> 3775944 (skydecor dubai final changes)
   }
 
   req.admin = admin;

@@ -4,7 +4,11 @@ import catchAsync from '../utils/catchAsync.js';
 import { signAdminToken } from '../utils/jwt.js';
 import { sendCreated, sendList, sendNoContent, sendSuccess } from '../utils/response.js';
 
+<<<<<<< HEAD
 const adminFields = ['name', 'email', 'password', 'role', 'isActive'];
+=======
+const adminFields = ['fullName', 'email', 'password', 'mobileNumber', 'role', 'isBlocked'];
+>>>>>>> 3775944 (skydecor dubai final changes)
 
 const pickAdminFields = (body) =>
   adminFields.reduce((payload, field) => {
@@ -25,12 +29,21 @@ export const loginAdmin = catchAsync(async (req, res, next) => {
     return next(new AppError('Invalid email or password.', 401, 'INVALID_CREDENTIALS'));
   }
 
+<<<<<<< HEAD
   if (!admin.isActive) {
     return next(new AppError('Admin account is not active.', 401, 'ADMIN_NOT_ACTIVE'));
   }
 
   admin.lastLoginAt = new Date();
   await admin.save();
+=======
+  if (admin.isBlocked) {
+    return next(new AppError('Admin account is blocked.', 401, 'ADMIN_BLOCKED'));
+  }
+
+  admin.lastLoginAt = new Date();
+  await Admin.updateOne({ _id: admin._id }, { lastLoginAt: admin.lastLoginAt });
+>>>>>>> 3775944 (skydecor dubai final changes)
 
   return sendAuthResponse(res, admin);
 });

@@ -5,7 +5,11 @@ export const slides = [
     imgSrc: "/images/banners/banner1.webp",
     alt: "Skydecor-hpl",
     subheading: "Skydecor DUBAI HPL",
+<<<<<<< HEAD
     heading: "Premium 1mm HPL",
+=======
+    heading: "Premium HPL",
+>>>>>>> 3775944 (skydecor dubai final changes)
     description: "Durable high-pressure laminates for walls, furniture, partitions, and commercial interiors.",
     btnText: "Explore Collection",
   },
@@ -13,7 +17,11 @@ export const slides = [
     imgSrc: "/images/banners/banner2.webp",
     alt: "Skydecor-hpl",
     subheading: "LUXURY SURFACES",
+<<<<<<< HEAD
     heading: "Elegant 0.8mm Designs",
+=======
+    heading: "Elegant Surface Designs",
+>>>>>>> 3775944 (skydecor dubai final changes)
     description: "Lightweight decorative surfaces with refined textures for modern residential and retail spaces.",
     btnText: "View Designs",
   },
@@ -60,9 +68,15 @@ export const slides = [
   {
     imgSrc: "/images/banners/banner8.jpg",
     alt: "Skydecor-hpl",
+<<<<<<< HEAD
     subheading: "1mm & 0.8mm HPL",
     heading: "Perfect Balance of\nStrength & Elegance",
     description: "Flexible thickness options for furniture makers, designers, and project contractors.",
+=======
+    subheading: "PREMIUM HPL",
+    heading: "Perfect Balance of\nStrength & Elegance",
+    description: "Flexible surface options for furniture makers, designers, and project contractors.",
+>>>>>>> 3775944 (skydecor dubai final changes)
     btnText: "Browse Now",
   },
   {

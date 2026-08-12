@@ -9,7 +9,10 @@ export const initialState = {
   category: "All",
   subCategory: "All",
   texture: "All",
+<<<<<<< HEAD
   thickness: "All",
+=======
+>>>>>>> 3775944 (skydecor dubai final changes)
   width: "All",
   activeFilterOnSale: false,
   brands: [],
@@ -37,8 +40,11 @@ export function reducer(state, action) {
       return { ...state, subCategory: action.payload };
     case "SET_TEXTURE":
       return { ...state, texture: action.payload };
+<<<<<<< HEAD
     case "SET_THICKNESS":
       return { ...state, thickness: action.payload };
+=======
+>>>>>>> 3775944 (skydecor dubai final changes)
     case "SET_WIDTH":
       return { ...state, width: action.payload };
     case "SET_AVAILABILITY":
@@ -70,7 +76,10 @@ export function reducer(state, action) {
         category: "All",
         subCategory: "All",
         texture: "All",
+<<<<<<< HEAD
         thickness: "All",
+=======
+>>>>>>> 3775944 (skydecor dubai final changes)
         width: "All",
 
         brands: [],

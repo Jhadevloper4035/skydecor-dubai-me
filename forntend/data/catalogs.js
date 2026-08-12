@@ -8,12 +8,21 @@ export const catalogs = [
   {
     id: 1,
     category: "new",
+<<<<<<< HEAD
     title: "Design Master 1mm+",
     description:
       "Explore premium 1mm+ decorative HPL featuring elegant textures, contemporary patterns, and durable finishes for residential and commercial interiors.",
     image: "https://rantechnology.in/skydecor/design-master.png",
     pdf: "https://rantechnology.in/skydecor/dubai-design-master.pdf",
     fileName: "Design_Master_1mm_Plus.pdf",
+=======
+    title: "Design Master",
+    description:
+      "Explore premium decorative HPL featuring elegant textures, contemporary patterns, and durable finishes for residential and commercial interiors.",
+    image: "https://rantechnology.in/skydecor/design-master.png",
+    pdf: "https://rantechnology.in/skydecor/dubai-design-master.pdf",
+    fileName: "Design_Master.pdf",
+>>>>>>> 3775944 (skydecor dubai final changes)
   },
   {
     id: 2,

@@ -70,7 +70,11 @@ const uspItems = [
   },
   {
     icon: "fa-solid fa-ruler-combined",
+<<<<<<< HEAD
     title: "Full Thickness",
+=======
+    title: "Reliable Construction",
+>>>>>>> 3775944 (skydecor dubai final changes)
     text: "Consistent construction supports reliable fabrication and finishing.",
   },
   {

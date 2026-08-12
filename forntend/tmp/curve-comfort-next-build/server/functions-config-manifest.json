@@ -1,0 +1,8 @@
+{
+  "version": 1,
+  "functions": {
+    "/api/contact-leads": {},
+    "/api/product-inquiries": {},
+    "/api/newsletter-subscribers": {}
+  }
+}

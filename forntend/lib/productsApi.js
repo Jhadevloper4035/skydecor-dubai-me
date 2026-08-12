@@ -111,7 +111,10 @@ const productContainsQuery = (product, query) => {
     product.texture,
     product.textureCode,
     product.size,
+<<<<<<< HEAD
     product.thickness,
+=======
+>>>>>>> 3775944 (skydecor dubai final changes)
     product.width,
   ];
 
@@ -215,7 +218,10 @@ export const buildLocalProductFilterOptions = (products = localProducts, selecte
     subCategories: sortValues(subCategoryProducts.map((product) => product.subCategory)),
     textures: sortValues(textureProducts.map((product) => product.texture)),
     sizes: sortValues(selectedProducts.map((product) => product.size)),
+<<<<<<< HEAD
     thicknesses: sortValues(selectedProducts.map((product) => product.thickness)),
+=======
+>>>>>>> 3775944 (skydecor dubai final changes)
     widths: sortValues(selectedProducts.map((product) => product.width)),
   };
 };
@@ -257,7 +263,10 @@ export const filterProductsLocally = (products = localProducts, filters = {}) =>
       matchesChoice(product, "subCategory", "subCategorySlug", filters.subCategory) &&
       matchesChoice(product, "texture", "textureSlug", filters.texture) &&
       (!filters.size || product.size === filters.size) &&
+<<<<<<< HEAD
       (!filters.thickness || product.thickness === filters.thickness) &&
+=======
+>>>>>>> 3775944 (skydecor dubai final changes)
       (!filters.width || product.width === filters.width) &&
       productContainsQuery(product, filters.query)
   );

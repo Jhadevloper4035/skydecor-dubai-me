@@ -12,7 +12,10 @@ export default function FilterMeta({
     ["subCategory", "setSubCategory"],
     ["texture", "setTexture"],
     ["size", "setSize"],
+<<<<<<< HEAD
     ["thickness", "setThickness"],
+=======
+>>>>>>> 3775944 (skydecor dubai final changes)
   ].filter(([filterKey]) => allProps[filterKey] != "All");
 
   return (

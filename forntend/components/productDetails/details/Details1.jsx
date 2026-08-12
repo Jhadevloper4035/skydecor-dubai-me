@@ -22,7 +22,11 @@ const DEFAULT_FEATURES = [
 ];
 
 const DEFAULT_WARRANTY =
+<<<<<<< HEAD
   "Warranty and performance terms vary by collection, thickness, and product application.";
+=======
+  "Warranty and performance terms vary by collection and product application.";
+>>>>>>> 3775944 (skydecor dubai final changes)
 
 const titleCase = (value = "") =>
   String(value)
@@ -72,7 +76,10 @@ const getProductSpecs = (product = {}) =>
     ["Texture Code", upperValue(product.textureCode)],
     ["Texture", displayValue(product.texture)],
     ["Size", displayValue(product.size)],
+<<<<<<< HEAD
     ["Thickness", "Starting from 0.5mm to 18mm"],
+=======
+>>>>>>> 3775944 (skydecor dubai final changes)
     ["Width", displayValue(product.width)],
   ].filter(([, value]) => value && value !== "-");
 

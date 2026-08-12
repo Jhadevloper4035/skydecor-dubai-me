@@ -6,6 +6,7 @@ export const loginAdminValidator = [
 ];
 
 export const createAdminValidator = [
+<<<<<<< HEAD
   body('name').trim().notEmpty().withMessage('is required').isLength({ max: 100 }),
   body('email').trim().isEmail().withMessage('must be a valid email'),
   body('password').isLength({ min: 8 }).withMessage('must be at least 8 characters'),
@@ -19,6 +20,28 @@ export const updateAdminValidator = [
   body('password').optional().isLength({ min: 8 }).withMessage('must be at least 8 characters'),
   body('role').optional().isIn(['admin', 'superadmin']).withMessage('must be admin or superadmin'),
   body('isActive').optional().isBoolean().withMessage('must be true or false'),
+=======
+  body('fullName').trim().notEmpty().withMessage('is required').isLength({ min: 2, max: 60 }),
+  body('email').trim().isEmail().withMessage('must be a valid email'),
+  body('password').isLength({ min: 8 }).withMessage('must be at least 8 characters'),
+  body('mobileNumber').trim().notEmpty().withMessage('is required'),
+  body('role').optional().isIn(['admin', 'superadmin']).withMessage('must be admin or superadmin'),
+  body('isBlocked').optional().isBoolean().withMessage('must be true or false'),
+];
+
+export const updateAdminValidator = [
+  body('fullName')
+    .optional()
+    .trim()
+    .notEmpty()
+    .withMessage('cannot be empty')
+    .isLength({ min: 2, max: 60 }),
+  body('email').optional().trim().isEmail().withMessage('must be a valid email'),
+  body('password').optional().isLength({ min: 8 }).withMessage('must be at least 8 characters'),
+  body('mobileNumber').optional().trim().notEmpty().withMessage('cannot be empty'),
+  body('role').optional().isIn(['admin', 'superadmin']).withMessage('must be admin or superadmin'),
+  body('isBlocked').optional().isBoolean().withMessage('must be true or false'),
+>>>>>>> 3775944 (skydecor dubai final changes)
 ];
 
 export const adminIdValidator = [

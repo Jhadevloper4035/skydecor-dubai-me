@@ -17039,3 +17039,240 @@ input[type="reset"],
 .link {
   cursor: pointer;
 }
+<<<<<<< HEAD
+=======
+.admin-auth-page,
+.admin-dashboard-page {
+  min-height: 100vh;
+  background: #f5f2eb;
+  color: #171717;
+  font-family: var(--font-main, Arial, sans-serif);
+}
+
+.admin-auth-page {
+  display: grid;
+  place-items: center;
+  padding: 32px 16px;
+}
+
+.admin-auth-panel {
+  width: min(100%, 420px);
+  padding: 32px;
+  background: #ffffff;
+  border: 1px solid #d8cfb9;
+  border-radius: 8px;
+}
+
+.admin-eyebrow {
+  margin: 0 0 8px;
+  color: #8a7338;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0;
+}
+
+.admin-auth-panel h1,
+.admin-dashboard-header h1,
+.admin-section h2 {
+  margin: 0;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.admin-auth-panel h1 {
+  font-size: 34px;
+}
+
+.admin-form {
+  display: grid;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.admin-form label {
+  display: grid;
+  gap: 8px;
+  color: #2f2c26;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.admin-form input,
+.admin-form select {
+  width: 100%;
+  height: 46px;
+  padding: 0 14px;
+  border: 1px solid #c9b982;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #171717;
+}
+
+.admin-primary-btn,
+.admin-secondary-btn,
+.admin-actions button {
+  height: 44px;
+  padding: 0 18px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.admin-primary-btn {
+  border: 1px solid #8a7338;
+  background: #8a7338;
+  color: #ffffff;
+}
+
+.admin-secondary-btn,
+.admin-actions button {
+  border: 1px solid #8a7338;
+  background: #ffffff;
+  color: #5b4820;
+}
+
+.admin-primary-btn:disabled {
+  opacity: 0.65;
+}
+
+.admin-dashboard-page {
+  padding: 32px;
+}
+
+.admin-dashboard-header,
+.admin-section {
+  width: min(100%, 1180px);
+  margin: 0 auto 24px;
+}
+
+.admin-dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #d8cfb9;
+}
+
+.admin-dashboard-header h1 {
+  font-size: 38px;
+}
+
+.admin-dashboard-header p {
+  margin: 6px 0 0;
+}
+
+.admin-section {
+  padding: 24px;
+  background: #ffffff;
+  border: 1px solid #d8cfb9;
+  border-radius: 8px;
+}
+
+.admin-section h2 {
+  font-size: 24px;
+}
+
+.admin-profile-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin: 20px 0 0;
+}
+
+.admin-profile-grid div {
+  padding: 16px;
+  background: #f9f7f1;
+  border-radius: 6px;
+}
+
+.admin-profile-grid dt {
+  color: #796a43;
+  font-size: 13px;
+}
+
+.admin-profile-grid dd {
+  margin: 4px 0 0;
+  font-weight: 600;
+}
+
+.admin-grid-form {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.admin-grid-form button {
+  align-self: end;
+}
+
+.admin-table-wrap {
+  margin-top: 18px;
+  overflow-x: auto;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 760px;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 14px 12px;
+  border-bottom: 1px solid #ece5d5;
+  text-align: left;
+}
+
+.admin-table th {
+  color: #5b4820;
+  font-weight: 600;
+}
+
+.admin-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.admin-error,
+.admin-success {
+  width: min(100%, 1180px);
+  margin: 0 auto 16px;
+  padding: 12px 14px;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.admin-error {
+  background: #fdecec;
+  color: #a32727;
+}
+
+.admin-success {
+  background: #eef8ec;
+  color: #276b33;
+}
+
+@media (max-width: 767px) {
+  .admin-dashboard-page {
+    padding: 20px 14px;
+  }
+
+  .admin-auth-panel,
+  .admin-section {
+    padding: 22px;
+  }
+
+  .admin-dashboard-header,
+  .admin-profile-grid,
+  .admin-grid-form {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-dashboard-header {
+    display: grid;
+  }
+
+  .admin-dashboard-header h1 {
+    font-size: 30px;
+  }
+}
+>>>>>>> 3775944 (skydecor dubai final changes)
