@@ -11,13 +11,8 @@ export default function Banner() {
               <p className="text-btn-uppercase">Product Type</p>
               <h2 className="banner-heading">Ambience collection</h2>
               <p className="body-text-1">
-<<<<<<< HEAD
-                Lightweight yet durable, our 0.8mm HPL is perfect for
-=======
-                Lightweight yet durable, our decorative HPL is perfect for
->>>>>>> 3775944 (skydecor dubai final changes)
-                interior wall panels, furniture surfaces, and decorative
-                applications — available in a wide range of textures and finishes.
+                Durable decorative HPL for interior wall panels, furniture
+                surfaces, and a wide range of textures and finishes.
               </p>
             </div>
             <div className="box-btn">
@@ -56,13 +51,8 @@ export default function Banner() {
               <p className="text-btn-uppercase">Product Type</p>
               <h2 className="banner-heading">Design Master</h2>
               <p className="body-text-1">
-<<<<<<< HEAD
-                Our 1mm HPL offers superior strength and a premium finish,
-=======
-                Our premium HPL offers superior strength and a premium finish,
->>>>>>> 3775944 (skydecor dubai final changes)
-                ideal for high-traffic surfaces, modular kitchens, and
-                commercial interiors across Dubai & UAE.
+                A premium HPL finish for high-traffic surfaces, modular
+                kitchens, and commercial interiors across Dubai & UAE.
               </p>
             </div>
             <div className="box-btn">

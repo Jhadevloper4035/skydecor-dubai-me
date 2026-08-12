@@ -40,16 +40,6 @@ const findCompareItemId = (product = {}, compareItem = []) =>
 const displayName = (product = {}) =>
   upperValue(product.productName || product.title || product.designName || product.productCode);
 
-<<<<<<< HEAD
-const formatThickness = (value = "") => {
-  const normalized = String(value).trim();
-  if (!normalized) return "-";
-
-  return normalized.replace(/\s*mm$/i, " mm").replace(/(\d)(mm)$/i, "$1 mm");
-};
-
-=======
->>>>>>> 3775944 (skydecor dubai final changes)
 const productRows = [
   ["Product Name", displayName],
   ["Design Name", (product) => displayValue(product.designName)],
@@ -59,10 +49,6 @@ const productRows = [
   ["Texture", (product) => displayValue(product.texture)],
   ["Texture Code", (product) => upperValue(product.textureCode) || "-"],
   ["Size", (product) => product.size || "-"],
-<<<<<<< HEAD
-  ["Thickness", (product) => formatThickness(product.thickness)],
-=======
->>>>>>> 3775944 (skydecor dubai final changes)
   ["Width", (product) => product.width || "-"],
   [
     "Availability",

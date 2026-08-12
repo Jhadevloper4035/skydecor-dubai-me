@@ -60,10 +60,6 @@ const getSearchableText = (product = {}) =>
     product.textureSlug,
     product.textureCode,
     product.size,
-<<<<<<< HEAD
-    product.thickness,
-=======
->>>>>>> 3775944 (skydecor dubai final changes)
     product.width,
     ...(Array.isArray(product.tags) ? product.tags : [product.tags]),
     ...(product.filterBrands || []),

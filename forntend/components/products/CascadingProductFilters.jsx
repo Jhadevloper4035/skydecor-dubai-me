@@ -54,16 +54,6 @@ const filterFields = [
     optionsKey: "sizes",
     setterKey: "setSize",
   },
-<<<<<<< HEAD
-  {
-    key: "thickness",
-    label: "Thickness",
-    placeholder: "All Thicknesses",
-    optionsKey: "thicknesses",
-    setterKey: "setThickness",
-  },
-=======
->>>>>>> 3775944 (skydecor dubai final changes)
 ];
 
 export default function CascadingProductFilters({

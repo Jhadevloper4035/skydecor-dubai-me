@@ -2,15 +2,9 @@
 import ProductCard1 from "@/components/productCards/ProductCard1";
 import { localProducts } from "@/lib/productsApi";
 import useProductStore from "@/store/productStore";
+import { homeProducts } from "@/data/homeProducts";
 import React, { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-
-const titleize = (value = "") =>
-  String(value)
-    .trim()
-    .replace(/[-_]+/g, " ")
-    .replace(/\s+/g, " ")
-    .replace(/\b\w/g, (letter) => letter.toUpperCase());
 
 const normalizeKey = (value = "") =>
   String(value)
@@ -18,27 +12,18 @@ const normalizeKey = (value = "") =>
     .toLowerCase()
     .replace(/\s+/g, "-");
 
-    
-const getProductCollection = (product = {}) => {
-  const productType = normalizeKey(product.productTypeSlug || product.productType);
-  const category = normalizeKey(product.categorySlug || product.category);
-
-  if (productType === "decorative-hpl" && category) {
-    return {
-      key: category,
-      label: titleize(product.category || product.categorySlug),
-      href: `/products/product-type/decorative-hpl/category/${category}`,
-    };
-  }
-
-  return {
-    key: productType,
-    label: titleize(product.productType || product.productTypeSlug || "Products"),
-    href: productType
-      ? `/products/product-type/${productType}`
-      : "/products",
-  };
-};
+const collections = [
+  {
+    key: "design-master",
+    label: "Design Master",
+    href: "/products/product-type/decorative-hpl/category/design-master",
+  },
+  {
+    key: "ambience",
+    label: "Ambience",
+    href: "/products/product-type/decorative-hpl/category/ambience",
+  },
+];
 
 export default function Products3({ parentClass = "flat-spacing-3" }) {
   const storeProducts = useProductStore((state) => state.items);
@@ -52,25 +37,19 @@ export default function Products3({ parentClass = "flat-spacing-3" }) {
   }, [fetchProducts]);
 
   const tabs = useMemo(() => {
-    const collectionMap = new Map();
+    return collections.map((collection) => ({
+      ...collection,
+      products: (() => {
+        const matchesCollection = (product) =>
+          normalizeKey(product.productTypeSlug || product.productType) === "decorative-hpl" &&
+          normalizeKey(product.categorySlug || product.category) === collection.key;
+        const collectionProducts = products.filter(matchesCollection);
 
-    products.forEach((product) => {
-      const collection = getProductCollection(product);
-      const { key } = collection;
-      if (!key) return;
-
-      const existingTab = collectionMap.get(key) || {
-        ...collection,
-        products: [],
-      };
-
-      existingTab.products.push(product);
-      collectionMap.set(key, existingTab);
-    });
-
-    return Array.from(collectionMap.values()).sort((left, right) =>
-      left.label.localeCompare(right.label)
-    );
+        return collectionProducts.length >= 10
+          ? collectionProducts
+          : homeProducts.filter(matchesCollection);
+      })(),
+    }));
   }, [products]);
 
   useEffect(() => {

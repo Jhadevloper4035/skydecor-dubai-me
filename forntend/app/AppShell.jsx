@@ -37,10 +37,6 @@ const cleanupStaleBootstrapLayers = () => {
 
 export default function AppShell({ children }) {
   const pathname = usePathname();
-<<<<<<< HEAD
-=======
-  const isAdminRoute = pathname?.startsWith("/admin");
->>>>>>> 3775944 (skydecor dubai final changes)
   const [scrollDirection, setScrollDirection] = useState("down");
 
   useEffect(() => {
@@ -116,17 +112,9 @@ export default function AppShell({ children }) {
   }, []);
 
   useEffect(() => {
-<<<<<<< HEAD
     const header = document.querySelector("header");
     if (header) header.style.top = scrollDirection === "up" ? "0px" : "-185px";
   }, [scrollDirection]);
-=======
-    if (isAdminRoute) return;
-
-    const header = document.querySelector("header");
-    if (header) header.style.top = scrollDirection === "up" ? "0px" : "-185px";
-  }, [scrollDirection, isAdminRoute]);
->>>>>>> 3775944 (skydecor dubai final changes)
 
   useEffect(() => {
     import("@/utlis/wow").then(({ default: WOW }) => {
@@ -142,7 +130,6 @@ export default function AppShell({ children }) {
         <Suspense fallback={null}>
           <RouteLoadingController />
         </Suspense>
-<<<<<<< HEAD
         <Header1 />
         <div id="wrapper">{children}</div>
         <Footer1 />
@@ -152,21 +139,6 @@ export default function AppShell({ children }) {
         <SearchModal />
         <LegacyScripts />
         <FloatingWhatsApp />
-=======
-        {!isAdminRoute ? <Header1 /> : null}
-        <div id="wrapper">{children}</div>
-        {!isAdminRoute ? (
-          <>
-            <Footer1 />
-            <QuickView />
-            <Compare />
-            <MobileMenu />
-            <SearchModal />
-            <LegacyScripts />
-            <FloatingWhatsApp />
-          </>
-        ) : null}
->>>>>>> 3775944 (skydecor dubai final changes)
       </Context>
     </StoreProvider>
   );

@@ -30,10 +30,6 @@ const getQuickProductSpecs = (product = {}) =>
     ["Texture Code", upperValue(product.textureCode)],
     ["Texture", displayValue(product.texture)],
     ["Size", displayValue(product.size)],
-<<<<<<< HEAD
-    ["Thickness", "Starting from 0.5mm to 18mm"],
-=======
->>>>>>> 3775944 (skydecor dubai final changes)
     ["Width", displayValue(product.width)],
   ].filter(([, value]) => value && value !== "-");
 

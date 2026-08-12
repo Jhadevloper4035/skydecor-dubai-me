@@ -32,10 +32,6 @@ const productContainsQuery = (product, query) => {
     product.texture,
     product.textureCode,
     product.size,
-<<<<<<< HEAD
-    product.thickness,
-=======
->>>>>>> 3775944 (skydecor dubai final changes)
     product.width,
   ];
 
@@ -129,10 +125,6 @@ export default function Products1({
     category,
     subCategory,
     texture,
-<<<<<<< HEAD
-    thickness,
-=======
->>>>>>> 3775944 (skydecor dubai final changes)
     brands,
 
     filtered,
@@ -183,10 +175,6 @@ export default function Products1({
       filterDispatch({ type: "SET_SUB_CATEGORY", payload: "All" });
       filterDispatch({ type: "SET_TEXTURE", payload: "All" });
       filterDispatch({ type: "SET_SIZE", payload: "All" });
-<<<<<<< HEAD
-      filterDispatch({ type: "SET_THICKNESS", payload: "All" });
-=======
->>>>>>> 3775944 (skydecor dubai final changes)
     },
     setCategory: (value) => {
       filterDispatch({
@@ -196,10 +184,6 @@ export default function Products1({
       filterDispatch({ type: "SET_SUB_CATEGORY", payload: "All" });
       filterDispatch({ type: "SET_TEXTURE", payload: "All" });
       filterDispatch({ type: "SET_SIZE", payload: "All" });
-<<<<<<< HEAD
-      filterDispatch({ type: "SET_THICKNESS", payload: "All" });
-=======
->>>>>>> 3775944 (skydecor dubai final changes)
     },
     setSubCategory: (value) => {
       filterDispatch({
@@ -208,10 +192,6 @@ export default function Products1({
       });
       filterDispatch({ type: "SET_TEXTURE", payload: "All" });
       filterDispatch({ type: "SET_SIZE", payload: "All" });
-<<<<<<< HEAD
-      filterDispatch({ type: "SET_THICKNESS", payload: "All" });
-=======
->>>>>>> 3775944 (skydecor dubai final changes)
     },
     setTexture: (value) => {
       filterDispatch({
@@ -219,16 +199,6 @@ export default function Products1({
         payload: value == texture ? "All" : value,
       });
       filterDispatch({ type: "SET_SIZE", payload: "All" });
-<<<<<<< HEAD
-      filterDispatch({ type: "SET_THICKNESS", payload: "All" });
-    },
-    setThickness: (value) => {
-      filterDispatch({
-        type: "SET_THICKNESS",
-        payload: value == thickness ? "All" : value,
-      });
-=======
->>>>>>> 3775944 (skydecor dubai final changes)
     },
     setBrands: (newBrand) => {
       const updated = [...brands].includes(newBrand)
@@ -269,10 +239,6 @@ export default function Products1({
     });
     filterDispatch({ type: "SET_TEXTURE", payload: "All" });
     filterDispatch({ type: "SET_SIZE", payload: "All" });
-<<<<<<< HEAD
-    filterDispatch({ type: "SET_THICKNESS", payload: "All" });
-=======
->>>>>>> 3775944 (skydecor dubai final changes)
     filterDispatch({ type: "SET_CURRENT_PAGE", payload: 1 });
   }, [initialProductType, initialCategory, initialSubCategory, initialQuery]);
 
@@ -311,10 +277,6 @@ export default function Products1({
       subCategory: selectedFilterValue(subCategory) || initialSubCategory,
       texture: selectedFilterValue(texture),
       size: size !== "All" && size !== "Free Size" ? size : "",
-<<<<<<< HEAD
-      thickness: selectedFilterValue(thickness),
-=======
->>>>>>> 3775944 (skydecor dubai final changes)
     });
     let filteredArrays = [];
 
@@ -346,10 +308,6 @@ export default function Products1({
     subCategory,
     texture,
     size,
-<<<<<<< HEAD
-    thickness,
-=======
->>>>>>> 3775944 (skydecor dubai final changes)
     initialProductType,
     initialCategory,
     initialSubCategory,
