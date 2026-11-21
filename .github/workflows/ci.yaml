@@ -281,10 +281,10 @@ jobs:
 
             BASE_URL="http://localhost:${NGINX_HTTP_PORT:-80}"
 
-            curl -fsS -H "Host: skydecor.me" "$BASE_URL/health"
-            curl -fsS -H "Host: skydecor.me" "$BASE_URL/ready"
-            curl -fsS -H "Host: skydecor.me" "$BASE_URL/" >/dev/null
-            curl -fsS -H "Host: skydecor.me" "$BASE_URL/api/v1/products" >/dev/null
+            curl -fsS "$BASE_URL/health"
+            curl -fsS "$BASE_URL/ready"
+            curl -fsS "$BASE_URL/" >/dev/null
+            curl -fsS "$BASE_URL/api/v1/products" >/dev/null
 
             docker image prune -f
             echo "Deploy successfully: $GIT_COMMIT_SHA"
