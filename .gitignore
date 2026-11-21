@@ -68,6 +68,7 @@ dump/
 # Local Codex/code review tooling
 .codex
 .code-review-graph/
+.playwright-mcp/
 
 # OS files
 .DS_Store
