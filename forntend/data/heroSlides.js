@@ -2,51 +2,53 @@
 
 export const slides = [
   {
-    imgSrc: "/images/banners/banner1.webp",
-    alt: "skydecor-hpl",
-    subheading: "skydecor DUBAI HPL",
+    imgSrc: "/images/banners/hero-banner.jpeg",
+    tabletImgSrc: "/images/banners/hero-banner-tablet.jpeg",
+    mobileImgSrc: "/images/banners/hero-banner-mobile.jpeg",
+    alt: "A modern living room featuring Skydecor decorative surfaces",
+    subheading: "Skydecor Dubai HPL",
     heading: "Premium 1mm HPL",
     btnText: "Explore Collection",
   },
   {
     imgSrc: "/images/banners/banner2.webp",
     alt: "skydecor-hpl",
-    subheading: "LUXURY SURFACES",
+    subheading: "Luxury Surfaces",
     heading: "Elegant 0.8mm Designs",
     btnText: "View Designs",
   },
   {
     imgSrc: "/images/banners/banner3.webp",
     alt: "skydecor-hpl",
-    subheading: "MODERN INTERIORS",
+    subheading: "Modern Interiors",
     heading: "Stylish & Durable\nHPL Sheets",
     btnText: "Explore Collection",
   },
   {
     imgSrc: "/images/banners/banner4.jpg",
     alt: "skydecor-hpl",
-    subheading: "HIGH GLOSS & MATTE",
+    subheading: "High Gloss & Matte",
     heading: "Finish That Defines\nLuxury Spaces",
     btnText: "Explore Range",
   },
   {
     imgSrc: "/images/banners/banner5.jpg",
     alt: "skydecor-hpl",
-    subheading: "INTERIOR SOLUTIONS",
+    subheading: "Interior Solutions",
     heading: "Designed for\nModern Living",
     btnText: "Discover More",
   },
   {
     imgSrc: "/images/banners/banner6.jpg",
     alt: "skydecor-hpl",
-    subheading: "PREMIUM QUALITY",
+    subheading: "Premium Quality",
     heading: "Engineered for\nDurability & Style",
     btnText: "View Collection",
   },
   {
     imgSrc: "/images/banners/banner7.jpg",
     alt: "skydecor-hpl",
-    subheading: "DUBAI COLLECTION",
+    subheading: "Dubai Collection",
     heading: "Global Designs\nTimeless Appeal",
     btnText: "Explore Range",
   },
@@ -60,10 +62,10 @@ export const slides = [
   {
     imgSrc: "/images/banners/banner9.jpg",
     alt: "skydecor-hpl",
-    subheading: "skydecor EXCLUSIVE",
+    subheading: "Skydecor Exclusive",
     heading: "Upgrade Your\nInterior Spaces",
     btnText: "Explore Range",
-  }
+  },
 ];
 
 

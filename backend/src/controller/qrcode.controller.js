@@ -1,9 +1,4 @@
 import QRCode from '../model/qrcode.model.js';
-import {
-  cacheQRCodeScan,
-  clearQRCodeScanCache,
-  getCachedQRCodeScan,
-} from '../service/qrcodeCache.service.js';
 import { createImagePresignedUrl } from '../service/upload.service.js';
 import AppError from '../utils/appError.js';
 import catchAsync from '../utils/catchAsync.js';
@@ -38,22 +33,13 @@ const getNextQRCodeId = async () => {
 };
 
 const findQRCodeForScan = async ({ productCode, productType }) => {
-  const cachedQRCode = await getCachedQRCodeScan({ productCode, productType });
-
-  if (cachedQRCode) {
-    return QRCode.hydrate(cachedQRCode);
-  }
-
   const filter = { productCode: productCode.toUpperCase() };
 
   if (productType) {
     filter.productType = productType.toLowerCase();
   }
 
-  const qrCode = await QRCode.findOne(filter);
-  await cacheQRCodeScan({ productCode, productType, qrCode });
-
-  return qrCode;
+  return QRCode.findOne(filter);
 };
 
 export const createQRCode = catchAsync(async (req, res) => {
@@ -64,7 +50,6 @@ export const createQRCode = catchAsync(async (req, res) => {
   }
 
   const qrCode = await QRCode.create(payload);
-  await clearQRCodeScanCache();
 
   sendCreated(res, { qrCode });
 });
@@ -131,8 +116,6 @@ export const updateQRCode = catchAsync(async (req, res, next) => {
     return next(new AppError('QR code not found.', 404, 'QR_CODE_NOT_FOUND'));
   }
 
-  await clearQRCodeScanCache();
-
   sendSuccess(res, { qrCode });
 });
 
@@ -142,8 +125,6 @@ export const deleteQRCode = catchAsync(async (req, res, next) => {
   if (!qrCode) {
     return next(new AppError('QR code not found.', 404, 'QR_CODE_NOT_FOUND'));
   }
-
-  await clearQRCodeScanCache();
 
   sendNoContent(res);
 });

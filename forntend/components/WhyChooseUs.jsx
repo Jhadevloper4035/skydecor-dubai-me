@@ -1,158 +1,70 @@
-import Link from "next/link";
-
-const whyChooseItems = [
+const benefits = [
   {
-    id: 1,
-    icon: "/images/icon-why-choose-us-item.svg",
-    title: "High-Quality Craftsmanship",
-    description: "We use premium materials and work with trusted artisans to ensure durability, beauty, and flawless",
-    delay: "",
+    icon: "fa-sliders",
+    title: "Tailored Design Solutions",
+    description:
+      "Thoughtful surface and interior solutions shaped around your space, style, and requirements.",
   },
   {
-    id: 2,
-    icon: "/images/icon-why-choose-us-item.svg",
-    title: "On-Time & Hassle-Free Execution",
-    description: "We follow a structured workflow and maintain transparent communication to deliver projects on schedule.",
-    delay: "0.2s",
+    icon: "fa-table-cells-large",
+    title: "Complete Product Range",
+    description:
+      "Decorative, acrylic, and PVC HPL surfaces for residential and commercial interiors.",
   },
   {
-    id: 3,
-    icon: "/images/icon-why-choose-us-item.svg",
-    title: "Sustainable & Smart Design Approach",
-    description: "We focus on eco-friendly designs, energy-efficient concepts, and future-ready architectural planning.",
-    delay: "0.4s",
+    icon: "fa-shield-halved",
+    title: "Quality Materials",
+    description:
+      "Premium materials selected for dependable performance, finish quality, and lasting appeal.",
   },
   {
-    id: 4,
-    icon: "/images/icon-why-choose-us-item.svg",
-    title: "End-to-End Project Handling",
-    description: "From concept, planning, and design to execution and final styling — we manage everything seamlessly.",
-    delay: "0.6s",
+    icon: "fa-user-shield",
+    title: "Expert Guidance",
+    description:
+      "Practical support from product selection through to specifications for your project.",
+  },
+  {
+    icon: "fa-wand-magic-sparkles",
+    title: "Smart Design Approach",
+    description:
+      "Modern, considered design that balances visual impact with everyday functionality.",
+  },
+  {
+    icon: "fa-palette",
+    title: "End-To-End Support",
+    description:
+      "A reliable team to help deliver cohesive, beautifully finished spaces from concept to completion.",
   },
 ];
 
 export default function WhyChooseUs() {
   return (
-    <div className="why-choose-us-elite">
+    <section className="why-choose-us-elite why-choose-grid-section">
       <div className="container">
-
-        {/* Section Title */}
-        <div className="row section-row">
-          <div className="col-lg-12">
-            <div className="section-title section-title-center">
-              <h3 className="heading wow fadeInUp">Why Choose Us</h3>
-              <h2 className="text-anime-style-3 heading" data-cursor="-opaque">
-                Experience Professional Service
-              </h2>
-              <p className="wow fadeInUp" data-wow-delay="0.2s">
-                We are a creative architecture and interior design studio dedicated to transforming spaces with modern aesthetics, smart planning, and timeless elegance.
-              </p>
-            </div>
-          </div>
+        <div className="why-choose-grid-section__intro">
+          <h2>Why Choose Skydecor</h2>
+          <span aria-hidden="true" className="why-choose-grid-section__divider" />
+          <p>
+            We create thoughtful interior solutions that combine modern
+            aesthetics, dependable materials, and practical project support.
+          </p>
         </div>
-
-        <div className="row">
-
-
-          <div className="col-xl-6">
-            <div className="why-choose-images-elite wow fadeInUp">
-
-
-              <div className="why-choose-client-box-elite">
-                <div className="why-choose-client-body-elite">
-                  <div className="icon-box">
-                    <img src="/images/icon-phone-white.svg" alt="" />
-                  </div>
-                  <div className="why-choose-client-content-elite">
-                    <h3 className="heading">24/7 Expert Support Section</h3>
-                    <p>Our team is available 24/7 to support you at every stage of your architecture</p>
-                  </div>
-                </div>
-              </div>
-
-
-              <div className="why-choose-image-1-elite">
-                <figure className="image-anime">
-                  <img src="/images/why-choose-image-1.jpg" alt="" />
-                </figure>
-              </div>
-
-
-              <div className="why-choose-image-2-elite">
-                <figure className="image-anime">
-                  <img src="/images/why-choose-image-2.jpg" alt="" />
-                </figure>
-              </div>
-
-            </div>
-          </div>
-
-          {/* Right — Why Choose Items */}
-          
-          <div className="col-xl-6">
-            <div className="why-choose-item-list-elite">
-              {whyChooseItems.map((item) => (
-                <div
-                  className="why-choose-item-elite wow fadeInUp"
-                  key={item.id}
-                  data-wow-delay={item.delay || undefined}
-                >
-                  <div className="why-choose-item-header-elite">
-                    <div className="icon-box">
-                      <img src={item.icon} alt={item.title} />
-                    </div>
-                    <div className="why-choose-item-title-elite">
-                      <h3 className="">{item.title}</h3>
-                    </div>
-                  </div>
-                  <div className="why-choose-item-body-elite">
-                    <p>{item.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-
-
-          {/* Section Footer */}
-          <div className="col-lg-12">
-            <div
-              className="section-footer-text section-satisfy-img wow fadeInUp"
-              data-wow-delay="0.4s"
+        <div className="why-choose-grid-section__grid">
+          {benefits.map((benefit, index) => (
+            <article
+              className="why-choose-grid-section__card wow fadeInUp"
+              data-wow-delay={`${index * 0.1}s`}
+              key={benefit.title}
             >
-              <div className="satisfy-client-images">
-                <div className="satisfy-client-image">
-                  <figure className="image-anime">
-                    <img src="/images/avatar/user-1.jpg" alt="" />
-                  </figure>
-                </div>
-                <div className="satisfy-client-image add-more">
-                  <i>
-                    <img src="/images/icon-phone-white.svg" alt="" />
-                  </i>
-                </div>
+              <div className="why-choose-grid-section__icon" aria-hidden="true">
+                <i className={`fa-solid ${benefit.icon}`} />
               </div>
-              <p>
-                Experience design where vision and precision come together beautifully -{" "}
-                <Link href="/contact">Contact Us Today</Link>
-              </p>
-              <ul>
-                <li><span className="counter">4.9</span>/5</li>
-                <li>
-                  <i className="fa-solid fa-star"></i>
-                  <i className="fa-solid fa-star"></i>
-                  <i className="fa-solid fa-star"></i>
-                  <i className="fa-solid fa-star"></i>
-                  <i className="fa-solid fa-star"></i>
-                </li>
-                <li>Over 4200 Reviews</li>
-              </ul>
-            </div>
-          </div>
-
+              <h3>{benefit.title}</h3>
+              <p>{benefit.description}</p>
+            </article>
+          ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }

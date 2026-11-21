@@ -92,13 +92,23 @@ export default function Products3({ parentClass = "flat-spacing-3" }) {
   return (
     <section className={parentClass}>
       <div className="container">
-        <div className="heading-section text-center wow fadeInUp">
-          <h3 className="heading">Our Products</h3>
-          <p className="subheading text-secondary">
-            Explore our premium HPL collection
-          </p>
+        <div className="heading-section text-center product-range-intro">
+          <h3 className="heading wow fadeInUp">Our Product Range</h3>
+          <span
+            aria-hidden="true"
+            className="product-range-intro__divider wow fadeInUp"
+            data-wow-delay="0.1s"
+          />
+          <div className="product-range-intro__copy">
+            <p className="subheading text-secondary wow fadeInUp" data-wow-delay="0.2s">
+              Discover decorative HPL surfaces in contemporary colours, textures,
+              and finishes for every interior vision.
+              Browse our Ambience and Design Master collections for materials
+              that balance lasting performance with a refined, modern look.
+            </p>
+          </div>
         </div>
-        <div className="flat-animate-tab">
+        <div className="flat-animate-tab wow fadeInUp" data-wow-delay="0.4s">
           <ul className="tab-product justify-content-sm-center" role="tablist">
             {tabs.map((tab) => (
               <li key={tab.key} className="nav-tab-item">

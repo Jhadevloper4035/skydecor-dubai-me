@@ -183,9 +183,9 @@ export default function ProductCompare() {
               {items.map((product) => (
                 <div
                   key={`${product._id || product.id || product.productCode}-details`}
-                  className="tf-compare-col tf-compare-field tf-compare-viewcart text-center"
+                  className="tf-compare-col tf-compare-field tf-compare-view-details text-center"
                 >
-                  <Link className="btn-view-cart" href={getProductDetailHref(product)}>
+                  <Link className="btn-view-details" href={getProductDetailHref(product)}>
                     View Details
                   </Link>
                 </div>

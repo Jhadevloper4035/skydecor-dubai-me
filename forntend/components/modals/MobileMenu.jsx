@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { contactDetails } from "@/data/contactDetails";
 import { otherPageLinks, productNavigation } from "@/data/menu";
@@ -13,8 +13,13 @@ const isSameSection = (pathname, href) =>
 
 export default function MobileMenu() {
   const pathname = usePathname();
+  const [isRangeMenuOpen, setIsRangeMenuOpen] = useState(false);
+  const [isDecorativeRangeOpen, setIsDecorativeRangeOpen] = useState(false);
+  const [isResourcesMenuOpen, setIsResourcesMenuOpen] = useState(false);
   const allProductsLink = productNavigation.allProducts;
-  const mainRangeLinks = productNavigation.ranges;
+  const mainRangeLinks = productNavigation.ranges.filter(
+    (range) => range.name === "Decorative HPL"
+  );
   const productMenuLinks = [
     allProductsLink,
     ...mainRangeLinks,
@@ -76,28 +81,24 @@ export default function MobileMenu() {
                   </Link>
                   <button
                     type="button"
-                    className="btn-open-sub mobile-range-toggle collapsed"
-                    aria-label="Open product ranges"
-                    data-bs-target="#mobile-range-menu"
-                    data-bs-toggle="collapse"
-                    aria-expanded="false"
+                    className={`btn-open-sub mobile-range-toggle ${
+                      isRangeMenuOpen ? "" : "collapsed"
+                    }`}
+                    aria-label={
+                      isRangeMenuOpen
+                        ? "Close product ranges"
+                        : "Open product ranges"
+                    }
+                    onClick={() => setIsRangeMenuOpen((isOpen) => !isOpen)}
+                    aria-expanded={isRangeMenuOpen}
                     aria-controls="mobile-range-menu"
                   />
                 </div>
-                <div id="mobile-range-menu" className="collapse">
+                <div
+                  id="mobile-range-menu"
+                  className={`collapse ${isRangeMenuOpen ? "show" : ""}`}
+                >
                   <ul className="sub-nav-menu">
-                    <li>
-                      <Link
-                        href={allProductsLink.href}
-                        className={`sub-nav-link ${
-                          pathname === allProductsLink.href ? "active" : ""
-                        }`}
-                        {...dismissOffcanvas}
-                      >
-                        {allProductsLink.name}
-                      </Link>
-                    </li>
-
                     {mainRangeLinks.map((group, index) => {
                       const groupId = `mobile-product-range-${index}`;
                       const groupLinks = [
@@ -109,21 +110,30 @@ export default function MobileMenu() {
                         <li key={group.name}>
                           <button
                             type="button"
-                            className={`sub-nav-link collapsed ${
+                            className={`sub-nav-link ${
+                              isDecorativeRangeOpen ? "" : "collapsed"
+                            } ${
                               groupLinks.some((link) =>
                                 isSameSection(pathname, link.href)
                               )
                                 ? "active"
                                 : ""
                             }`}
-                            data-bs-toggle="collapse"
-                            aria-expanded="false"
+                            onClick={() =>
+                              setIsDecorativeRangeOpen((isOpen) => !isOpen)
+                            }
+                            aria-expanded={isDecorativeRangeOpen}
                             aria-controls={groupId}
                           >
                             <span>{group.name}</span>
                             <span className="btn-open-sub" />
                           </button>
-                          <div id={groupId} className="collapse">
+                          <div
+                            id={groupId}
+                            className={`collapse ${
+                              isDecorativeRangeOpen ? "show" : ""
+                            }`}
+                          >
                             <ul className="sub-nav-menu sub-menu-level-2">
                               {groupLinks.map((link) => (
                                 <li key={`${group.name}-${link.name}`}>
@@ -174,19 +184,24 @@ export default function MobileMenu() {
               <li className="nav-mb-item">
                 <button
                   type="button"
-                  className={`collapsed mb-menu-link ${
+                  className={`${isResourcesMenuOpen ? "" : "collapsed"} mb-menu-link ${
                     resourceLinks.some((link) => isSameSection(pathname, link.href))
                       ? "active"
                       : ""
                   }`}
-                  data-bs-toggle="collapse"
-                  aria-expanded="false"
+                  onClick={() =>
+                    setIsResourcesMenuOpen((isOpen) => !isOpen)
+                  }
+                  aria-expanded={isResourcesMenuOpen}
                   aria-controls="mobile-resources-menu"
                 >
                   <span>Resources</span>
                   <span className="btn-open-sub" />
                 </button>
-                <div id="mobile-resources-menu" className="collapse">
+                <div
+                  id="mobile-resources-menu"
+                  className={`collapse ${isResourcesMenuOpen ? "show" : ""}`}
+                >
                   <ul className="sub-nav-menu">
                     {resourceLinks.map((link) => (
                       <li key={link.href}>

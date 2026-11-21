@@ -266,9 +266,7 @@ export const productStyles = [
 ];
 
 export const otherShopMenus = [
-  { href: "/products", name: "Wish List" },
   { href: "/products", name: "Search Result" },
-  { href: "/products", name: "Shopping Cart" },
 ];
 
 const shopLink = ({ category, subCategory, query } = {}) => {

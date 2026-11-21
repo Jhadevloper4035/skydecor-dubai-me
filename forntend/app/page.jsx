@@ -21,13 +21,13 @@ export default function Home() {
     <>
       <Hero />
       <CategorySection />
-      <Products />
+      <Products parentClass="flat-spacing sd-home-products" />
       <VideoSection />
       <AboutUs />
       <OurServices />
       <CtaBox />
       <WhyChooseUs />
-      <Blogs />
+      <Blogs parentClass="flat-spacing sd-home-journal" />
     </>
   );
 }

@@ -11,14 +11,9 @@ export default function ProductsCards6({ product }) {
   const productHref = getProductDetailHref(product);
 
   const {
-    setQuickAddItem,
-    addToWishlist,
-    isAddedtoWishlist,
     addToCompareItem,
     isAddedtoCompareItem,
     setQuickViewItem,
-    addProductToCart,
-    isAddedToCartProducts,
   } = useContextElement();
 
   useEffect(() => {
@@ -107,25 +102,6 @@ export default function ProductsCards6({ product }) {
             </div>
           )}
           <div className="list-product-btn">
-            <a
-              onClick={() => addProductToCart(product.id)}
-              className="btn-main-product"
-            >
-              {isAddedToCartProducts(product.id)
-                ? "Already Added"
-                : "Add To cart"}
-            </a>
-            <a
-              onClick={() => addToWishlist(product.id)}
-              className="box-icon wishlist btn-icon-action"
-            >
-              <span className="icon icon-heart" />
-              <span className="tooltip">
-                {isAddedtoWishlist(product.id)
-                  ? "Already Wishlisted"
-                  : "Wishlist"}
-              </span>
-            </a>
             <a
               href="#compare"
               data-bs-toggle="offcanvas"

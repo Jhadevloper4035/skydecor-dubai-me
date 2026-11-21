@@ -6,22 +6,10 @@ import GlobalSpinner from "@/components/common/GlobalSpinner";
 import LegacyScripts from "@/components/common/LegacyScripts";
 import RouteLoadingController from "@/components/common/RouteLoadingController";
 
-import '@fortawesome/fontawesome-free/css/all.min.css'
-
-import './styles/animate.css'
-import './styles/bootstrap.min.css'
-import './styles/custom.css'
-import './styles/magnific-popup.css'
-import './styles/mousecursor.css'
-import './styles/slicknav.min.css'
-import './styles/swiper-bundle.min.css'
-
-
+import "bootstrap/dist/css/bootstrap.min.css";
+import "swiper/css/bundle";
 import { usePathname } from "next/navigation";
-import "../public/scss/main.scss";
-import "photoswipe/style.css";
-import "react-range-slider-input/dist/style.css";
-import "../public/css/image-compare-viewer.min.css";
+import "./styles/global.scss";
 
 
 import { Suspense, useEffect, useState } from "react";
@@ -33,37 +21,8 @@ import Compare from "@/components/modals/Compare";
 import MobileMenu from "@/components/modals/MobileMenu";
 import SearchModal from "@/components/modals/SearchModal";
 
-
-const hasVisibleBootstrapLayer = () =>
-  Boolean(
-    document.querySelector(
-      ".modal.show, .modal.showing, .offcanvas.show, .offcanvas.showing"
-    )
-  );
-
-const cleanupStaleBootstrapLayers = () => {
-  window.setTimeout(() => {
-    if (hasVisibleBootstrapLayer()) return;
-
-    document
-      .querySelectorAll(".modal-backdrop, .offcanvas-backdrop")
-      .forEach((backdrop) => backdrop.remove());
-    document.body.classList.remove("modal-open");
-    document.body.style.removeProperty("overflow");
-    document.body.style.removeProperty("padding-right");
-  }, 350);
-};
-
 export default function RootLayout({ children }) {
   const pathname = usePathname();
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      // Import the script only on the client side
-      import("bootstrap/dist/js/bootstrap.esm").then(() => {
-        // Module is imported, you can access any exported functionality if
-      });
-    }
-  }, []);
   useEffect(() => {
     const handleScroll = () => {
       const header = document.querySelector("header");
@@ -115,41 +74,6 @@ export default function RootLayout({ children }) {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [pathname]);
-  useEffect(() => {
-    // Close any open modal
-    import("bootstrap").then((bs) => {
-      document.querySelectorAll(".modal.show").forEach((modal) => {
-        bs.Modal.getInstance(modal)?.hide();
-      });
-      document.querySelectorAll(".offcanvas.show").forEach((offcanvas) => {
-        bs.Offcanvas.getInstance(offcanvas)?.hide();
-      });
-      cleanupStaleBootstrapLayers();
-    });
-  }, [pathname]);
-
-  useEffect(() => {
-    const handleBootstrapHidden = () => cleanupStaleBootstrapLayers();
-    const handleDismissClick = (event) => {
-      if (
-        event.target.closest(
-          '[data-bs-dismiss="modal"], [data-bs-dismiss="offcanvas"]'
-        )
-      ) {
-        cleanupStaleBootstrapLayers();
-      }
-    };
-
-    document.addEventListener("hidden.bs.modal", handleBootstrapHidden);
-    document.addEventListener("hidden.bs.offcanvas", handleBootstrapHidden);
-    document.addEventListener("click", handleDismissClick, true);
-
-    return () => {
-      document.removeEventListener("hidden.bs.modal", handleBootstrapHidden);
-      document.removeEventListener("hidden.bs.offcanvas", handleBootstrapHidden);
-      document.removeEventListener("click", handleDismissClick, true);
-    };
-  }, []);
 
   useEffect(() => {
     const header = document.querySelector("header");
@@ -161,15 +85,21 @@ export default function RootLayout({ children }) {
       }
     }
   }, [scrollDirection]);
-  useEffect(() => {
-    import("@/utlis/wow").then(({ default: WOW }) => {
-      const wow = new WOW({ mobile: false, live: false });
-      wow.init();
-    });
-  }, [pathname]);
   return (
     <html lang="en" data-scroll-behavior="smooth" suppressHydrationWarning>
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100..900;1,100..900&display=swap"
+        />
+        <link rel="stylesheet" href="/fonts/font-icons.css" />
+        <link rel="stylesheet" href="/css/animate.css" />
         <link
           rel="icon"
           type="image/png"

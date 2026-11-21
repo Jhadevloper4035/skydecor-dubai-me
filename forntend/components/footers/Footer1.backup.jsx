@@ -228,7 +228,7 @@ export default function Footer1({
                           </div>
                           <div className="subscribe-msg" />
                         </form>
-                        <div className="tf-cart-checkbox">
+                        <div className="tf-form-checkbox">
                           <div className="tf-checkbox-wrapp">
                             <input
                               className=""

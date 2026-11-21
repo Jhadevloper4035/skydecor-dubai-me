@@ -136,7 +136,7 @@ export default function Details1({ product = {} }) {
                     <a
                       href="#product_inquiry"
                       data-bs-toggle="modal"
-                      className="btn-style-2 flex-grow-1 text-btn-uppercase fw-6 btn-add-to-cart"
+                      className="btn-style-2 flex-grow-1 text-btn-uppercase fw-6 btn-product-inquiry"
                     >
                       <span>Product Inquiry</span>
                     </a>

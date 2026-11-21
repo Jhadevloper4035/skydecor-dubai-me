@@ -1,9 +1,10 @@
 "use client";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade, Pagination } from "swiper/modules";
-import { slides } from "@/data/heroSlides";
 import Image from "next/image";
 import Link from "next/link";
+import { slides } from "@/data/heroSlides";
+
 export default function Hero() {
   return (
     <section className="tf-slideshow slider-default slider-effect-fade">
@@ -20,14 +21,40 @@ export default function Hero() {
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
-            <div className="wrap-slider">
-              <Image
-                alt={slide.alt}
-                src={slide.imgSrc}
-                width={1920}
-                height={803}
-                priority
-              />
+            <div
+              className={`wrap-slider${
+                slide.tabletImgSrc ? " home-hero-banner" : ""
+              }`}
+            >
+              {slide.tabletImgSrc ? (
+                <picture className="home-hero-picture">
+                  {slide.mobileImgSrc && (
+                    <source
+                      media="(max-width: 767px)"
+                      srcSet={slide.mobileImgSrc}
+                    />
+                  )}
+                  <source
+                    media="(max-width: 1024px)"
+                    srcSet={slide.tabletImgSrc}
+                  />
+                  <Image
+                    alt={slide.alt}
+                    src={slide.imgSrc}
+                    fill
+                    sizes="100vw"
+                    priority
+                  />
+                </picture>
+              ) : (
+                <Image
+                  alt={slide.alt}
+                  src={slide.imgSrc}
+                  width={1920}
+                  height={803}
+                  priority
+                />
+              )}
               <div className="box-content">
                 <div className="content-slider">
                   <div className="box-title-slider">
@@ -44,10 +71,7 @@ export default function Hero() {
                     </div>
                   </div>
                   <div className="fade-item fade-item-3 box-btn-slider">
-                    <Link
-                      href={`/products`}
-                      className="tf-btn btn-fill btn-white"
-                    >
+                    <Link href="/products" className="tf-btn btn-fill btn-white">
                       <span className="text">{slide.btnText}</span>
                       <i className="icon icon-arrowUpRight" />
                     </Link>

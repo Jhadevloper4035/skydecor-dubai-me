@@ -7,25 +7,18 @@ import { socialLinks } from "@/data/footerLinks";
 import { productNavigation } from "@/data/menu";
 import ScrollTop from "../common/ScrollTop";
 
-const importantLinks = [
-  { label: "About Us", href: "/about-us" },
-  { label: "All Products", href: "/products" },
-  { label: "Catalogs", href: "/catalog" },
-  { label: "Certificates", href: "/certificates" },
-  { label: "Blog", href: "/blog-default" },
-  { label: "Careers", href: "/career" },
-  { label: "Contact", href: "/contact" },
-  { label: "Terms of Use", href: "/term-of-use" },
-];
-
 const footerSections = [
   {
     title: "Quick Links",
     links: [
+      { label: "About Us", href: "/about-us" },
       { label: "All Products", href: "/products" },
-      { label: "About skydecor", href: "/about-us" },
-      { label: "Contact Our Team", href: "/contact" },
+      { label: "Catalogs", href: "/catalog" },
+      { label: "Certificates", href: "/certificates" },
+      { label: "Blog", href: "/blog-default" },
       { label: "Careers", href: "/career" },
+      { label: "Contact", href: "/contact" },
+      { label: "Terms Of Use", href: "/term-of-use" },
     ],
   },
   {
@@ -48,6 +41,10 @@ const footerSections = [
     ],
   },
 ];
+
+const footerProductRanges = productNavigation.ranges.filter(
+  (range) => range.name === "Decorative HPL"
+);
 
 export default function Footer1({ hasPaddingBottom = false }) {
   return (
@@ -96,7 +93,7 @@ export default function Footer1({ hasPaddingBottom = false }) {
             </section>
 
             <div className="sd-footer__products">
-              {productNavigation.ranges.map((range) => (
+              {footerProductRanges.map((range) => (
                 <section className="sd-footer__range" key={range.name}>
                   <h2>
                     <Link href={range.href}>{range.name}</Link>
@@ -129,14 +126,6 @@ export default function Footer1({ hasPaddingBottom = false }) {
             <p>
               © {new Date().getFullYear()} skydecor Dubai. All rights reserved.
             </p>
-
-            <nav className="sd-footer__important-links" aria-label="Footer links">
-              {importantLinks.map((link) => (
-                <Link href={link.href} key={link.href}>
-                  {link.label}
-                </Link>
-              ))}
-            </nav>
 
             <ul className="sd-footer__social" aria-label="Social media">
               {socialLinks.map((link) => (

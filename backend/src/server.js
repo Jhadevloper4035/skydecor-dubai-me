@@ -1,6 +1,5 @@
 import app from './index.js';
 import connectDB, { closeDB } from './config/db.js';
-import connectRedis, { closeRedis } from './config/redis.js';
 import env from './config/env.js';
 import { bootstrapSuperAdmin } from './service/bootstrapAdmin.service.js';
 import logger from './utils/logger.js';
@@ -9,7 +8,6 @@ const { PORT, NODE_ENV } = env;
 
 async function start() {
   await connectDB();
-  await connectRedis();
   await bootstrapSuperAdmin();
 
   const server = app.listen(PORT, () => {
@@ -34,7 +32,6 @@ async function start() {
       logger.info('HTTP server closed');
       try {
         await closeDB();
-        await closeRedis();
         globalThis.clearTimeout(forceExitTimer);
         process.exit(0);
       } catch (err) {

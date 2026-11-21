@@ -7,7 +7,9 @@ import { usePathname } from "next/navigation";
 export default function Nav() {
   const pathname = usePathname();
   const allProductsLink = productNavigation.allProducts;
-  const mainRangeLinks = productNavigation.ranges;
+  const mainRangeLinks = productNavigation.ranges.find(
+    (range) => range.name === "Decorative HPL",
+  ).categoryLinks;
   const productMenuLinks = [allProductsLink, ...mainRangeLinks];
 
   return (
@@ -53,27 +55,21 @@ export default function Nav() {
               aria-label="Product ranges"
               tabIndex={0}
             >
-              {mainRangeLinks.map((range) => (
+              {mainRangeLinks.map((link) => (
                 <div
                   className="mega-menu-item sd-range-menu-column"
-                  key={range.name}
+                  key={link.href}
                 >
-                  <Link href={range.href} className="menu-heading">
-                    {range.name}
-                  </Link>
                   <ul className="menu-list">
-                    {range.categoryLinks.map((link) => (
-                      <li
-                        className={`menu-item-li ${
-                          pathname === link.href ? "active" : ""
-                        }`}
-                        key={`${range.name}-${link.name}`}
-                      >
-                        <Link href={link.href} className="menu-link-text">
-                          {link.name}
-                        </Link>
-                      </li>
-                    ))}
+                    <li
+                      className={`menu-item-li ${
+                        pathname === link.href ? "active" : ""
+                      }`}
+                    >
+                      <Link href={link.href} className="menu-link-text">
+                        {link.name}
+                      </Link>
+                    </li>
                   </ul>
                 </div>
               ))}

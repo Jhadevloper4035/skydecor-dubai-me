@@ -59,6 +59,13 @@ export default function ProductCard1({
   const { imgSrc, imgHover } = getProductImages(product);
   const productId = product._id || product.id;
   const productHref = getProductDetailHref(product);
+  const productCategory = formatProductLabel(
+    (product.subCategory || product.category || product.productType || "").replace(
+      /-textured$/i,
+      ""
+    )
+  );
+  const productFinish = formatProductLabel(product.texture);
 
   const [currentImage, setCurrentImage] = useState(imgSrc);
 
@@ -174,9 +181,10 @@ export default function ProductCard1({
         >
           {product.productName}
         </Link>
-        {product.designName && (
+        {productCategory && (
           <p className="text-caption-1 text-secondary text-uppercase">
-            {formatProductLabel(product.category || product.productType)}
+            {productCategory}
+            {productFinish && ` - ${productFinish}`}
           </p>
         )}
        

@@ -20,8 +20,9 @@ export default function Blogs({
   return (
     <section className={parentClass}>
       <div className="container">
-        <div className="heading-section text-center">
-          <h3 className=" wow fadeInUp">Design Journal</h3>
+        <div className="heading-section text-center blog-section-intro">
+          <h2 className="wow fadeInUp">Design Journal</h2>
+          <span aria-hidden="true" className="blog-section-intro__divider" />
           <p className="subheading text-secondary wow fadeInUp">
             Practical guidance for surfaces, specifications, and interior projects.
           </p>

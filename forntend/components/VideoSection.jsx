@@ -2,7 +2,7 @@
 
 export default function IntroVideo() {
     return (
-        <div className="intro-video-box">
+        <section className="intro-video-box sd-home-video">
             <div className="container-fluid">
                 <div className="row no-gutters">
                     <div className="col-lg-12">
@@ -31,6 +31,6 @@ export default function IntroVideo() {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 }

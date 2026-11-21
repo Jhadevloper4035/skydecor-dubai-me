@@ -1,126 +1,50 @@
-// components/OurServices.js
 import Link from "next/link";
 
 const services = [
-  {
-    id: 1,
-    image: "/images/service-1.jpg",
-    icon: "/images/icon-service-item-1.svg",
-    title: "Bedroom Design",
-    description: "We design beautiful, functional homes that reflect your.",
-    delay: "",
-  },
-  {
-    id: 2,
-    image: "/images/our-project-image-1.jpg",
-    icon: "/images/icon-service-item-2.svg",
-    title: "Living Room Design",
-    description:
-      "Smart, efficient, and visually impactful designs for offices,",
-    delay: "0.2s",
-  },
-  {
-    id: 3,
-    image: "/images/our-project-image-2.jpg",
-    icon: "/images/icon-service-item-3.svg",
-    title: "Kitchen Design",
-    description: "Customized interior solutions that combine comfort,",
-    delay: "0.4s",
-  },
-  {
-    id: 4,
-    image: "/images/our-project-image-3.jpg",
-    icon: "/images/icon-service-item-4.svg",
-    title: "Workspace Design",
-    description: "Custom furniture concepts, décor selection, color ",
-    delay: "0.6s",
-  },
+  { image: "/images/service-1.jpg", title: "Bedroom Design", firstLine: "Bedroom", secondLine: "Design" },
+  { image: "/images/our-project-image-1.jpg", title: "Living Room Design", firstLine: "Living Room", secondLine: "Design" },
+  { image: "/images/our-project-image-2.jpg", title: "Kitchen Design", firstLine: "Kitchen", secondLine: "Design" },
+  { image: "/images/our-project-image-3.jpg", title: "Workspace Design", firstLine: "Workspace", secondLine: "Design" },
 ];
 
 export default function OurServices() {
   return (
-    <div className="our-services-elite">
+    <section className="our-services-elite service-grid-section">
       <div className="container">
-        {/* Section Title */}
-        <div className="row section-row">
-          <div className="col-lg-12">
-            <div className="section-title section-title-center">
-              <h3 className="heading wow fadeInUp">Our Services</h3>
-              <h2 className="text-anime-style-3 heading" data-cursor="-opaque">
-                Design That Inspires
-              </h2>
-            </div>
-          </div>
+        <div className="service-grid-section__intro">
+          <h2 className="wow fadeInUp">Design That Inspires</h2>
+          <span
+            aria-hidden="true"
+            className="service-grid-section__divider wow fadeInUp"
+            data-wow-delay="0.1s"
+          />
+          <p className="wow fadeInUp" data-wow-delay="0.2s">
+            Our design services bring together thoughtful planning, refined
+            materials, and practical details for spaces that feel considered
+            from every angle.
+          </p>
+          <p className="wow fadeInUp" data-wow-delay="0.3s">
+            From bedrooms and living rooms to kitchens and workspaces, we help
+            shape interiors that are elegant, functional, and made for everyday
+            living.
+          </p>
         </div>
-
-        <div className="row">
-          {/* Service Items */}
+        <div className="service-grid-section__grid">
           {services.map((service) => (
-            <div className="col-xl-3 col-md-6" key={service.id}>
-              <div
-                className="service-item-elite wow fadeInUp"
-                data-wow-delay={service.delay || undefined}
-              >
-                {/* Service Image */}
-                <div className="service-item-image-elite">
-                  <Link href="/contact" data-cursor-text="view">
-                    <figure className="image-anime">
-                      <img src={service.image} alt={service.title} />
-                    </figure>
-                  </Link>
-                </div>
-
-                {/* Service Body */}
-                <div className="service-item-body-elite">
-                  <div className="service-item-content-elite">
-                    <h2 className="">
-                      <Link href="/contact">{service.title}</Link>
-                    </h2>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-
-          {/* Section Footer */}
-          <div className="col-lg-12">
-            <div
-              className="section-footer-text section-satisfy-img wow fadeInUp"
-              data-wow-delay="0.4s"
+            <Link
+              className="service-grid-section__card"
+              href="/contact"
+              key={service.title}
             >
-              <div className="satisfy-client-images">
-                <div className="satisfy-client-image">
-                  <figure className="image-anime">
-                    <img src="/images/avatar/user-1.jpg" alt="" />
-                  </figure>
-                </div>
-                <div className="satisfy-client-image add-more">
-                  <i>
-                    <img src="/images/icon-phone-white.svg" alt="" />
-                  </i>
-                </div>
-              </div>
-              <p>
-                Discover more stunning designs crafted with precision —
-                <Link href="/contact"> Contact Us Today</Link>.
-              </p>
-              <ul>
-                <li>
-                  <span className="counter">4.9</span>/5
-                </li>
-                <li>
-                  <i className="fa-solid fa-star"></i>
-                  <i className="fa-solid fa-star"></i>
-                  <i className="fa-solid fa-star"></i>
-                  <i className="fa-solid fa-star"></i>
-                  <i className="fa-solid fa-star"></i>
-                </li>
-                <li>Over 4200 Reviews</li>
-              </ul>
-            </div>
-          </div>
+              <img src={service.image} alt={service.title} />
+              <h3 aria-label={service.title}>
+                <span aria-hidden="true">{service.firstLine}</span>
+                <span aria-hidden="true">{service.secondLine}</span>
+              </h3>
+            </Link>
+          ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }

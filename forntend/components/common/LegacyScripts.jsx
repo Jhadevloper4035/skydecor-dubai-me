@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 const legacyScripts = [
   "/js/jquery-3.7.1.min.js",
@@ -55,7 +56,29 @@ const loadScript = (src) =>
     document.body.appendChild(script);
   });
 
+const hasVisibleBootstrapLayer = () =>
+  Boolean(
+    document.querySelector(
+      ".modal.show, .modal.showing, .offcanvas.show, .offcanvas.showing"
+    )
+  );
+
+const cleanupStaleBootstrapLayers = () => {
+  window.setTimeout(() => {
+    if (hasVisibleBootstrapLayer()) return;
+
+    document
+      .querySelectorAll(".modal-backdrop, .offcanvas-backdrop")
+      .forEach((backdrop) => backdrop.remove());
+    document.body.classList.remove("modal-open");
+    document.body.style.removeProperty("overflow");
+    document.body.style.removeProperty("padding-right");
+  }, 350);
+};
+
 export default function LegacyScripts() {
+  const pathname = usePathname();
+
   useEffect(() => {
     let cancelled = false;
 
@@ -74,6 +97,52 @@ export default function LegacyScripts() {
       cancelled = true;
     };
   }, []);
+
+  useEffect(() => {
+    import("bootstrap/dist/js/bootstrap.esm");
+  }, []);
+
+  useEffect(() => {
+    import("bootstrap").then((bs) => {
+      document.querySelectorAll(".modal.show").forEach((modal) => {
+        bs.Modal.getInstance(modal)?.hide();
+      });
+      document.querySelectorAll(".offcanvas.show").forEach((offcanvas) => {
+        bs.Offcanvas.getInstance(offcanvas)?.hide();
+      });
+      cleanupStaleBootstrapLayers();
+    });
+  }, [pathname]);
+
+  useEffect(() => {
+    const handleBootstrapHidden = () => cleanupStaleBootstrapLayers();
+    const handleDismissClick = (event) => {
+      if (
+        event.target.closest(
+          '[data-bs-dismiss="modal"], [data-bs-dismiss="offcanvas"]'
+        )
+      ) {
+        cleanupStaleBootstrapLayers();
+      }
+    };
+
+    document.addEventListener("hidden.bs.modal", handleBootstrapHidden);
+    document.addEventListener("hidden.bs.offcanvas", handleBootstrapHidden);
+    document.addEventListener("click", handleDismissClick, true);
+
+    return () => {
+      document.removeEventListener("hidden.bs.modal", handleBootstrapHidden);
+      document.removeEventListener("hidden.bs.offcanvas", handleBootstrapHidden);
+      document.removeEventListener("click", handleDismissClick, true);
+    };
+  }, []);
+
+  useEffect(() => {
+    import("@/utlis/wow").then(({ default: WOW }) => {
+      const wow = new WOW({ mobile: false, live: false });
+      wow.init();
+    });
+  }, [pathname]);
 
   return null;
 }

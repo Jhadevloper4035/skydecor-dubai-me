@@ -2,40 +2,29 @@
 
 import React from "react";
 import Nav from "./Nav";
-import Topbar from "./Topbar";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-
-const quickLinks = [
-  { href: "/catalog", label: "Catalogs" },
-  { href: "/certificates", label: "Certificates" },
-  { href: "/contact", label: "Contact Us", mobileLabel: "Contact" },
-];
+import { contactDetails } from "@/data/contactDetails";
+import { socialLinks } from "@/data/footerLinks";
 
 export default function Header1() {
-  const pathname = usePathname();
-  const isActiveQuickLink = (href) =>
-    pathname === href || pathname.startsWith(`${href}/`);
-
   return (
     <header id="header" className="header-default header-style-4">
-      <Topbar />
       <div className="main-header">
         <div className="container">
           <div className="row wrapper-header align-items-center">
             <div className="col-xl-5 d-none d-xl-block">
-              <ul className="header-list-categories">
-                {quickLinks.map((link) => (
-                  <li
-                    className={`categories-item ${
-                      isActiveQuickLink(link.href) ? "active" : ""
-                    }`}
-                    key={link.href}
-                  >
-                    <Link href={link.href}>{link.label}</Link>
-                  </li>
-                ))}
+              <ul className="sd-header-contact">
+                <li>
+                  <a href={contactDetails.phoneHref}>
+                    <span>{contactDetails.headerPhoneLabel}</span>
+                  </a>
+                </li>
+                <li>
+                  <a href={`mailto:${contactDetails.salesEmail}`}>
+                    {contactDetails.salesEmail}
+                  </a>
+                </li>
               </ul>
             </div>
 
@@ -97,7 +86,22 @@ export default function Header1() {
                       </svg>
                     </a>
                   </li>
-
+                  {socialLinks.map((link) => (
+                    <li
+                      className="sd-header-social d-none d-xl-block"
+                      key={link.className}
+                    >
+                      <a
+                        href={link.href}
+                        className="nav-icon-item"
+                        aria-label={link.className.replace("social-", "")}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <i className={link.iconClass} aria-hidden="true" />
+                      </a>
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>
@@ -105,26 +109,12 @@ export default function Header1() {
         </div>
       </div>
 
-      <div className="header-bottom header-dark">
+      <div className="header-bottom header-dark d-none d-xl-block">
         <div className="container">
           <div className="wrapper-header d-flex justify-content-center align-items-center">
             <nav className="box-navigation text-center">
               <ul className="box-nav-ul d-flex align-items-center justify-content-center d-none d-xl-flex">
                 <Nav />
-              </ul>
-              <ul className="header-list-categories d-xl-none justify-content-center">
-                {quickLinks.map((link) => (
-                  <li
-                    className={`categories-item ${
-                      isActiveQuickLink(link.href) ? "active" : ""
-                    }`}
-                    key={link.href}
-                  >
-                    <Link href={link.href} className="text-uppercase">
-                      {link.mobileLabel || link.label}
-                    </Link>
-                  </li>
-                ))}
               </ul>
             </nav>
           </div>

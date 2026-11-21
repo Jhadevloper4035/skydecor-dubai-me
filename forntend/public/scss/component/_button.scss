@@ -369,29 +369,3 @@
         transform: rotate(360deg);
     }
 }
-
-.btn-fixed-cart {
-    position: fixed;
-    top: 40%;
-    right: 20px;
-    background-color: var(--main);
-    width: 60px;
-    height: 60px;
-    display: block;
-    @include mixin.flex(center, center);
-    z-index: 999;
-    border-radius: 99px 0px 99px 99px;
-    .count-box {
-        right: 6px;
-        top: 16px;
-        position: absolute;
-        width: 14px;
-        height: 14px;
-        border-radius: 99px;
-        background-color: var(--primary);
-        font-size: 10px;
-        line-height: 8px;
-        color: var(--white);
-        @include mixin.flex(center, center);
-    }
-}

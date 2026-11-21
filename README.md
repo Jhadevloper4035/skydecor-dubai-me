@@ -2,7 +2,7 @@
 
 SkyDecor Dubai is a MERN stack laminate discovery platform. It helps users explore SkyDecor laminate collections, filter and sort products according to their project needs, view product details, and visualize laminate options before choosing materials for homes, offices, retail spaces, and interior design projects.
 
-It includes a React/Next.js frontend, an Express.js REST API, MongoDB persistence with Mongoose, Redis QR-code scan caching, Docker-based local and production runtime configs, and seed data for laminate products and QR codes.
+It includes a React/Next.js frontend, an Express.js REST API, MongoDB persistence with Mongoose, Docker-based local and production runtime configs, and seed data for laminate products and QR codes.
 
 The project is structured so it can be extended into a cloud deployment workflow using Docker images, Kubernetes, AWS infrastructure, and a CI/CD pipeline.
 
@@ -12,7 +12,7 @@ The project is structured so it can be extended into a cloud deployment workflow
 .
 ├── backend/                 # Express API, MongoDB models, validators, seed scripts
 ├── forntend/                # Next.js frontend app
-├── docs/                    # Backend, auth, Redis, Docker, MongoDB, and upload docs
+├── docs/                    # Backend, auth, Docker, MongoDB, and upload docs
 ├── docker-compose.yaml      # Development frontend + backend
 ├── docker-compose.prod.yaml # Production Nginx + frontend + backend
 └── init-mongo.js            # Optional local MongoDB initialization script
@@ -23,7 +23,6 @@ The project is structured so it can be extended into a cloud deployment workflow
 ## Tech Stack
 
 - MongoDB: database layer for products, QR codes, and application data
-- Redis: QR-code scan lookup cache to reduce repeated MongoDB reads
 - Express.js: backend REST API
 - JWT authentication: admin and superadmin access control for protected backend operations
 - React/Next.js: frontend application
@@ -79,8 +78,6 @@ UPLOAD_MAX_BATCH_FILES=10
 UPLOAD_ALLOW_SVG=false
 JWT_SECRET=change-this-to-a-random-32-character-minimum-secret
 JWT_EXPIRES_IN=1d
-REDIS_URL=redis://redis:6379
-QR_CODE_CACHE_TTL_SECONDS=300
 ```
 
 For team development, point `MONGO_URI` at a shared MongoDB Atlas development database, not the production database.
@@ -111,8 +108,6 @@ UPLOAD_MAX_BATCH_FILES=10
 UPLOAD_ALLOW_SVG=false
 JWT_SECRET=change-this-to-a-random-32-character-minimum-secret
 JWT_EXPIRES_IN=1d
-REDIS_URL=redis://redis:6379
-QR_CODE_CACHE_TTL_SECONDS=300
 BOOTSTRAP_SUPERADMIN_NAME=Super Admin
 BOOTSTRAP_SUPERADMIN_EMAIL=admin@example.com
 BOOTSTRAP_SUPERADMIN_PASSWORD=change-this-password
@@ -160,7 +155,6 @@ Detailed backend docs:
 - [Backend overview](docs/docs.md)
 - [Swagger API documentation](docs/SWAGGER_API_DOCUMENTATION.md)
 - [Authentication and authorization](docs/AUTHENTICATION_AUTHORIZATION.md)
-- [Redis QR-code scan cache](docs/REDIS_QRCODE_CACHE.md)
 - [S3 presigned uploads](docs/S3_PRESIGNED_UPLOADS.md)
 - [MongoDB setup](docs/MONGODB_SETUP.md)
 
@@ -313,8 +307,6 @@ PROD_MONGO_URI=mongodb+srv://<user>:<password>@<cluster>.mongodb.net/skydecor?re
 PROD_ALLOWED_ORIGINS=https://skydecor.me,https://www.skydecor.me
 PROD_JWT_SECRET=generate-a-random-secret-at-least-32-characters-long
 PROD_JWT_EXPIRES_IN=1d
-PROD_QR_CODE_CACHE_TTL_SECONDS=300
-
 # Optional: set only for first deploy to create the first superadmin, then remove or leave empty
 BOOTSTRAP_SUPERADMIN_NAME=Super Admin
 BOOTSTRAP_SUPERADMIN_EMAIL=admin@example.com

@@ -346,7 +346,7 @@ export default function SearchModal() {
                   ))}
                 </ul>
               </div>
-              <div>
+              <div className="d-none d-md-block">
                 <h6 className="mb_16">Recently viewed products</h6>
                 {productsStatus === "loading" && (
                   <p className="text-caption-1 text-secondary mb_16">Loading products...</p>
@@ -366,7 +366,7 @@ export default function SearchModal() {
                 ""
               ) : (
                 <div
-                  className="wd-load view-more-button text-center"
+                  className="wd-load view-more-button text-center d-none d-md-block"
                   onClick={() => handleLoad()}
                 >
                   <button
