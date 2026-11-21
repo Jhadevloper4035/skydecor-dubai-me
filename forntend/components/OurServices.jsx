@@ -23,11 +23,7 @@ export default function OurServices() {
             materials, and practical details for spaces that feel considered
             from every angle.
           </p>
-          <p className="wow fadeInUp" data-wow-delay="0.3s">
-            From bedrooms and living rooms to kitchens and workspaces, we help
-            shape interiors that are elegant, functional, and made for everyday
-            living.
-          </p>
+          
         </div>
         <div className="service-grid-section__grid">
           {services.map((service) => (
