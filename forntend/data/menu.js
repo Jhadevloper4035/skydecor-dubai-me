@@ -381,10 +381,26 @@ export const productNavigation = {
         {
           name: "Design Master",
           href: "/products/product-type/decorative-hpl/category/design-master",
+          subCategoryLinks: [
+            { name: "Foil", href: "/products/product-type/decorative-hpl/category/design-master/sub-category/foil" },
+            { name: "Solid", href: "/products/product-type/decorative-hpl/category/design-master/sub-category/solid" },
+            { name: "Solid Textured", href: "/products/product-type/decorative-hpl/category/design-master/sub-category/solid-textured" },
+            { name: "Stone", href: "/products/product-type/decorative-hpl/category/design-master/sub-category/stone" },
+            { name: "Woodgrain", href: "/products/product-type/decorative-hpl/category/design-master/sub-category/woodgrain" },
+            { name: "Woodgrain Textured", href: "/products/product-type/decorative-hpl/category/design-master/sub-category/woodgrain-textured" },
+          ],
         },
         {
           name: "Ambience",
           href: "/products/product-type/decorative-hpl/category/ambience",
+          subCategoryLinks: [
+            { name: "Abstract", href: "/products/product-type/decorative-hpl/category/ambience/sub-category/abstract" },
+            { name: "Solid", href: "/products/product-type/decorative-hpl/category/ambience/sub-category/solid" },
+            { name: "Solid Textured", href: "/products/product-type/decorative-hpl/category/ambience/sub-category/solid-textured" },
+            { name: "Stone", href: "/products/product-type/decorative-hpl/category/ambience/sub-category/stone" },
+            { name: "Woodgrain", href: "/products/product-type/decorative-hpl/category/ambience/sub-category/woodgrain" },
+            { name: "Woodgrain Textured", href: "/products/product-type/decorative-hpl/category/ambience/sub-category/woodgrain-textured" },
+          ],
         },
       ],
     },

@@ -101,10 +101,6 @@ export default function MobileMenu() {
                   <ul className="sub-nav-menu">
                     {mainRangeLinks.map((group, index) => {
                       const groupId = `mobile-product-range-${index}`;
-                      const groupLinks = [
-                        { href: group.href, name: `All ${group.name}` },
-                        ...group.categoryLinks,
-                      ];
 
                       return (
                         <li key={group.name}>
@@ -113,7 +109,7 @@ export default function MobileMenu() {
                             className={`sub-nav-link ${
                               isDecorativeRangeOpen ? "" : "collapsed"
                             } ${
-                              groupLinks.some((link) =>
+                              [group, ...group.categoryLinks].some((link) =>
                                 isSameSection(pathname, link.href)
                               )
                                 ? "active"
@@ -135,17 +131,43 @@ export default function MobileMenu() {
                             }`}
                           >
                             <ul className="sub-nav-menu sub-menu-level-2">
-                              {groupLinks.map((link) => (
-                                <li key={`${group.name}-${link.name}`}>
+                              <li>
+                                <Link
+                                  href={group.href}
+                                  className={`sub-nav-link ${
+                                    pathname === group.href ? "active" : ""
+                                  }`}
+                                  {...dismissOffcanvas}
+                                >
+                                  All {group.name}
+                                </Link>
+                              </li>
+                              {group.categoryLinks.map((category) => (
+                                <li key={`${group.name}-${category.name}`}>
                                   <Link
-                                    href={link.href}
+                                    href={category.href}
                                     className={`sub-nav-link ${
-                                      pathname === link.href ? "active" : ""
+                                      pathname === category.href ? "active" : ""
                                     }`}
                                     {...dismissOffcanvas}
                                   >
-                                    {link.name}
+                                    {category.name}
                                   </Link>
+                                  <ul className="sub-nav-menu sub-menu-level-2">
+                                    {category.subCategoryLinks.map((subCategory) => (
+                                      <li key={subCategory.href}>
+                                        <Link
+                                          href={subCategory.href}
+                                          className={`sub-nav-link ${
+                                            pathname === subCategory.href ? "active" : ""
+                                          }`}
+                                          {...dismissOffcanvas}
+                                        >
+                                          {subCategory.name}
+                                        </Link>
+                                      </li>
+                                    ))}
+                                  </ul>
                                 </li>
                               ))}
                             </ul>

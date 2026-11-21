@@ -43,16 +43,15 @@ export default function CertificatesPage() {
     <main className="sd-certificates-page">
       <section className="sd-certificates-library flat-spacing">
         <div className="container">
-          <div className="sd-certificates-library__head">
-            <div>
-              <span className="sd-events-kicker">Document Library</span>
-              <h3 className="heading">Our certifications</h3>
-            </div>
-            <p aria-live="polite">
-              Showing <strong>{visibleCertificates.length}</strong>{" "}
-              {visibleCertificates.length === 1
-                ? "certificate"
-                : "certificates"}
+          <div className="sd-certificates-library__head sd-library-heading">
+            <h3 className="heading">Our certifications</h3>
+            <span
+              aria-hidden="true"
+              className="sd-library-heading__divider"
+            />
+            <p className="subheading text-secondary">
+              Explore our quality certificates, test reports, and product
+              compliance documents.
             </p>
           </div>
 
@@ -109,11 +108,11 @@ export default function CertificatesPage() {
                     href={certificate.pdf}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="sd-certificate-card__download"
+                    className="tf-btn btn-fill sd-certificate-card__download"
                     aria-label={`Download ${certificate.title} PDF`}
                   >
                     <i className="fa-solid fa-arrow-down" />
-                    Download PDF
+                    <span className="text text-button">Download PDF</span>
                   </a>
                 </div>
               </article>

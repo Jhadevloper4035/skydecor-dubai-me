@@ -39,3 +39,31 @@
 - If the image crop needs adjustment after browser review, tune only the `object-position` value for the left image panel.
 
 final result: blocked
+
+---
+
+**Header alignment update — verification status**
+
+- Source visual truth: user-provided desktop header screenshot in this conversation.
+- Implementation target: homepage desktop header (`Header1`) at 1273 × 138 CSS pixels, default state.
+- Implemented change: removed asymmetric desktop header padding and vertically centered the contact, logo, and icon groups on one shared row centerline.
+- Browser-rendered implementation screenshot: unavailable. Browser automation requires the user's approval before use in this workspace.
+- Full-view and focused comparison: blocked pending an approved browser capture at the matching desktop viewport.
+- Fonts and typography: unchanged.
+- Spacing and layout rhythm: adjusted only the desktop header row's vertical centering.
+- Colors and visual tokens: unchanged.
+- Image quality and asset fidelity: existing logo asset is unchanged.
+- Copy and content: unchanged.
+
+**Findings**
+
+- [Blocked] Header alignment cannot be visually compared against the supplied screenshot without an approved browser capture.
+  Location: homepage header.
+  Fix: approve browser automation or inspect the updated header at the supplied desktop viewport.
+
+**Implementation Checklist**
+
+1. Confirm the contact buttons, logo, and icon controls share the same vertical centerline.
+2. Confirm desktop navigation remains centered beneath the main header row.
+
+final result: blocked

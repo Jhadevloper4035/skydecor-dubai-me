@@ -1,0 +1,263 @@
+- generic [active] [ref=f2e1]:
+  - banner [ref=f2e4]:
+    - generic [ref=f2e7]:
+      - link "" [ref=f2e9] [cursor=pointer]:
+        - /url: "#mobileMenu"
+      - link [ref=f2e12] [cursor=pointer]:
+        - /url: /
+        - img "logo" [ref=f2e13]
+      - list [ref=f2e16]:
+        - listitem [ref=f2e17]:
+          - link "Search" [ref=f2e18] [cursor=pointer]:
+            - /url: "#search"
+  - generic [ref=f2e22]:
+    - generic [ref=f2e25]:
+      - img "A modern living room featuring Skydecor decorative surfaces" [ref=f2e29]
+      - img "skydecor-hpl" [ref=f2e35]
+      - img "skydecor-hpl" [ref=f2e41]
+      - img "skydecor-hpl" [ref=f2e47]
+      - img "skydecor-hpl" [ref=f2e53]
+      - img "skydecor-hpl" [ref=f2e59]
+      - img "skydecor-hpl" [ref=f2e65]
+      - img "skydecor-hpl" [ref=f2e71]
+      - img "skydecor-hpl" [ref=f2e77]
+    - generic [ref=f2e81]:
+      - generic [ref=f2e83]:
+        - img "Design Master HPL collection" [ref=f2e85]
+        - generic [ref=f2e86]:
+          - generic [ref=f2e87]:
+            - paragraph [ref=f2e88]: Product Type
+            - heading "Design Master" [level=2] [ref=f2e89]
+          - generic [ref=f2e90]:
+            - generic [ref=f2e91]:
+              - paragraph [ref=f2e92]: Our 1mm HPL offers superior strength and a premium finish, ideal for high-traffic surfaces, modular kitchens, and commercial interiors across Dubai & UAE.
+              - paragraph [ref=f2e93]: Built for demanding environments, it delivers dependable performance and design flexibility across every space.
+            - link "View Products" [ref=f2e95] [cursor=pointer]:
+              - /url: /products/product-type/decorative-hpl/category/design-master
+      - generic [ref=f2e97]:
+        - generic [ref=f2e98]:
+          - generic [ref=f2e99]:
+            - paragraph [ref=f2e100]: Product Type
+            - heading "Ambience collection" [level=2] [ref=f2e101]
+          - generic [ref=f2e102]:
+            - generic [ref=f2e103]:
+              - paragraph [ref=f2e104]: Lightweight yet durable, our 0.8mm HPL is perfect for interior wall panels, furniture surfaces, and decorative applications — available in a wide range of textures and finishes.
+              - paragraph [ref=f2e105]: Its versatile construction brings a clean, durable finish to everyday interior projects without compromising practicality.
+            - link "View Products" [ref=f2e107] [cursor=pointer]:
+              - /url: /products/product-type/decorative-hpl/category/ambience
+        - img "Ambience HPL collection" [ref=f2e109]
+    - generic [ref=f2e111]:
+      - generic [ref=f2e112]:
+        - heading "Our Product Range" [level=3] [ref=f2e113]
+        - paragraph [ref=f2e116]: Discover decorative HPL surfaces in contemporary colours, textures, and finishes for every interior vision. Browse our Ambience and Design Master collections for materials that balance lasting performance with a refined, modern look.
+      - generic [ref=f2e117]:
+        - tablist
+        - tabpanel [ref=f2e119]:
+          - link "View All Products" [ref=f2e121] [cursor=pointer]:
+            - /url: /products
+    - generic [ref=f2e126]:
+      - figure [ref=f2e128]
+      - link "Play" [ref=f2e130]:
+        - /url: https://www.youtube.com/watch?v=p_pyRDeVT4k
+    - generic [ref=f2e133]:
+      - figure [ref=f2e135]:
+        - img "Skydecor decorative interior surfaces" [ref=f2e136]
+      - generic [ref=f2e138]:
+        - paragraph [ref=f2e139]: About Skydecor
+        - heading "HPL Made For Better Spaces" [level=2] [ref=f2e140]
+        - generic [ref=f2e141]:
+          - paragraph [ref=f2e142]: Established in 2016, skydecor creates decorative, acrylic, and PVC HPL with a focus on design, precision, and dependable quality.
+          - paragraph [ref=f2e143]: Our advanced manufacturing facilities and Dubai warehouse support customers across the Middle East and global markets with versatile surfaces for modern interiors.
+        - link "Know More" [ref=f2e144] [cursor=pointer]:
+          - /url: /about-us
+    - generic [ref=f2e146]:
+      - generic [ref=f2e147]:
+        - heading "Design That Inspires" [level=2] [ref=f2e148]
+        - paragraph [ref=f2e150]: Our design services bring together thoughtful planning, refined materials, and practical details for spaces that feel considered from every angle.
+      - generic [ref=f2e151]:
+        - link [ref=f2e152] [cursor=pointer]:
+          - /url: /contact
+          - img "Bedroom Design" [ref=f2e153]
+          - heading "Bedroom Design" [level=3] [ref=f2e154]:
+            - generic [aria-hidden] [ref=f2e155]: Bedroom
+            - generic [aria-hidden] [ref=f2e156]: Design
+        - link [ref=f2e157] [cursor=pointer]:
+          - /url: /contact
+          - img "Living Room Design" [ref=f2e158]
+          - heading "Living Room Design" [level=3] [ref=f2e159]:
+            - generic [aria-hidden] [ref=f2e160]: Living Room
+            - generic [aria-hidden] [ref=f2e161]: Design
+        - link [ref=f2e162] [cursor=pointer]:
+          - /url: /contact
+          - img "Kitchen Design" [ref=f2e163]
+          - heading "Kitchen Design" [level=3] [ref=f2e164]:
+            - generic [aria-hidden] [ref=f2e165]: Kitchen
+            - generic [aria-hidden] [ref=f2e166]: Design
+        - link [ref=f2e167] [cursor=pointer]:
+          - /url: /contact
+          - img "Workspace Design" [ref=f2e168]
+          - heading "Workspace Design" [level=3] [ref=f2e169]:
+            - generic [aria-hidden] [ref=f2e170]: Workspace
+            - generic [aria-hidden] [ref=f2e171]: Design
+    - generic [ref=f2e174]:
+      - heading "Ready To Transform Your Space With Skydecor?" [level=2] [ref=f2e175]
+      - paragraph [ref=f2e176]: From concept to completion, our HPL specialists help you select finishes that bring quality, functionality, and style to every project.
+      - link "Book Consultation" [ref=f2e177] [cursor=pointer]:
+        - /url: /contact
+    - generic [ref=f2e179]:
+      - generic [ref=f2e180]:
+        - heading "Why Choose Skydecor" [level=2] [ref=f2e181]
+        - paragraph [ref=f2e183]: We create thoughtful interior solutions that combine modern aesthetics, dependable materials, and practical project support.
+      - generic [ref=f2e184]:
+        - article [ref=f2e185]:
+          - heading "Tailored Design Solutions" [level=3] [ref=f2e188]
+          - paragraph [ref=f2e189]: Thoughtful surface and interior solutions shaped around your space, style, and requirements.
+        - article [ref=f2e190]:
+          - heading "Complete Product Range" [level=3] [ref=f2e193]
+          - paragraph [ref=f2e194]: Decorative, acrylic, and PVC HPL surfaces for residential and commercial interiors.
+        - article [ref=f2e195]:
+          - heading "Quality Materials" [level=3] [ref=f2e198]
+          - paragraph [ref=f2e199]: Premium materials selected for dependable performance, finish quality, and lasting appeal.
+        - article [ref=f2e200]:
+          - heading "Expert Guidance" [level=3] [ref=f2e203]
+          - paragraph [ref=f2e204]: Practical support from product selection through to specifications for your project.
+        - article [ref=f2e205]:
+          - heading "Smart Design Approach" [level=3] [ref=f2e208]
+          - paragraph [ref=f2e209]: Modern, considered design that balances visual impact with everyday functionality.
+        - article [ref=f2e210]:
+          - heading "End-To-End Support" [level=3] [ref=f2e213]
+          - paragraph [ref=f2e214]: A reliable team to help deliver cohesive, beautifully finished spaces from concept to completion.
+    - generic [ref=f2e216]:
+      - generic [ref=f2e217]:
+        - heading "Design Journal" [level=2] [ref=f2e218]
+        - paragraph [ref=f2e220]: Practical guidance for surfaces, specifications, and interior projects.
+      - generic [ref=f2e222]:
+        - generic [ref=f2e224]:
+          - img "Decorative HPL finishes for interior design" [ref=f2e226]
+          - generic [ref=f2e227]:
+            - paragraph [ref=f2e228]: 15 Jun 2026
+            - heading [level=6] [ref=f2e230]:
+              - link "How to Choose the Right HPL Finish" [ref=f2e231] [cursor=pointer]:
+                - /url: /blog-detail/choosing-hpl-finishes
+        - generic [ref=f2e233]:
+          - img "Surface samples arranged for project planning" [ref=f2e235]
+          - generic [ref=f2e236]:
+            - paragraph [ref=f2e237]: 08 Jun 2026
+            - heading [level=6] [ref=f2e239]:
+              - link "Why Surface Samples Matter in Project Planning" [ref=f2e240] [cursor=pointer]:
+                - /url: /blog-detail/surface-samples-project-planning
+        - generic [ref=f2e242]:
+          - img "Clean decorative interior surface" [ref=f2e244]
+          - generic [ref=f2e245]:
+            - paragraph [ref=f2e246]: 01 Jun 2026
+            - heading [level=6] [ref=f2e248]:
+              - link "Everyday Care for Decorative Surfaces" [ref=f2e249] [cursor=pointer]:
+                - /url: /blog-detail/caring-for-decorative-surfaces
+  - contentinfo [ref=f2e250]:
+    - generic [ref=f2e251]:
+      - link "skydecor home" [ref=f2e253] [cursor=pointer]:
+        - /url: /
+        - img "skydecor" [ref=f2e254]
+      - generic [ref=f2e255]:
+        - region "Headquarters & Contact" [ref=f2e256]:
+          - heading "Headquarters & Contact" [level=2] [ref=f2e257]
+          - generic [ref=f2e258]:
+            - strong [ref=f2e259]: skydecor Dubai
+            - generic [ref=f2e260]: Dubai, United Arab Emirates
+            - link "info@skydecor.eu" [ref=f2e261] [cursor=pointer]:
+              - /url: mailto:info@skydecor.eu
+            - link "Chat with us on WhatsApp" [ref=f2e262] [cursor=pointer]:
+              - /url: https://alvo.chat/3Ijc
+          - paragraph [ref=f2e263]: Decorative HPL and interior surface solutions for projects across Dubai and the UAE.
+          - link "Request info" [ref=f2e265] [cursor=pointer]:
+            - /url: /contact
+            - text: Request info
+            - generic [aria-hidden] [ref=f2e266]: 
+        - generic [ref=f2e267]:
+          - generic [ref=f2e268]:
+            - heading [level=2] [ref=f2e269]:
+              - link "Decorative HPL" [ref=f2e270] [cursor=pointer]:
+                - /url: /products/product-type/decorative-hpl
+            - list [ref=f2e271]:
+              - listitem [ref=f2e272]:
+                - link "Design Master" [ref=f2e273] [cursor=pointer]:
+                  - /url: /products/product-type/decorative-hpl/category/design-master
+              - listitem [ref=f2e274]:
+                - link "Ambience" [ref=f2e275] [cursor=pointer]:
+                  - /url: /products/product-type/decorative-hpl/category/ambience
+          - generic [ref=f2e276]:
+            - heading "Quick Links" [level=2] [ref=f2e277]
+            - list [ref=f2e278]:
+              - listitem [ref=f2e279]:
+                - link "About Us" [ref=f2e280] [cursor=pointer]:
+                  - /url: /about-us
+              - listitem [ref=f2e281]:
+                - link "All Products" [ref=f2e282] [cursor=pointer]:
+                  - /url: /products
+              - listitem [ref=f2e283]:
+                - link "Catalogs" [ref=f2e284] [cursor=pointer]:
+                  - /url: /catalog
+              - listitem [ref=f2e285]:
+                - link "Certificates" [ref=f2e286] [cursor=pointer]:
+                  - /url: /certificates
+              - listitem [ref=f2e287]:
+                - link "Blog" [ref=f2e288] [cursor=pointer]:
+                  - /url: /blog-default
+              - listitem [ref=f2e289]:
+                - link "Careers" [ref=f2e290] [cursor=pointer]:
+                  - /url: /career
+              - listitem [ref=f2e291]:
+                - link "Contact" [ref=f2e292] [cursor=pointer]:
+                  - /url: /contact
+              - listitem [ref=f2e293]:
+                - link "Terms Of Use" [ref=f2e294] [cursor=pointer]:
+                  - /url: /term-of-use
+          - generic [ref=f2e295]:
+            - heading "Design Ideas" [level=2] [ref=f2e296]
+            - list [ref=f2e297]:
+              - listitem [ref=f2e298]:
+                - link "Bedroom Design" [ref=f2e299] [cursor=pointer]:
+                  - /url: /bedroom-design
+              - listitem [ref=f2e300]:
+                - link "Living Room Design" [ref=f2e301] [cursor=pointer]:
+                  - /url: /living-room-design
+              - listitem [ref=f2e302]:
+                - link "Kitchen Design" [ref=f2e303] [cursor=pointer]:
+                  - /url: /kitchen-design
+              - listitem [ref=f2e304]:
+                - link "Workspace Design" [ref=f2e305] [cursor=pointer]:
+                  - /url: /workspace-design
+              - listitem [ref=f2e306]:
+                - link "Kidroom design" [ref=f2e307] [cursor=pointer]:
+                  - /url: /kidroom-design
+          - generic [ref=f2e308]:
+            - heading "Legal" [level=2] [ref=f2e309]
+            - list [ref=f2e310]:
+              - listitem [ref=f2e311]:
+                - link "Terms of Use" [ref=f2e312] [cursor=pointer]:
+                  - /url: /term-of-use
+              - listitem [ref=f2e313]:
+                - link "Website Terms" [ref=f2e314] [cursor=pointer]:
+                  - /url: /term-of-use
+              - listitem [ref=f2e315]:
+                - link "FAQs" [ref=f2e316] [cursor=pointer]:
+                  - /url: /FAQs
+              - listitem [ref=f2e317]:
+                - link "Contact" [ref=f2e318] [cursor=pointer]:
+                  - /url: /contact
+      - generic [ref=f2e319]:
+        - paragraph [ref=f2e320]: © 2026 skydecor Dubai. All rights reserved.
+        - list "Social media" [ref=f2e321]:
+          - listitem [ref=f2e322]:
+            - link "facebook" [ref=f2e323] [cursor=pointer]:
+              - /url: https://www.facebook.com/skydecorlam
+          - listitem [ref=f2e325]:
+            - link "instagram" [ref=f2e326] [cursor=pointer]:
+              - /url: https://www.instagram.com/skydecorindia/
+          - listitem [ref=f2e328]:
+            - link "whatsapp" [ref=f2e329] [cursor=pointer]:
+              - /url: https://alvo.chat/3Ijc
+          - listitem [ref=f2e331]:
+            - link "youtube" [ref=f2e332] [cursor=pointer]:
+              - /url: https://www.youtube.com/@skydecorindia
+  - text:     

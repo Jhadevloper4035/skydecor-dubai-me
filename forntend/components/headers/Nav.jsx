@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { otherPageLinks, productNavigation } from "@/data/menu";
@@ -7,10 +8,14 @@ import { usePathname } from "next/navigation";
 export default function Nav() {
   const pathname = usePathname();
   const allProductsLink = productNavigation.allProducts;
-  const mainRangeLinks = productNavigation.ranges.find(
+  const mainRange = productNavigation.ranges.find(
     (range) => range.name === "Decorative HPL",
-  ).categoryLinks;
-  const productMenuLinks = [allProductsLink, ...mainRangeLinks];
+  );
+  const productMenuLinks = [
+    allProductsLink,
+    mainRange,
+    ...mainRange.categoryLinks,
+  ];
 
   return (
     <>
@@ -53,26 +58,45 @@ export default function Nav() {
               className="sd-range-menu-track"
               role="region"
               aria-label="Product ranges"
-              tabIndex={0}
             >
-              {mainRangeLinks.map((link) => (
+              {mainRange.categoryLinks.map((category) => (
                 <div
                   className="mega-menu-item sd-range-menu-column"
-                  key={link.href}
+                  key={category.href}
                 >
+                  <Link href={category.href} className="menu-heading">
+                    {category.name}
+                  </Link>
                   <ul className="menu-list">
-                    <li
-                      className={`menu-item-li ${
-                        pathname === link.href ? "active" : ""
-                      }`}
-                    >
-                      <Link href={link.href} className="menu-link-text">
-                        {link.name}
-                      </Link>
-                    </li>
+                    {category.subCategoryLinks.map((subCategory) => (
+                      <li
+                        className={`menu-item-li ${
+                          pathname === subCategory.href ? "active" : ""
+                        }`}
+                        key={subCategory.href}
+                      >
+                        <Link
+                          href={subCategory.href}
+                          className="menu-link-text"
+                        >
+                          {subCategory.name}
+                        </Link>
+                      </li>
+                    ))}
                   </ul>
                 </div>
               ))}
+              <Link
+                href="/products/product-type/decorative-hpl/category/design-master"
+                className="sd-range-menu-promo"
+              >
+                <Image
+                  src="/images/collections/1mm.jpeg"
+                  alt="Design Master decorative HPL collection"
+                  width={640}
+                  height={480}
+                />
+              </Link>
             </div>
           </div>
         </div>
@@ -98,55 +122,43 @@ export default function Nav() {
         </Link>
       </li>
 
-
       <li
-  className={`menu-item position-relative has-submenu ${
-    otherPageLinks.some(
-      (link) =>
-        link.href.split("/")[1] === pathname.split("/")[1],
-    )
-      ? "active"
-      : ""
-  }`}
->
-  <Link
-    href="/resources"
-    className="item-link"
-    aria-haspopup="true"
-  >
-    Resources
+        className={`menu-item position-relative has-submenu ${
+          otherPageLinks.some(
+            (link) => link.href.split("/")[1] === pathname.split("/")[1],
+          )
+            ? "active"
+            : ""
+        }`}
+      >
+        <Link href="/resources" className="item-link" aria-haspopup="true">
+          Resources
+          <span className="sd-dropdown-indicator" aria-hidden="true">
+            <svg viewBox="0 0 12 8" focusable="false">
+              <path d="M1 1.5L6 6.5L11 1.5" />
+            </svg>
+          </span>
+        </Link>
 
-    <span className="sd-dropdown-indicator" aria-hidden="true">
-      <svg viewBox="0 0 12 8" focusable="false">
-        <path d="M1 1.5L6 6.5L11 1.5" />
-      </svg>
-    </span>
-  </Link>
-
-  <div className="sub-menu submenu-default">
-    <ul className="menu-list">
-      {otherPageLinks.map((link) => (
-        <li
-          key={link.href}
-          className={`menu-item-li ${
-            pathname.split("/")[1] === link.href.split("/")[1]
-              ? "active"
-              : ""
-          }`}
-        >
-          <Link href={link.href} className="menu-link-text">
-            {link.name}
-          </Link>
-        </li>
-      ))}
-    </ul>
-  </div>
-</li>
-
-     
-
-
-
+        <div className="sub-menu submenu-default">
+          <ul className="menu-list">
+            {otherPageLinks.map((link) => (
+              <li
+                key={link.href}
+                className={`menu-item-li ${
+                  pathname.split("/")[1] === link.href.split("/")[1]
+                    ? "active"
+                    : ""
+                }`}
+              >
+                <Link href={link.href} className="menu-link-text">
+                  {link.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </li>
 
       <li
         className={`menu-item ${

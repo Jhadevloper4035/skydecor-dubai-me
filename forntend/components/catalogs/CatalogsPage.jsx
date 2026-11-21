@@ -41,15 +41,20 @@ export default function CatalogsPage() {
     <main className="sd-catalogs-page">
       <section className="sd-catalogs-library flat-spacing">
         <div className="container">
-          <div className="sd-catalogs-library__head">
-            <div>
-              <span className="sd-events-kicker">Browse Collections</span>
-              <h3 className="heading">E-catalogs</h3>
-            </div>
-            <p aria-live="polite">
+          <div className="sd-catalogs-library__head sd-library-heading">
+            <h3 className="heading">E-catalogs</h3>
+            <span
+              aria-hidden="true"
+              className="sd-library-heading__divider"
+            />
+            <p className="subheading text-secondary">
+              Explore our product collections and download the latest
+              catalogues.
+            </p>
+            <span className="sd-library-heading__count" aria-live="polite">
               Showing <strong>{visibleCatalogs.length}</strong>{" "}
               {visibleCatalogs.length === 1 ? "catalog" : "catalogs"}
-            </p>
+            </span>
           </div>
 
           <div

@@ -317,8 +317,37 @@ h3 {
 }
 
 #header.header-style-4 .main-header .wrapper-header {
-  min-height: 84px;
-  padding: 14px 0 2px;
+  min-height: 82px;
+  padding: 0;
+}
+
+@media (min-width: 1200px) {
+  #header.header-style-4 .main-header .wrapper-header > .col-xl-5,
+  #header.header-style-4 .main-header .wrapper-header-right,
+  #header.header-style-4 .main-header .logo-header {
+    display: flex;
+    align-items: center;
+  }
+
+  #header.header-style-4 .main-header .wrapper-header-right {
+    justify-content: flex-end;
+    width: 100%;
+  }
+
+  #header.header-style-4 .main-header .logo-header {
+    justify-content: center;
+    line-height: 0;
+  }
+}
+
+#header.header-style-4 .sd-range-menu-column .menu-heading {
+  display: inline-flex;
+  margin-bottom: 18px;
+  padding-bottom: 7px;
+  border-bottom: 2px solid var(--accent-secondary-color);
+  color: var(--accent-color);
+  font-weight: 700;
+  letter-spacing: 0.1em;
 }
 
 #header.header-style-4 .header-bottom .wrapper-header {

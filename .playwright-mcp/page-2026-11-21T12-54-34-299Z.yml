@@ -1,0 +1,207 @@
+- generic [active] [ref=f4e1]:
+  - banner [ref=f4e4]:
+    - generic [ref=f4e7]:
+      - list [ref=f4e9]:
+        - listitem [ref=f4e10]:
+          - link "04-5751322, 058-8939560" [ref=f4e11] [cursor=pointer]:
+            - /url: tel:+971582093821
+        - listitem [ref=f4e13]:
+          - link "sales.mgr@skydecor.me" [ref=f4e14] [cursor=pointer]:
+            - /url: mailto:sales.mgr@skydecor.me
+      - text: 
+      - link [ref=f4e16] [cursor=pointer]:
+        - /url: /
+        - img "logo" [ref=f4e17]
+      - list [ref=f4e20]:
+        - listitem [ref=f4e21]:
+          - link "Search" [ref=f4e22] [cursor=pointer]:
+            - /url: "#search"
+        - listitem [ref=f4e26]:
+          - link "facebook" [ref=f4e27] [cursor=pointer]:
+            - /url: https://www.facebook.com/skydecorlam
+        - listitem [ref=f4e29]:
+          - link "instagram" [ref=f4e30] [cursor=pointer]:
+            - /url: https://www.instagram.com/skydecorindia/
+        - listitem [ref=f4e32]:
+          - link "whatsapp" [ref=f4e33] [cursor=pointer]:
+            - /url: https://alvo.chat/3Ijc
+        - listitem [ref=f4e35]:
+          - link "youtube" [ref=f4e36] [cursor=pointer]:
+            - /url: https://www.youtube.com/@skydecorindia
+    - navigation [ref=f4e41]:
+      - list [ref=f4e42]:
+        - listitem [ref=f4e43]:
+          - link "Home" [ref=f4e44] [cursor=pointer]:
+            - /url: /
+        - listitem [ref=f4e45]:
+          - link "About Us" [ref=f4e46] [cursor=pointer]:
+            - /url: /about-us
+        - listitem [ref=f4e47]:
+          - link "Our Range" [ref=f4e48] [cursor=pointer]:
+            - /url: /products
+        - listitem [ref=f4e52]:
+          - link "Certificates" [ref=f4e53] [cursor=pointer]:
+            - /url: /certificates
+        - listitem [ref=f4e54]:
+          - link "Resources" [ref=f4e55] [cursor=pointer]:
+            - /url: /resources
+        - listitem [ref=f4e59]:
+          - link "Blog" [ref=f4e60] [cursor=pointer]:
+            - /url: /blog-default
+        - listitem [ref=f4e61]:
+          - link "Contact Us" [ref=f4e62] [cursor=pointer]:
+            - /url: /contact
+  - generic [ref=f4e63]:
+    - generic [ref=f4e67]:
+      - heading "Catalogs" [level=3] [ref=f4e68]
+      - list [ref=f4e69]:
+        - listitem [ref=f4e70]:
+          - link "Home" [ref=f4e71] [cursor=pointer]:
+            - /url: /
+        - listitem [ref=f4e72]:
+          - generic [ref=f4e73]: 
+        - listitem [ref=f4e74]: Catalogs
+    - main [ref=f4e75]:
+      - generic [ref=f4e77]:
+        - generic [ref=f4e78]:
+          - generic [ref=f4e79]: Browse Collections
+          - heading "E-catalogs" [level=3] [ref=f4e80]
+          - paragraph [ref=f4e81]:
+            - text: Showing
+            - strong [ref=f4e82]: "2"
+            - text: catalogs
+        - tablist "Filter catalogs" [ref=f4e83]:
+          - tab "All Collections" [selected] [ref=f4e84] [cursor=pointer]
+          - tab "New Arrivals" [ref=f4e85] [cursor=pointer]
+          - tab "Popular" [ref=f4e86] [cursor=pointer]
+        - generic [ref=f4e87]:
+          - article [ref=f4e88]:
+            - link "View Design Master 1mm+ catalog cover" [ref=f4e89] [cursor=pointer]:
+              - /url: https://rantechnology.in/skydecor/design-master.png
+              - img "Design Master 1mm+ catalog cover" [ref=f4e90]
+              - generic [ref=f4e91]: New Arrivals
+              - generic [ref=f4e92]: View catalog
+            - generic [ref=f4e94]:
+              - heading "Design Master 1mm+" [level=4] [ref=f4e95]
+              - paragraph [ref=f4e96]: Explore premium 1mm+ decorative HPL featuring elegant textures, contemporary patterns, and durable finishes for residential and commercial interiors.
+              - link "Download PDF" [ref=f4e97] [cursor=pointer]:
+                - /url: https://rantechnology.in/skydecor/dubai-design-master.pdf
+          - article [ref=f4e99]:
+            - link "View Ambience Collection catalog cover" [ref=f4e100] [cursor=pointer]:
+              - /url: https://rantechnology.in/skydecor/ambience.png
+              - img "Ambience Collection catalog cover" [ref=f4e101]
+              - generic [ref=f4e102]: Popular
+              - generic [ref=f4e103]: View catalog
+            - generic [ref=f4e105]:
+              - heading "Ambience Collection" [level=4] [ref=f4e106]
+              - paragraph [ref=f4e107]: Discover sophisticated decorative HPL designed to create warm, stylish, and inviting interior spaces with modern colours, textures, and finishes.
+              - link "Download PDF" [ref=f4e108] [cursor=pointer]:
+                - /url: https://rantechnology.in/skydecor/ambience.pdf
+  - contentinfo [ref=f4e110]:
+    - generic [ref=f4e111]:
+      - link "skydecor home" [ref=f4e113] [cursor=pointer]:
+        - /url: /
+        - img "skydecor" [ref=f4e114]
+      - generic [ref=f4e115]:
+        - region "Headquarters & Contact" [ref=f4e116]:
+          - heading "Headquarters & Contact" [level=2] [ref=f4e117]
+          - generic [ref=f4e118]:
+            - strong [ref=f4e119]: skydecor Dubai
+            - generic [ref=f4e120]: Dubai, United Arab Emirates
+            - link "info@skydecor.eu" [ref=f4e121] [cursor=pointer]:
+              - /url: mailto:info@skydecor.eu
+            - link "Chat with us on WhatsApp" [ref=f4e122] [cursor=pointer]:
+              - /url: https://alvo.chat/3Ijc
+          - paragraph [ref=f4e123]: Decorative HPL and interior surface solutions for projects across Dubai and the UAE.
+          - link "Request info" [ref=f4e125] [cursor=pointer]:
+            - /url: /contact
+            - text: Request info
+            - generic [aria-hidden] [ref=f4e126]: 
+        - generic [ref=f4e127]:
+          - generic [ref=f4e128]:
+            - heading [level=2] [ref=f4e129]:
+              - link "Decorative HPL" [ref=f4e130] [cursor=pointer]:
+                - /url: /products/product-type/decorative-hpl
+            - list [ref=f4e131]:
+              - listitem [ref=f4e132]:
+                - link "Design Master" [ref=f4e133] [cursor=pointer]:
+                  - /url: /products/product-type/decorative-hpl/category/design-master
+              - listitem [ref=f4e134]:
+                - link "Ambience" [ref=f4e135] [cursor=pointer]:
+                  - /url: /products/product-type/decorative-hpl/category/ambience
+          - generic [ref=f4e136]:
+            - heading "Quick Links" [level=2] [ref=f4e137]
+            - list [ref=f4e138]:
+              - listitem [ref=f4e139]:
+                - link "About Us" [ref=f4e140] [cursor=pointer]:
+                  - /url: /about-us
+              - listitem [ref=f4e141]:
+                - link "All Products" [ref=f4e142] [cursor=pointer]:
+                  - /url: /products
+              - listitem [ref=f4e143]:
+                - link "Catalogs" [ref=f4e144] [cursor=pointer]:
+                  - /url: /catalog
+              - listitem [ref=f4e145]:
+                - link "Certificates" [ref=f4e146] [cursor=pointer]:
+                  - /url: /certificates
+              - listitem [ref=f4e147]:
+                - link "Blog" [ref=f4e148] [cursor=pointer]:
+                  - /url: /blog-default
+              - listitem [ref=f4e149]:
+                - link "Careers" [ref=f4e150] [cursor=pointer]:
+                  - /url: /career
+              - listitem [ref=f4e151]:
+                - link "Contact" [ref=f4e152] [cursor=pointer]:
+                  - /url: /contact
+              - listitem [ref=f4e153]:
+                - link "Terms Of Use" [ref=f4e154] [cursor=pointer]:
+                  - /url: /term-of-use
+          - generic [ref=f4e155]:
+            - heading "Design Ideas" [level=2] [ref=f4e156]
+            - list [ref=f4e157]:
+              - listitem [ref=f4e158]:
+                - link "Bedroom Design" [ref=f4e159] [cursor=pointer]:
+                  - /url: /bedroom-design
+              - listitem [ref=f4e160]:
+                - link "Living Room Design" [ref=f4e161] [cursor=pointer]:
+                  - /url: /living-room-design
+              - listitem [ref=f4e162]:
+                - link "Kitchen Design" [ref=f4e163] [cursor=pointer]:
+                  - /url: /kitchen-design
+              - listitem [ref=f4e164]:
+                - link "Workspace Design" [ref=f4e165] [cursor=pointer]:
+                  - /url: /workspace-design
+              - listitem [ref=f4e166]:
+                - link "Kidroom design" [ref=f4e167] [cursor=pointer]:
+                  - /url: /kidroom-design
+          - generic [ref=f4e168]:
+            - heading "Legal" [level=2] [ref=f4e169]
+            - list [ref=f4e170]:
+              - listitem [ref=f4e171]:
+                - link "Terms of Use" [ref=f4e172] [cursor=pointer]:
+                  - /url: /term-of-use
+              - listitem [ref=f4e173]:
+                - link "Website Terms" [ref=f4e174] [cursor=pointer]:
+                  - /url: /term-of-use
+              - listitem [ref=f4e175]:
+                - link "FAQs" [ref=f4e176] [cursor=pointer]:
+                  - /url: /FAQs
+              - listitem [ref=f4e177]:
+                - link "Contact" [ref=f4e178] [cursor=pointer]:
+                  - /url: /contact
+      - generic [ref=f4e179]:
+        - paragraph [ref=f4e180]: © 2026 skydecor Dubai. All rights reserved.
+        - list "Social media" [ref=f4e181]:
+          - listitem [ref=f4e182]:
+            - link "facebook" [ref=f4e183] [cursor=pointer]:
+              - /url: https://www.facebook.com/skydecorlam
+          - listitem [ref=f4e185]:
+            - link "instagram" [ref=f4e186] [cursor=pointer]:
+              - /url: https://www.instagram.com/skydecorindia/
+          - listitem [ref=f4e188]:
+            - link "whatsapp" [ref=f4e189] [cursor=pointer]:
+              - /url: https://alvo.chat/3Ijc
+          - listitem [ref=f4e191]:
+            - link "youtube" [ref=f4e192] [cursor=pointer]:
+              - /url: https://www.youtube.com/@skydecorindia
+  - text:     

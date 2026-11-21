@@ -4,3 +4,7 @@
 @import "./mousecursor.css";
 @import "photoswipe/style.css";
 @import "../../public/scss/main.scss";
+
+.pswp .pswp__bg {
+  background-color: #000 !important;
+}
