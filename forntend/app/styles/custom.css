@@ -226,10 +226,25 @@
 
 .sd-footer__contact address {
     display: grid;
-    gap: 3px;
+    gap: 10px;
     margin: 0 0 12px;
     color: var(--sd-footer-text);
     font-style: normal;
+}
+
+.sd-footer__contact-item {
+    display: grid;
+    gap: 2px;
+}
+
+.sd-footer__contact-label {
+    color: #fff;
+    font-weight: 600;
+}
+
+.sd-footer__contact address p {
+    max-width: none;
+    margin: 0;
 }
 
 .sd-footer__contact address strong {
@@ -15597,6 +15612,17 @@ header.main-header .header-sticky.active {
 .terms-of-use-wrap .sd-terms {
   width: min(100%, 900px);
   margin: 0 auto;
+}
+
+.terms-of-use-wrap .sd-terms .terms-of-use-content p {
+  text-align: justify;
+  text-align-last: left;
+}
+
+@media (max-width: 767px) {
+  .terms-of-use-wrap .sd-terms .terms-of-use-content p {
+    text-align: left;
+  }
 }
 
 .sd-contact-lead {

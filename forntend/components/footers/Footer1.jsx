@@ -11,14 +11,14 @@ const footerSections = [
   {
     title: "Quick Links",
     links: [
+      { label: "Home", href: "/" },
       { label: "About Us", href: "/about-us" },
       { label: "All Products", href: "/products" },
       { label: "Catalogs", href: "/catalog" },
       { label: "Certificates", href: "/certificates" },
       { label: "Blog", href: "/blog-default" },
       { label: "Careers", href: "/career" },
-      { label: "Contact", href: "/contact" },
-      { label: "Terms Of Use", href: "/term-of-use" },
+      { label: "Contact Us", href: "/contact" },
     ],
   },
   {
@@ -35,9 +35,8 @@ const footerSections = [
     title: "Legal",
     links: [
       { label: "Terms of Use", href: "/term-of-use" },
-      { label: "Website Terms", href: "/term-of-use" },
+      { label: "Privacy Policy", href: "/privacy-policy" },
       { label: "FAQs", href: "/FAQs" },
-      { label: "Contact", href: "/contact" },
     ],
   },
 ];
@@ -69,35 +68,30 @@ export default function Footer1({ hasPaddingBottom = false }) {
             <section className="sd-footer__contact" aria-labelledby="footer-contact">
               <h2 id="footer-contact">Headquarters &amp; Contact</h2>
               <address>
-                <strong>{contactDetails.companyName}</strong>
-                <span>{contactDetails.locationLabel}</span>
                 {contactDetails.addresses.map((address) => (
-                  <span key={address.label}>
-                    {address.label}: {address.value}
-                  </span>
+                  <div className="sd-footer__contact-item" key={address.label}>
+                    <span className="sd-footer__contact-label">{address.label}</span>
+                    <p>{address.value}</p>
+                  </div>
                 ))}
-                {contactDetails.phones.map((phone) => (
-                  <a key={phone.href} href={phone.href}>
-                    {phone.label}
-                  </a>
-                ))}
-                {contactDetails.emails.map((email) => (
-                  <a key={email.href} href={email.href}>
-                    {email.label}
-                  </a>
-                ))}
-                <a
-                  href={contactDetails.whatsapp.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {contactDetails.whatsapp.label}
-                </a>
+                <div className="sd-footer__contact-item">
+                  <span className="sd-footer__contact-label">Email</span>
+                  {contactDetails.emails.map((email) => (
+                    <a key={email.href} href={email.href}>
+                      {email.label}
+                    </a>
+                  ))}
+                </div>
+                <div className="sd-footer__contact-item">
+                  <span className="sd-footer__contact-label">Phone</span>
+                  {contactDetails.phones.map((phone) => (
+                    <a key={phone.href} href={phone.href}>
+                      {phone.label}
+                    </a>
+                  ))}
+                </div>
               </address>
-              <p>
-                Decorative HPL and interior surface solutions for projects
-                across Dubai and the UAE.
-              </p>
+
               <div className="sd-footer__contact-actions">
                 <Link href="/contact" className="sd-footer__request-link">
                   Request info
@@ -138,7 +132,7 @@ export default function Footer1({ hasPaddingBottom = false }) {
 
           <div className="sd-footer__bottom">
             <p>
-              © {new Date().getFullYear()} skydecor Dubai. All rights reserved.
+              © {new Date().getFullYear()} skydecor Dubai. All rights reserved.Powered by <a href="https://www.rantechnology.in/" target="_blank" rel="noopener noreferrer">Rantechnology</a>  
             </p>
 
             <ul className="sd-footer__social" aria-label="Social media">

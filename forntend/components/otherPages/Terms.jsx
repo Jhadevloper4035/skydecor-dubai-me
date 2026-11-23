@@ -48,9 +48,9 @@ export default function Terms() {
             <p className="text-secondary">Last updated: June 15, 2026</p>
             {sections.map((section, index) => (
               <div className="terms-of-use-item" key={section.title}>
-                <h3 className="terms-of-use-title">
+                <h4 className="terms-of-use-title">
                   {index + 1}. {section.title}
-                </h3>
+                </h4>
                 <div className="terms-of-use-content">
                   <p>{section.content}</p>
                 </div>

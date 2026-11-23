@@ -346,21 +346,7 @@ export default function SearchModal() {
                   ))}
                 </ul>
               </div>
-              <div className="d-none d-md-block">
-                <h6 className="mb_16">Recently viewed products</h6>
-                {productsStatus === "loading" && (
-                  <p className="text-caption-1 text-secondary mb_16">Loading products...</p>
-                )}
-                {!visibleProducts.length && productsStatus !== "loading" && (
-                  <p className="text-caption-1 text-secondary mb_16">{emptyText}</p>
-                )}
-                <div className="tf-grid-layout tf-col-2 lg-col-3 xl-col-4">
-                  {visibleProducts.map((product) => (
-                    <ProductCard1 product={product} key={getProductKey(product)} />
-                  ))}
-                </div>
-              </div>
-              {/* Load Item */}
+           
 
               {visibleCount >= productsToRender.length ? (
                 ""
