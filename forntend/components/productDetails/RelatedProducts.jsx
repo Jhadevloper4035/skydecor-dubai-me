@@ -152,7 +152,7 @@ export default function RelatedProducts({ product = {}, products = [], productsS
     <section className="flat-spacing">
       <div className="container flat-animate-tab">
         <ul
-          className="tab-product justify-content-sm-center wow fadeInUp"
+          className="tab-product justify-content-center wow fadeInUp"
           data-wow-delay="0s"
           role="tablist"
         >

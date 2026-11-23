@@ -58,23 +58,23 @@ export default function Hero() {
               <div className="box-content">
                 <div className="content-slider">
                   <div className="box-title-slider">
-                    <p className="fade-item fade-item-1 subheading text-btn-uppercase text-white">
+                    {/* <p className="fade-item fade-item-1 subheading text-btn-uppercase text-white">
                       {slide.subheading}
-                    </p>
-                    <div className="fade-item fade-item-2 heading text-white title-display">
+                    </p> */}
+                    {/* <div className="fade-item fade-item-2 heading text-white title-display">
                       {slide.heading.split("\n").map((line, idx) => (
                         <span key={idx}>
                           {line}
                           <br />
                         </span>
                       ))}
-                    </div>
+                    </div> */}
                   </div>
                   <div className="fade-item fade-item-3 box-btn-slider">
-                    <Link href="/products" className="tf-btn btn-fill btn-white">
+                    {/* <Link href="/products" className="tf-btn btn-fill btn-white">
                       <span className="text">{slide.btnText}</span>
                       <i className="icon icon-arrowUpRight" />
-                    </Link>
+                    </Link> */}
                   </div>
                 </div>
               </div>

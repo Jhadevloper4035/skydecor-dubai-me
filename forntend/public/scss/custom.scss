@@ -569,7 +569,6 @@ h6 {
 .service-grid-section {
   padding: 80px 0;
   background: var(--bg-color);
-
   &__intro {
     max-width: 820px;
     margin: 0 auto 64px;
@@ -852,13 +851,17 @@ h6 {
 
 .sd-footer__directory h2 {
   font-family: "Montserrat", sans-serif !important;
-  font-size: 18px !important;
+  font-size: 16px !important;
   line-height: 1.35 !important;
   text-transform: capitalize !important;
 }
 
+.sd-footer__directory li,
 .sd-footer__directory li a,
-.sd-footer__important-links a {
+.sd-footer__important-links a,
+.sd-footer__contact,
+.sd-footer__contact p,
+.sd-footer__bottom p {
   font-size: 16px !important;
 }
 

@@ -136,7 +136,6 @@ export default function Products1({
     sortingOption,
     sorted,
 
-    activeFilterOnSale,
     currentPage,
     itemPerPage,
   } = state;
@@ -228,7 +227,6 @@ export default function Products1({
     },
     setSortingOption: (value) =>
       filterDispatch({ type: "SET_SORTING_OPTION", payload: value }),
-    toggleFilterWithOnSale: () => filterDispatch({ type: "TOGGLE_FILTER_ON_SALE" }),
     setCurrentPage: handlePageChange,
     setItemPerPage: (value) => {
       filterDispatch({ type: "SET_CURRENT_PAGE", payload: 1 }),
@@ -309,11 +307,6 @@ export default function Products1({
       );
       filteredArrays = [...filteredArrays, filteredByColor];
     }
-    if (activeFilterOnSale) {
-      const filteredByonSale = [...products].filter((elm) => elm.oldPrice);
-      filteredArrays = [...filteredArrays, filteredByonSale];
-    }
-
     const commonItems = [...products].filter((item) =>
       filteredArrays.every((array) => array.includes(item))
     );
@@ -332,7 +325,6 @@ export default function Products1({
     initialQuery,
     color,
     brands,
-    activeFilterOnSale,
   ]);
 
   useEffect(() => {
@@ -383,15 +375,6 @@ export default function Products1({
                 <span className="icon icon-filter" />
                 <span className="text">Filters</span>
               </a>
-              <div
-                onClick={allProps.toggleFilterWithOnSale}
-                className={`d-none d-lg-flex shop-sale-text ${
-                  activeFilterOnSale ? "active" : ""
-                }`}
-              >
-                <i className="icon icon-checkCircle" />
-                <p className="text-caption-1">Shop sale items only</p>
-              </div>
             </div>
             <ul className="tf-control-layout">
               <LayoutHandler

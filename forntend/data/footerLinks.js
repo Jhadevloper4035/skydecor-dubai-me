@@ -1,27 +1,7 @@
 import { contactDetails } from "./contactDetails";
 
-export const socialLinks = [
-  {
-    href: "https://www.facebook.com/skydecorlam",
-    className: "social-facebook",
-    iconClass: "fab fa-facebook-f fa-xs",
-  },
-  {
-    href: "https://www.instagram.com/skydecorindia/",
-    className: "social-instagram",
-    iconClass: "fab fa-instagram fa-xs",
-  },
-  {
-    href: contactDetails.whatsappHref,
-    className: "social-whatsapp",
-    iconClass: "fab fa-whatsapp fa-xs",
-  },
-  {
-    href: "https://www.youtube.com/@skydecorindia",
-    className: "social-youtube",
-    iconClass: "fab fa-youtube fa-xs",
-  },
-];
+// Kept as a reference for the unused legacy footer component.
+export const socialLinks = contactDetails.socialLinks;
 
 export const footerLinks = [
   {

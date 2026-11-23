@@ -76,7 +76,6 @@ export default function Details1({ product = {} }) {
   const collectionPath = [
     displayValue(product.productType),
     displayValue(product.category),
-    displayValue(product.subCategory),
   ]
     .filter((value) => value && value !== "-")
     .join(" / ");
@@ -235,7 +234,7 @@ export default function Details1({ product = {} }) {
                           </div>
                           <div>
                             <p>Dubai, United Arab Emirates</p>
-                            <p>Email: info@skydecor.eu</p>
+                            <p>Email: info@skydecor.me</p>
                           </div>
                         </div>
                       </div>

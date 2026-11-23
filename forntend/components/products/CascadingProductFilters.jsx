@@ -75,8 +75,7 @@ export default function CascadingProductFilters({
   const hasActiveFilters =
     filterFields.some(({ key }) => allProps[key] !== "All") ||
     allProps.color !== "All" ||
-    allProps.brands.length > 0 ||
-    allProps.activeFilterOnSale;
+    allProps.brands.length > 0;
 
   return (
     <div className={`sd-cascade-filter ${className}`.trim()}>

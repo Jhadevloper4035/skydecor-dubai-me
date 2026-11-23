@@ -1,7 +1,6 @@
 "use client";
 
 import { contactDetails } from "@/data/contactDetails";
-import { productNavigation } from "@/data/menu";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
@@ -13,6 +12,8 @@ const inquiryTypes = [
   "Project quotation",
   "Technical support ",
 ];
+
+const productLineupOptions = ["Design Master", "Ambience"];
 
 const initialFormState = {
   name: "",
@@ -32,7 +33,6 @@ export default function Contact2() {
   const [formData, setFormData] = useState(initialFormState);
   const [status, setStatus] = useState("idle");
   const [errorMessage, setErrorMessage] = useState("");
-  const productLineupOptions = productNavigation.ranges.map((range) => range.name);
   const isSubmitting = status === "submitting";
 
   const updateField = (event) => {
@@ -88,33 +88,76 @@ export default function Contact2() {
       <div className="container">
         <div className="sd-contact-lead__layout">
           <div className="sd-contact-lead__intro">
-            <span className="sd-events-kicker">Get in Touch</span>
-            <h2>Let us help with your project</h2>
-            <p>
-              Send your product interest, sample request, or project details.
-              Our Dubai team will get back to you shortly.
-            </p>
+            <address className="sd-contact-lead__address">
+              {contactDetails.addresses.map((address) => (
+                <div key={address.label}>
+                  <span>{address.label}</span>
+                  <p>{address.value}</p>
+                </div>
+              ))}
+            </address>
+            <a
+              className="sd-contact-lead__directions"
+              href={contactDetails.addresses[0].directionsHref}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Get directions
+              <i className="icon icon-arrowUpRight" aria-hidden="true" />
+            </a>
 
             <div className="sd-contact-lead__info">
               <div>
-                <span>Call</span>
-                <a href={contactDetails.phoneHref}>{contactDetails.phoneLabel}</a>
+                <span>Phone</span>
+                {contactDetails.phones.map((phone) => (
+                  <a
+                    className="sd-contact-lead__contact-link"
+                    href={phone.href}
+                    key={phone.href}
+                  >
+                    <i className="icon icon-phone" aria-hidden="true" />
+                    {phone.label}
+                  </a>
+                ))}
               </div>
               <div>
                 <span>Email</span>
-                <a href={`mailto:${contactDetails.email}`}>{contactDetails.email}</a>
+                {contactDetails.emails.map((email) => (
+                  <a
+                    className="sd-contact-lead__contact-link"
+                    href={email.href}
+                    key={email.href}
+                  >
+                    <i className="icon icon-mail" aria-hidden="true" />
+                    {email.label}
+                  </a>
+                ))}
               </div>
-              <div>
-                <span>WhatsApp</span>
+            </div>
+
+            <a
+              className="sd-contact-lead__whatsapp"
+              href={contactDetails.whatsapp.href}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="icon icon-whatsapp" aria-hidden="true" />
+              {contactDetails.whatsapp.label}
+            </a>
+
+            <nav className="sd-contact-lead__social" aria-label="Skydecor social links">
+              {contactDetails.socialLinks.map((link) => (
                 <a
-                  href={contactDetails.whatsappHref}
+                  href={link.href}
+                  key={link.className}
+                  aria-label={link.label}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Chat with skydecor
+                  <i className={link.iconClass} aria-hidden="true" />
                 </a>
-              </div>
-            </div>
+              ))}
+            </nav>
           </div>
 
           <form className="sd-contact-lead__form" onSubmit={submitLead}>
@@ -239,7 +282,7 @@ export default function Contact2() {
               <textarea
                 id="contact-lead-message"
                 name="message"
-                rows={5}
+                rows={3}
                 value={formData.message}
                 onChange={updateField}
                 placeholder="Product, quantity, project location, timeline..."

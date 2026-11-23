@@ -276,7 +276,7 @@ export default function MobileMenu() {
             </div>
             <div className="mb-contact">
               <p className="text-caption-1">
-                Dubai, United Arab Emirates
+                {contactDetails.locationLabel}
               </p>
               <Link
                 href="/contact"
@@ -288,18 +288,26 @@ export default function MobileMenu() {
               </Link>
             </div>
             <ul className="mb-info">
-              <li>
-                <i className="icon icon-mail" />
-                <a href={`mailto:${contactDetails.email}`}>{contactDetails.email}</a>
-              </li>
+              {contactDetails.phones.map((phone) => (
+                <li key={phone.href}>
+                  <i className="icon icon-phone" />
+                  <a href={phone.href}>{phone.label}</a>
+                </li>
+              ))}
+              {contactDetails.emails.map((email) => (
+                <li key={email.href}>
+                  <i className="icon icon-mail" />
+                  <a href={email.href}>{email.label}</a>
+                </li>
+              ))}
               <li>
                 <i className="icon icon-phone" />
                 <a
-                  href={contactDetails.whatsappHref}
+                  href={contactDetails.whatsapp.href}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  WhatsApp skydecor
+                  {contactDetails.whatsapp.label}
                 </a>
               </li>
             </ul>

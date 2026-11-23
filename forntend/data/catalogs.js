@@ -8,9 +8,9 @@ export const catalogs = [
   {
     id: 1,
     category: "new",
-    title: "Design Master 1mm+",
+    title: "Design Master",
     description:
-      "Explore premium 1mm+ decorative HPL featuring elegant textures, contemporary patterns, and durable finishes for residential and commercial interiors.",
+      "Explore premium Decorative HPL featuring elegant textures, contemporary patterns, and durable finishes for residential and commercial interiors.",
     image: "https://rantechnology.in/skydecor/design-master.png",
     pdf: "https://rantechnology.in/skydecor/dubai-design-master.pdf",
     fileName: "Design_Master_1mm_Plus.pdf",

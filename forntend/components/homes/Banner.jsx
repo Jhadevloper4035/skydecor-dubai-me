@@ -23,7 +23,7 @@ export default function Banner() {
             <div className="sd-home-collection-card__details">
               <div className="sd-home-collection-card__copy">
                 <p className="body-text-1">
-                  Our 1mm HPL offers superior strength and a premium finish,
+                  Our HPL offers superior strength and a premium finish,
                   ideal for high-traffic surfaces, modular kitchens, and
                   commercial interiors across Dubai & UAE.
                 </p>

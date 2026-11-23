@@ -1,3 +1,5 @@
+import { contactDetails } from "@/data/contactDetails";
+
 const sections = [
   {
     title: "Website use",
@@ -32,7 +34,7 @@ const sections = [
   {
     title: "Updates and contact",
     content:
-      "We may update these terms as the website and services change. For questions about these terms or website content, contact info@skydecor.eu.",
+      `We may update these terms as the website and services change. For questions about these terms or website content, contact ${contactDetails.emails[0].label}.`,
   },
 ];
 

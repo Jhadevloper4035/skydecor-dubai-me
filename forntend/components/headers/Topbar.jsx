@@ -3,7 +3,6 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import { contactDetails } from "@/data/contactDetails";
-import { socialLinks } from "@/data/footerLinks";
 
 export default function Topbar() {
   return (
@@ -13,22 +12,23 @@ export default function Topbar() {
           <div className="col-xl-4 d-none d-xl-block">
             <div className="tf-cur">
               <ul className="topbar-left">
-                <li>
-                  <a
-                    className="text-caption-1 text-white sd-topbar-contact-pill"
-                    href={contactDetails.phoneHref}
-                  >
-                    {contactDetails.phoneLabel}
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="text-caption-1 text-white"
-                    href={`mailto:${contactDetails.email}`}
-                  >
-                    {contactDetails.email}
-                  </a>
-                </li>
+                {contactDetails.phones.map((phone) => (
+                  <li key={phone.href}>
+                    <a
+                      className="text-caption-1 text-white sd-topbar-contact-pill"
+                      href={phone.href}
+                    >
+                      {phone.label}
+                    </a>
+                  </li>
+                ))}
+                {contactDetails.emails.map((email) => (
+                  <li key={email.href}>
+                    <a className="text-caption-1 text-white" href={email.href}>
+                      {email.label}
+                    </a>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
@@ -63,12 +63,12 @@ export default function Topbar() {
           </div>
           <div className="col-xl-3 d-none d-xl-block">
             <ul className="tf-social-icon style-fill style-fill-2 justify-content-end">
-              {socialLinks.map((link) => (
+              {contactDetails.socialLinks.map((link) => (
                 <li key={link.className}>
                   <a
                     href={link.href}
                     className={link.className}
-                    aria-label={link.className.replace("social-", "")}
+                    aria-label={link.label}
                     target="_blank"
                     rel="noopener noreferrer"
                   >

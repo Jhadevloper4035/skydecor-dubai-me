@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { socialLinks } from "@/data/footerLinks";
+import { contactDetails } from "@/data/contactDetails";
 import { productNavigation } from "@/data/menu";
 import ScrollTop from "../common/ScrollTop";
 
@@ -69,15 +69,29 @@ export default function Footer1({ hasPaddingBottom = false }) {
             <section className="sd-footer__contact" aria-labelledby="footer-contact">
               <h2 id="footer-contact">Headquarters &amp; Contact</h2>
               <address>
-                <strong>skydecor Dubai</strong>
-                <span>Dubai, United Arab Emirates</span>
-                <a href="mailto:info@skydecor.eu">info@skydecor.eu</a>
+                <strong>{contactDetails.companyName}</strong>
+                <span>{contactDetails.locationLabel}</span>
+                {contactDetails.addresses.map((address) => (
+                  <span key={address.label}>
+                    {address.label}: {address.value}
+                  </span>
+                ))}
+                {contactDetails.phones.map((phone) => (
+                  <a key={phone.href} href={phone.href}>
+                    {phone.label}
+                  </a>
+                ))}
+                {contactDetails.emails.map((email) => (
+                  <a key={email.href} href={email.href}>
+                    {email.label}
+                  </a>
+                ))}
                 <a
-                  href="https://alvo.chat/3Ijc"
+                  href={contactDetails.whatsapp.href}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Chat with us on WhatsApp
+                  {contactDetails.whatsapp.label}
                 </a>
               </address>
               <p>
@@ -128,11 +142,11 @@ export default function Footer1({ hasPaddingBottom = false }) {
             </p>
 
             <ul className="sd-footer__social" aria-label="Social media">
-              {socialLinks.map((link) => (
+              {contactDetails.socialLinks.map((link) => (
                 <li key={link.className}>
                   <a
                     href={link.href}
-                    aria-label={link.className.replace("social-", "")}
+                    aria-label={link.label}
                     target="_blank"
                     rel="noopener noreferrer"
                   >

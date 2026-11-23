@@ -5,7 +5,6 @@ import Nav from "./Nav";
 import Image from "next/image";
 import Link from "next/link";
 import { contactDetails } from "@/data/contactDetails";
-import { socialLinks } from "@/data/footerLinks";
 
 export default function Header1() {
   return (
@@ -16,15 +15,18 @@ export default function Header1() {
             <div className="col-xl-5 d-none d-xl-block">
               <ul className="sd-header-contact">
                 <li>
-                  <a href={contactDetails.phoneHref}>
-                    <span>{contactDetails.headerPhoneLabel}</span>
-                  </a>
+                  {contactDetails.phones.map((phone, index) => (
+                    <React.Fragment key={phone.href}>
+                      <a href={phone.href}>{phone.label}</a>
+                      {index < contactDetails.phones.length - 1 ? ", " : null}
+                    </React.Fragment>
+                  ))}
                 </li>
-                <li>
-                  <a href={`mailto:${contactDetails.salesEmail}`}>
-                    {contactDetails.salesEmail}
-                  </a>
-                </li>
+                {contactDetails.emails.map((email) => (
+                  <li key={email.href}>
+                    <a href={email.href}>{email.label}</a>
+                  </li>
+                ))}
               </ul>
             </div>
 
@@ -86,7 +88,7 @@ export default function Header1() {
                       </svg>
                     </a>
                   </li>
-                  {socialLinks.map((link) => (
+                  {contactDetails.socialLinks.map((link) => (
                     <li
                       className="sd-header-social d-none d-xl-block"
                       key={link.className}
@@ -94,7 +96,7 @@ export default function Header1() {
                       <a
                         href={link.href}
                         className="nav-icon-item"
-                        aria-label={link.className.replace("social-", "")}
+                        aria-label={link.label}
                         target="_blank"
                         rel="noopener noreferrer"
                       >

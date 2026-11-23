@@ -1,8 +1,6 @@
 export const initialState = {
   price: [0, 450],
-
   availability: "All",
-
   color: "All",
   size: "All",
   productType: "All",
@@ -11,7 +9,6 @@ export const initialState = {
   texture: "All",
   thickness: "All",
   width: "All",
-  activeFilterOnSale: false,
   brands: [],
   filtered: [],
   sortingOption: "Sort by (Default)",
@@ -53,8 +50,6 @@ export function reducer(state, action) {
       return { ...state, sorted: [...action.payload] };
     case "SET_CURRENT_PAGE":
       return { ...state, currentPage: action.payload };
-    case "TOGGLE_FILTER_ON_SALE":
-      return { ...state, activeFilterOnSale: !state.activeFilterOnSale };
     case "SET_ITEM_PER_PAGE":
       return { ...state, itemPerPage: action.payload };
     case "CLEAR_FILTER":
@@ -74,7 +69,6 @@ export function reducer(state, action) {
         width: "All",
 
         brands: [],
-        activeFilterOnSale: false,
       };
     default:
       return state;
