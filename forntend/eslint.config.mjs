@@ -6,6 +6,7 @@ const config = [
     ignores: [
       ".next/**",
       ".next-*/**",
+      "tmp/**",
       "tmp/header-alignment/**",
       "node_modules/**",
       "out/**",
