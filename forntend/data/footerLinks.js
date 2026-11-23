@@ -21,7 +21,7 @@ export const footerLinks = [
     items: [
       { label: "Shipping", href: "#", isLink: false },
       { label: "Return & Refund", href: "#", isLink: false },
-      { label: "Privacy Policy", href: "#", isLink: false },
+      { label: "Privacy Policy", href: "/privacy-policy", isLink: true },
       { label: "Terms & Conditions", href: "/term-of-use", isLink: true },
       { label: "Orders FAQs", href: "/FAQs", isLink: true },
     ],

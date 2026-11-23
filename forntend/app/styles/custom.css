@@ -15609,20 +15609,30 @@ header.main-header .header-sticky.active {
   margin-bottom: 16px;
 }
 
-.terms-of-use-wrap .sd-terms {
+.sd-legal-content {
   width: min(100%, 900px);
   margin: 0 auto;
 }
 
-.terms-of-use-wrap .sd-terms .terms-of-use-content p {
-  text-align: justify;
-  text-align-last: left;
+.sd-legal-content__updated {
+  margin: 0;
 }
 
-@media (max-width: 767px) {
-  .terms-of-use-wrap .sd-terms .terms-of-use-content p {
-    text-align: left;
-  }
+.sd-legal-content__item {
+  margin-top: 40px;
+}
+
+.sd-legal-content__title {
+  margin: 0 0 16px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.sd-legal-content__item p {
+  margin: 0;
+  line-height: 1.75;
+  text-align: left;
 }
 
 .sd-contact-lead {
