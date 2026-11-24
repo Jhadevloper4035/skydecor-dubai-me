@@ -1,4 +1,4 @@
-const benefits = [
+const defaultBenefits = [
   {
     icon: "fa-sliders",
     title: "Tailored Design Solutions",
@@ -37,16 +37,26 @@ const benefits = [
   },
 ];
 
-export default function WhyChooseUs() {
+const defaultIntro =
+  "We create thoughtful interior solutions that combine modern aesthetics, dependable materials, and practical project support.";
+
+export default function WhyChooseUs({
+  heading = "Why Choose Skydecor",
+  intro = defaultIntro,
+  benefits = defaultBenefits,
+}) {
   return (
     <section className="why-choose-us-elite why-choose-grid-section">
       <div className="container">
         <div className="why-choose-grid-section__intro">
-          <h2>Why Choose Skydecor</h2>
-          <span aria-hidden="true" className="why-choose-grid-section__divider" />
-          <p>
-            We create thoughtful interior solutions that combine modern
-            aesthetics, dependable materials, and practical project support.
+          <h2 className="wow fadeInUp">{heading}</h2>
+          <span
+            aria-hidden="true"
+            className="why-choose-grid-section__divider wow fadeInUp"
+            data-wow-delay="0.1s"
+          />
+          <p className="wow fadeInUp" data-wow-delay="0.2s">
+            {intro}
           </p>
         </div>
         <div className="why-choose-grid-section__grid">

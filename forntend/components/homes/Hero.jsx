@@ -1,11 +1,13 @@
 "use client";
+import { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade, Pagination } from "swiper/modules";
 import Image from "next/image";
-import Link from "next/link";
 import { slides } from "@/data/heroSlides";
 
 export default function Hero() {
+  const swiperRef = useRef(null);
+
   return (
     <section className="tf-slideshow slider-default slider-effect-fade">
       <Swiper
@@ -18,6 +20,9 @@ export default function Hero() {
         autoplay={{ delay: 3000, disableOnInteraction: false }}
         dir="ltr"
         className="swiper tf-sw-slideshow"
+        onSwiper={(swiper) => {
+          swiperRef.current = swiper;
+        }}
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
@@ -82,6 +87,26 @@ export default function Hero() {
           </SwiperSlide>
         ))}
       </Swiper>
+      <button
+        type="button"
+        className="home-hero-nav home-hero-nav--previous"
+        aria-label="Show previous slide"
+        onClick={() => swiperRef.current?.slidePrev()}
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M15 5L8 12L15 19" />
+        </svg>
+      </button>
+      <button
+        type="button"
+        className="home-hero-nav home-hero-nav--next"
+        aria-label="Show next slide"
+        onClick={() => swiperRef.current?.slideNext()}
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M9 5L16 12L9 19" />
+        </svg>
+      </button>
       <div className="wrap-pagination">
         <div className="container">
           <div className="sw-dots sw-pagination-slider type-circle white-circle justify-content-center spd55" />

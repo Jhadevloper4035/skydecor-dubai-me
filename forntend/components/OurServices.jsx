@@ -1,15 +1,11 @@
 import Link from "next/link";
+import { designIdeas } from "@/data/designIdeas";
 
-const services = [
-  { image: "/images/service-1.jpg", title: "Bedroom Design", firstLine: "Bedroom", secondLine: "Design" },
-  { image: "/images/our-project-image-1.jpg", title: "Living Room Design", firstLine: "Living Room", secondLine: "Design" },
-  { image: "/images/our-project-image-2.jpg", title: "Kitchen Design", firstLine: "Kitchen", secondLine: "Design" },
-  { image: "/images/our-project-image-3.jpg", title: "Workspace Design", firstLine: "Workspace", secondLine: "Design" },
-];
+const titleLines = (title) => title.replace(" Design", "").split(" ");
 
 export default function OurServices() {
   return (
-    <section className="our-services-elite service-grid-section">
+    <section id="design-ideas" className="our-services-elite service-grid-section">
       <div className="container">
         <div className="service-grid-section__intro">
           <h2 className="wow fadeInUp">Design That Inspires</h2>
@@ -26,16 +22,16 @@ export default function OurServices() {
           
         </div>
         <div className="service-grid-section__grid">
-          {services.map((service) => (
+          {designIdeas.map((idea) => (
             <Link
               className="service-grid-section__card"
-              href="/contact"
-              key={service.title}
+              href={`/${idea.slug}`}
+              key={idea.slug}
             >
-              <img src={service.image} alt={service.title} />
-              <h3 aria-label={service.title}>
-                <span aria-hidden="true">{service.firstLine}</span>
-                <span aria-hidden="true">{service.secondLine}</span>
+              <img src={idea.image} alt={idea.title} />
+              <h3 aria-label={idea.title}>
+                <span aria-hidden="true">{titleLines(idea.title).join(" ")}</span>
+                <span aria-hidden="true">Design</span>
               </h3>
             </Link>
           ))}

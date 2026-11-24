@@ -17,10 +17,15 @@ const DEFAULT_VISIBLE_COUNT = 8;
 const LOAD_MORE_COUNT = 4;
 const MAX_SUGGESTIONS = 24;
 
-const normalizeValue = (value = "") => String(value || "").trim().toLowerCase();
+const normalizeValue = (value = "") =>
+  String(value || "")
+    .trim()
+    .toLowerCase();
 
 const getProductKey = (product = {}) =>
-  normalizeValue(product.productCodeSlug || product.productCode || product._id || product.id);
+  normalizeValue(
+    product.productCodeSlug || product.productCode || product._id || product.id,
+  );
 
 const uniqueProducts = (products = []) => {
   const seen = new Set();
@@ -36,7 +41,9 @@ const uniqueProducts = (products = []) => {
 
 const readRecentlyViewedKeys = () => {
   try {
-    const keys = JSON.parse(window.localStorage.getItem(RECENTLY_VIEWED_KEY) || "[]");
+    const keys = JSON.parse(
+      window.localStorage.getItem(RECENTLY_VIEWED_KEY) || "[]",
+    );
     return Array.isArray(keys) ? keys.filter(Boolean) : [];
   } catch {
     return [];
@@ -72,9 +79,7 @@ const getSearchableText = (product = {}) =>
     .toLowerCase();
 
 const searchProducts = (products = [], query = "") => {
-  const terms = normalizeValue(query)
-    .split(/\s+/)
-    .filter(Boolean);
+  const terms = normalizeValue(query).split(/\s+/).filter(Boolean);
 
   if (!terms.length) return [];
 
@@ -99,7 +104,11 @@ const buildKeywordTags = (products = []) => {
 };
 
 const getProductTitle = (product = {}) =>
-  product.productName || product.title || product.designName || product.productCode || "Product";
+  product.productName ||
+  product.title ||
+  product.designName ||
+  product.productCode ||
+  "Product";
 
 const closeSearchModal = () => {
   if (typeof window === "undefined") return;
@@ -119,7 +128,9 @@ const closeSearchModal = () => {
   document.body.classList.remove("modal-open");
   document.body.style.removeProperty("overflow");
   document.body.style.removeProperty("padding-right");
-  document.querySelectorAll(".modal-backdrop").forEach((backdrop) => backdrop.remove());
+  document
+    .querySelectorAll(".modal-backdrop")
+    .forEach((backdrop) => backdrop.remove());
 };
 
 export default function SearchModal() {
@@ -132,20 +143,27 @@ export default function SearchModal() {
   const [visibleCount, setVisibleCount] = useState(DEFAULT_VISIBLE_COUNT);
   const [recentlyViewedKeys, setRecentlyViewedKeys] = useState([]);
   const catalogProducts = useMemo(() => {
-    const sourceProducts = backendProducts.length ? backendProducts : localProducts;
+    const sourceProducts = backendProducts.length
+      ? backendProducts
+      : localProducts;
 
     return uniqueProducts(sourceProducts.map(normalizeProduct));
   }, [backendProducts]);
-  const keywordTags = useMemo(() => buildKeywordTags(catalogProducts), [catalogProducts]);
+  const keywordTags = useMemo(
+    () => buildKeywordTags(catalogProducts),
+    [catalogProducts],
+  );
   const searchResults = useMemo(
     () => searchProducts(catalogProducts, query),
-    [catalogProducts, query]
+    [catalogProducts, query],
   );
   const hasQuery = Boolean(query.trim());
-  const suggestionProducts = hasQuery ? searchResults.slice(0, MAX_SUGGESTIONS) : [];
+  const suggestionProducts = hasQuery
+    ? searchResults.slice(0, MAX_SUGGESTIONS)
+    : [];
   const recentlyViewedProducts = useMemo(() => {
     const productByKey = new Map(
-      catalogProducts.map((product) => [getProductKey(product), product])
+      catalogProducts.map((product) => [getProductKey(product), product]),
     );
 
     return recentlyViewedKeys
@@ -154,7 +172,8 @@ export default function SearchModal() {
   }, [catalogProducts, recentlyViewedKeys]);
   const productsToRender = recentlyViewedProducts;
   const visibleProducts = productsToRender.slice(0, visibleCount);
-  const emptyText = "Recently viewed products will appear here after you open product detail pages.";
+  const emptyText =
+    "Recently viewed products will appear here after you open product detail pages.";
 
   useEffect(() => {
     let shouldUpdate = true;
@@ -164,7 +183,10 @@ export default function SearchModal() {
 
       hasRequestedProducts.current = true;
       setProductsStatus("loading");
-      const products = await getProductsFromApi({ limit: 1000, isActive: true });
+      const products = await getProductsFromApi({
+        limit: 1000,
+        isActive: true,
+      });
 
       if (!shouldUpdate) return;
 
@@ -177,7 +199,8 @@ export default function SearchModal() {
       }
     };
 
-    const refreshRecentlyViewed = () => setRecentlyViewedKeys(readRecentlyViewedKeys());
+    const refreshRecentlyViewed = () =>
+      setRecentlyViewedKeys(readRecentlyViewedKeys());
     const handleSearchModalShown = () => {
       refreshRecentlyViewed();
       loadProducts();
@@ -190,7 +213,10 @@ export default function SearchModal() {
 
     return () => {
       shouldUpdate = false;
-      searchModal?.removeEventListener("shown.bs.modal", handleSearchModalShown);
+      searchModal?.removeEventListener(
+        "shown.bs.modal",
+        handleSearchModalShown,
+      );
     };
   }, []);
 
@@ -240,7 +266,10 @@ export default function SearchModal() {
               data-bs-dismiss="modal"
             />
           </div>
-          <form className="form-search sky-search-form" onSubmit={handleSearchSubmit}>
+          <form
+            className="form-search sky-search-form"
+            onSubmit={handleSearchSubmit}
+          >
             <fieldset className="text">
               <input
                 type="text"
@@ -264,7 +293,11 @@ export default function SearchModal() {
                 <i className="fa-solid fa-xmark" />
               </button>
             )}
-            <button className="sky-search-submit" type="submit" aria-label="Search products">
+            <button
+              className="sky-search-submit"
+              type="submit"
+              aria-label="Search products"
+            >
               <svg
                 className="icon"
                 width={20}
@@ -293,7 +326,9 @@ export default function SearchModal() {
           {hasQuery ? (
             <div className="sky-search-suggestions">
               {productsStatus === "loading" && !suggestionProducts.length ? (
-                <p className="sky-search-suggestion-empty">Searching products...</p>
+                <p className="sky-search-suggestion-empty">
+                  Searching products...
+                </p>
               ) : suggestionProducts.length ? (
                 suggestionProducts.map((product) => (
                   <Link
@@ -310,14 +345,15 @@ export default function SearchModal() {
                       loading="lazy"
                     />
                     <span className="sky-search-suggestion-content">
-                      <span className="sky-search-suggestion-title">
-                        {getProductTitle(product)}
-                      </span>
-                      <span className="sky-search-suggestion-meta">
-                        {product.productCode || product.productCodeSlug || product.designName}
+                      <span className="sky-search-suggestion-meta" style={{ textTransform: "uppercase" }}>
+                        {
+                          product.productCodeSlug ||
+                          product.designName}
                       </span>
                       <span className="sky-search-suggestion-texture">
-                        {product.texture || product.category || product.productType}
+                        {product.texture ||
+                          product.category ||
+                          product.productType}
                       </span>
                     </span>
                   </Link>
@@ -346,7 +382,6 @@ export default function SearchModal() {
                   ))}
                 </ul>
               </div>
-           
 
               {visibleCount >= productsToRender.length ? (
                 ""

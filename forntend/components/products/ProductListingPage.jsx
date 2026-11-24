@@ -17,6 +17,18 @@ export default function ProductListingPage({
   query = "",
 }) {
   const title = titleize(subCategory || category || productType || query);
+  const isDesignMaster = category === "design-master";
+  const bannerImages = isDesignMaster
+    ? {
+        desktop: "/images/banners/design-master-desktop.jpeg",
+        tablet: "/images/banners/design-master-tablet.jpeg",
+        mobile: "/images/banners/deisgn-master-mobile.jpeg",
+      }
+    : {
+        desktop: "/images/banners/product-desktop.jpeg",
+        tablet: "/images/banners/product-tablet.jpeg",
+        mobile: "/images/banners/product-mobile.jpeg",
+      };
   const breadcrumbLevels = [
     { name: "Products", href: "/products" },
     productType && {
@@ -44,13 +56,13 @@ export default function ProductListingPage({
         <picture className="product-listing-banner__artwork">
           <source
             media="(min-width: 1200px)"
-            srcSet="/images/banners/product-desktop.jpeg"
+            srcSet={bannerImages.desktop}
           />
           <source
             media="(min-width: 768px)"
-            srcSet="/images/banners/product-tablet.jpeg"
+            srcSet={bannerImages.tablet}
           />
-          <img src="/images/banners/product-mobile.jpeg" alt="" />
+          <img src={bannerImages.mobile} alt="" />
         </picture>
         <div className="product-listing-banner__content">
           <div className="container-full">

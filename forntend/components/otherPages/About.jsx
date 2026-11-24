@@ -3,6 +3,8 @@
 import Image from "next/image";
 import PhotoSwipeLightbox from "photoswipe/lightbox";
 import { useEffect, useRef } from "react";
+import WhyChooseUs from "@/components/WhyChooseUs";
+import DirectorSection from "@/components/otherPages/DirectorSection";
 
 const companyStory = [
   "Established in 2016, skydecor creates decorative, acrylic, and PVC HPL with a focus on design, precision, and dependable quality.",
@@ -63,36 +65,42 @@ const manufacturingGallery = [
   },
 ];
 
-const uspItems = [
+const aboutBenefits = [
   {
-    icon: "fa-solid fa-link",
-    title: "Phenolic Bonding",
-    text: "Strong, dependable adhesion engineered for lasting HPL performance.",
+    icon: "fa-link",
+    title: "Design & Material Expertise",
+    description:
+      "We create decorative, acrylic, and PVC HPL with a focus on design, precision, and dependable quality.",
   },
   {
-    icon: "fa-solid fa-hammer",
-    title: "Carpenter Friendly",
-    text: "Easy to handle, cut, and install across everyday interior applications.",
+    icon: "fa-gears",
+    title: "Advanced Manufacturing",
+    description:
+      "Modern machinery, skilled teams, and consistent quality control support an annual capacity of more than five million sheets.",
   },
   {
-    icon: "fa-solid fa-broom",
-    title: "Easy to Clean",
-    text: "Low-maintenance surfaces designed for simple, routine care.",
+    icon: "fa-globe",
+    title: "Regional & Global Reach",
+    description:
+      "Our Dubai warehouse supports customers across the Middle East and global markets.",
   },
   {
-    icon: "fa-solid fa-shield-halved",
-    title: "Long Life",
-    text: "Durable finishes that retain their character through regular use.",
+    icon: "fa-shield-halved",
+    title: "Made for Everyday Use",
+    description:
+      "Easy-care surfaces and durable finishes are designed to retain their character through regular use.",
   },
   {
-    icon: "fa-solid fa-ruler-combined",
-    title: "Full Thickness",
-    text: "Consistent construction supports reliable fabrication and finishing.",
+    icon: "fa-house",
+    title: "Versatile Interior Applications",
+    description:
+      "Our surface range works across furniture, wall panels, kitchens, and other interior applications.",
   },
   {
-    icon: "fa-solid fa-house",
-    title: "Made for Interiors",
-    text: "Versatile surfaces for furniture, wall panels, kitchens, and more.",
+    icon: "fa-leaf",
+    title: "Sustainability in Focus",
+    description:
+      "We are committed to integrating eco-friendly materials and sustainable practices into our work.",
   },
 ];
 
@@ -118,8 +126,18 @@ export default function About() {
   return (
     <>
       <section className="flat-spacing sd-about-story">
-        <div className="container">
+        <div className="container wow fadeInUp" data-wow-delay="0s">
           <div className="tf-grid-layout md-col-2 radius-20 gap-0 overflow-hidden sd-about-story__card">
+            <div className="image-100 sd-about-story__image">
+              <Image
+                src="/images/about-us-image-1.jpg"
+                alt="skydecor HPL in a contemporary interior"
+                width={906}
+                height={1000}
+                sizes="(max-width: 767px) 100vw, 50vw"
+              />
+            </div>
+
             <div className="banner-text style-2 bg-brown-2 mb-0 sd-about-story__content">
               <div className="box-title">
                 <p className="text-btn-uppercase">skydecor HPL</p>
@@ -133,26 +151,30 @@ export default function About() {
                   <p key={paragraph}>{paragraph}</p>
                 ))}
               </div>
-            </div>
-
-            <div className="image-100 sd-about-story__image">
-              <Image
-                src="/images/about-us-image-1.jpg"
-                alt="skydecor HPL in a contemporary interior"
-                width={906}
-                height={1000}
-                sizes="(max-width: 767px) 100vw, 50vw"
-              />
+              <a
+                className="sd-about-story__profile-download"
+                href="/company-profile.pdf"
+                download
+              >
+                <i className="fa-solid fa-download" aria-hidden="true" />
+                Download company profile
+              </a>
             </div>
           </div>
         </div>
       </section>
 
+      <DirectorSection />
+
       <section className="sd-about-commitments">
-        <div className="container">
-          <div className="sd-about-section-head sd-about-section-head--light">
+        <div className="container wow fadeInUp" data-wow-delay="0.1s">
+          <div className="sd-about-section-head sd-about-section-head--light sd-about-section-head--centered">
             <p className="sd-about-eyebrow">Our core commitments</p>
             <h2>What guides us</h2>
+            <span
+              aria-hidden="true"
+              className="sd-about-section-head__divider"
+            />
           </div>
 
           <div className="sd-about-commitments__grid">
@@ -167,11 +189,15 @@ export default function About() {
       </section>
 
       <section className="flat-spacing sd-about-manufacturing">
-        <div className="container">
-          <div className="sd-about-manufacturing__intro">
+        <div className="container wow fadeInUp" data-wow-delay="0.2s">
+          <div className="sd-about-manufacturing__intro sd-about-section-head--centered">
             <div>
               <p className="sd-about-eyebrow">Manufacturing</p>
               <h2>Precision at every stage</h2>
+              <span
+                aria-hidden="true"
+                className="sd-about-section-head__divider"
+              />
               <p className="sd-about-manufacturing__description">
                 Modern machinery, skilled teams, and consistent quality control
                 support an annual capacity of more than five million sheets.
@@ -209,28 +235,11 @@ export default function About() {
         </div>
       </section>
 
-      <section className="flat-spacing sd-about-usps">
-        <div className="container">
-          <div className="sd-about-section-head">
-            <p className="sd-about-eyebrow">Our USPs</p>
-            <h2>Designed for everyday performance</h2>
-          </div>
-
-          <div className="sd-about-usps__grid">
-            {uspItems.map((item) => (
-              <article className="sd-about-usp" key={item.title}>
-                <span className="sd-about-usp__icon" aria-hidden="true">
-                  <i className={item.icon} />
-                </span>
-                <div>
-                  <h3>{item.title}</h3>
-                  <p>{item.text}</p>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+      <WhyChooseUs
+        heading="What Makes skydecor Different"
+        intro="Established in 2016, skydecor combines design-led surfaces, advanced manufacturing, and a Dubai warehouse serving customers across the Middle East and global markets."
+        benefits={aboutBenefits}
+      />
     </>
   );
 }

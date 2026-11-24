@@ -1,9 +1,8 @@
 import Link from "next/link";
 import About from "@/components/otherPages/About";
-import React from "react";
 
 export const metadata = {
-  title: "About skydecor | Decorative Surface Solutions",
+  title: "About Us | Decorative Surface Solutions",
   description:
     "Learn about skydecor and our decorative HPL, panels, and interior surface solutions for residential and commercial projects.",
 };
@@ -11,25 +10,35 @@ export const metadata = {
 export default function AboutUsPage() {
   return (
     <>
-      <div
-        className="page-title"
-        style={{ backgroundImage: "url(/images/section/page-title.jpg)" }}
-      >
-        <div className="container-full">
-          <div className="row">
-            <div className="col-12">
-              <h3 className="heading text-center">About skydecor</h3>
-              <ul className="breadcrumbs d-flex align-items-center justify-content-center">
-                <li>
-                  <Link className="link" href={`/`}>
-                    Home
-                  </Link>
-                </li>
-                <li>
-                  <i className="icon-arrRight" />
-                </li>
-                <li>About skydecor</li>
-              </ul>
+      <div className="page-title product-listing-banner">
+        <picture className="product-listing-banner__artwork">
+          <source
+            media="(min-width: 1200px)"
+            srcSet="/images/banners/product-desktop.jpeg"
+          />
+          <source
+            media="(min-width: 768px)"
+            srcSet="/images/banners/product-tablet.jpeg"
+          />
+          <img src="/images/banners/product-mobile.jpeg" alt="" />
+        </picture>
+        <div className="product-listing-banner__content">
+          <div className="container-full">
+            <div className="row">
+              <div className="col-12">
+                <h1 className="heading text-start">About Us</h1>
+                <ul className="breadcrumbs d-flex align-items-center justify-content-start">
+                  <li>
+                    <Link className="link" href="/">
+                      Home
+                    </Link>
+                  </li>
+                  <li>
+                    <i className="icon-arrRight" />
+                  </li>
+                  <li>About Us</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
