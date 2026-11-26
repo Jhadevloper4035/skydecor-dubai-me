@@ -26,14 +26,6 @@ const formatProductName = (product = {}) =>
 const formatProductCode = (product = {}) =>
   upperValue(product.productCode || product.productCodeSlug || product._id || product.id);
 
-const formatThickness = (value = "") => {
-  const normalized = String(value).trim();
-  if (!normalized) return "-";
-  return normalized
-    .replace(/\s*mm$/i, " mm")
-    .replace(/(\d)(mm)$/i, "$1 mm");
-};
-
 const ProductSpecRow = ({ label, value }) => (
   <div className="sky-product-spec-row">
     <div className="sky-product-spec-label">{label}</div>
@@ -128,7 +120,6 @@ export default function Details1({ product = {} }) {
                     <ProductSpecRow label="Category" value={displayValue(product.category)} />
                     <ProductSpecRow label="Sub Category" value={displayValue(product.subCategory)} />
                     <ProductSpecRow label="Texture" value={displayValue(product.texture)} />
-                    <ProductSpecRow label="Thickness" value={formatThickness(product.thickness)} />
                   </div>
 
                   <div className="tf-product-info-by-btn sky-product-action-row mb_10 mt_24">

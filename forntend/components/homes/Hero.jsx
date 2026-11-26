@@ -26,12 +26,13 @@ export default function Hero() {
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
+            {({ isActive, isNext, isPrev }) => (
             <div
               className={`wrap-slider${
                 slide.tabletImgSrc ? " home-hero-banner" : ""
               }`}
             >
-              {slide.tabletImgSrc ? (
+              {(index === 0 || isActive || isNext || isPrev) && (slide.tabletImgSrc ? (
                 <picture className="home-hero-picture">
                   {slide.mobileImgSrc && (
                     <source
@@ -48,7 +49,18 @@ export default function Hero() {
                     src={slide.imgSrc}
                     fill
                     sizes="100vw"
-                    priority
+                    fetchPriority="high"
+                    loading="eager"
+                  />
+                </picture>
+              ) : slide.mobileImgSrc ? (
+                <picture>
+                  <source media="(max-width: 767px)" srcSet={slide.mobileImgSrc} />
+                  <Image
+                    alt={slide.alt}
+                    src={slide.imgSrc}
+                    width={1920}
+                    height={803}
                   />
                 </picture>
               ) : (
@@ -57,9 +69,8 @@ export default function Hero() {
                   src={slide.imgSrc}
                   width={1920}
                   height={803}
-                  priority
                 />
-              )}
+              ))}
               <div className="box-content">
                 <div className="content-slider">
                   <div className="box-title-slider">
@@ -84,6 +95,7 @@ export default function Hero() {
                 </div>
               </div>
             </div>
+            )}
           </SwiperSlide>
         ))}
       </Swiper>

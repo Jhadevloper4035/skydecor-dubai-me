@@ -401,6 +401,46 @@ export const allBlogs = [
       "Review physical samples in the project lighting before making a final decision. Colour, texture, and sheen can look different on a screen and can shift throughout the day.",
       "Consider cleaning, traffic, edge details, and nearby materials as part of the same decision. Our team can help compare suitable collections for your project requirements.",
     ],
+    sections: [
+      {
+        heading: "Begin with how the surface will be used",
+        paragraphs: [
+          "A finish should suit both the look of the room and the demands placed on it. Frequently touched doors, reception counters, and family spaces benefit from a choice that remains comfortable to live with as the room is used day after day.",
+          "Think about who will use the space, how often it will be cleaned, and whether the surface sits beside water, heat, or high-traffic areas. Answering these practical questions first helps narrow the collection before colour and pattern are compared.",
+        ],
+      },
+      {
+        heading: "Compare sheen, texture, and colour in context",
+        paragraphs: [
+          "Matte, textured, woodgrain, and higher-sheen finishes each respond differently to light. A finish that feels subtle in a sample library can appear more pronounced beside a large window, under warm lighting, or across a full wall of cabinetry.",
+          "Place samples next to flooring, paint, handles, stone, fabric, and metal details. Viewing the palette together makes undertones easier to spot and helps the completed interior feel intentional rather than assembled one item at a time.",
+        ],
+      },
+      {
+        heading: "Complete the specification, not just the colour choice",
+        paragraphs: [
+          "The final result also depends on surrounding details. Edges, panel layout, hardware, and the direction of a woodgrain can all influence how a finish reads once installed. Include these details in the conversation before ordering.",
+          "Keep approved samples and finish names with the project record so that future additions or replacements can be checked against the original selection. This simple step supports a more consistent result across rooms and project phases.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Should I choose a finish from a screen or a physical sample?",
+        answer:
+          "Use online images to shortlist options, then make the final choice from a physical sample in the project environment. Screen settings and lighting can change the way colour and texture appear.",
+      },
+      {
+        question: "Which finish is best for a busy area?",
+        answer:
+          "The right choice depends on the application, cleaning routine, and installation details. Share how the surface will be used so the collection can be reviewed against those conditions.",
+      },
+      {
+        question: "Can I use the same finish throughout the project?",
+        answer:
+          "A consistent finish can create a cohesive look, but it should still be checked in each location. Lighting, scale, and adjacent materials can make one finish read differently from room to room.",
+      },
+    ],
     categories: ["HPL", "Design Guidance"],
     tags: ["finishes", "interiors", "samples"],
   },
@@ -419,6 +459,46 @@ export const allBlogs = [
       "Place samples beside flooring, paint, fabrics, and metal finishes. This makes it easier to identify undertone conflicts and build a coordinated material palette.",
       "When requesting samples, include the application and approximate project quantity so the product team can provide relevant availability and technical guidance.",
     ],
+    sections: [
+      {
+        heading: "See materials in the light where they will live",
+        paragraphs: [
+          "Natural light, warm downlights, and cooler task lighting can each reveal a different side of the same surface. Reviewing samples at several times of day gives the design team a more reliable picture than a single image or showroom visit.",
+          "Move the sample around the room and view it both vertically and horizontally where possible. This helps show how scale, reflection, and shadow will affect the material across doors, panels, worktops, or feature areas.",
+        ],
+      },
+      {
+        heading: "Build the palette as a complete set",
+        paragraphs: [
+          "A sample is most useful when it is considered alongside every nearby finish. Compare it with paint, flooring, fabrics, metalwork, stone, and hardware rather than approving each material in isolation.",
+          "This process can expose small differences in warmth, grain, or sheen before they become difficult to correct on site. It also helps the team decide where a contrast should be deliberate and where a quieter match is more appropriate.",
+        ],
+      },
+      {
+        heading: "Turn approval into a clear project record",
+        paragraphs: [
+          "Once a selection is approved, label the retained sample with the product name, finish, and intended location. A simple material board or schedule gives architects, installers, and clients one shared reference throughout the project.",
+          "Confirm the required quantity, lead time, and technical suitability before finalising the order. Early coordination reduces last-minute substitutions and keeps the visual intent aligned with the installation plan.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "How many samples should a project team review?",
+        answer:
+          "Start with a focused shortlist, then compare the strongest options against the surrounding materials. Reviewing too many similar options can make approval slower without improving the decision.",
+      },
+      {
+        question: "Are digital colour references enough for final approval?",
+        answer:
+          "No. Digital references are helpful for early direction, but a physical sample is the more dependable reference for final colour, texture, and sheen approval.",
+      },
+      {
+        question: "What should be recorded after a sample is approved?",
+        answer:
+          "Keep the product name, finish, intended application, and approved sample together in the project schedule. This gives the whole team a clear reference for ordering and future coordination.",
+      },
+    ],
     categories: ["Project Planning", "Materials"],
     tags: ["samples", "specification", "design"],
   },
@@ -436,6 +516,46 @@ export const allBlogs = [
       "For routine cleaning, use a soft damp cloth with a mild non-abrasive cleaner. Wipe spills promptly and dry the surface after cleaning.",
       "Avoid abrasive pads, harsh chemicals, and tools that can scratch the finish. Product-specific guidance should always take priority for specialist surfaces.",
       "Good installation details also support long-term performance. Edges, joints, and areas around water should be finished for the conditions of the application.",
+    ],
+    sections: [
+      {
+        heading: "Make routine cleaning gentle and consistent",
+        paragraphs: [
+          "A regular, light cleaning routine is usually more effective than occasional heavy cleaning. Use a soft cloth with clean water or a mild non-abrasive cleaner, then dry the surface so residue and moisture are not left behind.",
+          "Treat spills as soon as practical, especially around worktops, doors, and frequently handled panels. Prompt attention keeps everyday marks from becoming harder to remove and helps preserve the finish's intended appearance.",
+        ],
+      },
+      {
+        heading: "Use the right method for the mark",
+        paragraphs: [
+          "Avoid scouring pads, sharp tools, and aggressive cleaning products unless the product guidance specifically permits them. These can dull, scratch, or otherwise change the surface instead of lifting the mark.",
+          "When a mark is unfamiliar, test the cleaning method in an inconspicuous area first and follow the manufacturer's product-specific care guidance. A measured approach is safer than increasing the cleaning strength immediately.",
+        ],
+      },
+      {
+        heading: "Protect edges, joints, and wet areas",
+        paragraphs: [
+          "Care also includes checking the details around the surface. Keep edges and joints clean and dry, and make sure areas close to sinks, appliances, or other moisture sources are finished for their intended conditions.",
+          "If a panel, edge, or seal shows signs of damage, arrange an assessment before continued moisture exposure causes a larger issue. Early attention can help maintain both the look and the function of the installation.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "What should I use for everyday cleaning?",
+        answer:
+          "A soft damp cloth and a mild non-abrasive cleaner are suitable for routine care. Dry the surface afterwards and follow the product-specific guidance when it is available.",
+      },
+      {
+        question: "Can abrasive pads or strong chemicals be used?",
+        answer:
+          "Avoid them unless the product guidance explicitly allows them. Abrasive tools and harsh chemicals can alter the surface and may cause avoidable damage.",
+      },
+      {
+        question: "How should surfaces near water be cared for?",
+        answer:
+          "Wipe water promptly, keep edges and joints dry, and make sure the installation is finished appropriately for the area. Seek advice if you notice a damaged edge or seal.",
+      },
     ],
     categories: ["Care", "HPL"],
     tags: ["maintenance", "cleaning", "surfaces"],

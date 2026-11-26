@@ -15,6 +15,8 @@ export default function AboutUs() {
               <img
                 src="/images/about-us-image-1.jpg"
                 alt="Skydecor decorative interior surfaces"
+                loading="lazy"
+                decoding="async"
               />
             </figure>
           </div>

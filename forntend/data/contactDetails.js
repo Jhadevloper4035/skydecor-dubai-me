@@ -6,6 +6,10 @@ export const contactDetails = {
       label: "info@skydecor.me",
       href: "mailto:info@skydecor.me",
     },
+    {
+      label: "sales.mgr@skydecor.me",
+      href: "mailto:sales.mgr@skydecor.me",
+    },
   ],
   phones: [
     {
@@ -20,9 +24,10 @@ export const contactDetails = {
   addresses: [
     {
       label: "Sales office",
-      value: "WH.03, Ras Al Khor Industrial Area 2, Dubai, United Arab Emirates",
+      value:
+        "Al Saqr Business Tower, Trade Centre Second, Office A-89, Dubai-237810, United Arab Emirates",
       directionsHref:
-        "https://www.google.com/maps/search/?api=1&query=WH.03%2C%20Ras%20Al%20Khor%20Industrial%20Area%202%2C%20Dubai",
+        "https://www.google.com/maps/search/?api=1&query=Al%20Saqr%20Business%20Tower%2C%20Trade%20Centre%20Second%2C%20Office%20A-89%2C%20Dubai-237810%2C%20United%20Arab%20Emirates",
     },
     {
       label: "Distribution centre",

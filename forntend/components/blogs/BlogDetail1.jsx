@@ -7,6 +7,7 @@ import {
   selectSelectedBlog,
   setSelectedBlog,
 } from "@/store/contentSlice";
+import { allBlogs } from "@/data/blogs";
 
 export default function BlogDetail1({ blog: initialBlog }) {
   const dispatch = useAppDispatch();
@@ -16,6 +17,11 @@ export default function BlogDetail1({ blog: initialBlog }) {
   const categories = blog.categories?.length ? blog.categories : ["skydecor"];
   const tags = blog.tags?.length ? blog.tags : categories;
   const paragraphs = blog.content?.length ? blog.content : [blog.description];
+  const fallbackBlog = allBlogs.find((item) => item.slug === blog.slug);
+  const sections = blog.sections?.length
+    ? blog.sections
+    : fallbackBlog?.sections || [];
+  const faqs = blog.faqs?.length ? blog.faqs : fallbackBlog?.faqs || [];
 
   useEffect(() => {
     if (initialBlog) dispatch(setSelectedBlog(initialBlog));
@@ -65,6 +71,31 @@ export default function BlogDetail1({ blog: initialBlog }) {
               {paragraph}
             </p>
           ))}
+
+          {sections.map((section) => (
+            <section className="sky-blog-article-section" key={section.heading}>
+              <h4>{section.heading}</h4>
+              {section.paragraphs.map((paragraph) => (
+                <p className="body-text-1 mb_16" key={paragraph}>
+                  {paragraph}
+                </p>
+              ))}
+            </section>
+          ))}
+
+          {faqs.length ? (
+            <section className="sky-blog-faqs" aria-labelledby="blog-faq-heading">
+              <h4 id="blog-faq-heading">Frequently asked questions</h4>
+              <div className="sky-blog-faqs__list">
+                {faqs.map((faq) => (
+                  <details key={faq.question}>
+                    <summary>{faq.question}</summary>
+                    <p className="body-text-1">{faq.answer}</p>
+                  </details>
+                ))}
+              </div>
+            </section>
+          ) : null}
         </div>
 
         <div className="bot d-flex justify-content-between gap-10 flex-wrap">

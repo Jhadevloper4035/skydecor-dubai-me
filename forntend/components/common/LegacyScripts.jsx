@@ -12,7 +12,6 @@ const legacyScripts = [
   "/js/SplitText.min.js",
   "/js/jquery.counterup.min.js",
   "/js/jquery.magnific-popup.min.js",
-  "/js/jquery.mb.YTPlayer.min.js",
   "/js/jquery.slicknav.js",
   "/js/jquery.waypoints.min.js",
   "/js/swiper-bundle.min.js",

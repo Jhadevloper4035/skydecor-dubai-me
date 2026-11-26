@@ -15,18 +15,17 @@ export default function Header1() {
             <div className="col-xl-5 d-none d-xl-block">
               <ul className="sd-header-contact">
                 <li>
-                  {contactDetails.phones.map((phone, index) => (
-                    <React.Fragment key={phone.href}>
-                      <a href={phone.href}>{phone.label}</a>
-                      {index < contactDetails.phones.length - 1 ? ", " : null}
-                    </React.Fragment>
-                  ))}
+                  <a href={contactDetails.phones[0].href}>
+                    <i className="icon icon-phone" aria-hidden="true" />
+                    {contactDetails.phones[0].label}
+                  </a>
                 </li>
-                {contactDetails.emails.map((email) => (
-                  <li key={email.href}>
-                    <a href={email.href}>{email.label}</a>
-                  </li>
-                ))}
+                <li>
+                  <a href={contactDetails.emails[1].href}>
+                    <i className="icon icon-mail" aria-hidden="true" />
+                    {contactDetails.emails[1].label}
+                  </a>
+                </li>
               </ul>
             </div>
 

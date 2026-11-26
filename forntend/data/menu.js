@@ -341,14 +341,6 @@ export const productFeatures = [
 
 
 
-export const blogLinks = [
-  { href: "/blog-default", name: "Blog Default" },
-  { href: "/blog-list", name: "Blog List" },
-  { href: "/blog-grid", name: "Blog Grid" },
-  { href: "/blog-detail/1", name: "Blog Detail 1" },
-  { href: "/blog-detail-02/1", name: "Blog Detail 2" },
-];
-
 export const otherPageLinks = [
   { href: "/catalog", name: "Catalogs" },
   // { href: "/events", name: "Events" },

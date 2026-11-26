@@ -16,7 +16,6 @@ const footerSections = [
       { label: "All Products", href: "/products" },
       { label: "Catalogs", href: "/catalog" },
       { label: "Certificates", href: "/certificates" },
-      { label: "Blog", href: "/blog-default" },
       { label: "Careers", href: "/career" },
       { label: "Contact Us", href: "/contact" },
     ],

@@ -2,9 +2,9 @@
 
 export const slides = [
   {
-    imgSrc: "/images/banners/hero-banner.jpeg",
-    tabletImgSrc: "/images/banners/hero-banner-tablet.jpeg",
-    mobileImgSrc: "/images/banners/hero-banner-mobile.jpeg",
+    imgSrc: "/images/banners/hero-banner-optimized.webp",
+    tabletImgSrc: "/images/banners/hero-banner-tablet-optimized.webp",
+    mobileImgSrc: "/images/banners/hero-banner-mobile-optimized.webp",
     alt: "A modern living room featuring Skydecor decorative surfaces",
     subheading: "Skydecor Dubai HPL",
     heading: "Premium 1mm HPL",
@@ -12,6 +12,7 @@ export const slides = [
   },
   {
     imgSrc: "/images/banners/banner2.webp",
+    mobileImgSrc: "/images/banners/banner2-mobile-optimized.webp",
     alt: "skydecor-hpl",
     subheading: "Luxury Surfaces",
     heading: "Elegant 0.8mm Designs",
@@ -19,6 +20,7 @@ export const slides = [
   },
   {
     imgSrc: "/images/banners/banner3.webp",
+    mobileImgSrc: "/images/banners/banner3-mobile-optimized.webp",
     alt: "skydecor-hpl",
     subheading: "Modern Interiors",
     heading: "Stylish & Durable\nHPL Sheets",

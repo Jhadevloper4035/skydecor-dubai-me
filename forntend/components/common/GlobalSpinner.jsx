@@ -17,7 +17,7 @@ export default function GlobalSpinner() {
   const isProductLoading = useAppSelector((state) =>
     PRODUCT_LOADING_STATUSES.some((key) => state.products?.[key] === "loading")
   );
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
 
   useEffect(() => {
     if (isInitialLoading || loadingCount > 0 || isProductLoading) {

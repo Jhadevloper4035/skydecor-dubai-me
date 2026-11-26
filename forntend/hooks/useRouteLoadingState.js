@@ -4,10 +4,9 @@ import { useEffect, useRef } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 
 import { useAppDispatch } from "@/store/hooks";
-import { resetLoading, setInitialLoading, setIsLoading } from "@/store/uiSlice";
+import { resetLoading, setIsLoading } from "@/store/uiSlice";
 
 const COMPLETE_DELAY_MS = 250;
-const INITIAL_LOADER_MS = 700;
 const MAX_NAVIGATION_MS = 7000;
 
 const getRouteKey = (pathname, searchParams) => {
@@ -37,14 +36,6 @@ export const useRouteLoadingState = () => {
   const isNavigating = useRef(false);
   const fallbackTimer = useRef(null);
   const interactionTimer = useRef(null);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      dispatch(setInitialLoading(false));
-    }, INITIAL_LOADER_MS);
-
-    return () => clearTimeout(timer);
-  }, [dispatch]);
 
   useEffect(() => {
     const currentRoute = getRouteKey(pathname, searchParams);

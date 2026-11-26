@@ -56,16 +56,6 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: "/blog-grid",
-        destination: "/blog-default",
-        permanent: true,
-      },
-      {
-        source: "/blog-list",
-        destination: "/blog-default",
-        permanent: true,
-      },
-      {
         source: "/blog-detail-02/:path*",
         destination: "/blog-detail/:path*",
         permanent: true,

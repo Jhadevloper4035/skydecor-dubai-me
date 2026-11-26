@@ -244,18 +244,6 @@ export default function MobileMenu() {
 
               <li className="nav-mb-item">
                 <Link
-                  href="/blog-default"
-                  className={`mb-menu-link ${
-                    isSameSection(pathname, "/blog-default") ? "active" : ""
-                  }`}
-                  {...dismissOffcanvas}
-                >
-                  <span>Blog</span>
-                </Link>
-              </li>
-
-              <li className="nav-mb-item">
-                <Link
                   href="/contact"
                   className={`mb-menu-link ${
                     isSameSection(pathname, "/contact") ? "active" : ""

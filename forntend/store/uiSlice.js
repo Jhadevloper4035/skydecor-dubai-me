@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   loadingCount: 0,
-  isInitialLoading: true,
+  isInitialLoading: false,
 };
 
 const uiSlice = createSlice({

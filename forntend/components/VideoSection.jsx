@@ -11,7 +11,7 @@ export default function IntroVideo() {
                             {/* Intro Image */}
                             <div className="intro-video-image">
                                 <figure>
-                                    <img src="/images/banners/banner3.webp" alt="" />
+                                    <img src="/images/banners/banner3.webp" alt="" loading="lazy" decoding="async" />
                                 </figure>
                             </div>
 

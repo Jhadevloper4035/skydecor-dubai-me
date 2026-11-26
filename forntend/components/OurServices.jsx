@@ -28,7 +28,7 @@ export default function OurServices() {
               href={`/${idea.slug}`}
               key={idea.slug}
             >
-              <img src={idea.image} alt={idea.title} />
+              <img src={idea.image} alt={idea.title} loading="lazy" decoding="async" />
               <h3 aria-label={idea.title}>
                 <span aria-hidden="true">{titleLines(idea.title).join(" ")}</span>
                 <span aria-hidden="true">Design</span>

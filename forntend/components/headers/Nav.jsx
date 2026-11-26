@@ -162,16 +162,6 @@ export default function Nav() {
 
       <li
         className={`menu-item ${
-          pathname.split("/")[1]?.startsWith("blog") ? "active" : ""
-        }`}
-      >
-        <Link href="/blog-default" className="item-link">
-          Blog
-        </Link>
-      </li>
-
-      <li
-        className={`menu-item ${
           pathname.split("/")[1] === "contact" ? "active" : ""
         }`}
       >
