@@ -54,7 +54,7 @@ export default function Banner() {
             <div className="sd-home-collection-card__details">
               <div className="sd-home-collection-card__copy">
                 <p className="body-text-1">
-                  Lightweight yet durable, our 0.8mm HPL is perfect for
+                  Lightweight yet durable, our HPL is perfect for
                   interior wall panels, furniture surfaces, and decorative
                   applications — available in a wide range of textures and finishes.
                 </p>
