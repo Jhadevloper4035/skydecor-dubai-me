@@ -46,7 +46,7 @@
     stroke-linejoin: round;
 }
 
-.mobile-range-menu-row .mobile-range-all-link {
+.mobile-menu-row .mobile-range-all-link {
     display: flex;
     align-items: center;
     align-self: stretch;
@@ -54,7 +54,7 @@
     color: inherit;
 }
 
-.mobile-range-menu-row .mobile-range-toggle {
+.mobile-menu-row .mobile-range-toggle {
     flex: 0 0 40px;
     width: 40px;
     height: 40px;
@@ -63,7 +63,7 @@
     background: transparent;
 }
 
-.mobile-range-menu-row .mobile-range-toggle:not(.collapsed)::before {
+.mobile-menu-row .mobile-range-toggle:not(.collapsed)::before {
     transform: rotate(90deg);
 }
 

@@ -14,22 +14,17 @@ const isSameSection = (pathname, href) =>
 export default function MobileMenu() {
   const pathname = usePathname();
   const [isRangeMenuOpen, setIsRangeMenuOpen] = useState(false);
-  const [isDecorativeRangeOpen, setIsDecorativeRangeOpen] = useState(false);
   const [isResourcesMenuOpen, setIsResourcesMenuOpen] = useState(false);
   const allProductsLink = productNavigation.allProducts;
-  const mainRangeLinks = productNavigation.ranges.filter(
+  const mainRange = productNavigation.ranges.find(
     (range) => range.name === "Decorative HPL"
   );
   const productMenuLinks = [
     allProductsLink,
-    ...mainRangeLinks,
+    mainRange,
+    ...mainRange.categoryLinks,
   ];
-  const resourceLinks = otherPageLinks.filter(
-    (link) =>
-      !["/about-us", "/contact", "/contact-02", "/404", "/coming-soon"].includes(
-        link.href
-      )
-  );
+  const resourcesHref = otherPageLinks[0]?.href || "/";
 
   return (
     <div className="offcanvas offcanvas-start canvas-mb" id="mobileMenu">
@@ -66,7 +61,7 @@ export default function MobileMenu() {
 
               <li className="nav-mb-item">
                 <div
-                  className={`mb-menu-link mobile-range-menu-row ${
+                  className={`mb-menu-link mobile-menu-row ${
                     productMenuLinks.some((link) => isSameSection(pathname, link.href))
                       ? "active"
                       : ""
@@ -99,96 +94,36 @@ export default function MobileMenu() {
                   className={`collapse ${isRangeMenuOpen ? "show" : ""}`}
                 >
                   <ul className="sub-nav-menu">
-                    {mainRangeLinks.map((group, index) => {
-                      const groupId = `mobile-product-range-${index}`;
-
-                      return (
-                        <li key={group.name}>
-                          <button
-                            type="button"
-                            className={`sub-nav-link ${
-                              isDecorativeRangeOpen ? "" : "collapsed"
-                            } ${
-                              [group, ...group.categoryLinks].some((link) =>
-                                isSameSection(pathname, link.href)
-                              )
-                                ? "active"
-                                : ""
-                            }`}
-                            onClick={() =>
-                              setIsDecorativeRangeOpen((isOpen) => !isOpen)
-                            }
-                            aria-expanded={isDecorativeRangeOpen}
-                            aria-controls={groupId}
-                          >
-                            <span>{group.name}</span>
-                            <span className="btn-open-sub" />
-                          </button>
-                          <div
-                            id={groupId}
-                            className={`collapse ${
-                              isDecorativeRangeOpen ? "show" : ""
-                            }`}
-                          >
-                            <ul className="sub-nav-menu sub-menu-level-2">
-                              <li>
-                                <Link
-                                  href={group.href}
-                                  className={`sub-nav-link ${
-                                    pathname === group.href ? "active" : ""
-                                  }`}
-                                  {...dismissOffcanvas}
-                                >
-                                  All {group.name}
-                                </Link>
-                              </li>
-                              {group.categoryLinks.map((category) => (
-                                <li key={`${group.name}-${category.name}`}>
-                                  <Link
-                                    href={category.href}
-                                    className={`sub-nav-link ${
-                                      pathname === category.href ? "active" : ""
-                                    }`}
-                                    {...dismissOffcanvas}
-                                  >
-                                    {category.name}
-                                  </Link>
-                                  <ul className="sub-nav-menu sub-menu-level-2">
-                                    {category.subCategoryLinks.map((subCategory) => (
-                                      <li key={subCategory.href}>
-                                        <Link
-                                          href={subCategory.href}
-                                          className={`sub-nav-link ${
-                                            pathname === subCategory.href ? "active" : ""
-                                          }`}
-                                          {...dismissOffcanvas}
-                                        >
-                                          {subCategory.name}
-                                        </Link>
-                                      </li>
-                                    ))}
-                                  </ul>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        </li>
-                      );
-                    })}
+                    {mainRange.categoryLinks.map((category) => (
+                      <li key={category.href}>
+                        <Link
+                          href={category.href}
+                          className={`sub-nav-link ${
+                            pathname === category.href ? "active" : ""
+                          }`}
+                          {...dismissOffcanvas}
+                        >
+                          {category.name}
+                        </Link>
+                        <ul className="sub-nav-menu sub-menu-level-2">
+                          {category.subCategoryLinks.map((subCategory) => (
+                            <li key={subCategory.href}>
+                              <Link
+                                href={subCategory.href}
+                                className={`sub-nav-link ${
+                                  pathname === subCategory.href ? "active" : ""
+                                }`}
+                                {...dismissOffcanvas}
+                              >
+                                {subCategory.name}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </li>
+                    ))}
                   </ul>
                 </div>
-              </li>
-
-              <li className="nav-mb-item">
-                <Link
-                  href="/career"
-                  className={`mb-menu-link ${
-                    isSameSection(pathname, "/career") ? "active" : ""
-                  }`}
-                  {...dismissOffcanvas}
-                >
-                  <span>Career</span>
-                </Link>
               </li>
 
               <li className="nav-mb-item">
@@ -204,28 +139,43 @@ export default function MobileMenu() {
               </li>
 
               <li className="nav-mb-item">
-                <button
-                  type="button"
-                  className={`${isResourcesMenuOpen ? "" : "collapsed"} mb-menu-link ${
-                    resourceLinks.some((link) => isSameSection(pathname, link.href))
+                <div
+                  className={`mb-menu-link mobile-menu-row ${
+                    otherPageLinks.some((link) => isSameSection(pathname, link.href))
                       ? "active"
                       : ""
                   }`}
-                  onClick={() =>
-                    setIsResourcesMenuOpen((isOpen) => !isOpen)
-                  }
-                  aria-expanded={isResourcesMenuOpen}
-                  aria-controls="mobile-resources-menu"
                 >
-                  <span>Resources</span>
-                  <span className="btn-open-sub" />
-                </button>
+                  <Link
+                    href={resourcesHref}
+                    className="mobile-range-all-link"
+                    {...dismissOffcanvas}
+                  >
+                    Resources
+                  </Link>
+                  <button
+                    type="button"
+                    className={`btn-open-sub mobile-range-toggle ${
+                      isResourcesMenuOpen ? "" : "collapsed"
+                    }`}
+                    aria-label={
+                      isResourcesMenuOpen
+                        ? "Close resources"
+                        : "Open resources"
+                    }
+                    onClick={() =>
+                      setIsResourcesMenuOpen((isOpen) => !isOpen)
+                    }
+                    aria-expanded={isResourcesMenuOpen}
+                    aria-controls="mobile-resources-menu"
+                  />
+                </div>
                 <div
                   id="mobile-resources-menu"
                   className={`collapse ${isResourcesMenuOpen ? "show" : ""}`}
                 >
                   <ul className="sub-nav-menu">
-                    {resourceLinks.map((link) => (
+                    {otherPageLinks.map((link) => (
                       <li key={link.href}>
                         <Link
                           href={link.href}

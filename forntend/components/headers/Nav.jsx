@@ -16,6 +16,7 @@ export default function Nav() {
     mainRange,
     ...mainRange.categoryLinks,
   ];
+  const resourcesHref = otherPageLinks[0]?.href || "/";
 
   return (
     <>
@@ -131,7 +132,7 @@ export default function Nav() {
             : ""
         }`}
       >
-        <Link href="/resources" className="item-link" aria-haspopup="true">
+        <Link href={resourcesHref} className="item-link" aria-haspopup="true">
           Resources
           <span className="sd-dropdown-indicator" aria-hidden="true">
             <svg viewBox="0 0 12 8" focusable="false">
