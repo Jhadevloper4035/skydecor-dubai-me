@@ -33,7 +33,7 @@ export default async function ThankYouPage({ searchParams }) {
               <span className="text text-button">Explore Products</span>
             </Link>
             <Link href="/catalog" className="btn-line">
-              View Catalogs
+              View Catalogues
             </Link>
           </div>
         </div>

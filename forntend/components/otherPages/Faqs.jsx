@@ -7,9 +7,9 @@ const faqs = [
       "Our range includes PVC HPL, decorative HPL, acrylic HPL, edgeband, MDF boards, acoustic panels, and Matteva surfaces.",
   },
   {
-    question: "Can I request samples or a catalog?",
+    question: "Can I request samples or a catalogue?",
     answer:
-      "Yes. Send your preferred collection, finish, and project details through our contact page. Our team will help with samples and the latest catalogs.",
+      "Yes. Send your preferred collection, finish, and project details through our contact page. Our team will help with samples and the latest catalogues.",
   },
   {
     question: "How do I choose the right HPL for my project?",

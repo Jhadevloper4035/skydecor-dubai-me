@@ -151,14 +151,6 @@ export default function About() {
                   <p key={paragraph}>{paragraph}</p>
                 ))}
               </div>
-              <a
-                className="sd-about-story__profile-download"
-                href="/company-profile.pdf"
-                download
-              >
-                <i className="fa-solid fa-download" aria-hidden="true" />
-                Download company profile
-              </a>
             </div>
           </div>
         </div>

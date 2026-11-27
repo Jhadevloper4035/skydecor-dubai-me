@@ -6,7 +6,7 @@ import { useState } from "react";
 
 const inquiryTypes = [
   "Product information",
-  "Catalog request",
+  "Catalogue request",
   "Sample request",
   "Dealer / distributor inquiry",
   "Project quotation",

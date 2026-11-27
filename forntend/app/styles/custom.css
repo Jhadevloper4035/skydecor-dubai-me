@@ -1040,34 +1040,6 @@ body[style*="overflow: hidden"] :is(.fixed-top, .fixed-bottom, .is-fixed, .stick
     line-height: 1.65;
 }
 
-.sd-about-story__profile-download {
-    display: inline-flex;
-    width: fit-content;
-    align-items: center;
-    gap: 10px;
-    margin-top: 6px;
-    padding: 13px 18px;
-    border-radius: 4px;
-    color: var(--white);
-    background: var(--main);
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 1.2;
-    text-decoration: none;
-    transition: background-color 0.2s ease, transform 0.2s ease;
-}
-
-.sd-about-story__profile-download:hover {
-    color: var(--white);
-    background: var(--primary);
-    transform: translateY(-2px);
-}
-
-.sd-about-story__profile-download:focus-visible {
-    outline: 3px solid var(--primary);
-    outline-offset: 3px;
-}
-
 .sd-about-story__image,
 .sd-about-story__image img {
     min-height: 570px;

@@ -1,3 +1,6 @@
+const salesOfficeAddress =
+  "Al Saqr Business Tower, Trade Centre Second, Office A-89, Dubai-237810, United Arab Emirates";
+
 export const contactDetails = {
   companyName: "skydecor Dubai",
   locationLabel: "Dubai, United Arab Emirates",
@@ -24,10 +27,8 @@ export const contactDetails = {
   addresses: [
     {
       label: "Sales office",
-      value:
-        "Al Saqr Business Tower, Trade Centre Second, Office A-89, Dubai-237810, United Arab Emirates",
-      directionsHref:
-        "https://www.google.com/maps/search/?api=1&query=Al%20Saqr%20Business%20Tower%2C%20Trade%20Centre%20Second%2C%20Office%20A-89%2C%20Dubai-237810%2C%20United%20Arab%20Emirates",
+      value: salesOfficeAddress,
+      directionsHref: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(salesOfficeAddress)}`,
     },
     {
       label: "Distribution centre",
@@ -38,8 +39,7 @@ export const contactDetails = {
     label: "Chat with us on WhatsApp",
     href: "https://alvo.chat/3Ijc",
   },
-  mapEmbedUrl:
-    "https://www.google.com/maps?q=Dubai%2C%20United%20Arab%20Emirates&output=embed",
+  mapEmbedUrl: `https://www.google.com/maps?q=${encodeURIComponent(salesOfficeAddress)}&output=embed`,
   socialLinks: [
     {
       href: "https://www.facebook.com/skydecorlam",

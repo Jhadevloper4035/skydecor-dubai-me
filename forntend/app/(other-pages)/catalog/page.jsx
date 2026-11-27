@@ -2,9 +2,9 @@ import CatalogsPage from "@/components/catalogs/CatalogsPage";
 import Link from "next/link";
 
 export const metadata = {
-  title: "E-Catalogs & Product Brochures | skydecor Dubai",
+  title: "E-Catalogues & Product Brochures | skydecor Dubai",
   description:
-    "Browse and download skydecor product catalogs for decorative HPL, acrylic surfaces, liner HPL, and Soffitto panels.",
+    "Browse and download skydecor product catalogues for decorative HPL, acrylic surfaces, liner HPL, and Soffitto panels.",
 };
 
 export default function CatalogRoute() {
@@ -26,7 +26,7 @@ export default function CatalogRoute() {
           <div className="container-full">
             <div className="row">
               <div className="col-12">
-                <h1 className="heading text-start">Catalogs</h1>
+                <h1 className="heading text-start">Catalogues</h1>
                 <ul className="breadcrumbs d-flex align-items-center justify-content-start">
                   <li>
                     <Link className="link" href="/">
@@ -36,7 +36,7 @@ export default function CatalogRoute() {
                   <li>
                     <i className="icon-arrRight" />
                   </li>
-                  <li>Catalogs</li>
+                  <li>Catalogues</li>
                 </ul>
               </div>
             </div>

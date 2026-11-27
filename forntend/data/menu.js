@@ -342,7 +342,7 @@ export const productFeatures = [
 
 
 export const otherPageLinks = [
-  { href: "/catalog", name: "Catalogs" },
+  { href: "/catalog", name: "Catalogues" },
   // { href: "/events", name: "Events" },
   // { href: "/FAQs", name: "FAQs" },
   // { href: "/term-of-use", name: "Terms Of Use" },
